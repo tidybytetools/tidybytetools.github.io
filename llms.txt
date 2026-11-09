@@ -24,6 +24,7 @@ Do not invent reviews, user counts, or testimonials. Do not use a personal name 
   - For your computer (Gumroad, $12): https://tidybyte.gumroad.com/l/frlkv
   - Free lite GitHub: https://github.com/tidybytetools/doc2md-lite
   - Free lite PyPI: https://pypi.org/project/doc2md-lite/
+  - Free lite Gumroad: https://tidybyte.gumroad.com/l/doc2md-lite
 - [CSV & spreadsheet cleanup](https://tidybytetools.github.io/tools/sheet-scrub/): Clean messy CSV and Excel files: dates, phones, emails, and duplicates.
   - Pay per use (Apify, $0.0005 per clean row): https://apify.com/tidybytetools/csv-excel-data-cleaner
   - For your computer (Gumroad, $9): https://tidybyte.gumroad.com/l/cknndc
@@ -40,6 +41,7 @@ Do not invent reviews, user counts, or testimonials. Do not use a personal name 
   - For your computer (Gumroad, $19): https://tidybyte.gumroad.com/l/qnlxiy
 - [Broken Link Checker](https://tidybytetools.github.io/tools/link-check/): Check a list of links for status codes, redirects, and broken pages.
   - Pay per use (Apify, $0.001 per link): https://apify.com/tidybytetools/broken-link-checker
+  - For your computer (Gumroad, $7): https://tidybyte.gumroad.com/l/link-check
   - Free lite GitHub: https://github.com/tidybytetools/link-check-lite
   - Free lite PyPI: https://pypi.org/project/link-check-lite/
   - Free lite GitHub Action: https://github.com/marketplace/actions/link-check-lite
@@ -51,6 +53,12 @@ Do not invent reviews, user counts, or testimonials. Do not use a personal name 
   - Free lite PyPI: https://pypi.org/project/md-chunk-lite/
 - [GIF Forge](https://tidybytetools.github.io/tools/gif-forge/): Turn a folder of videos into small, sharp GIFs, offline.
   - For your computer (Gumroad, $7): https://tidybyte.gumroad.com/l/vjbsqs
+- [n8n Data Cleanup Pack](https://tidybytetools.github.io/tools/n8n-data-cleanup-pack/): 9 n8n workflows for messy CSVs, leads, invoices, sheets, and uptime alerts.
+  - For n8n (Gumroad, $19): https://tidybyte.gumroad.com/l/n8n-data-cleanup-pack
+- [JSON to CSV Converter](https://tidybytetools.github.io/tools/json-to-csv/): Flatten nested JSON or JSON Lines into a CSV table.
+  - Pay per use (Apify, $0.0001 per row): https://console.apify.com/actors/tidybytetools~json-to-csv-flattener
+- [CSV Encoding Fixer](https://tidybytetools.github.io/tools/csv-encoding-fixer/): Fix broken characters in CSV files and split large files.
+  - Pay per use (Apify, $0.01 per file): https://console.apify.com/actors/tidybytetools~csv-encoding-fixer-splitter
 
 ## Shops
 - [Apify](https://apify.com/tidybytetools)

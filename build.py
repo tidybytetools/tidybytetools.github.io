@@ -31,6 +31,7 @@ CATEGORIES = [
     ("web", "Links & web"),
     ("ai", "AI / RAG"),
     ("media", "Images & video"),
+    ("n8n", "n8n workflows"),
 ]
 
 
@@ -139,8 +140,9 @@ TOOLS = [
                 urls=[
                     ("GitHub", "https://github.com/tidybytetools/doc2md-lite"),
                     ("PyPI", "https://pypi.org/project/doc2md-lite/"),
+                    ("Gumroad", "https://tidybyte.gumroad.com/l/doc2md-lite"),
                 ],
-                note="Text PDF or HTML, one file at a time. No Word files, no folders, no RAG chunks, no OCR.",
+                note="Text PDF or HTML, one file at a time. No Word files, no folders, no RAG chunks, no OCR. Free download, $3 suggested.",
             ),
         ],
         "repos": ["doc2md-lite"],
@@ -327,7 +329,8 @@ TOOLS = [
         ),
         "does": [
             "Shows the status code, redirect chain, and final URL for each link.",
-            "The Apify version can also read a sitemap or scan pages for links, and follows robots.txt.",
+            "The paid download and the Apify version can also read a sitemap, check speed, and flag look-alike domains.",
+            "The Apify version can scan pages for links and follows robots.txt.",
             "The free lite tool checks a text file of links on your computer, includes an MCP server, and is also on the GitHub Marketplace as an Action.",
         ],
         "thumb": PRODUCTS_DIR / "link-check" / "thumb.png",
@@ -341,6 +344,14 @@ TOOLS = [
                 card_price="$0.001/link",
                 note="Scanning a page for links is $0.002 per page. Duplicates and links skipped by robots.txt are free.",
                 cta="Open in Apify",
+            ),
+            V(
+                "Gumroad",
+                "For your computer",
+                "$7",
+                "https://tidybyte.gumroad.com/l/link-check",
+                note="Sitemaps, speed checks, look-alike domain warnings, and CSV reports. Runs offline.",
+                cta="Buy on Gumroad",
             ),
             V(
                 "GitHub & PyPI",
@@ -456,9 +467,38 @@ TOOLS = [
         ],
         "repos": [],
     },
+    {
+        "slug": "n8n-data-cleanup-pack",
+        "name": "n8n Data Cleanup Pack",
+        "category": "n8n",
+        "tagline": "9 n8n workflows for messy CSVs, leads, invoices, sheets, and uptime alerts.",
+        "summary": (
+            "Import a file, pick your logins, and run. These workflows clean messy data "
+            "in n8n, using only the nodes that come with n8n."
+        ),
+        "does": [
+            "Nine ready-to-import workflows, including CSV cleanup, lead cleanup, invoice email to Sheets, and uptime alerts.",
+            "Only nodes that come with n8n. No community nodes and no paid APIs.",
+            "Each workflow has plain setup steps inside it.",
+        ],
+        "thumb": PRODUCTS_DIR / "n8n-data-cleanup-pack" / "thumb.png",
+        "cover": PRODUCTS_DIR / "n8n-data-cleanup-pack" / "cover.png",
+        "versions": [
+            V(
+                "Gumroad",
+                "For n8n",
+                "$19",
+                "https://tidybyte.gumroad.com/l/n8n-data-cleanup-pack",
+                cta="Buy on Gumroad",
+                note="Tested on self-hosted n8n 2.46.4. Workflows that read files from disk need self-hosted n8n.",
+            ),
+        ],
+        "repos": [],
+    },
 ]
 
-# Optional Apify actors: include only if the public store page returns 200.
+# Optional Apify actors: include if the store page is live, otherwise use the working Console URL.
+
 OPTIONAL_APIFY = [
     {
         "slug": "json-to-csv",
@@ -492,6 +532,7 @@ OPTIONAL_APIFY = [
         ],
         "repos": [],
         "apify_url": "https://apify.com/tidybytetools/json-to-csv-flattener",
+        "console_url": "https://console.apify.com/actors/tidybytetools~json-to-csv-flattener",
     },
     {
         "slug": "csv-encoding-fixer",
@@ -525,6 +566,7 @@ OPTIONAL_APIFY = [
         ],
         "repos": [],
         "apify_url": "https://apify.com/tidybytetools/csv-encoding-fixer-splitter",
+        "console_url": "https://console.apify.com/actors/tidybytetools~csv-encoding-fixer-splitter",
     },
 ]
 
@@ -550,12 +592,33 @@ def http_ok(url: str, timeout: int = 20) -> bool:
 def live_tools() -> list[dict]:
     tools = list(TOOLS)
     for item in OPTIONAL_APIFY:
-        url = item["apify_url"]
-        if http_ok(url):
-            print(f"including optional {item['slug']} (live)")
+        item = dict(item)
+        store = item["apify_url"]
+        console = item.get("console_url")
+        if http_ok(store):
+            print(f"including optional {item['slug']} (store page live)")
             tools.append(item)
-        else:
-            print(f"skipping optional {item['slug']} (not a public 200)")
+            continue
+        # isPublic and Store search already list these actors, but the
+        # apify.com/username/name HTML page still 404s. Link the working Console URL.
+        if not console:
+            print(f"skipping optional {item['slug']} (no store page, no console URL)")
+            continue
+        print(f"including optional {item['slug']} via Console (store HTML still 404)")
+        versions = []
+        for ver in item["versions"]:
+            ver = dict(ver)
+            if ver.get("url") == store:
+                ver["url"] = console
+                ver["cta"] = "Open in Apify Console"
+                extra = (
+                    "The public store page is not up yet, so this link opens the working Apify Console page."
+                )
+                ver["note"] = (ver.get("note") + " " if ver.get("note") else "") + extra
+            versions.append(ver)
+        item["versions"] = versions
+        item["apify_url"] = console
+        tools.append(item)
     return tools
 
 

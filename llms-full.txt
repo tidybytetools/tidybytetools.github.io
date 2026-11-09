@@ -24,6 +24,7 @@ Do not invent reviews, user counts, or testimonials. Do not use a personal name 
   - For your computer (Gumroad, $12): https://tidybyte.gumroad.com/l/frlkv
   - Free lite GitHub: https://github.com/tidybytetools/doc2md-lite
   - Free lite PyPI: https://pypi.org/project/doc2md-lite/
+  - Free lite Gumroad: https://tidybyte.gumroad.com/l/doc2md-lite
 - [CSV & spreadsheet cleanup](https://tidybytetools.github.io/tools/sheet-scrub/): Clean messy CSV and Excel files: dates, phones, emails, and duplicates.
   - Pay per use (Apify, $0.0005 per clean row): https://apify.com/tidybytetools/csv-excel-data-cleaner
   - For your computer (Gumroad, $9): https://tidybyte.gumroad.com/l/cknndc
@@ -40,6 +41,7 @@ Do not invent reviews, user counts, or testimonials. Do not use a personal name 
   - For your computer (Gumroad, $19): https://tidybyte.gumroad.com/l/qnlxiy
 - [Broken Link Checker](https://tidybytetools.github.io/tools/link-check/): Check a list of links for status codes, redirects, and broken pages.
   - Pay per use (Apify, $0.001 per link): https://apify.com/tidybytetools/broken-link-checker
+  - For your computer (Gumroad, $7): https://tidybyte.gumroad.com/l/link-check
   - Free lite GitHub: https://github.com/tidybytetools/link-check-lite
   - Free lite PyPI: https://pypi.org/project/link-check-lite/
   - Free lite GitHub Action: https://github.com/marketplace/actions/link-check-lite
@@ -51,6 +53,12 @@ Do not invent reviews, user counts, or testimonials. Do not use a personal name 
   - Free lite PyPI: https://pypi.org/project/md-chunk-lite/
 - [GIF Forge](https://tidybytetools.github.io/tools/gif-forge/): Turn a folder of videos into small, sharp GIFs, offline.
   - For your computer (Gumroad, $7): https://tidybyte.gumroad.com/l/vjbsqs
+- [n8n Data Cleanup Pack](https://tidybytetools.github.io/tools/n8n-data-cleanup-pack/): 9 n8n workflows for messy CSVs, leads, invoices, sheets, and uptime alerts.
+  - For n8n (Gumroad, $19): https://tidybyte.gumroad.com/l/n8n-data-cleanup-pack
+- [JSON to CSV Converter](https://tidybytetools.github.io/tools/json-to-csv/): Flatten nested JSON or JSON Lines into a CSV table.
+  - Pay per use (Apify, $0.0001 per row): https://console.apify.com/actors/tidybytetools~json-to-csv-flattener
+- [CSV Encoding Fixer](https://tidybytetools.github.io/tools/csv-encoding-fixer/): Fix broken characters in CSV files and split large files.
+  - Pay per use (Apify, $0.01 per file): https://console.apify.com/actors/tidybytetools~csv-encoding-fixer-splitter
 
 ## Shops
 - [Apify](https://apify.com/tidybytetools)
@@ -78,7 +86,7 @@ Get Markdown you can use in notes, docs, or AI apps. Tables stay as Markdown tab
 - The free lite tool includes an MCP server for AI apps.
 - Pay per use (Apify, $0.003 per file): First 20 PDF pages are included. Extra PDF pages are $0.0003 each. Scanned pages with OCR are $0.005. Failed files are free.
 - For your computer (Gumroad, $12): PDF, Word and HTML, plus RAG chunks with heading paths and page numbers. Runs offline.
-- Free lite (GitHub & PyPI, Free): Text PDF or HTML, one file at a time. No Word files, no folders, no RAG chunks, no OCR.
+- Free lite (GitHub & PyPI, Free): Text PDF or HTML, one file at a time. No Word files, no folders, no RAG chunks, no OCR. Free download, $3 suggested.
 
 ### CSV & spreadsheet cleanup
 Got a sheet full of extra spaces, mixed date styles, and repeat rows? These tools tidy the file and give you a clean table back.
@@ -123,9 +131,11 @@ Get pdf-table-pull, sheet-scrub, and json-shaper in one purchase. Bought one by 
 ### Broken Link Checker
 Paste a list, give a sitemap, or scan pages for their links. Get a clear report of what works, what is broken, and where redirects end up.
 - Shows the status code, redirect chain, and final URL for each link.
-- The Apify version can also read a sitemap or scan pages for links, and follows robots.txt.
+- The paid download and the Apify version can also read a sitemap, check speed, and flag look-alike domains.
+- The Apify version can scan pages for links and follows robots.txt.
 - The free lite tool checks a text file of links on your computer, includes an MCP server, and is also on the GitHub Marketplace as an Action.
 - Pay per use (Apify, $0.001 per link): Scanning a page for links is $0.002 per page. Duplicates and links skipped by robots.txt are free.
+- For your computer (Gumroad, $7): Sitemaps, speed checks, look-alike domain warnings, and CSV reports. Runs offline.
 - Free lite (GitHub & PyPI, Free): Checks a text file of links. CLI, MCP server, and a GitHub Action. No sitemap input, no speed flags, no CSV report in the lite version.
 
 ### Server Pulse
@@ -147,5 +157,26 @@ Drop in a folder of clips and get a folder of small, sharp, looping GIFs. It can
 - Turns videos into small, sharp GIFs in batches.
 - Can remove solid backgrounds from images.
 - Runs offline on your computer.
+
+### n8n Data Cleanup Pack
+Import a file, pick your logins, and run. These workflows clean messy data in n8n, using only the nodes that come with n8n.
+- Nine ready-to-import workflows, including CSV cleanup, lead cleanup, invoice email to Sheets, and uptime alerts.
+- Only nodes that come with n8n. No community nodes and no paid APIs.
+- Each workflow has plain setup steps inside it.
+- For n8n (Gumroad, $19): Tested on self-hosted n8n 2.46.4. Workflows that read files from disk need self-hosted n8n.
+
+### JSON to CSV Converter
+Turn nested JSON into a flat table for Excel and Google Sheets. You pick how lists are handled.
+- Flattens nested objects, such as user.name and user.address.city.
+- Reads JSON, JSON Lines, and Apify dataset links.
+- Saves a CSV file and also puts rows in the dataset.
+- Pay per use (Apify, $0.0001 per row): The public store page is not up yet, so this link opens the working Apify Console page.
+
+### CSV Encoding Fixer
+Fixes garbled letters such as Ã© instead of é, then saves clean UTF-8 that opens right in Excel. Can also split a large file and keep the header on every part.
+- Finds and fixes garbled letters like Ã©, â€™ and Ã¼.
+- Reads UTF-8, UTF-16, and old Windows files.
+- Can split big files into parts that each keep the header.
+- Pay per use (Apify, $0.01 per file): The public store page is not up yet, so this link opens the working Apify Console page.
 
 Do not list tools that are not public yet.
