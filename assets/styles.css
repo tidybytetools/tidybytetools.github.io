@@ -453,3 +453,73 @@ button:focus-visible,
   color: var(--slate);
   font-size: 0.95rem;
 }
+
+
+/* Hero example */
+.hero .example { margin-top: 2rem; }
+.hero .example figcaption { border-top: 1px solid var(--line); }
+
+/* FAQ */
+.faq { display: grid; gap: 0.55rem; }
+.faq details {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 0.7rem;
+  padding: 0.1rem 0;
+}
+.faq summary {
+  cursor: pointer;
+  font-weight: 700;
+  padding: 0.85rem 1.1rem;
+  letter-spacing: -0.02em;
+  list-style: none;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after {
+  content: "+";
+  float: right;
+  font-weight: 500;
+  color: var(--slate);
+}
+.faq details[open] summary::after { content: "–"; }
+.faq details p {
+  margin: 0;
+  padding: 0 1.1rem 1rem;
+  color: var(--slate);
+}
+
+/* Tool pages */
+.crumb {
+  margin: 1.2rem 0 0.8rem;
+  color: var(--slate);
+  font-size: 0.95rem;
+}
+.crumb a { color: var(--slate); text-decoration: none; }
+.crumb a:hover { color: var(--mint-deep); text-decoration: underline; }
+.tool-hero { padding: 0 0 1.75rem; }
+.tool-hero h1 {
+  margin: 0 0 0.7rem;
+  font-size: clamp(1.7rem, 3.6vw, 2.4rem);
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+}
+.tool-hero .lede { margin: 0 0 0.6rem; max-width: 42rem; color: var(--slate); font-size: 1.1rem; }
+.offers { display: grid; gap: 0.7rem; margin: 0 0 1.75rem; }
+.offer {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 0.7rem;
+  padding: 1.1rem 1.15rem;
+}
+.offer h2 { margin: 0 0 0.35rem; font-size: 1.05rem; }
+.offer p { margin: 0 0 0.8rem; color: var(--slate); }
+.prose { max-width: 42rem; }
+.prose h2 { margin: 0 0 0.5rem; font-size: 1.2rem; }
+.prose p { margin: 0 0 0.9rem; }
+
+.get-it { margin: 0 0 0.7rem; font-size: 1.2rem; letter-spacing: -0.03em; }
+
+/* Keep in-page anchors clear of the sticky header */
+.section, .family, .card[id], #faq, #tools, #how, #main {
+  scroll-margin-top: 5rem;
+}

@@ -1,0 +1,156 @@
+# Tidy Byte Tools
+
+> Small tools that clean up messy data. Each one does one job and does it well. Free lite tools run on your computer (CLI + MCP). Paid downloads are on Gumroad. Pay-per-use actors are on Apify.
+
+Home: https://tidybytetools.github.io
+GitHub: https://github.com/tidybytetools
+Apify: https://apify.com/tidybytetools
+Gumroad: https://tidybyte.gumroad.com
+PyPI: https://pypi.org/user/tidybytetools/
+
+## Free tools (GitHub, PyPI, MCP)
+
+- [json-shaper-lite](https://tidybytetools.github.io/tools/json-shaper/): Turns notes, CSV, and Markdown tables into clean JSON. Install: `pip install json-shaper-lite`. GitHub: https://github.com/tidybytetools/json-shaper-lite. PyPI: https://pypi.org/project/json-shaper-lite/.
+- [pdf-table-pull-lite](https://tidybytetools.github.io/tools/pdf-table-pull/): Pulls tables out of text PDFs and saves each one as a CSV file. Install: `pip install pdf-table-pull-lite`. GitHub: https://github.com/tidybytetools/pdf-table-pull-lite. PyPI: https://pypi.org/project/pdf-table-pull-lite/.
+- [doc2md-lite](https://tidybytetools.github.io/tools/doc2md/): Turns a text PDF or a saved web page into clean Markdown. Tables stay as tables. Install: `pip install doc2md-lite`. GitHub: https://github.com/tidybytetools/doc2md-lite. PyPI: https://pypi.org/project/doc2md-lite/.
+- [link-check-lite](https://tidybytetools.github.io/tools/link-check/): Checks a list of links and shows which ones work, break, or redirect. Install: `pip install link-check-lite`. GitHub: https://github.com/tidybytetools/link-check-lite. PyPI: https://pypi.org/project/link-check-lite/.
+- [md-chunk-lite](https://tidybytetools.github.io/tools/markdown-chunker/): Splits Markdown into chunks by heading, and keeps the heading path and line numbers. Install: `pip install md-chunk-lite`. GitHub: https://github.com/tidybytetools/md-chunk-lite. PyPI: https://pypi.org/project/md-chunk-lite/.
+
+## Pay per use (Apify)
+
+- [PDF Table Extractor](https://tidybytetools.github.io/tools/pdf-table-pull/): Pulls tables out of PDFs, even tables that run across pages. Saves JSON, CSV, or Excel. Can read scans with OCR. Price: $0.003 / page with a table. Run: https://apify.com/tidybytetools/pdf-table-pull.
+- [Doc to Markdown](https://tidybytetools.github.io/tools/doc2md/): Turns PDFs, Word files, and web pages into clean Markdown, plus chunks for AI search. Price: $0.003 / file. Run: https://apify.com/tidybytetools/doc-to-markdown.
+- [Broken Link Checker](https://tidybytetools.github.io/tools/link-check/): Checks lots of links at once. You get the status code, redirect chain, final URL, and speed. Price: $0.001 / link. Run: https://apify.com/tidybytetools/broken-link-checker.
+- [Markdown RAG Chunker](https://tidybytetools.github.io/tools/markdown-chunker/): Splits Markdown into chunks for AI search. Keeps code blocks and tables whole when they fit. Each chunk has its heading path. Price: $0.0001 / chunk. Run: https://apify.com/tidybytetools/markdown-rag-chunker.
+- [CSV & Excel Data Cleaner](https://tidybytetools.github.io/tools/csv-excel-data-cleaner/): Cleans CSV, Excel, or JSON tables. Fixes headers, dates, emails, and phones, and removes duplicate and empty rows. Price: $0.0005 / clean row. Run: https://apify.com/tidybytetools/csv-excel-data-cleaner.
+- [Phone Number Validator & Formatter](https://tidybytetools.github.io/tools/phone-number-validator/): Checks if phone numbers are valid and writes them as E.164, international, and national. Shows country, line type, area, and time zone. Offline — nothing is called or texted. Price: $0.001 / number. Run: https://apify.com/tidybytetools/phone-number-validator-formatter.
+- [JSON to CSV Converter](https://tidybytetools.github.io/tools/json-to-csv/): Turns nested JSON or JSON Lines into a flat CSV table for Excel and Google Sheets. Price: $0.0001 / row. Run: https://apify.com/tidybytetools/json-to-csv-flattener.
+- [CSV Encoding Fixer & Splitter](https://tidybytetools.github.io/tools/csv-encoding-fixer/): Fixes broken characters in CSV files (like Ã© instead of é). Saves clean UTF-8, and can split big files while keeping the header. Price: $0.01 / file. Run: https://apify.com/tidybytetools/csv-encoding-fixer-splitter.
+
+## Pay once (Gumroad)
+
+- [Data Cleanup Bundle](https://tidybytetools.github.io/tools/data-cleanup-bundle/): Gets you pdf-table-pull, sheet-scrub, and json-shaper together. Price: $19 (saves $7 vs buying the three tools one by one). Buy: https://tidybyte.gumroad.com/l/qnlxiy.
+- [pdf-table-pull](https://tidybytetools.github.io/tools/pdf-table-pull/): Pulls tables out of PDFs into Excel, CSV, or JSON. Joins tables across pages and can read scanned pages. Price: $12, pay once. Buy: https://tidybyte.gumroad.com/l/hkxqxh.
+- [doc2md](https://tidybytetools.github.io/tools/doc2md/): Turns PDF, Word, and HTML files into clean Markdown, plus chunks ready for AI search. Price: $12, pay once. Buy: https://tidybyte.gumroad.com/l/frlkv.
+- [sheet-scrub](https://tidybytetools.github.io/tools/sheet-scrub/): Cleans messy Excel and CSV files in one command: duplicates, dates, phones, and emails. Price: $9, pay once. Buy: https://tidybyte.gumroad.com/l/cknndc.
+- [lead-sheet-fixer](https://tidybytetools.github.io/tools/lead-sheet-fixer/): Cleans the lead list you already have: phones fixed, bad emails flagged, names split, duplicates merged. Price: $9, pay once. Buy: https://tidybyte.gumroad.com/l/iaiacv.
+- [json-shaper](https://tidybytetools.github.io/tools/json-shaper/): Turns messy text, CSV, Markdown tables, app logs, and US addresses into clean JSON. Price: $5 minimum, pay what you want. Buy: https://tidybyte.gumroad.com/l/cznmeo.
+- [gif-forge](https://tidybytetools.github.io/tools/gif-forge/): Turns a folder of videos into small, sharp GIFs, and can remove solid backgrounds from images. Runs offline. Price: $7, pay once. Buy: https://tidybyte.gumroad.com/l/vjbsqs.
+- [server-pulse](https://tidybytetools.github.io/tools/server-pulse/): Sends Discord alerts when a website or game server goes down, plus Stripe and PayPal donation alerts. Price: $19, pay once. Buy: https://tidybyte.gumroad.com/l/cjatbj.
+
+## Notes for agents
+
+- Do not invent reviews, user counts, or testimonials. We do not publish those here.
+- Offline tools (GitHub, PyPI, Gumroad) run on the user's computer. Apify tools run on Apify's servers.
+- Refunds for Gumroad purchases follow Gumroad's 30-day policy.
+- Full catalog: https://tidybytetools.github.io/llms-full.txt
+
+
+## Tool details
+
+### pdf-table-pull
+URL: https://tidybytetools.github.io/tools/pdf-table-pull/
+Copying tables out of a PDF by hand is slow, and pasting them into Excel often wrecks the columns. pdf-table-pull does it in one step.
+Who it is for: People with bank statements, invoices, supplier price lists, reports, or government data.
+Honest limits: Text PDFs (where you can select the words with your mouse) give the best results. OCR on scans is slower and can misread blurry pages. Handwriting and photos of crumpled receipts will not work well.
+- Free: pdf-table-pull-lite (Free): Pulls tables out of text PDFs and saves each one as CSV. Runs on your computer. MIT license. Also works as an MCP server for AI apps. Link: https://github.com/tidybytetools/pdf-table-pull-lite
+- Pay once: pdf-table-pull ($12): Adds Excel and JSON output, joins tables that carry on to the next page, reads scanned pages with optional OCR, and opens password-protected PDFs. Link: https://tidybyte.gumroad.com/l/hkxqxh
+- Pay per use: PDF Table Extractor ($0.003 / page): The same job on Apify. $0.003 per page with a table, $0.01 per scanned OCR page. Pages with no tables are free. Link: https://apify.com/tidybytetools/pdf-table-pull
+
+### doc2md
+URL: https://tidybytetools.github.io/tools/doc2md/
+AI tools read Markdown best. Most converters give you a wall of text, and tables turn into word soup. doc2md keeps headings, lists, and tables intact.
+Who it is for: People feeding docs to ChatGPT, Claude, or their own AI app, building a search index, or moving old Word docs into a wiki.
+Honest limits: The free lite tool reads text PDFs and saved HTML, not Word files and not scans. Two-column PDFs, like science papers, may mix the columns. Old .doc files and images are not read.
+- Free: doc2md-lite (Free): Turns one text PDF or a saved web page (.html) into Markdown, and keeps tables. MIT license. Also works as an MCP server. Link: https://github.com/tidybytetools/doc2md-lite
+- Pay once: doc2md ($12): Adds Word (.docx) files, whole folders, page picking, password-locked PDFs, and RAG chunks with heading paths and page numbers. Link: https://tidybyte.gumroad.com/l/frlkv
+- Pay per use: Doc to Markdown ($0.003 / file): The same job on Apify, including OCR for scanned PDFs. $0.003 per file (first 20 PDF pages included). Link: https://apify.com/tidybytetools/doc-to-markdown
+
+### link-check
+URL: https://tidybytetools.github.io/tools/link-check/
+A simple way to check a list of links. You see which ones work, which are broken, and where redirects end up.
+Who it is for: People who maintain docs, a website, or a list of resources and want to catch 404s early.
+Honest limits: The free tool checks the links you give it. It does not crawl a whole site or read a sitemap. The Apify tool can do those jobs.
+- Free: link-check-lite (Free): Checks a list of links on your computer. MIT license. Also works as an MCP server. Link: https://github.com/tidybytetools/link-check-lite
+- Pay per use: Broken Link Checker ($0.001 / link): Checks thousands of links on Apify. Paste a list, give a sitemap, or scan pages for their links. Follows robots.txt. $0.001 per link. Link: https://apify.com/tidybytetools/broken-link-checker
+
+### Markdown chunker
+URL: https://tidybytetools.github.io/tools/markdown-chunker/
+Splits Markdown into chunks by heading. Every chunk knows its heading path and the line numbers it came from. The same file always gives the same chunks, because this is plain code, not an AI model.
+Who it is for: People building AI search (RAG), embeddings, or a docs bot.
+Honest limits: These tools chunk Markdown you already have. To turn PDFs or Word files into chunks, use doc2md.
+- Free: md-chunk-lite (Free): Runs on your computer. MIT license. Also works as an MCP server. Link: https://github.com/tidybytetools/md-chunk-lite
+- Pay per use: Markdown RAG Chunker ($0.0001 / chunk): The same job on Apify. Keeps code blocks and tables whole when they fit. Optional overlap. $0.0001 per chunk. Link: https://apify.com/tidybytetools/markdown-rag-chunker
+
+### json-shaper
+URL: https://tidybytetools.github.io/tools/json-shaper/
+Free converters handle neat CSV. json-shaper is for the messy stuff they choke on: notes, pasted tables, and — in the paid version — logs and addresses. Numbers stay numbers, and true/false become booleans.
+Who it is for: People turning messy notes or exports into JSON for scripts and AI tools.
+Honest limits: The address parser in the paid tool handles US one-line addresses only. If you only need plain CSV to JSON, the free lite tool is enough.
+- Free: json-shaper-lite (Free): Turns key: value notes, CSV/TSV, and Markdown tables into JSON. MIT license. Also works as an MCP server. Free download also on Gumroad. Link: https://github.com/tidybytetools/json-shaper-lite
+- Pay once: json-shaper ($5+): Adds app log parsing and one-line US address splitting. One Python file, no extra installs. Link: https://tidybyte.gumroad.com/l/cznmeo
+
+### sheet-scrub
+URL: https://tidybytetools.github.io/tools/sheet-scrub/
+Got a contact list or export full of double spaces, duplicate rows, five date styles, and phone numbers typed every possible way? sheet-scrub fixes it in one command and tells you exactly what it changed. Your original file is never touched.
+Who it is for: People with messy spreadsheets who want a clean file and a short report.
+Honest limits: Phone formatting is built for US and Canada 10-digit numbers. Other numbers are left as they are and listed in the report. Dates like 03/04/2026 are read month-first by default, with a switch for day-first.
+- Pay once: sheet-scrub ($9): Works with Excel, CSV, and JSON, and can convert between them. Runs offline on your computer. Link: https://tidybyte.gumroad.com/l/cknndc
+- Need this in the cloud? ($0.0005 / row): The Apify CSV & Excel Data Cleaner does a similar job, charged per clean row. Link: https://apify.com/tidybytetools/csv-excel-data-cleaner
+
+### lead-sheet-fixer
+URL: https://tidybytetools.github.io/tools/lead-sheet-fixer/
+Got a lead list from a form, an event, or an old CRM export? Phones typed five ways, names in ALL CAPS, the same person three times? lead-sheet-fixer cleans it and gives you a short report. Your original file is never touched.
+Who it is for: People cleaning a lead list they already have, not finding new leads.
+Honest limits: It checks that emails and phones look right. It does not check that an inbox exists or that a phone still works. It does not find new leads or scrape websites. It cleans the list you already have.
+- Pay once: lead-sheet-fixer ($9): Works with Excel, CSV, and JSON. Finds email, phone, name, and company columns on its own. Runs offline. Link: https://tidybyte.gumroad.com/l/iaiacv
+
+### gif-forge
+URL: https://tidybytetools.github.io/tools/gif-forge/
+Drop a folder of clips in and get a folder of small, sharp, looping GIFs out. gif-forge uses ffmpeg’s two-pass palette method, so you skip the grainy, bloated files most online converters make. No uploads, no size caps, no watermark.
+Who it is for: People making GIFs for Discord, store listings, README demos, or social posts.
+Honest limits: It is a command-line tool, not a point-and-click app. The background remover is for solid backgrounds. It will not cut a person out of a busy photo. You need Python 3.8+, ffmpeg, and Pillow.
+- Pay once: gif-forge ($7): Batch video-to-GIF plus a batch background remover for product shots, sprites, logos, and screenshots on a plain solid background. Link: https://tidybyte.gumroad.com/l/vjbsqs
+
+### server-pulse
+URL: https://tidybytetools.github.io/tools/server-pulse/
+server-pulse watches your website and game ports. It posts a down alert to Discord when something breaks, and an up alert when it is back. It only alerts after a few failed checks in a row, so a short network blip will not spam your channel. It can also announce Stripe and PayPal donations.
+Who it is for: People who run a website or a game server and want alerts in Discord, without a monthly uptime bill.
+Honest limits: It has to run on a machine that is always on. A cheap VPS works best. Donation alerts need your server reachable from the internet so Stripe or PayPal can send to it. The guide explains how.
+- Pay once: server-pulse ($19): Checks websites, Minecraft, Rust, or any TCP port. Pure Python, no pip installs. Runs on a VPS, a Raspberry Pi, or a Windows PC. Link: https://tidybyte.gumroad.com/l/cjatbj
+
+### Data Cleanup Bundle
+URL: https://tidybytetools.github.io/tools/data-cleanup-bundle/
+Three small command-line tools for the boring part of working with data: getting it out of PDFs, cleaning up spreadsheets, and turning messy text into JSON. They all run on your own computer, so your files are never uploaded.
+Who it is for: People who want the three data tools together and a lower price.
+Honest limits: These are command-line tools. If you have never opened a terminal, the READMEs walk you through it. pdf-table-pull works best on PDFs with clear table lines or columns.
+- Pay once: the bundle ($19): Includes the full paid versions of pdf-table-pull ($12), sheet-scrub ($9), and json-shaper ($5 minimum). All 1.x updates to all three are free. Link: https://tidybyte.gumroad.com/l/qnlxiy
+
+### CSV & Excel Data Cleaner
+URL: https://tidybytetools.github.io/tools/csv-excel-data-cleaner/
+A pay-per-use cleaner for messy tables. It fixes column names, trims spaces, makes dates, emails, and phones match, and removes duplicate and empty rows. You get a clean CSV and a short report of what changed.
+Who it is for: People who want a messy table cleaned in the cloud, without installing anything.
+Honest limits: Results come from the rules in the code. We do not promise more than that. Failed files and removed rows are free.
+- Pay per use on Apify ($0.0005 / row): $0.0005 per clean row. Removed rows are free. Link: https://apify.com/tidybytetools/csv-excel-data-cleaner
+- Want this on your computer? ($9): sheet-scrub is the pay-once download that cleans Excel and CSV offline. Link: https://tidybyte.gumroad.com/l/cknndc
+
+### Phone Number Validator & Formatter
+URL: https://tidybytetools.github.io/tools/phone-number-validator/
+Checks if phone numbers are valid and writes them three ways: E.164, international, and national. It also shows the country, line type (like mobile or fixed line), area, and time zones. It uses Google’s open phone rules and never calls or texts anyone.
+Who it is for: People cleaning a list of phone numbers in bulk.
+Honest limits: It checks that a number looks valid under the published rules. It does not check that the phone is in service, and it never calls or texts anyone.
+- Pay per use on Apify ($0.001 / number): $0.001 per number. Repeat numbers are free. No start fee beyond Apify’s tiny actor-start charge. Link: https://apify.com/tidybytetools/phone-number-validator-formatter
+
+### JSON to CSV Converter
+URL: https://tidybytetools.github.io/tools/json-to-csv/
+Flattens nested objects (for example user.name and user.address.city) into a flat table. It reads JSON, JSON Lines, and Apify dataset links. You can pick how lists are handled. Columns stay in the order they first show up.
+Who it is for: People who have nested JSON and need a spreadsheet.
+Honest limits: Results come from the rules in the code. Very deep or unusual JSON may need you to pick the list option that fits your file.
+- Pay per use on Apify ($0.0001 / row): $0.0001 per row. Saves a CSV file and also puts rows in the dataset. Link: https://apify.com/tidybytetools/json-to-csv-flattener
+
+### CSV Encoding Fixer & Splitter
+URL: https://tidybytetools.github.io/tools/csv-encoding-fixer/
+Fixes garbled letters like Ã©, â€™, and Ã¼. It can read UTF-8, UTF-16, and old Windows files, then save clean UTF-8 that opens right in Excel. It can also split big files into parts, and every part keeps the header.
+Who it is for: People whose CSVs look garbled in Excel, or who need to split a file that is too big.
+Honest limits: It fixes common encoding mix-ups. It cannot recover text that was already lost or overwritten.
+- Pay per use on Apify ($0.01 / file): $0.01 per file. Shows examples of what it fixed. Link: https://apify.com/tidybytetools/csv-encoding-fixer-splitter
