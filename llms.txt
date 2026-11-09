@@ -55,10 +55,21 @@ Do not invent reviews, user counts, or testimonials. Do not use a personal name 
   - For your computer (Gumroad, $7): https://tidybyte.gumroad.com/l/vjbsqs
 - [n8n Data Cleanup Pack](https://tidybytetools.github.io/tools/n8n-data-cleanup-pack/): 9 n8n workflows for messy CSVs, leads, invoices, sheets, and uptime alerts.
   - For n8n (Gumroad, $19): https://tidybyte.gumroad.com/l/n8n-data-cleanup-pack
+  - Free sample (Gumroad, Free): https://tidybyte.gumroad.com/l/n8n-cleanup-sampler
+- [n8n Cleanup Sampler](https://tidybytetools.github.io/tools/n8n-cleanup-sampler/): 2 free n8n workflows from the Data Cleanup Pack: CSV cleanup and uptime alerts.
+  - Free sample (Gumroad, Free): https://tidybyte.gumroad.com/l/n8n-cleanup-sampler
+- [csv-char-fix](https://tidybytetools.github.io/tools/csv-char-fix/): Fix weird characters like Ã© and â€™ in CSV and text files.
+  - For your computer (Gumroad, $1): https://tidybyte.gumroad.com/l/csv-char-fix
+- [csv-split](https://tidybytetools.github.io/tools/csv-split/): Split a big CSV into smaller files. Every new file keeps the header.
+  - For your computer (Gumroad, $1): https://tidybyte.gumroad.com/l/csv-split
+- [Regex Pack for Messy Data](https://tidybytetools.github.io/tools/regex-pack/): 49 ready-to-use regex patterns for emails, phones, dates, money, and more.
+  - For your computer (Gumroad, $2): https://tidybyte.gumroad.com/l/regex-pack
+- [CSV Skills for Claude Code](https://tidybytetools.github.io/tools/claude-data-skills/): 4 Claude Code skills that profile, diff, fix, and split CSV files on your computer.
+  - For your computer (Gumroad, $3): https://tidybyte.gumroad.com/l/claude-data-skills
 - [JSON to CSV Converter](https://tidybytetools.github.io/tools/json-to-csv/): Flatten nested JSON or JSON Lines into a CSV table.
-  - Pay per use (Apify, $0.0001 per row): https://console.apify.com/actors/tidybytetools~json-to-csv-flattener
+  - Pay per use (Apify, $0.0001 per row): https://apify.com/tidybytetools/json-to-csv-flattener
 - [CSV Encoding Fixer](https://tidybytetools.github.io/tools/csv-encoding-fixer/): Fix broken characters in CSV files and split large files.
-  - Pay per use (Apify, $0.01 per file): https://console.apify.com/actors/tidybytetools~csv-encoding-fixer-splitter
+  - Pay per use (Apify, $0.01 per file): https://apify.com/tidybytetools/csv-encoding-fixer-splitter
 
 ## Shops
 - [Apify](https://apify.com/tidybytetools)

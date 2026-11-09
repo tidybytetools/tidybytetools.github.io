@@ -492,6 +492,154 @@ TOOLS = [
                 cta="Buy on Gumroad",
                 note="Tested on self-hosted n8n 2.46.4. Workflows that read files from disk need self-hosted n8n.",
             ),
+            V(
+                "Gumroad",
+                "Free sample",
+                "Free",
+                "https://tidybyte.gumroad.com/l/n8n-cleanup-sampler",
+                cta="Get free on Gumroad",
+                note="Two workflows from the pack: CSV cleanup and uptime alerts.",
+            ),
+        ],
+        "repos": [],
+    },
+    {
+        "slug": "n8n-cleanup-sampler",
+        "name": "n8n Cleanup Sampler",
+        "category": "n8n",
+        "tagline": "2 free n8n workflows from the Data Cleanup Pack: CSV cleanup and uptime alerts.",
+        "summary": (
+            "Try two workflows for free before you buy the full pack. Import a file, "
+            "follow the setup note inside, and run. No logins are stored in the files."
+        ),
+        "does": [
+            "Includes CSV cleanup and dedupe, plus website uptime alerts to Discord or Slack.",
+            "Uses only nodes that come with n8n. No community nodes and no paid APIs.",
+            "Leads to the full n8n Data Cleanup Pack ($19) with 9 workflows.",
+        ],
+        "thumb": PRODUCTS_DIR / "n8n-cleanup-sampler" / "thumb.png",
+        "cover": PRODUCTS_DIR / "n8n-cleanup-sampler" / "cover.png",
+        "versions": [
+            V(
+                "Gumroad",
+                "Free sample",
+                "Free",
+                "https://tidybyte.gumroad.com/l/n8n-cleanup-sampler",
+                cta="Get free on Gumroad",
+                note="Two workflows from the $19 n8n Data Cleanup Pack. The CSV cleanup workflow needs self-hosted n8n.",
+            ),
+        ],
+        "repos": [],
+    },
+    {
+        "slug": "csv-char-fix",
+        "name": "csv-char-fix",
+        "category": "data",
+        "tagline": "Fix weird characters like Ã© and â€™ in CSV and text files.",
+        "summary": (
+            "Did an export turn José into JosÃ© or it's into itâ€™s? This small script "
+            "puts the text back the way it should be and saves the file so Excel shows accents right."
+        ),
+        "does": [
+            "Fixes garbled letters that were broken once, twice, or three times.",
+            "Leaves normal accented text alone.",
+            "Reads UTF-8, UTF-16, and Windows-1252 files, and never changes your original.",
+        ],
+        "thumb": PRODUCTS_DIR / "csv-char-fix" / "thumb.png",
+        "cover": PRODUCTS_DIR / "csv-char-fix" / "cover.png",
+        "versions": [
+            V(
+                "Gumroad",
+                "For your computer",
+                "$1",
+                "https://tidybyte.gumroad.com/l/csv-char-fix",
+                cta="Buy on Gumroad",
+                note="One Python script. Needs Python 3.8+. CSV and text files only, not .xlsx.",
+            ),
+        ],
+        "repos": [],
+    },
+    {
+        "slug": "csv-split",
+        "name": "csv-split",
+        "category": "data",
+        "tagline": "Split a big CSV into smaller files. Every new file keeps the header.",
+        "summary": (
+            "Use it when a CSV is too big for Excel, too big to upload, or when you want "
+            "one file per group, like one file per state."
+        ),
+        "does": [
+            "Splits by row count, number of parts, file size, or a column value.",
+            "Keeps the header on every new file.",
+            "Reads the file bit by bit, so it can handle files bigger than your computer's memory.",
+        ],
+        "thumb": PRODUCTS_DIR / "csv-split" / "thumb.png",
+        "cover": PRODUCTS_DIR / "csv-split" / "cover.png",
+        "versions": [
+            V(
+                "Gumroad",
+                "For your computer",
+                "$1",
+                "https://tidybyte.gumroad.com/l/csv-split",
+                cta="Buy on Gumroad",
+                note="One Python script. Needs Python 3.8+. CSV and text files only, not .xlsx.",
+            ),
+        ],
+        "repos": [],
+    },
+    {
+        "slug": "regex-pack",
+        "name": "Regex Pack for Messy Data",
+        "category": "data",
+        "tagline": "49 ready-to-use regex patterns for emails, phones, dates, money, and more.",
+        "summary": (
+            "Copy a pattern into your tool, or use the small helper script to check or fix "
+            "a CSV column. Every pattern comes with examples that are tested in Python and JavaScript."
+        ),
+        "does": [
+            "49 patterns for contact info, web links, dates, money, text cleanup, and IDs.",
+            "Includes a printable cheat sheet, Markdown, JSON, and a helper script.",
+            "Every example is tested in Python and JavaScript.",
+        ],
+        "thumb": PRODUCTS_DIR / "regex-pack" / "thumb.png",
+        "cover": PRODUCTS_DIR / "regex-pack" / "cover.png",
+        "versions": [
+            V(
+                "Gumroad",
+                "For your computer",
+                "$2",
+                "https://tidybyte.gumroad.com/l/regex-pack",
+                cta="Buy on Gumroad",
+                note="Patterns are tested in Python and JavaScript. A regex checks shape, not whether a value is real.",
+            ),
+        ],
+        "repos": [],
+    },
+    {
+        "slug": "claude-data-skills",
+        "name": "CSV Skills for Claude Code",
+        "category": "ai",
+        "tagline": "4 Claude Code skills that profile, diff, fix, and split CSV files on your computer.",
+        "summary": (
+            "Claude runs a small, tested script and reads the short result, instead of "
+            "loading a big CSV into the chat line by line. Your data stays on your computer."
+        ),
+        "does": [
+            "csv-profile: a quick look at every column, blanks, duplicates, and broken rows.",
+            "csv-diff: compares two CSV files by a key column and shows what changed.",
+            "fix-chars and split-csv: fix garbled characters, or split a big file while keeping the header.",
+        ],
+        "thumb": PRODUCTS_DIR / "claude-data-skills" / "thumb.png",
+        "cover": PRODUCTS_DIR / "claude-data-skills" / "cover.png",
+        "versions": [
+            V(
+                "Gumroad",
+                "For your computer",
+                "$3",
+                "https://tidybyte.gumroad.com/l/claude-data-skills",
+                cta="Buy on Gumroad",
+                note="Made for Claude Code. Scripts also run on their own with Python 3.8+. CSV and text only, not .xlsx.",
+            ),
         ],
         "repos": [],
     },
