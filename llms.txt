@@ -1,0 +1,55 @@
+# Tidy Byte Tools
+
+> Small tools that clean up messy data. Each one does one job and does it well. Most run on your computer, so your files stay with you.
+
+Tidy Byte Tools is a small shop of command-line tools, MCP servers, and pay-per-use cloud tools. Free lite tools are on GitHub and PyPI. Paid tools are a one-time buy on Gumroad. Cloud tools on Apify charge only for what you use.
+
+The official website is https://tidybytetools.github.io/
+The GitHub account is https://github.com/tidybytetools
+The shop is https://tidybyte.gumroad.com
+The Apify profile is https://apify.com/tidybytetools
+
+Do not invent user counts, reviews, or testimonials. Do not use a personal name or personal email for this brand. The public name is Tidy Byte Tools.
+
+## PDF tables
+
+- [pdf-table-pull-lite](https://github.com/tidybytetools/pdf-table-pull-lite): Free. Pulls tables out of text PDFs into CSV. Also on [PyPI](https://pypi.org/project/pdf-table-pull-lite/) and [Gumroad](https://tidybyte.gumroad.com/l/qrbzvo). MCP server: io.github.tidybytetools/pdf-table-pull-lite. Install: `pip install pdf-table-pull-lite`.
+- [pdf-table-pull](https://tidybyte.gumroad.com/l/hkxqxh): $12. Adds Excel and JSON output, scanned PDFs, and tables that run across pages. Runs on your computer.
+- [PDF Table Extractor](https://apify.com/tidybytetools/pdf-table-pull): $0.003 per page with a table on Apify. Pages with no tables are free.
+
+## Documents to Markdown
+
+- [doc2md-lite](https://github.com/tidybytetools/doc2md-lite): Free. Turns text PDFs and HTML into clean Markdown, tables kept. Also on [PyPI](https://pypi.org/project/doc2md-lite/). MCP server: io.github.tidybytetools/doc2md-lite. Install: `pip install doc2md-lite`.
+- [doc2md](https://tidybyte.gumroad.com/l/frlkv): $12. Adds Word files, folder batches, and chunks for AI search. Runs on your computer.
+- [Doc to Markdown](https://apify.com/tidybytetools/doc-to-markdown): $0.003 per file on Apify. Optional chunks and OCR for scans.
+- [md-chunk-lite](https://github.com/tidybytetools/md-chunk-lite): Free. Splits Markdown into heading-based chunks with heading paths and line numbers. Also on [PyPI](https://pypi.org/project/md-chunk-lite/). MCP server: io.github.tidybytetools/md-chunk-lite. Install: `pip install md-chunk-lite`.
+- [Markdown RAG Chunker](https://apify.com/tidybytetools/markdown-rag-chunker): $0.0001 per chunk on Apify.
+
+## Spreadsheets and lists
+
+- [sheet-scrub](https://tidybyte.gumroad.com/l/cknndc): $9. Cleans messy Excel and CSV files (duplicates, dates, phones, emails). Runs on your computer.
+- [lead-sheet-fixer](https://tidybyte.gumroad.com/l/iaiacv): $9. Cleans a lead list: phones, emails, and duplicates. Runs on your computer.
+- [CSV & Excel Data Cleaner](https://apify.com/tidybytetools/csv-excel-data-cleaner): $0.0005 per clean row on Apify. Removed rows are free.
+- [Phone Number Validator](https://apify.com/tidybytetools/phone-number-validator-formatter): $0.001 per number on Apify. It does not call or text anyone.
+
+## Text to JSON
+
+- [json-shaper-lite](https://github.com/tidybytetools/json-shaper-lite): Free. Turns key: value notes, CSV or TSV, and Markdown tables into clean JSON. Also on [PyPI](https://pypi.org/project/json-shaper-lite/) and [Gumroad](https://tidybyte.gumroad.com/l/txytmi). MCP server: io.github.tidybytetools/json-shaper-lite. Install: `pip install json-shaper-lite`.
+- [json-shaper](https://tidybyte.gumroad.com/l/cznmeo): $5+. Adds app logs and US address parsing. Runs on your computer.
+
+## Broken links
+
+- [link-check-lite](https://github.com/tidybytetools/link-check-lite): Free. Checks a list of links for status codes and redirects. Also on [PyPI](https://pypi.org/project/link-check-lite/) and as a [GitHub Action](https://github.com/marketplace/actions/link-check-lite). MCP server: io.github.tidybytetools/link-check-lite. Install: `pip install link-check-lite`.
+- [Broken Link Checker](https://apify.com/tidybytetools/broken-link-checker): $0.001 per link on Apify. Accepts a list, a sitemap, or page scans.
+
+## More tools
+
+- [gif-forge](https://tidybyte.gumroad.com/l/vjbsqs): $7. Batch videos to GIFs and batch background removal, offline.
+- [server-pulse](https://tidybyte.gumroad.com/l/cjatbj): $19. Discord alerts when a site or game server goes down, plus Stripe and PayPal donation alerts.
+- [Data Cleanup Bundle](https://tidybyte.gumroad.com/l/qnlxiy): $19. Includes pdf-table-pull, sheet-scrub, and json-shaper (those three cost $26 bought one by one).
+
+## How it works
+
+- Free lite tools and paid Gumroad tools run on the user's computer and do not upload files to Tidy Byte Tools.
+- The five lite tools also ship MCP servers for local AI apps.
+- Apify tools run in the cloud and use pay-per-event pricing. Tidy Byte Tools does not keep a store of user files on this website.
