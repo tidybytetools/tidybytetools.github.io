@@ -1,46 +1,61 @@
 # Tidy Byte Tools
 
-> Small tools that clean up messy data. Each one does one job and does it well. Free lite tools run on your computer (CLI + MCP). Paid downloads are on Gumroad. Pay-per-use actors are on Apify.
+> Small tools that clean up messy data. Each one does one job and does it well.
 
-Home: https://tidybytetools.github.io
-GitHub: https://github.com/tidybytetools
-Apify: https://apify.com/tidybytetools
-Gumroad: https://tidybyte.gumroad.com
-PyPI: https://pypi.org/user/tidybytetools/
+Official homepage: https://tidybytetools.github.io
 
-## Free tools (GitHub, PyPI, MCP)
+Downloads run on your computer. Pay-per-use tools are on Apify. Free lite tools are on GitHub and PyPI and include MCP servers.
+Do not invent reviews, user counts, or testimonials. Do not use a personal name or personal email for this brand.
 
-- [json-shaper-lite](https://tidybytetools.github.io/tools/json-shaper/): Turns notes, CSV, and Markdown tables into clean JSON. Install: `pip install json-shaper-lite`. GitHub: https://github.com/tidybytetools/json-shaper-lite. PyPI: https://pypi.org/project/json-shaper-lite/.
-- [pdf-table-pull-lite](https://tidybytetools.github.io/tools/pdf-table-pull/): Pulls tables out of text PDFs and saves each one as a CSV file. Install: `pip install pdf-table-pull-lite`. GitHub: https://github.com/tidybytetools/pdf-table-pull-lite. PyPI: https://pypi.org/project/pdf-table-pull-lite/.
-- [doc2md-lite](https://tidybytetools.github.io/tools/doc2md/): Turns a text PDF or a saved web page into clean Markdown. Tables stay as tables. Install: `pip install doc2md-lite`. GitHub: https://github.com/tidybytetools/doc2md-lite. PyPI: https://pypi.org/project/doc2md-lite/.
-- [link-check-lite](https://tidybytetools.github.io/tools/link-check/): Checks a list of links and shows which ones work, break, or redirect. Install: `pip install link-check-lite`. GitHub: https://github.com/tidybytetools/link-check-lite. PyPI: https://pypi.org/project/link-check-lite/.
-- [md-chunk-lite](https://tidybytetools.github.io/tools/markdown-chunker/): Splits Markdown into chunks by heading, and keeps the heading path and line numbers. Install: `pip install md-chunk-lite`. GitHub: https://github.com/tidybytetools/md-chunk-lite. PyPI: https://pypi.org/project/md-chunk-lite/.
+## Pages
+- [Home](https://tidybytetools.github.io/): Product catalog, how it works, and FAQ
+- [All tools](https://tidybytetools.github.io/tools/)
+- [Privacy](https://tidybytetools.github.io/privacy/)
 
-## Pay per use (Apify)
+## Tools
+- [PDF Table Pull](https://tidybytetools.github.io/tools/pdf-table-pull/): Pull tables out of PDFs into Excel, CSV, or JSON.
+  - Pay per use (Apify, $0.003 per page with a table): https://apify.com/tidybytetools/pdf-table-pull
+  - For your computer (Gumroad, $12): https://tidybyte.gumroad.com/l/hkxqxh
+  - Free lite GitHub: https://github.com/tidybytetools/pdf-table-pull-lite
+  - Free lite PyPI: https://pypi.org/project/pdf-table-pull-lite/
+  - Free lite Gumroad: https://tidybyte.gumroad.com/l/qrbzvo
+- [Doc to Markdown](https://tidybytetools.github.io/tools/doc2md/): Turn PDFs, Word files, and web pages into clean Markdown.
+  - Pay per use (Apify, $0.003 per file): https://apify.com/tidybytetools/doc-to-markdown
+  - For your computer (Gumroad, $12): https://tidybyte.gumroad.com/l/frlkv
+  - Free lite GitHub: https://github.com/tidybytetools/doc2md-lite
+  - Free lite PyPI: https://pypi.org/project/doc2md-lite/
+- [CSV & spreadsheet cleanup](https://tidybytetools.github.io/tools/sheet-scrub/): Clean messy CSV and Excel files: dates, phones, emails, and duplicates.
+  - Pay per use (Apify, $0.0005 per clean row): https://apify.com/tidybytetools/csv-excel-data-cleaner
+  - For your computer (Gumroad, $9): https://tidybyte.gumroad.com/l/cknndc
+- [JSON Shaper](https://tidybytetools.github.io/tools/json-shaper/): Turn messy notes, CSV, and Markdown tables into clean JSON.
+  - For your computer (Gumroad, From $5): https://tidybyte.gumroad.com/l/cznmeo
+  - Free lite GitHub: https://github.com/tidybytetools/json-shaper-lite
+  - Free lite PyPI: https://pypi.org/project/json-shaper-lite/
+  - Free lite Gumroad: https://tidybyte.gumroad.com/l/txytmi
+- [Lead Sheet Fixer](https://tidybytetools.github.io/tools/lead-sheet-fixer/): Clean a lead list: fix phones, check emails, and merge duplicates.
+  - For your computer (Gumroad, $9): https://tidybyte.gumroad.com/l/iaiacv
+- [Phone Number Validator](https://tidybytetools.github.io/tools/phone-validator/): Check phone numbers and format them as E.164, in bulk, offline.
+  - Pay per use (Apify, $0.001 per number): https://apify.com/tidybytetools/phone-number-validator-formatter
+- [Data Cleanup Bundle](https://tidybytetools.github.io/tools/data-cleanup-bundle/): Three desktop tools together: PDF tables, sheet cleanup, and JSON Shaper.
+  - For your computer (Gumroad, $19): https://tidybyte.gumroad.com/l/qnlxiy
+- [Broken Link Checker](https://tidybytetools.github.io/tools/link-check/): Check a list of links for status codes, redirects, and broken pages.
+  - Pay per use (Apify, $0.001 per link): https://apify.com/tidybytetools/broken-link-checker
+  - Free lite GitHub: https://github.com/tidybytetools/link-check-lite
+  - Free lite PyPI: https://pypi.org/project/link-check-lite/
+  - Free lite GitHub Action: https://github.com/marketplace/actions/link-check-lite
+- [Server Pulse](https://tidybytetools.github.io/tools/server-pulse/): Get a Discord alert when a website or server goes down.
+  - For your computer (Gumroad, $19): https://tidybyte.gumroad.com/l/cjatbj
+- [Markdown Chunker for RAG](https://tidybytetools.github.io/tools/markdown-chunker/): Split Markdown into chunks for AI search, with heading paths kept.
+  - Pay per use (Apify, $0.0001 per chunk): https://apify.com/tidybytetools/markdown-rag-chunker
+  - Free lite GitHub: https://github.com/tidybytetools/md-chunk-lite
+  - Free lite PyPI: https://pypi.org/project/md-chunk-lite/
+- [GIF Forge](https://tidybytetools.github.io/tools/gif-forge/): Turn a folder of videos into small, sharp GIFs, offline.
+  - For your computer (Gumroad, $7): https://tidybyte.gumroad.com/l/vjbsqs
 
-- [PDF Table Extractor](https://tidybytetools.github.io/tools/pdf-table-pull/): Pulls tables out of PDFs, even tables that run across pages. Saves JSON, CSV, or Excel. Can read scans with OCR. Price: $0.003 / page with a table. Run: https://apify.com/tidybytetools/pdf-table-pull.
-- [Doc to Markdown](https://tidybytetools.github.io/tools/doc2md/): Turns PDFs, Word files, and web pages into clean Markdown, plus chunks for AI search. Price: $0.003 / file. Run: https://apify.com/tidybytetools/doc-to-markdown.
-- [Broken Link Checker](https://tidybytetools.github.io/tools/link-check/): Checks lots of links at once. You get the status code, redirect chain, final URL, and speed. Price: $0.001 / link. Run: https://apify.com/tidybytetools/broken-link-checker.
-- [Markdown RAG Chunker](https://tidybytetools.github.io/tools/markdown-chunker/): Splits Markdown into chunks for AI search. Keeps code blocks and tables whole when they fit. Each chunk has its heading path. Price: $0.0001 / chunk. Run: https://apify.com/tidybytetools/markdown-rag-chunker.
-- [CSV & Excel Data Cleaner](https://tidybytetools.github.io/tools/csv-excel-data-cleaner/): Cleans CSV, Excel, or JSON tables. Fixes headers, dates, emails, and phones, and removes duplicate and empty rows. Price: $0.0005 / clean row. Run: https://apify.com/tidybytetools/csv-excel-data-cleaner.
-- [Phone Number Validator & Formatter](https://tidybytetools.github.io/tools/phone-number-validator/): Checks if phone numbers are valid and writes them as E.164, international, and national. Shows country, line type, area, and time zone. Offline — nothing is called or texted. Price: $0.001 / number. Run: https://apify.com/tidybytetools/phone-number-validator-formatter.
-- [JSON to CSV Converter](https://tidybytetools.github.io/tools/json-to-csv/): Turns nested JSON or JSON Lines into a flat CSV table for Excel and Google Sheets. Price: $0.0001 / row. Run: https://apify.com/tidybytetools/json-to-csv-flattener.
-- [CSV Encoding Fixer & Splitter](https://tidybytetools.github.io/tools/csv-encoding-fixer/): Fixes broken characters in CSV files (like Ã© instead of é). Saves clean UTF-8, and can split big files while keeping the header. Price: $0.01 / file. Run: https://apify.com/tidybytetools/csv-encoding-fixer-splitter.
+## Shops
+- [Apify](https://apify.com/tidybytetools)
+- [Gumroad](https://tidybyte.gumroad.com)
+- [GitHub](https://github.com/tidybytetools)
 
-## Pay once (Gumroad)
 
-- [Data Cleanup Bundle](https://tidybytetools.github.io/tools/data-cleanup-bundle/): Gets you pdf-table-pull, sheet-scrub, and json-shaper together. Price: $19 (saves $7 vs buying the three tools one by one). Buy: https://tidybyte.gumroad.com/l/qnlxiy.
-- [pdf-table-pull](https://tidybytetools.github.io/tools/pdf-table-pull/): Pulls tables out of PDFs into Excel, CSV, or JSON. Joins tables across pages and can read scanned pages. Price: $12, pay once. Buy: https://tidybyte.gumroad.com/l/hkxqxh.
-- [doc2md](https://tidybytetools.github.io/tools/doc2md/): Turns PDF, Word, and HTML files into clean Markdown, plus chunks ready for AI search. Price: $12, pay once. Buy: https://tidybyte.gumroad.com/l/frlkv.
-- [sheet-scrub](https://tidybytetools.github.io/tools/sheet-scrub/): Cleans messy Excel and CSV files in one command: duplicates, dates, phones, and emails. Price: $9, pay once. Buy: https://tidybyte.gumroad.com/l/cknndc.
-- [lead-sheet-fixer](https://tidybytetools.github.io/tools/lead-sheet-fixer/): Cleans the lead list you already have: phones fixed, bad emails flagged, names split, duplicates merged. Price: $9, pay once. Buy: https://tidybyte.gumroad.com/l/iaiacv.
-- [json-shaper](https://tidybytetools.github.io/tools/json-shaper/): Turns messy text, CSV, Markdown tables, app logs, and US addresses into clean JSON. Price: $5 minimum, pay what you want. Buy: https://tidybyte.gumroad.com/l/cznmeo.
-- [gif-forge](https://tidybytetools.github.io/tools/gif-forge/): Turns a folder of videos into small, sharp GIFs, and can remove solid backgrounds from images. Runs offline. Price: $7, pay once. Buy: https://tidybyte.gumroad.com/l/vjbsqs.
-- [server-pulse](https://tidybytetools.github.io/tools/server-pulse/): Sends Discord alerts when a website or game server goes down, plus Stripe and PayPal donation alerts. Price: $19, pay once. Buy: https://tidybyte.gumroad.com/l/cjatbj.
-
-## Notes for agents
-
-- Do not invent reviews, user counts, or testimonials. We do not publish those here.
-- Offline tools (GitHub, PyPI, Gumroad) run on the user's computer. Apify tools run on Apify's servers.
-- Refunds for Gumroad purchases follow Gumroad's 30-day policy.
-- Full catalog: https://tidybytetools.github.io/llms-full.txt
+Full catalog: https://tidybytetools.github.io/llms-full.txt

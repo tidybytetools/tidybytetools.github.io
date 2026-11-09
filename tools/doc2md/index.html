@@ -3,103 +3,128 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>doc2md: PDF, Word, and HTML to clean Markdown · Tidy Byte Tools</title>
-  <meta name="description" content="Turn PDFs, Word files, and web pages into clean Markdown with real tables, plus chunks for AI search. Free lite tool on GitHub and PyPI. Paid download and Apify versions available.">
+  <title>Doc to Markdown — Tidy Byte Tools</title>
+  <meta name="description" content="Turn PDFs, Word files, and web pages into clean Markdown.">
   <link rel="canonical" href="https://tidybytetools.github.io/tools/doc2md/">
-  <meta name="theme-color" content="#F4F7F5">
-  <meta name="robots" content="index,follow">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#F4F7F5" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0D1512" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Tidy Byte Tools">
-  <meta property="og:title" content="doc2md: PDF, Word, and HTML to clean Markdown · Tidy Byte Tools">
-  <meta property="og:description" content="Turn PDFs, Word files, and web pages into clean Markdown with real tables, plus chunks for AI search. Free lite tool on GitHub and PyPI. Paid download and Apify versions available.">
+  <meta property="og:title" content="Doc to Markdown — Tidy Byte Tools">
+  <meta property="og:description" content="Turn PDFs, Word files, and web pages into clean Markdown.">
   <meta property="og:url" content="https://tidybytetools.github.io/tools/doc2md/">
   <meta property="og:image" content="https://tidybytetools.github.io/assets/img/og.png">
-  <meta property="og:image:width" content="1280">
-  <meta property="og:image:height" content="640">
-  <meta property="og:image:alt" content="Tidy Byte Tools — small tools that clean up messy data">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="doc2md: PDF, Word, and HTML to clean Markdown · Tidy Byte Tools">
-  <meta name="twitter:description" content="Turn PDFs, Word files, and web pages into clean Markdown with real tables, plus chunks for AI search. Free lite tool on GitHub and PyPI. Paid download and Apify versions available.">
+  <meta name="twitter:title" content="Doc to Markdown — Tidy Byte Tools">
+  <meta name="twitter:description" content="Turn PDFs, Word files, and web pages into clean Markdown.">
   <meta name="twitter:image" content="https://tidybytetools.github.io/assets/img/og.png">
-  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
-  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
-  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
-  <link rel="stylesheet" href="/assets/styles.css">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "doc2md", "applicationCategory": "DeveloperApplication", "operatingSystem": "Windows, macOS, Linux", "url": "https://tidybytetools.github.io/tools/doc2md/", "description": "Turn PDFs, Word files, and web pages into clean Markdown with real tables, plus chunks for AI search. Free lite tool on GitHub and PyPI. Paid download and Apify versions available.", "publisher": {"@type": "Organization", "name": "Tidy Byte Tools", "url": "https://tidybytetools.github.io/"}}</script>
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Doc to Markdown", "applicationCategory": "DeveloperApplication", "operatingSystem": "Windows, macOS, Linux", "description": "Turn PDFs, Word files, and web pages into clean Markdown.", "url": "https://tidybytetools.github.io/tools/doc2md/", "image": "https://tidybytetools.github.io/assets/img/covers/doc2md.png", "author": {"@type": "Organization", "name": "Tidy Byte Tools", "url": "https://tidybytetools.github.io"}, "offers": [{"@type": "Offer", "url": "https://apify.com/tidybytetools/doc-to-markdown", "availability": "https://schema.org/InStock"}, {"@type": "Offer", "url": "https://tidybyte.gumroad.com/l/frlkv", "availability": "https://schema.org/InStock"}, {"@type": "Offer", "url": "https://github.com/tidybytetools/doc2md-lite", "availability": "https://schema.org/InStock", "price": "0", "priceCurrency": "USD"}]}</script>
 </head>
-<body>
-  <a class="skip" href="#main">Skip to content</a>
-  <header class="site-header">
-    <div class="wrap">
-      <a class="logo" href="/">
-        <img src="/assets/img/lockup.svg" width="294" height="80" alt="Tidy Byte Tools">
-      </a>
-      <nav class="nav" aria-label="Site">
-        <a href="/#tools">Tools</a>
-        <a href="/#how">How it works</a>
-        <a href="/#faq">FAQ</a>
-        <a href="https://tidybyte.gumroad.com">Shop</a>
-        <a href="https://github.com/tidybytetools">GitHub</a>
-      </nav>
-    </div>
-  </header>
-  <main id="main">
-    <div class="wrap">
-      <p class="crumb"><a href="/">Home</a> / doc2md</p>
-      <header class="tool-hero">
-        <h1>doc2md</h1>
-        <p class="lede">AI tools read Markdown best. Most converters give you a wall of text, and tables turn into word soup. doc2md keeps headings, lists, and tables intact.</p>
-        <p class="who">People feeding docs to ChatGPT, Claude, or their own AI app, building a search index, or moving old Word docs into a wiki.</p>
-      </header>
-        <figure class="example">
-          <img src="/assets/img/tools/doc2md-gallery.png" alt="A real run of doc2md turning a sample file into clean Markdown with a table kept as a table." width="1280" height="720">
-          <figcaption>A real run on a sample file that ships with the paid tool. Tables stay as Markdown tables.</figcaption>
-        </figure>
 
-      <h2 class="get-it">How to get it</h2>
-      <div class="offers">
-        <div class="offer">
-          <div class="card-top"><span class="price free">Free</span></div>
-          <h2>Free: doc2md-lite</h2>
-          <p>Turns one text PDF or a saved web page (.html) into Markdown, and keeps tables. MIT license. Also works as an MCP server.</p>
-          <a class="btn btn-primary" href="https://github.com/tidybytetools/doc2md-lite">GitHub</a>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="header-inner">
+
+    <a class="logo" href="/">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="/assets/img/lockup-horizontal-dark.svg">
+        <img src="/assets/img/lockup-horizontal-light.svg" alt="Tidy Byte Tools" height="32" width="118">
+      </picture>
+    </a>
+    
+<nav aria-label="Primary"><ul><li><a href="/tools/" aria-current="page">Tools</a></li><li><a href="/#how">How it works</a></li><li><a href="/#faq">FAQ</a></li><li><a href="https://github.com/tidybytetools">GitHub</a></li></ul></nav>
+</div></header>
+<main id="main">
+    <article class="page-hero">
+      <div class="wrap">
+        <p class="crumb"><a href="/">Home</a> / <a href="/tools/">Tools</a> / Doc to Markdown</p>
+        <p class="cat-label">PDF &amp; docs</p>
+        <h1>Doc to Markdown</h1>
+        <p class="lede">Turn PDFs, Word files, and web pages into clean Markdown.</p>
+        <div class="cover">
+          <picture>
+            <source type="image/webp" srcset="/assets/img/covers/doc2md.webp">
+            <img src="/assets/img/covers/doc2md.png" alt="Doc to Markdown — Turn PDFs, Word files, and web pages into clean Markdown." width="1280" height="720">
+          </picture>
         </div>
-        <div class="offer">
-          <div class="card-top"><span class="price">$12</span></div>
-          <h2>Pay once: doc2md</h2>
-          <p>Adds Word (.docx) files, whole folders, page picking, password-locked PDFs, and RAG chunks with heading paths and page numbers.</p>
-          <a class="btn btn-primary" href="https://tidybyte.gumroad.com/l/frlkv">Get on Gumroad</a>
+        <div class="cover"><picture><source type="image/webp" srcset="/assets/img/galleries/doc2md.webp"><img src="/assets/img/galleries/doc2md.png" alt="A real run of doc2md turning a sample file into clean Markdown with a table kept as a table." width="1280" height="720"></picture></div>
+        <div class="prose">
+          <p>Get Markdown you can use in notes, docs, or AI apps. Tables stay as Markdown tables. The paid version also writes chunks for AI search.</p>
+          <h2>What it does</h2>
+          <ul><li>Turns text PDFs and HTML into clean Markdown (all versions).</li><li>Keeps tables as real Markdown tables.</li><li>The paid version also reads Word files, whole folders, and writes RAG chunks.</li><li>The Apify version can read scanned PDFs with OCR.</li><li>The free lite tool includes an MCP server for AI apps.</li></ul>
+          <h2>Get it</h2>
         </div>
-        <div class="offer">
-          <div class="card-top"><span class="price">$0.003 / file</span></div>
-          <h2>Pay per use: Doc to Markdown</h2>
-          <p>The same job on Apify, including OCR for scanned PDFs. $0.003 per file (first 20 PDF pages included).</p>
-          <a class="btn btn-primary" href="https://apify.com/tidybytetools/doc-to-markdown">Try on Apify</a>
-        </div>
+        <div class="version-block">
+              <h3>Pay per use · Apify · $0.003 per file</h3>
+              <p>First 20 PDF pages are included. Extra PDF pages are $0.0003 each. Scanned pages with OCR are $0.005. Failed files are free.</p>
+              <div class="btn-row"><a class="btn btn-secondary btn-sm" href="https://apify.com/tidybytetools/doc-to-markdown">Open in Apify</a></div>
+            </div><div class="version-block">
+              <h3>For your computer · Gumroad · $12</h3>
+              <p>PDF, Word and HTML, plus RAG chunks with heading paths and page numbers. Runs offline.</p>
+              <div class="btn-row"><a class="btn btn-secondary btn-sm" href="https://tidybyte.gumroad.com/l/frlkv">Buy on Gumroad</a></div>
+            </div><div class="version-block">
+              <h3>Free lite · GitHub &amp; PyPI · Free</h3>
+              <p>Text PDF or HTML, one file at a time. No Word files, no folders, no RAG chunks, no OCR.</p>
+              <div class="btn-row"><a class="btn btn-secondary btn-sm" href="https://github.com/tidybytetools/doc2md-lite">GitHub</a><a class="btn btn-secondary btn-sm" href="https://pypi.org/project/doc2md-lite/">PyPI</a></div>
+            </div>
       </div>
-      <div class="prose">
-        <h2>Honest limits</h2>
-        <p>The free lite tool reads text PDFs and saved HTML, not Word files and not scans. Two-column PDFs, like science papers, may mix the columns. Old .doc files and images are not read.</p>
-        <p><a href="/#tools">See all Tidy Byte Tools</a></p>
-      </div>
+    </article>
+    </main>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      
+    <a class="logo" href="/">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="/assets/img/lockup-horizontal-dark.svg">
+        <img src="/assets/img/lockup-horizontal-light.svg" alt="Tidy Byte Tools" height="32" width="118">
+      </picture>
+    </a>
+    
+      <p>Small tools that clean up messy data. Each one does one job and does it well.</p>
     </div>
-  </main>
-  <footer class="site-footer">
-    <div class="wrap">
-      <div class="foot-brand">
-        <img src="/assets/img/mark.svg" width="32" height="32" alt="">
-        <p>Tidy Byte Tools makes small tools for messy files and links. Found a bug? Open an issue on the tool's GitHub page.</p>
-      </div>
-      <nav class="foot-nav" aria-label="Footer">
-        <a href="https://github.com/tidybytetools">GitHub</a>
-        <a href="https://tidybyte.gumroad.com">Gumroad</a>
-        <a href="https://apify.com/tidybytetools">Apify</a>
-        <a href="https://pypi.org/user/tidybytetools/">PyPI</a>
-        <a href="/llms.txt">llms.txt</a>
-        <a href="/sitemap.xml">Sitemap</a>
-      </nav>
+    <div>
+      <h2>Tools</h2>
+      <ul><li><a href="/tools/pdf-table-pull/">PDF Table Pull</a></li>
+<li><a href="/tools/doc2md/">Doc to Markdown</a></li>
+<li><a href="/tools/sheet-scrub/">CSV &amp; spreadsheet cleanup</a></li>
+<li><a href="/tools/json-shaper/">JSON Shaper</a></li>
+<li><a href="/tools/lead-sheet-fixer/">Lead Sheet Fixer</a></li>
+<li><a href="/tools/phone-validator/">Phone Number Validator</a></li>
+<li><a href="/tools/data-cleanup-bundle/">Data Cleanup Bundle</a></li>
+<li><a href="/tools/link-check/">Broken Link Checker</a></li>
+<li><a href="/tools/server-pulse/">Server Pulse</a></li>
+<li><a href="/tools/markdown-chunker/">Markdown Chunker for RAG</a></li>
+<li><a href="/tools/gif-forge/">GIF Forge</a></li></ul>
     </div>
-  </footer>
-</body>
-</html>
+    <div>
+      <h2>Shops</h2>
+      <ul>
+        <li><a href="https://apify.com/tidybytetools">Apify</a></li>
+        <li><a href="https://tidybyte.gumroad.com">Gumroad</a></li>
+        <li><a href="https://github.com/tidybytetools">GitHub</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>This site</h2>
+      <ul>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/llms.txt">llms.txt</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap legal">
+    <p>© 2026 Tidy Byte Tools. This site does not use tracking cookies.</p>
+  </div>
+</footer>
+
+</body></html>

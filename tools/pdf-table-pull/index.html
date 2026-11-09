@@ -3,103 +3,128 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>pdf-table-pull: PDF tables to CSV, Excel, or JSON · Tidy Byte Tools</title>
-  <meta name="description" content="Pull tables out of PDFs into CSV, Excel, or JSON. Free lite tool on GitHub and PyPI. Paid download adds Excel, scans, and tables that run across pages. Also on Apify, pay per page.">
+  <title>PDF Table Pull — Tidy Byte Tools</title>
+  <meta name="description" content="Pull tables out of PDFs into Excel, CSV, or JSON.">
   <link rel="canonical" href="https://tidybytetools.github.io/tools/pdf-table-pull/">
-  <meta name="theme-color" content="#F4F7F5">
-  <meta name="robots" content="index,follow">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#F4F7F5" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0D1512" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Tidy Byte Tools">
-  <meta property="og:title" content="pdf-table-pull: PDF tables to CSV, Excel, or JSON · Tidy Byte Tools">
-  <meta property="og:description" content="Pull tables out of PDFs into CSV, Excel, or JSON. Free lite tool on GitHub and PyPI. Paid download adds Excel, scans, and tables that run across pages. Also on Apify, pay per page.">
+  <meta property="og:title" content="PDF Table Pull — Tidy Byte Tools">
+  <meta property="og:description" content="Pull tables out of PDFs into Excel, CSV, or JSON.">
   <meta property="og:url" content="https://tidybytetools.github.io/tools/pdf-table-pull/">
   <meta property="og:image" content="https://tidybytetools.github.io/assets/img/og.png">
-  <meta property="og:image:width" content="1280">
-  <meta property="og:image:height" content="640">
-  <meta property="og:image:alt" content="Tidy Byte Tools — small tools that clean up messy data">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="pdf-table-pull: PDF tables to CSV, Excel, or JSON · Tidy Byte Tools">
-  <meta name="twitter:description" content="Pull tables out of PDFs into CSV, Excel, or JSON. Free lite tool on GitHub and PyPI. Paid download adds Excel, scans, and tables that run across pages. Also on Apify, pay per page.">
+  <meta name="twitter:title" content="PDF Table Pull — Tidy Byte Tools">
+  <meta name="twitter:description" content="Pull tables out of PDFs into Excel, CSV, or JSON.">
   <meta name="twitter:image" content="https://tidybytetools.github.io/assets/img/og.png">
-  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
-  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
-  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
-  <link rel="stylesheet" href="/assets/styles.css">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "pdf-table-pull", "applicationCategory": "DeveloperApplication", "operatingSystem": "Windows, macOS, Linux", "url": "https://tidybytetools.github.io/tools/pdf-table-pull/", "description": "Pull tables out of PDFs into CSV, Excel, or JSON. Free lite tool on GitHub and PyPI. Paid download adds Excel, scans, and tables that run across pages. Also on Apify, pay per page.", "publisher": {"@type": "Organization", "name": "Tidy Byte Tools", "url": "https://tidybytetools.github.io/"}}</script>
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "PDF Table Pull", "applicationCategory": "DeveloperApplication", "operatingSystem": "Windows, macOS, Linux", "description": "Pull tables out of PDFs into Excel, CSV, or JSON.", "url": "https://tidybytetools.github.io/tools/pdf-table-pull/", "image": "https://tidybytetools.github.io/assets/img/covers/pdf-table-pull.png", "author": {"@type": "Organization", "name": "Tidy Byte Tools", "url": "https://tidybytetools.github.io"}, "offers": [{"@type": "Offer", "url": "https://apify.com/tidybytetools/pdf-table-pull", "availability": "https://schema.org/InStock"}, {"@type": "Offer", "url": "https://tidybyte.gumroad.com/l/hkxqxh", "availability": "https://schema.org/InStock"}, {"@type": "Offer", "url": "https://github.com/tidybytetools/pdf-table-pull-lite", "availability": "https://schema.org/InStock", "price": "0", "priceCurrency": "USD"}]}</script>
 </head>
-<body>
-  <a class="skip" href="#main">Skip to content</a>
-  <header class="site-header">
-    <div class="wrap">
-      <a class="logo" href="/">
-        <img src="/assets/img/lockup.svg" width="294" height="80" alt="Tidy Byte Tools">
-      </a>
-      <nav class="nav" aria-label="Site">
-        <a href="/#tools">Tools</a>
-        <a href="/#how">How it works</a>
-        <a href="/#faq">FAQ</a>
-        <a href="https://tidybyte.gumroad.com">Shop</a>
-        <a href="https://github.com/tidybytetools">GitHub</a>
-      </nav>
-    </div>
-  </header>
-  <main id="main">
-    <div class="wrap">
-      <p class="crumb"><a href="/">Home</a> / pdf-table-pull</p>
-      <header class="tool-hero">
-        <h1>pdf-table-pull</h1>
-        <p class="lede">Copying tables out of a PDF by hand is slow, and pasting them into Excel often wrecks the columns. pdf-table-pull does it in one step.</p>
-        <p class="who">People with bank statements, invoices, supplier price lists, reports, or government data.</p>
-      </header>
-        <figure class="example">
-          <img src="/assets/img/tools/pdf-table-pull-gallery.png" alt="A real run of pdf-table-pull: a sample PDF goes in, and an Excel file comes out with real numbers. The value (40) became -40, and a table that ran across two pages was joined." width="1280" height="720">
-          <figcaption>A real run on the sample PDF that ships with the paid tool. The value “(40)” became −40, and a table that ran across two pages was joined.</figcaption>
-        </figure>
 
-      <h2 class="get-it">How to get it</h2>
-      <div class="offers">
-        <div class="offer">
-          <div class="card-top"><span class="price free">Free</span></div>
-          <h2>Free: pdf-table-pull-lite</h2>
-          <p>Pulls tables out of text PDFs and saves each one as CSV. Runs on your computer. MIT license. Also works as an MCP server for AI apps.</p>
-          <a class="btn btn-primary" href="https://github.com/tidybytetools/pdf-table-pull-lite">GitHub</a>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="header-inner">
+
+    <a class="logo" href="/">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="/assets/img/lockup-horizontal-dark.svg">
+        <img src="/assets/img/lockup-horizontal-light.svg" alt="Tidy Byte Tools" height="32" width="118">
+      </picture>
+    </a>
+    
+<nav aria-label="Primary"><ul><li><a href="/tools/" aria-current="page">Tools</a></li><li><a href="/#how">How it works</a></li><li><a href="/#faq">FAQ</a></li><li><a href="https://github.com/tidybytetools">GitHub</a></li></ul></nav>
+</div></header>
+<main id="main">
+    <article class="page-hero">
+      <div class="wrap">
+        <p class="crumb"><a href="/">Home</a> / <a href="/tools/">Tools</a> / PDF Table Pull</p>
+        <p class="cat-label">PDF &amp; docs</p>
+        <h1>PDF Table Pull</h1>
+        <p class="lede">Pull tables out of PDFs into Excel, CSV, or JSON.</p>
+        <div class="cover">
+          <picture>
+            <source type="image/webp" srcset="/assets/img/covers/pdf-table-pull.webp">
+            <img src="/assets/img/covers/pdf-table-pull.png" alt="PDF Table Pull — Pull tables out of PDFs into Excel, CSV, or JSON." width="1280" height="720">
+          </picture>
         </div>
-        <div class="offer">
-          <div class="card-top"><span class="price">$12</span></div>
-          <h2>Pay once: pdf-table-pull</h2>
-          <p>Adds Excel and JSON output, joins tables that carry on to the next page, reads scanned pages with optional OCR, and opens password-protected PDFs.</p>
-          <a class="btn btn-primary" href="https://tidybyte.gumroad.com/l/hkxqxh">Get on Gumroad</a>
+        <div class="cover"><picture><source type="image/webp" srcset="/assets/img/galleries/pdf-table-pull.webp"><img src="/assets/img/galleries/pdf-table-pull.png" alt="A real run of pdf-table-pull: a sample PDF goes in, and an Excel file comes out with real numbers. The value (40) became -40, and a table that ran across two pages was joined." width="1280" height="720"></picture></div>
+        <div class="prose">
+          <p>Copying tables out of a PDF by hand is slow, and pasting them into Excel often wrecks the columns. This tool finds the tables and saves clean rows.</p>
+          <h2>What it does</h2>
+          <ul><li>Finds tables in a PDF, including tables that run across pages (paid and Apify).</li><li>Saves Excel, CSV, or JSON (the free lite version saves CSV only).</li><li>Reads scanned pages with OCR in the paid and Apify versions.</li><li>The free lite tool also works as an MCP server for AI apps.</li></ul>
+          <h2>Get it</h2>
         </div>
-        <div class="offer">
-          <div class="card-top"><span class="price">$0.003 / page</span></div>
-          <h2>Pay per use: PDF Table Extractor</h2>
-          <p>The same job on Apify. $0.003 per page with a table, $0.01 per scanned OCR page. Pages with no tables are free.</p>
-          <a class="btn btn-primary" href="https://apify.com/tidybytetools/pdf-table-pull">Try on Apify</a>
-        </div>
+        <div class="version-block">
+              <h3>Pay per use · Apify · $0.003 per page with a table</h3>
+              <p>Pages with no tables are free. Scanned pages read with OCR are $0.01 each.</p>
+              <div class="btn-row"><a class="btn btn-secondary btn-sm" href="https://apify.com/tidybytetools/pdf-table-pull">Open in Apify</a></div>
+            </div><div class="version-block">
+              <h3>For your computer · Gumroad · $12</h3>
+              <p>Excel, CSV and JSON output, scanned PDFs, and tables that run across pages.</p>
+              <div class="btn-row"><a class="btn btn-secondary btn-sm" href="https://tidybyte.gumroad.com/l/hkxqxh">Buy on Gumroad</a></div>
+            </div><div class="version-block">
+              <h3>Free lite · GitHub &amp; PyPI · Free</h3>
+              <p>Text PDFs to CSV. CLI and MCP server. No Excel, no OCR, no joining tables across pages.</p>
+              <div class="btn-row"><a class="btn btn-secondary btn-sm" href="https://github.com/tidybytetools/pdf-table-pull-lite">GitHub</a><a class="btn btn-secondary btn-sm" href="https://pypi.org/project/pdf-table-pull-lite/">PyPI</a><a class="btn btn-secondary btn-sm" href="https://tidybyte.gumroad.com/l/qrbzvo">Gumroad</a></div>
+            </div>
       </div>
-      <div class="prose">
-        <h2>Honest limits</h2>
-        <p>Text PDFs (where you can select the words with your mouse) give the best results. OCR on scans is slower and can misread blurry pages. Handwriting and photos of crumpled receipts will not work well.</p>
-        <p><a href="/#tools">See all Tidy Byte Tools</a></p>
-      </div>
+    </article>
+    </main>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      
+    <a class="logo" href="/">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="/assets/img/lockup-horizontal-dark.svg">
+        <img src="/assets/img/lockup-horizontal-light.svg" alt="Tidy Byte Tools" height="32" width="118">
+      </picture>
+    </a>
+    
+      <p>Small tools that clean up messy data. Each one does one job and does it well.</p>
     </div>
-  </main>
-  <footer class="site-footer">
-    <div class="wrap">
-      <div class="foot-brand">
-        <img src="/assets/img/mark.svg" width="32" height="32" alt="">
-        <p>Tidy Byte Tools makes small tools for messy files and links. Found a bug? Open an issue on the tool's GitHub page.</p>
-      </div>
-      <nav class="foot-nav" aria-label="Footer">
-        <a href="https://github.com/tidybytetools">GitHub</a>
-        <a href="https://tidybyte.gumroad.com">Gumroad</a>
-        <a href="https://apify.com/tidybytetools">Apify</a>
-        <a href="https://pypi.org/user/tidybytetools/">PyPI</a>
-        <a href="/llms.txt">llms.txt</a>
-        <a href="/sitemap.xml">Sitemap</a>
-      </nav>
+    <div>
+      <h2>Tools</h2>
+      <ul><li><a href="/tools/pdf-table-pull/">PDF Table Pull</a></li>
+<li><a href="/tools/doc2md/">Doc to Markdown</a></li>
+<li><a href="/tools/sheet-scrub/">CSV &amp; spreadsheet cleanup</a></li>
+<li><a href="/tools/json-shaper/">JSON Shaper</a></li>
+<li><a href="/tools/lead-sheet-fixer/">Lead Sheet Fixer</a></li>
+<li><a href="/tools/phone-validator/">Phone Number Validator</a></li>
+<li><a href="/tools/data-cleanup-bundle/">Data Cleanup Bundle</a></li>
+<li><a href="/tools/link-check/">Broken Link Checker</a></li>
+<li><a href="/tools/server-pulse/">Server Pulse</a></li>
+<li><a href="/tools/markdown-chunker/">Markdown Chunker for RAG</a></li>
+<li><a href="/tools/gif-forge/">GIF Forge</a></li></ul>
     </div>
-  </footer>
-</body>
-</html>
+    <div>
+      <h2>Shops</h2>
+      <ul>
+        <li><a href="https://apify.com/tidybytetools">Apify</a></li>
+        <li><a href="https://tidybyte.gumroad.com">Gumroad</a></li>
+        <li><a href="https://github.com/tidybytetools">GitHub</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>This site</h2>
+      <ul>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/llms.txt">llms.txt</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap legal">
+    <p>© 2026 Tidy Byte Tools. This site does not use tracking cookies.</p>
+  </div>
+</footer>
+
+</body></html>
