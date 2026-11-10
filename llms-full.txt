@@ -66,6 +66,10 @@ Do not invent reviews, user counts, or testimonials. Do not use a personal name 
   - For your computer (Gumroad, $2): https://tidybyte.gumroad.com/l/regex-pack
 - [CSV Skills for Claude Code](https://tidybytetools.github.io/tools/claude-data-skills/): 4 Claude Code skills that profile, diff, fix, and split CSV files on your computer.
   - For your computer (Gumroad, $3): https://tidybyte.gumroad.com/l/claude-data-skills
+- [HTML Table Extractor](https://tidybytetools.github.io/tools/html-table-extractor/): Pull tables from web pages into CSV and JSON.
+  - Pay per use (Apify, $0.0005 per data row): https://apify.com/tidybytetools/html-table-extractor
+- [LLM Token Counter](https://tidybytetools.github.io/tools/llm-token-counter/): Count tokens and estimate cost for GPT, Claude, and Gemini.
+  - Pay per use (Apify, $0.0005 per unique text): https://apify.com/tidybytetools/llm-token-counter
 - [JSON to CSV Converter](https://tidybytetools.github.io/tools/json-to-csv/): Flatten nested JSON or JSON Lines into a CSV table.
   - Pay per use (Apify, $0.0001 per row): https://apify.com/tidybytetools/json-to-csv-flattener
 - [CSV Encoding Fixer](https://tidybytetools.github.io/tools/csv-encoding-fixer/): Fix broken characters in CSV files and split large files.
@@ -211,6 +215,18 @@ Claude runs a small, tested script and reads the short result, instead of loadin
 - csv-diff: compares two CSV files by a key column and shows what changed.
 - fix-chars and split-csv: fix garbled characters, or split a big file while keeping the header.
 - For your computer (Gumroad, $3): Made for Claude Code. Scripts also run on their own with Python 3.8+. CSV and text only, not .xlsx.
+
+### HTML Table Extractor
+Reads HTML tables from a page or pasted HTML. Keeps merged cells, handles more than one table on a page, and saves CSV. Honest about tables that only appear after JavaScript runs.
+- Finds HTML tables on a page or in pasted HTML.
+- Handles merged cells and more than one table.
+- Saves CSV and JSON rows. Failed pages are free.
+
+### LLM Token Counter
+Counts tokens offline for OpenAI models and estimates Claude and Gemini. Uses public list prices. No API key. Paste text or add file links.
+- Exact OpenAI token counts with tiktoken.
+- Claude and Gemini counts marked as estimates.
+- Shows dated public list prices for cost estimates.
 
 ### JSON to CSV Converter
 Turn nested JSON into a flat table for Excel and Google Sheets. You pick how lists are handled.

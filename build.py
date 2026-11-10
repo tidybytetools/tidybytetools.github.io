@@ -649,6 +649,76 @@ TOOLS = [
 
 OPTIONAL_APIFY = [
     {
+        "slug": "html-table-extractor",
+        "name": "HTML Table Extractor",
+        "category": "web",
+        "tagline": "Pull tables from web pages into CSV and JSON.",
+        "summary": (
+            "Reads HTML tables from a page or pasted HTML. Keeps merged cells, "
+            "handles more than one table on a page, and saves CSV. Honest about "
+            "tables that only appear after JavaScript runs."
+        ),
+        "does": [
+            "Finds HTML tables on a page or in pasted HTML.",
+            "Handles merged cells and more than one table.",
+            "Saves CSV and JSON rows. Failed pages are free.",
+        ],
+        "thumb": None,
+        "cover": None,
+        "gen_art": {
+            "title": "html-table-extractor",
+            "sub": "Web tables to CSV & JSON",
+            "badge": "PAY PER USE",
+        },
+        "versions": [
+            V(
+                "Apify",
+                "Pay per use",
+                "$0.0005 per data row",
+                "https://apify.com/tidybytetools/html-table-extractor",
+                cta="Open in Apify",
+            ),
+        ],
+        "repos": [],
+        "apify_url": "https://apify.com/tidybytetools/html-table-extractor",
+        "console_url": "https://console.apify.com/actors/tidybytetools~html-table-extractor",
+    },
+    {
+        "slug": "llm-token-counter",
+        "name": "LLM Token Counter",
+        "category": "ai",
+        "tagline": "Count tokens and estimate cost for GPT, Claude, and Gemini.",
+        "summary": (
+            "Counts tokens offline for OpenAI models and estimates Claude and Gemini. "
+            "Uses public list prices. No API key. Paste text or add file links."
+        ),
+        "does": [
+            "Exact OpenAI token counts with tiktoken.",
+            "Claude and Gemini counts marked as estimates.",
+            "Shows dated public list prices for cost estimates.",
+        ],
+        "thumb": None,
+        "cover": None,
+        "gen_art": {
+            "title": "llm-token-counter",
+            "sub": "Tokens & cost, offline",
+            "badge": "PAY PER USE",
+        },
+        "versions": [
+            V(
+                "Apify",
+                "Pay per use",
+                "$0.0005 per unique text",
+                "https://apify.com/tidybytetools/llm-token-counter",
+                cta="Open in Apify",
+            ),
+        ],
+        "repos": [],
+        "apify_url": "https://apify.com/tidybytetools/llm-token-counter",
+        "console_url": "https://console.apify.com/actors/tidybytetools~llm-token-counter",
+    },
+
+    {
         "slug": "json-to-csv",
         "name": "JSON to CSV Converter",
         "category": "data",
