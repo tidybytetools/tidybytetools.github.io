@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How to turn a PDF or Word file into Markdown for AI and notes · Tidy Byte Tools</title>
+  <meta name="description" content="Convert a PDF, Word file, or web page into clean Markdown you can paste into a notes app or a RAG pipeline. A free local tool handles many text files. The Apify Actor adds Word, OCR, and ready-made chunks.">
+  <link rel="canonical" href="https://tidybytetools.github.io/guides/turn-pdf-or-word-into-markdown-for-ai/">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#F4F7F5" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0D1512" media="(prefers-color-scheme: dark)">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Tidy Byte Tools">
+  <meta property="og:title" content="How to turn a PDF or Word file into Markdown for AI and notes · Tidy Byte Tools">
+  <meta property="og:description" content="Convert a PDF, Word file, or web page into clean Markdown you can paste into a notes app or a RAG pipeline. A free local tool handles many text files. The Apify Actor adds Word, OCR, and ready-made chunks.">
+  <meta property="og:url" content="https://tidybytetools.github.io/guides/turn-pdf-or-word-into-markdown-for-ai/">
+  <meta property="og:image" content="https://tidybytetools.github.io/assets/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to turn a PDF or Word file into Markdown for AI and notes · Tidy Byte Tools">
+  <meta name="twitter:description" content="Convert a PDF, Word file, or web page into clean Markdown you can paste into a notes app or a RAG pipeline. A free local tool handles many text files. The Apify Actor adds Word, OCR, and ready-made chunks.">
+  <meta name="twitter:image" content="https://tidybytetools.github.io/assets/img/og.png">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  
+</head>
+
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="header-inner">
+
+    <a class="logo" href="/">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="/assets/img/lockup-horizontal-dark.svg">
+        <img src="/assets/img/lockup-horizontal-light.svg" alt="Tidy Byte Tools" height="32" width="118">
+      </picture>
+    </a>
+    
+<nav aria-label="Primary"><ul><li><a href="/tools/">Tools</a></li><li><a href="/guides/" aria-current="page">Guides</a></li><li><a href="/#how">How it works</a></li><li><a href="/#faq">FAQ</a></li><li><a href="https://github.com/tidybytetools">GitHub</a></li></ul></nav>
+</div></header>
+<main id="main">
+    <section class="wrap page-hero">
+      <p class="crumb"><a href="/">Home</a> / <a href="/guides/">Guides</a> / How to turn a PDF or Word file into Markdown for AI and notes</p>
+      <h1>How to turn a PDF or Word file into Markdown for AI and notes</h1>
+      <p class="lede">Convert a PDF, Word file, or web page into clean Markdown you can paste into a notes app or a RAG pipeline. A free local tool handles many text files. The Apify Actor adds Word, OCR, and ready-made chunks.</p>
+    </section>
+    <section class="wrap" style="padding-bottom:48px">
+      <article class="prose guide-body"><p>You want the text out of a PDF, a Word file, or a web page — with the headings and tables still looking like headings and tables. Then you can paste it into a notes app, or cut it into chunks for AI search (RAG).</p>
+<p>Copy and paste from a PDF often breaks this. Headings vanish. Tables become a pile of words. Words split at the end of a line stay split. This page shows a better path, starting with a free local tool.</p>
+<h2>What "clean Markdown" means here</h2>
+<p>Good output looks like this:</p>
+<ul>
+<li>Headings use <code>#</code>, <code>##</code>, <code>###</code></li>
+<li>Tables are real Markdown tables, not a jumble</li>
+<li>Lists stay as lists</li>
+<li>A hyphen at the end of a line is joined back to the next word</li>
+<li>For AI search, each chunk can keep its heading path and page numbers</li>
+</ul>
+<h2>Free local tool: doc2md-lite</h2>
+<p><a href="https://github.com/tidybytetools/doc2md-lite">doc2md-lite</a> is a free tool you run on your own computer. It has a command-line tool and an MCP server for AI apps. There is no API key.</p>
+<p><strong>What it does</strong></p>
+<ul>
+<li>Turns many PDFs and HTML pages into Markdown.</li>
+<li>Tries to keep headings and tables.</li>
+<li>Runs offline.</li>
+</ul>
+<p><strong>What it does not do</strong></p>
+<ul>
+<li>Word (<code>.docx</code>) support and scanned-page OCR are stronger in the Apify Actor below. If a page is only a picture, the lite tool may return little or no text.</li>
+<li>It will not open a file that is behind a login.</li>
+</ul>
+<h3>Install and run</h3>
+<p>You need Python 3.</p>
+<pre><code>pip install doc2md-lite
+doc2md-lite path/to/file.pdf -o file.md</code></pre>
+<p>Open <code>file.md</code> in any text editor or notes app. If you want chunks for a vector database, see <a href="https://github.com/tidybytetools/md-chunk-lite">md-chunk-lite</a>, which splits Markdown by heading and keeps the heading path.</p>
+<h2>Cloud option: the Apify Actor</h2>
+<p><a href="https://apify.com/tidybytetools/doc-to-markdown">PDF, Word and Web Page to Markdown</a> accepts links to PDF files, Word (<code>.docx</code>) files, or web pages.</p>
+<p>It can also cut each file into RAG chunks. Each chunk keeps its heading path and page numbers. Chunks are free. You can get one dataset item per file, or one item per chunk (better for a vector database).</p>
+<p><strong>Price (November 2026):</strong> $0.003 per file converted (a PDF's first 20 pages are included), $0.0003 for each PDF page after the first 20, and $0.005 per scanned page read with OCR. Failed links and files with no text are free. Apify also adds a small start fee per run.</p>
+<p><strong>Honest limits:</strong> links must be public. Password-protected files and pages behind a login will not work in this Actor. OCR can misread a blurry scan. The Actor drops common web-page junk (menus, footers) unless you turn that off.</p>
+<p>1. Open the <a href="https://apify.com/tidybytetools/doc-to-markdown">Actor page</a>.</p>
+<p>2. Paste one or more file or page links (a sample PDF is already filled in).</p>
+<p>3. Leave "Make chunks for AI search" on if you want chunks.</p>
+<p>4. Click Start.</p>
+<p>5. Download the Markdown from the key-value store (<code>doc-1.md</code>, <code>doc-2.md</code>, …), or export the dataset.</p>
+<h2>A short way to choose</h2>
+<div class="table-wrap"><table>
+<tr><th>Your situation</th><th>What to use</th></tr>
+<tr><td>A text PDF or HTML file on your computer</td><td>Free <a href="https://github.com/tidybytetools/doc2md-lite">doc2md-lite</a></td></tr>
+<tr><td>You already have Markdown and only need chunks</td><td>Free <a href="https://github.com/tidybytetools/md-chunk-lite">md-chunk-lite</a></td></tr>
+<tr><td>Public links, Word files, scanned pages, or chunks in the cloud</td><td><a href="https://apify.com/tidybytetools/doc-to-markdown">Apify Actor</a></td></tr>
+</table></div>
+<h2>Related guides</h2>
+<ul>
+<li><a href="/guides/extract-pdf-tables-to-excel-or-csv/">How to extract tables from a PDF into Excel or CSV</a></li>
+<li><a href="/guides/check-a-website-for-broken-links/">How to check a website for broken links</a></li>
+<li><a href="/guides/count-llm-tokens-and-estimate-cost/">How to count LLM tokens and estimate cost</a></li>
+</ul>
+<p>These tools are made by <a href="https://apify.com/tidybytetools">Tidy Byte Tools</a>.</p></article>
+      <aside style="margin-top:36px">
+        <h2>More guides</h2>
+        <ul><li><a href="/guides/check-a-website-for-broken-links/">How to check a website for broken links</a></li><li><a href="/guides/count-llm-tokens-and-estimate-cost/">How to count LLM tokens and estimate cost</a></li><li><a href="/guides/extract-pdf-tables-to-excel-or-csv/">How to extract tables from a PDF into Excel or CSV</a></li><li><a href="/guides/flatten-nested-json-into-csv/">How to flatten nested JSON into CSV</a></li></ul>
+      </aside>
+    </section>
+    </main>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      
+    <a class="logo" href="/">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="/assets/img/lockup-horizontal-dark.svg">
+        <img src="/assets/img/lockup-horizontal-light.svg" alt="Tidy Byte Tools" height="32" width="118">
+      </picture>
+    </a>
+    
+      <p>Small tools that clean up messy data. Each one does one job and does it well.</p>
+    </div>
+    <div>
+      <h2>Tools</h2>
+      <ul><li><a href="/tools/pdf-table-pull/">PDF Table Pull</a></li>
+<li><a href="/tools/doc2md/">Doc to Markdown</a></li>
+<li><a href="/tools/sheet-scrub/">CSV &amp; spreadsheet cleanup</a></li>
+<li><a href="/tools/json-shaper/">JSON Shaper</a></li>
+<li><a href="/tools/lead-sheet-fixer/">Lead Sheet Fixer</a></li>
+<li><a href="/tools/phone-validator/">Phone Number Validator</a></li>
+<li><a href="/tools/data-cleanup-bundle/">Data Cleanup Bundle</a></li>
+<li><a href="/tools/link-check/">Broken Link Checker</a></li>
+<li><a href="/tools/server-pulse/">Server Pulse</a></li>
+<li><a href="/tools/markdown-chunker/">Markdown Chunker for RAG</a></li>
+<li><a href="/tools/gif-forge/">GIF Forge</a></li>
+<li><a href="/tools/n8n-data-cleanup-pack/">n8n Data Cleanup Pack</a></li>
+<li><a href="/tools/n8n-cleanup-sampler/">n8n Cleanup Sampler</a></li>
+<li><a href="/tools/csv-char-fix/">csv-char-fix</a></li>
+<li><a href="/tools/csv-split/">csv-split</a></li>
+<li><a href="/tools/regex-pack/">Regex Pack for Messy Data</a></li>
+<li><a href="/tools/claude-data-skills/">CSV Skills for Claude Code</a></li>
+<li><a href="/tools/html-table-extractor/">HTML Table Extractor</a></li>
+<li><a href="/tools/llm-token-counter/">LLM Token Counter</a></li>
+<li><a href="/tools/json-to-csv/">JSON to CSV Converter</a></li>
+<li><a href="/tools/csv-encoding-fixer/">CSV Encoding Fixer</a></li></ul>
+    </div>
+    <div>
+      <h2>Shops</h2>
+      <ul>
+        <li><a href="https://apify.com/tidybytetools">Apify</a></li>
+        <li><a href="https://tidybyte.gumroad.com">Gumroad</a></li>
+        <li><a href="https://github.com/tidybytetools">GitHub</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>This site</h2>
+      <ul>
+        <li><a href="/guides/">Guides</a></li>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/llms.txt">llms.txt</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap legal">
+    <p>© 2026 Tidy Byte Tools. This site does not use tracking cookies.</p>
+  </div>
+</footer>
+
+</body></html>

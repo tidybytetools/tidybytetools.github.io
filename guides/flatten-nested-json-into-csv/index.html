@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How to flatten nested JSON into CSV · Tidy Byte Tools</title>
+  <meta name="description" content="Turn nested JSON or JSON Lines into flat rows you can open in Excel or Google Sheets. Start with a free local idea, then use a pay-per-use cloud tool for larger files.">
+  <link rel="canonical" href="https://tidybytetools.github.io/guides/flatten-nested-json-into-csv/">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#F4F7F5" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0D1512" media="(prefers-color-scheme: dark)">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Tidy Byte Tools">
+  <meta property="og:title" content="How to flatten nested JSON into CSV · Tidy Byte Tools">
+  <meta property="og:description" content="Turn nested JSON or JSON Lines into flat rows you can open in Excel or Google Sheets. Start with a free local idea, then use a pay-per-use cloud tool for larger files.">
+  <meta property="og:url" content="https://tidybytetools.github.io/guides/flatten-nested-json-into-csv/">
+  <meta property="og:image" content="https://tidybytetools.github.io/assets/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to flatten nested JSON into CSV · Tidy Byte Tools">
+  <meta name="twitter:description" content="Turn nested JSON or JSON Lines into flat rows you can open in Excel or Google Sheets. Start with a free local idea, then use a pay-per-use cloud tool for larger files.">
+  <meta name="twitter:image" content="https://tidybytetools.github.io/assets/img/og.png">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  
+</head>
+
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="header-inner">
+
+    <a class="logo" href="/">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="/assets/img/lockup-horizontal-dark.svg">
+        <img src="/assets/img/lockup-horizontal-light.svg" alt="Tidy Byte Tools" height="32" width="118">
+      </picture>
+    </a>
+    
+<nav aria-label="Primary"><ul><li><a href="/tools/">Tools</a></li><li><a href="/guides/" aria-current="page">Guides</a></li><li><a href="/#how">How it works</a></li><li><a href="/#faq">FAQ</a></li><li><a href="https://github.com/tidybytetools">GitHub</a></li></ul></nav>
+</div></header>
+<main id="main">
+    <section class="wrap page-hero">
+      <p class="crumb"><a href="/">Home</a> / <a href="/guides/">Guides</a> / How to flatten nested JSON into CSV</p>
+      <h1>How to flatten nested JSON into CSV</h1>
+      <p class="lede">Turn nested JSON or JSON Lines into flat rows you can open in Excel or Google Sheets. Start with a free local idea, then use a pay-per-use cloud tool for larger files.</p>
+    </section>
+    <section class="wrap" style="padding-bottom:48px">
+      <article class="prose guide-body"><p>You have a JSON file with nested objects and lists. Spreadsheets want flat rows and columns. This page shows how to flatten that JSON into CSV, starting with free options.</p>
+<h2>What "flatten" means</h2>
+<p>Nested JSON looks like this:</p>
+<pre><code>{&quot;user&quot;:{&quot;name&quot;:&quot;Ada&quot;,&quot;city&quot;:&quot;London&quot;},&quot;tags&quot;:[&quot;math&quot;,&quot;code&quot;]}</code></pre>
+<p>A flat row might look like:</p>
+<div class="table-wrap"><table>
+<tr><th>user.name</th><th>user.city</th><th>tags</th></tr>
+<tr><td>Ada</td><td>London</td><td>math; code</td></tr>
+</table></div>
+<p>Keys become column names with dots. Lists are joined or expanded, depending on the tool. There is more than one honest way to flatten lists, so check a few sample rows before you trust a big file.</p>
+<h2>Free options first</h2>
+<p><strong>A spreadsheet, if the JSON is small.</strong> Some tools (and many coding notebooks) can open JSON and export CSV. For a tiny file this is fine.</p>
+<p><strong>Python on your computer.</strong> If you already use Python, you can load the JSON and write CSV with the standard library. For one-off work, that is free and keeps the file on your machine.</p>
+<p><strong>json-shaper-lite (related, free).</strong> <a href="https://github.com/tidybytetools/json-shaper-lite">json-shaper-lite</a> turns notes, CSV, TSV, and Markdown tables *into* typed JSON. It is the reverse direction. Use it when you are starting from a table, not when you already have nested JSON.</p>
+<p>If a free local script already gives you clean rows, you are done.</p>
+<h2>Cloud option: JSON to CSV Flattener</h2>
+<p><a href="https://apify.com/tidybytetools/json-to-csv-flattener">JSON to CSV Flattener</a> runs on Apify. You give it JSON or JSON Lines (one JSON object per line). It writes flat rows you can export as CSV.</p>
+<p><strong>What it does</strong></p>
+<ul>
+<li>Flattens nested objects with dotted keys.</li>
+<li>Accepts JSON and JSON Lines.</li>
+<li>Charges per output row at a low price.</li>
+</ul>
+<p><strong>What it does not do</strong></p>
+<ul>
+<li>It will not invent a perfect schema for every weird list shape. Check the first rows.</li>
+<li>Links must be public if you pass file URLs. Password-protected files will not open.</li>
+<li>It is not a full ETL suite. It does one job: flatten to rows.</li>
+</ul>
+<p><strong>Price (November 2026):</strong> $0.0001 per row written. Failed files are free. Apify also adds a small start fee per run.</p>
+<p>1. Open the <a href="https://apify.com/tidybytetools/json-to-csv-flattener">Actor page</a>.</p>
+<p>2. Paste JSON or give a file link (a sample is often filled in).</p>
+<p>3. Click Start.</p>
+<p>4. Export the dataset as CSV, or download the CSV from the run storage.</p>
+<h2>Going the other way (CSV or Excel to JSON)</h2>
+<p>If you need Excel or CSV *to* JSON instead, see our <a href="https://apify.com/tidybytetools">Excel &amp; CSV to JSON</a> tools on the store once they are public, or use a free local script. Do not use the flattener for that direction.</p>
+<h2>A short way to choose</h2>
+<div class="table-wrap"><table>
+<tr><th>Your situation</th><th>What to use</th></tr>
+<tr><td>Tiny JSON, you already write Python</td><td>Free local script</td></tr>
+<tr><td>You have a table and need JSON</td><td>Free <a href="https://github.com/tidybytetools/json-shaper-lite">json-shaper-lite</a></td></tr>
+<tr><td>Nested JSON or JSON Lines, want CSV in the cloud</td><td><a href="https://apify.com/tidybytetools/json-to-csv-flattener">Apify JSON to CSV Flattener</a></td></tr>
+</table></div>
+<h2>Related guides</h2>
+<ul>
+<li><a href="/guides/extract-pdf-tables-to-excel-or-csv/">How to extract tables from a PDF into Excel or CSV</a></li>
+<li><a href="/guides/count-llm-tokens-and-estimate-cost/">How to count LLM tokens and estimate cost</a></li>
+</ul>
+<p>These tools are made by <a href="https://apify.com/tidybytetools">Tidy Byte Tools</a>.</p></article>
+      <aside style="margin-top:36px">
+        <h2>More guides</h2>
+        <ul><li><a href="/guides/check-a-website-for-broken-links/">How to check a website for broken links</a></li><li><a href="/guides/count-llm-tokens-and-estimate-cost/">How to count LLM tokens and estimate cost</a></li><li><a href="/guides/extract-pdf-tables-to-excel-or-csv/">How to extract tables from a PDF into Excel or CSV</a></li><li><a href="/guides/turn-pdf-or-word-into-markdown-for-ai/">How to turn a PDF or Word file into Markdown for AI and notes</a></li></ul>
+      </aside>
+    </section>
+    </main>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      
+    <a class="logo" href="/">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="/assets/img/lockup-horizontal-dark.svg">
+        <img src="/assets/img/lockup-horizontal-light.svg" alt="Tidy Byte Tools" height="32" width="118">
+      </picture>
+    </a>
+    
+      <p>Small tools that clean up messy data. Each one does one job and does it well.</p>
+    </div>
+    <div>
+      <h2>Tools</h2>
+      <ul><li><a href="/tools/pdf-table-pull/">PDF Table Pull</a></li>
+<li><a href="/tools/doc2md/">Doc to Markdown</a></li>
+<li><a href="/tools/sheet-scrub/">CSV &amp; spreadsheet cleanup</a></li>
+<li><a href="/tools/json-shaper/">JSON Shaper</a></li>
+<li><a href="/tools/lead-sheet-fixer/">Lead Sheet Fixer</a></li>
+<li><a href="/tools/phone-validator/">Phone Number Validator</a></li>
+<li><a href="/tools/data-cleanup-bundle/">Data Cleanup Bundle</a></li>
+<li><a href="/tools/link-check/">Broken Link Checker</a></li>
+<li><a href="/tools/server-pulse/">Server Pulse</a></li>
+<li><a href="/tools/markdown-chunker/">Markdown Chunker for RAG</a></li>
+<li><a href="/tools/gif-forge/">GIF Forge</a></li>
+<li><a href="/tools/n8n-data-cleanup-pack/">n8n Data Cleanup Pack</a></li>
+<li><a href="/tools/n8n-cleanup-sampler/">n8n Cleanup Sampler</a></li>
+<li><a href="/tools/csv-char-fix/">csv-char-fix</a></li>
+<li><a href="/tools/csv-split/">csv-split</a></li>
+<li><a href="/tools/regex-pack/">Regex Pack for Messy Data</a></li>
+<li><a href="/tools/claude-data-skills/">CSV Skills for Claude Code</a></li>
+<li><a href="/tools/html-table-extractor/">HTML Table Extractor</a></li>
+<li><a href="/tools/llm-token-counter/">LLM Token Counter</a></li>
+<li><a href="/tools/json-to-csv/">JSON to CSV Converter</a></li>
+<li><a href="/tools/csv-encoding-fixer/">CSV Encoding Fixer</a></li></ul>
+    </div>
+    <div>
+      <h2>Shops</h2>
+      <ul>
+        <li><a href="https://apify.com/tidybytetools">Apify</a></li>
+        <li><a href="https://tidybyte.gumroad.com">Gumroad</a></li>
+        <li><a href="https://github.com/tidybytetools">GitHub</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>This site</h2>
+      <ul>
+        <li><a href="/guides/">Guides</a></li>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/llms.txt">llms.txt</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap legal">
+    <p>© 2026 Tidy Byte Tools. This site does not use tracking cookies.</p>
+  </div>
+</footer>
+
+</body></html>

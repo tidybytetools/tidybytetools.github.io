@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How to check a website for broken links · Tidy Byte Tools</title>
+  <meta name="description" content="Find broken links, redirects, and slow pages on a site or sitemap. Start with a free local checker. Use the Apify Actor when you want a scheduled cloud run and a ready-made report.">
+  <link rel="canonical" href="https://tidybytetools.github.io/guides/check-a-website-for-broken-links/">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#F4F7F5" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0D1512" media="(prefers-color-scheme: dark)">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Tidy Byte Tools">
+  <meta property="og:title" content="How to check a website for broken links · Tidy Byte Tools">
+  <meta property="og:description" content="Find broken links, redirects, and slow pages on a site or sitemap. Start with a free local checker. Use the Apify Actor when you want a scheduled cloud run and a ready-made report.">
+  <meta property="og:url" content="https://tidybytetools.github.io/guides/check-a-website-for-broken-links/">
+  <meta property="og:image" content="https://tidybytetools.github.io/assets/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to check a website for broken links · Tidy Byte Tools">
+  <meta name="twitter:description" content="Find broken links, redirects, and slow pages on a site or sitemap. Start with a free local checker. Use the Apify Actor when you want a scheduled cloud run and a ready-made report.">
+  <meta name="twitter:image" content="https://tidybytetools.github.io/assets/img/og.png">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  
+</head>
+
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="header-inner">
+
+    <a class="logo" href="/">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="/assets/img/lockup-horizontal-dark.svg">
+        <img src="/assets/img/lockup-horizontal-light.svg" alt="Tidy Byte Tools" height="32" width="118">
+      </picture>
+    </a>
+    
+<nav aria-label="Primary"><ul><li><a href="/tools/">Tools</a></li><li><a href="/guides/" aria-current="page">Guides</a></li><li><a href="/#how">How it works</a></li><li><a href="/#faq">FAQ</a></li><li><a href="https://github.com/tidybytetools">GitHub</a></li></ul></nav>
+</div></header>
+<main id="main">
+    <section class="wrap page-hero">
+      <p class="crumb"><a href="/">Home</a> / <a href="/guides/">Guides</a> / How to check a website for broken links</p>
+      <h1>How to check a website for broken links</h1>
+      <p class="lede">Find broken links, redirects, and slow pages on a site or sitemap. Start with a free local checker. Use the Apify Actor when you want a scheduled cloud run and a ready-made report.</p>
+    </section>
+    <section class="wrap" style="padding-bottom:48px">
+      <article class="prose guide-body"><p>A page can look fine while a button, a citation, or an old blog post points at a URL that now returns 404. After a site move, some old addresses may also fail to redirect to the new ones. This page shows how to check a list of links, starting with a free local tool.</p>
+<h2>What you will get back</h2>
+<p>A useful check tells you, for each URL:</p>
+<ul>
+<li>The HTTP status (200, 301, 404, 500, and so on)</li>
+<li>Whether the address redirected, and to where</li>
+<li>Whether the page was slow</li>
+<li>A short report you can sort in a spreadsheet</li>
+</ul>
+<p>No checker is perfect. Some sites block automated requests and return 403 even though the page works in your browser. Links that appear only after JavaScript runs will not be found by a simple scan of the HTML.</p>
+<h2>Free local tool: link-check-lite</h2>
+<p><a href="https://github.com/tidybytetools/link-check-lite">link-check-lite</a> is a free checker you run on your own computer. It has a command-line tool and an MCP server for AI apps. There is no API key.</p>
+<p><strong>What it does</strong></p>
+<ul>
+<li>Requests each URL and records the status code and redirects.</li>
+<li>Runs offline in the sense that you keep the tool and the results on your machine (it still has to request the remote pages, or it cannot check them).</li>
+</ul>
+<p><strong>What it does not do</strong></p>
+<ul>
+<li>It does not crawl an entire site by itself. You give it the URLs (or a list / sitemap you already have).</li>
+<li>It does not run page JavaScript.</li>
+</ul>
+<h3>Install and run</h3>
+<p>You need Python 3.</p>
+<pre><code>pip install link-check-lite
+link-check-lite https://example.com/page</code></pre>
+<p>The repository README shows how to pass a list of URLs and how to write a CSV report. Start with a short list so you can see the output before you check a large sitemap.</p>
+<p>Be kind to the site: do not hammer it. A short delay between requests to the same host is the right default.</p>
+<h2>Cloud option: the Apify Actor</h2>
+<p><a href="https://apify.com/tidybytetools/broken-link-checker">Broken Link Checker</a> runs on Apify. You can give it page links and, if you want, sitemap links. It checks the links it finds, and it writes a dataset plus <code>report.csv</code> and <code>report.md</code>.</p>
+<p><strong>Price (November 2026):</strong> $0.001 per link checked and $0.002 per page scanned. Duplicates and robots.txt skips are free. A broken link still counts as a checked link (that is the point of the tool). Apify also adds a small start fee per run.</p>
+<p><strong>Honest limits:</strong> it scans the pages you give it (or the pages listed in your sitemap input). It does not invent a full crawl of a site you did not list. It does not run JavaScript. Sites that block bots may show 403. You can turn on full GET requests if HEAD is blocked.</p>
+<p>You can schedule the Actor once a week and send the report to a webhook, Slack, or email with Apify's integrations.</p>
+<p>1. Open the <a href="https://apify.com/tidybytetools/broken-link-checker">Actor page</a>.</p>
+<p>2. Leave the sample URLs or paste your own (the sample includes a real page and a page that should 404, so you can see both outcomes).</p>
+<p>3. Click Start.</p>
+<p>4. Download <code>report.csv</code> or export the dataset.</p>
+<h2>After a site move</h2>
+<p>If you have a spreadsheet of <code>old_url,new_url</code>, you need a slightly different check: request the old URL and see whether it ends up at the new one. We published a free n8n template for that map, in addition to the tools above. A status of 200 on the old URL can still be a problem if it did not redirect.</p>
+<h2>A short way to choose</h2>
+<div class="table-wrap"><table>
+<tr><th>Your situation</th><th>What to use</th></tr>
+<tr><td>A list of URLs, and you can run Python</td><td>Free <a href="https://github.com/tidybytetools/link-check-lite">link-check-lite</a></td></tr>
+<tr><td>A scheduled cloud run, a sitemap, and a ready-made report</td><td><a href="https://apify.com/tidybytetools/broken-link-checker">Apify Actor</a></td></tr>
+<tr><td>A spreadsheet of old URL → new URL after a site move</td><td>The free n8n redirect-map template (submit or import from our n8n Creator Hub pack once it is published)</td></tr>
+</table></div>
+<h2>Related guides</h2>
+<ul>
+<li><a href="/guides/extract-pdf-tables-to-excel-or-csv/">How to extract tables from a PDF into Excel or CSV</a></li>
+<li><a href="/guides/turn-pdf-or-word-into-markdown-for-ai/">How to turn a PDF or Word file into Markdown for AI and notes</a></li>
+<li><a href="/guides/count-llm-tokens-and-estimate-cost/">How to count LLM tokens and estimate cost</a></li>
+</ul>
+<p>These tools are made by <a href="https://apify.com/tidybytetools">Tidy Byte Tools</a>.</p></article>
+      <aside style="margin-top:36px">
+        <h2>More guides</h2>
+        <ul><li><a href="/guides/count-llm-tokens-and-estimate-cost/">How to count LLM tokens and estimate cost</a></li><li><a href="/guides/extract-pdf-tables-to-excel-or-csv/">How to extract tables from a PDF into Excel or CSV</a></li><li><a href="/guides/flatten-nested-json-into-csv/">How to flatten nested JSON into CSV</a></li><li><a href="/guides/turn-pdf-or-word-into-markdown-for-ai/">How to turn a PDF or Word file into Markdown for AI and notes</a></li></ul>
+      </aside>
+    </section>
+    </main>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      
+    <a class="logo" href="/">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="/assets/img/lockup-horizontal-dark.svg">
+        <img src="/assets/img/lockup-horizontal-light.svg" alt="Tidy Byte Tools" height="32" width="118">
+      </picture>
+    </a>
+    
+      <p>Small tools that clean up messy data. Each one does one job and does it well.</p>
+    </div>
+    <div>
+      <h2>Tools</h2>
+      <ul><li><a href="/tools/pdf-table-pull/">PDF Table Pull</a></li>
+<li><a href="/tools/doc2md/">Doc to Markdown</a></li>
+<li><a href="/tools/sheet-scrub/">CSV &amp; spreadsheet cleanup</a></li>
+<li><a href="/tools/json-shaper/">JSON Shaper</a></li>
+<li><a href="/tools/lead-sheet-fixer/">Lead Sheet Fixer</a></li>
+<li><a href="/tools/phone-validator/">Phone Number Validator</a></li>
+<li><a href="/tools/data-cleanup-bundle/">Data Cleanup Bundle</a></li>
+<li><a href="/tools/link-check/">Broken Link Checker</a></li>
+<li><a href="/tools/server-pulse/">Server Pulse</a></li>
+<li><a href="/tools/markdown-chunker/">Markdown Chunker for RAG</a></li>
+<li><a href="/tools/gif-forge/">GIF Forge</a></li>
+<li><a href="/tools/n8n-data-cleanup-pack/">n8n Data Cleanup Pack</a></li>
+<li><a href="/tools/n8n-cleanup-sampler/">n8n Cleanup Sampler</a></li>
+<li><a href="/tools/csv-char-fix/">csv-char-fix</a></li>
+<li><a href="/tools/csv-split/">csv-split</a></li>
+<li><a href="/tools/regex-pack/">Regex Pack for Messy Data</a></li>
+<li><a href="/tools/claude-data-skills/">CSV Skills for Claude Code</a></li>
+<li><a href="/tools/html-table-extractor/">HTML Table Extractor</a></li>
+<li><a href="/tools/llm-token-counter/">LLM Token Counter</a></li>
+<li><a href="/tools/json-to-csv/">JSON to CSV Converter</a></li>
+<li><a href="/tools/csv-encoding-fixer/">CSV Encoding Fixer</a></li></ul>
+    </div>
+    <div>
+      <h2>Shops</h2>
+      <ul>
+        <li><a href="https://apify.com/tidybytetools">Apify</a></li>
+        <li><a href="https://tidybyte.gumroad.com">Gumroad</a></li>
+        <li><a href="https://github.com/tidybytetools">GitHub</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>This site</h2>
+      <ul>
+        <li><a href="/guides/">Guides</a></li>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/llms.txt">llms.txt</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap legal">
+    <p>© 2026 Tidy Byte Tools. This site does not use tracking cookies.</p>
+  </div>
+</footer>
+
+</body></html>

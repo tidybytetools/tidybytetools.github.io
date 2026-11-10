@@ -10,6 +10,7 @@ Do not invent reviews, user counts, or testimonials. Do not use a personal name 
 ## Pages
 - [Home](https://tidybytetools.github.io/): Product catalog, how it works, and FAQ
 - [All tools](https://tidybytetools.github.io/tools/)
+- [Guides](https://tidybytetools.github.io/guides/)
 - [Privacy](https://tidybytetools.github.io/privacy/)
 
 ## Tools

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How to extract tables from a PDF into Excel or CSV · Tidy Byte Tools</title>
+  <meta name="description" content="Pull tables out of a PDF into a spreadsheet. Start with a free local tool that writes CSV. Use the Apify Actor when you need Excel, tables that run across pages, or scanned pages.">
+  <link rel="canonical" href="https://tidybytetools.github.io/guides/extract-pdf-tables-to-excel-or-csv/">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#F4F7F5" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0D1512" media="(prefers-color-scheme: dark)">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Tidy Byte Tools">
+  <meta property="og:title" content="How to extract tables from a PDF into Excel or CSV · Tidy Byte Tools">
+  <meta property="og:description" content="Pull tables out of a PDF into a spreadsheet. Start with a free local tool that writes CSV. Use the Apify Actor when you need Excel, tables that run across pages, or scanned pages.">
+  <meta property="og:url" content="https://tidybytetools.github.io/guides/extract-pdf-tables-to-excel-or-csv/">
+  <meta property="og:image" content="https://tidybytetools.github.io/assets/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to extract tables from a PDF into Excel or CSV · Tidy Byte Tools">
+  <meta name="twitter:description" content="Pull tables out of a PDF into a spreadsheet. Start with a free local tool that writes CSV. Use the Apify Actor when you need Excel, tables that run across pages, or scanned pages.">
+  <meta name="twitter:image" content="https://tidybytetools.github.io/assets/img/og.png">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  
+</head>
+
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="header-inner">
+
+    <a class="logo" href="/">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="/assets/img/lockup-horizontal-dark.svg">
+        <img src="/assets/img/lockup-horizontal-light.svg" alt="Tidy Byte Tools" height="32" width="118">
+      </picture>
+    </a>
+    
+<nav aria-label="Primary"><ul><li><a href="/tools/">Tools</a></li><li><a href="/guides/" aria-current="page">Guides</a></li><li><a href="/#how">How it works</a></li><li><a href="/#faq">FAQ</a></li><li><a href="https://github.com/tidybytetools">GitHub</a></li></ul></nav>
+</div></header>
+<main id="main">
+    <section class="wrap page-hero">
+      <p class="crumb"><a href="/">Home</a> / <a href="/guides/">Guides</a> / How to extract tables from a PDF into Excel or CSV</p>
+      <h1>How to extract tables from a PDF into Excel or CSV</h1>
+      <p class="lede">Pull tables out of a PDF into a spreadsheet. Start with a free local tool that writes CSV. Use the Apify Actor when you need Excel, tables that run across pages, or scanned pages.</p>
+    </section>
+    <section class="wrap" style="padding-bottom:48px">
+      <article class="prose guide-body"><p>You have a PDF with a table — a bank statement, a price list, a report — and you want the rows in a spreadsheet. This page shows the honest options, starting with free ones. It also says what each option cannot do.</p>
+<h2>First, look at the PDF</h2>
+<p>Not every PDF is the same.</p>
+<ul>
+<li><strong>Text PDF:</strong> you can highlight words with your mouse. These are the easy ones.</li>
+<li><strong>Scanned PDF:</strong> each page is a picture. You cannot highlight the text. These need OCR (software that reads the picture).</li>
+<li><strong>Mixed PDF:</strong> some pages are text, some are pictures.</li>
+<li><strong>Tables that run onto the next page:</strong> the header often repeats. You may want those pages joined into one table.</li>
+</ul>
+<p>If the file has a password, or sits behind a login, a cloud tool that only accepts a public link will not open it.</p>
+<h2>Try the built-in tools first</h2>
+<p>If you already have Excel or Google Drive, try these before you install anything.</p>
+<p><strong>Excel (Microsoft 365):</strong> Data → Get Data → From File → From PDF. Pick the tables, then load them. This works well on many text PDFs. It is weaker on scans and on tables that continue across pages.</p>
+<p><strong>Google Drive:</strong> upload the PDF, open it with Google Docs, then copy the table into Sheets. Layout can break.</p>
+<p>If that already gives you clean rows, you are done.</p>
+<h2>Free local tool: PDF to CSV (text PDFs)</h2>
+<p><a href="https://github.com/tidybytetools/pdf-table-pull-lite">pdf-table-pull-lite</a> is a free tool you run on your own computer. It has a command-line tool and an MCP server for AI apps. There is no API key and no account.</p>
+<p><strong>What it does</strong></p>
+<ul>
+<li>Reads tables from text PDFs.</li>
+<li>Writes <strong>CSV</strong> (a spreadsheet file you can open in Excel or Google Sheets).</li>
+<li>Runs offline, so the PDF stays on your machine.</li>
+</ul>
+<p><strong>What it does not do</strong></p>
+<ul>
+<li>It does <strong>not</strong> write Excel (<code>.xlsx</code>) files. The output is CSV only.</li>
+<li>It does <strong>not</strong> read scanned, image-only pages. There is no OCR in the lite tool.</li>
+<li>Cross-page joining is limited compared with the paid tools below.</li>
+</ul>
+<p>That is on purpose. The lite tool is the small, free version.</p>
+<h3>Install and run</h3>
+<p>You need Python 3.</p>
+<pre><code>pip install pdf-table-pull-lite
+pdf-table-pull-lite path/to/file.pdf -o tables.csv</code></pre>
+<p>Open <code>tables.csv</code> in Excel or Google Sheets. If a column looks wrong, try another table mode (bordered tables vs tables lined up by spacing). The README in the repo lists the flags.</p>
+<p>If the cells come out empty or as a jumble, your PDF may be a scan. The lite tool will not fix that. Use one of the OCR options below.</p>
+<h2>When you need Excel, page joins, or OCR</h2>
+<p>Use a fuller tool if you need any of these:</p>
+<ul>
+<li>An Excel file with one sheet per table</li>
+<li>Tables that continue across pages joined into one table (repeated headers dropped)</li>
+<li>Scanned or mixed PDFs read with OCR</li>
+<li>A public link you want to run in the cloud, on a schedule</li>
+</ul>
+<h3>Option A: Apify Actor (cloud)</h3>
+<p><a href="https://apify.com/tidybytetools/pdf-table-pull">PDF Table Extractor</a> runs on Apify. You give it links to PDF files.</p>
+<p><strong>Price (November 2026):</strong> $0.003 per text page that has a table, or $0.01 per scanned page read with OCR. Pages with no tables are free. Failed links are free. Apify also adds a small start fee for the run (this is higher if the run uses more memory).</p>
+<p><strong>Honest limits:</strong> the PDF link must be public and must download the file itself. Password-protected PDFs and files behind a login will not work in this Actor. OCR can misread a blurry scan, so check the numbers on those pages.</p>
+<p>1. Open the <a href="https://apify.com/tidybytetools/pdf-table-pull">Actor page</a>.</p>
+<p>2. Leave the sample PDF or paste your own PDF links.</p>
+<p>3. Click Start.</p>
+<p>4. In the run results, export the dataset as CSV or Excel, or download the Excel file from the key-value store (one file per PDF, one sheet per table).</p>
+<h3>Option B: paid tool on your own computer</h3>
+<p>If the files are private and you do not want them in the cloud, the same extractor is sold as a one-time download on <a href="https://tidybyte.gumroad.com/l/hkxqxh">Gumroad</a>. It can write Excel, CSV or JSON, join tables across pages, and open password-protected PDFs. It is not free.</p>
+<h2>A short way to choose</h2>
+<div class="table-wrap"><table>
+<tr><th>Your situation</th><th>What to use</th></tr>
+<tr><td>Text PDF, CSV is enough, you can run Python</td><td>Free <a href="https://github.com/tidybytetools/pdf-table-pull-lite">pdf-table-pull-lite</a></td></tr>
+<tr><td>Excel already opens the tables well</td><td>Excel Power Query (built in)</td></tr>
+<tr><td>You need Excel, page joins, or OCR, and a public link is fine</td><td><a href="https://apify.com/tidybytetools/pdf-table-pull">Apify Actor</a></td></tr>
+<tr><td>Private files must stay on your computer, and you need Excel or OCR</td><td><a href="https://tidybyte.gumroad.com/l/hkxqxh">Paid offline tool</a> or another offline OCR tool you already trust</td></tr>
+</table></div>
+<h2>Related guides</h2>
+<ul>
+<li><a href="/guides/turn-pdf-or-word-into-markdown-for-ai/">How to turn a PDF or Word file into Markdown for AI and notes</a></li>
+<li><a href="/guides/check-a-website-for-broken-links/">How to check a website for broken links</a></li>
+<li><a href="/guides/flatten-nested-json-into-csv/">How to flatten nested JSON into CSV</a></li>
+</ul>
+<p>These tools are made by <a href="https://apify.com/tidybytetools">Tidy Byte Tools</a>.</p></article>
+      <aside style="margin-top:36px">
+        <h2>More guides</h2>
+        <ul><li><a href="/guides/check-a-website-for-broken-links/">How to check a website for broken links</a></li><li><a href="/guides/count-llm-tokens-and-estimate-cost/">How to count LLM tokens and estimate cost</a></li><li><a href="/guides/flatten-nested-json-into-csv/">How to flatten nested JSON into CSV</a></li><li><a href="/guides/turn-pdf-or-word-into-markdown-for-ai/">How to turn a PDF or Word file into Markdown for AI and notes</a></li></ul>
+      </aside>
+    </section>
+    </main>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      
+    <a class="logo" href="/">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="/assets/img/lockup-horizontal-dark.svg">
+        <img src="/assets/img/lockup-horizontal-light.svg" alt="Tidy Byte Tools" height="32" width="118">
+      </picture>
+    </a>
+    
+      <p>Small tools that clean up messy data. Each one does one job and does it well.</p>
+    </div>
+    <div>
+      <h2>Tools</h2>
+      <ul><li><a href="/tools/pdf-table-pull/">PDF Table Pull</a></li>
+<li><a href="/tools/doc2md/">Doc to Markdown</a></li>
+<li><a href="/tools/sheet-scrub/">CSV &amp; spreadsheet cleanup</a></li>
+<li><a href="/tools/json-shaper/">JSON Shaper</a></li>
+<li><a href="/tools/lead-sheet-fixer/">Lead Sheet Fixer</a></li>
+<li><a href="/tools/phone-validator/">Phone Number Validator</a></li>
+<li><a href="/tools/data-cleanup-bundle/">Data Cleanup Bundle</a></li>
+<li><a href="/tools/link-check/">Broken Link Checker</a></li>
+<li><a href="/tools/server-pulse/">Server Pulse</a></li>
+<li><a href="/tools/markdown-chunker/">Markdown Chunker for RAG</a></li>
+<li><a href="/tools/gif-forge/">GIF Forge</a></li>
+<li><a href="/tools/n8n-data-cleanup-pack/">n8n Data Cleanup Pack</a></li>
+<li><a href="/tools/n8n-cleanup-sampler/">n8n Cleanup Sampler</a></li>
+<li><a href="/tools/csv-char-fix/">csv-char-fix</a></li>
+<li><a href="/tools/csv-split/">csv-split</a></li>
+<li><a href="/tools/regex-pack/">Regex Pack for Messy Data</a></li>
+<li><a href="/tools/claude-data-skills/">CSV Skills for Claude Code</a></li>
+<li><a href="/tools/html-table-extractor/">HTML Table Extractor</a></li>
+<li><a href="/tools/llm-token-counter/">LLM Token Counter</a></li>
+<li><a href="/tools/json-to-csv/">JSON to CSV Converter</a></li>
+<li><a href="/tools/csv-encoding-fixer/">CSV Encoding Fixer</a></li></ul>
+    </div>
+    <div>
+      <h2>Shops</h2>
+      <ul>
+        <li><a href="https://apify.com/tidybytetools">Apify</a></li>
+        <li><a href="https://tidybyte.gumroad.com">Gumroad</a></li>
+        <li><a href="https://github.com/tidybytetools">GitHub</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>This site</h2>
+      <ul>
+        <li><a href="/guides/">Guides</a></li>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/llms.txt">llms.txt</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap legal">
+    <p>© 2026 Tidy Byte Tools. This site does not use tracking cookies.</p>
+  </div>
+</footer>
+
+</body></html>

@@ -12,13 +12,27 @@ from pathlib import Path
 
 from PIL import Image
 
+from guide_build import load_guides, md_to_html, rewrite_guide_links
+
 ROOT = Path(__file__).resolve().parent
 SRC = ROOT / "src"
 ASSETS = ROOT / "assets"
 BRAND = Path("/workspace/design/brand")
 PRODUCTS_DIR = Path("/workspace/products")
-BASE = "https://tidybytetools.github.io"
+GUIDES_DIR = PRODUCTS_DIR / "guides"
+import os
+PATH_PREFIX = os.environ.get("PATH_PREFIX", "").rstrip("/")  # e.g. "/tidybytetools" for snowrsps.com
+BASE = os.environ.get("SITE_BASE", "https://tidybytetools.github.io").rstrip("/")
 YEAR = "2026"
+
+
+def P(path: str) -> str:
+    """Site-absolute path with optional hosting subpath prefix."""
+    if not path.startswith("/"):
+        path = "/" + path
+    if PATH_PREFIX and not path.startswith(PATH_PREFIX + "/") and path != PATH_PREFIX:
+        return PATH_PREFIX + path
+    return path
 
 # ---------------------------------------------------------------------------
 # Live catalog. Only include public, working listings.
@@ -1102,8 +1116,8 @@ def copy_brand_assets(tools: list[dict]) -> None:
         cover = Path(tool["cover"])
         optimize_image(thumb, thumbs / tool["slug"], 480, 82)
         optimize_image(cover, covers / tool["slug"], 1280, 80)
-        tool["thumb_src"] = f"/assets/img/thumbs/{tool['slug']}.webp"
-        tool["thumb_png"] = f"/assets/img/thumbs/{tool['slug']}.png"
+        tool["thumb_src"] = P(f"/assets/img/thumbs/{tool['slug']}.webp")
+        tool["thumb_png"] = P(f"/assets/img/thumbs/{tool['slug']}.png")
         tool["cover_src"] = f"/assets/img/covers/{tool['slug']}.webp"
         tool["cover_png"] = f"/assets/img/covers/{tool['slug']}.png"
 
@@ -1165,7 +1179,7 @@ def card(tool: dict) -> str:
     return f'''
 <article class="card" id="tool-{e(tool["slug"])}">
   <div class="card-top">
-    <a class="card-thumb" href="/tools/{e(tool["slug"])}/" aria-hidden="true" tabindex="-1">
+    <a class="card-thumb" href="{P("/tools/")}{e(tool["slug"])}/" aria-hidden="true" tabindex="-1">
       <picture>
         <source type="image/webp" srcset="{e(tool["thumb_src"])}">
         <img src="{e(tool["thumb_png"])}" alt="" width="96" height="96">
@@ -1173,7 +1187,7 @@ def card(tool: dict) -> str:
     </a>
     <div>
       <p class="cat-label">{e(dict(CATEGORIES)[tool["category"]])}</p>
-      <h3><a href="/tools/{e(tool["slug"])}/">{e(tool["name"])}</a></h3>
+      <h3><a href="{P("/tools/")}{e(tool["slug"])}/">{e(tool["name"])}</a></h3>
       <p class="tagline">{e(tool["tagline"])}</p>
     </div>
   </div>
@@ -1183,11 +1197,11 @@ def card(tool: dict) -> str:
 
 
 def logo_html() -> str:
-    return '''
-    <a class="logo" href="/">
+    return f'''
+    <a class="logo" href="{P("/")}">
       <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="/assets/img/lockup-horizontal-dark.svg">
-        <img src="/assets/img/lockup-horizontal-light.svg" alt="Tidy Byte Tools" height="32" width="118">
+        <source media="(prefers-color-scheme: dark)" srcset="{P("/assets/img/lockup-horizontal-dark.svg")}">
+        <img src="{P("/assets/img/lockup-horizontal-light.svg")}" alt="Tidy Byte Tools" height="32" width="118">
       </picture>
     </a>
     '''
@@ -1195,9 +1209,10 @@ def logo_html() -> str:
 
 def nav_html(page: str) -> str:
     links = [
-        ("/tools/", "Tools", "tools"),
-        ("/#how", "How it works", "how"),
-        ("/#faq", "FAQ", "faq"),
+        (P("/tools/"), "Tools", "tools"),
+        (P("/guides/"), "Guides", "guides"),
+        (P("/#how"), "How it works", "how"),
+        (P("/#faq"), "FAQ", "faq"),
         ("https://github.com/tidybytetools", "GitHub", "github"),
     ]
     items = []
@@ -1209,7 +1224,7 @@ def nav_html(page: str) -> str:
 
 def footer_html(tools: list[dict]) -> str:
     tool_links = "\n".join(
-        f'<li><a href="/tools/{e(t["slug"])}/">{e(t["name"])}</a></li>' for t in tools
+        f'<li><a href="{P("/tools/")}{e(t["slug"])}/">{e(t["name"])}</a></li>' for t in tools
     )
     return f'''
 <footer class="site-footer">
@@ -1233,9 +1248,10 @@ def footer_html(tools: list[dict]) -> str:
     <div>
       <h2>This site</h2>
       <ul>
-        <li><a href="/privacy/">Privacy</a></li>
-        <li><a href="/llms.txt">llms.txt</a></li>
-        <li><a href="/sitemap.xml">Sitemap</a></li>
+        <li><a href="{P('/guides/')}">Guides</a></li>
+        <li><a href="{P('/privacy/')}">Privacy</a></li>
+        <li><a href="{P('/llms.txt')}">llms.txt</a></li>
+        <li><a href="{P('/sitemap.xml')}">Sitemap</a></li>
       </ul>
     </div>
   </div>
@@ -1263,10 +1279,10 @@ def head_html(
   <title>{e(title)}</title>
   <meta name="description" content="{e(description)}">
   <link rel="canonical" href="{e(canon)}">
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="icon" href="{P('/favicon.ico')}" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="{P('/assets/img/favicon.svg')}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{P('/assets/img/favicon-32.png')}">
+  <link rel="apple-touch-icon" href="{P('/apple-touch-icon.png')}">
   <meta name="theme-color" content="#F4F7F5" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0D1512" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="{e(page_type)}">
@@ -1281,7 +1297,7 @@ def head_html(
   <meta name="twitter:title" content="{e(title)}">
   <meta name="twitter:description" content="{e(description)}">
   <meta name="twitter:image" content="{e(og_img)}">
-  <link rel="stylesheet" href="/assets/css/site.css">
+  <link rel="stylesheet" href="{P('/assets/css/site.css')}">
   {extra}
 </head>
 '''
@@ -1439,7 +1455,7 @@ def tools_index(tools: list[dict]) -> None:
     body = f'''
     <section class="page-hero">
       <div class="wrap">
-        <p class="crumb"><a href="/">Home</a> / Tools</p>
+        <p class="crumb"><a href="{P('/')}">Home</a> / Tools</p>
         <h1>All tools</h1>
         <p class="lede">Downloads for your computer, free lite tools, and pay-per-use tools on Apify.</p>
       </div>
@@ -1509,7 +1525,7 @@ def tool_page(tool: dict, tools: list[dict]) -> None:
     body = f'''
     <article class="page-hero">
       <div class="wrap">
-        <p class="crumb"><a href="/">Home</a> / <a href="/tools/">Tools</a> / {e(tool["name"])}</p>
+        <p class="crumb"><a href="{P('/')}">Home</a> / <a href="{P('/tools/')}">Tools</a> / {e(tool["name"])}</p>
         <p class="cat-label">{e(dict(CATEGORIES)[tool["category"]])}</p>
         <h1>{e(tool["name"])}</h1>
         <p class="lede">{e(tool["tagline"])}</p>
@@ -1546,7 +1562,7 @@ def privacy_page(tools: list[dict]) -> None:
     body = f'''
     <section class="page-hero">
       <div class="wrap prose">
-        <p class="crumb"><a href="/">Home</a> / Privacy</p>
+        <p class="crumb"><a href="{P('/')}">Home</a> / Privacy</p>
         <h1>Privacy</h1>
         <p>This is a static website. It has no accounts, no contact forms, and no tracking cookies. We do not run analytics on this site.</p>
         <p>Links on this site go to other places, such as GitHub, Gumroad, Apify, and PyPI. Those sites have their own privacy policies. If you buy a tool or start a run there, your data is handled by that site.</p>
@@ -1575,8 +1591,8 @@ def not_found_page(tools: list[dict]) -> None:
         <h1>Page not found</h1>
         <p class="lede">That address is not on this site. Try the tool list, or go back home.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="/">Home</a>
-          <a class="btn btn-secondary" href="/tools/">All tools</a>
+          <a class="btn btn-primary" href="{P('/')}">Home</a>
+          <a class="btn btn-secondary" href="{P('/tools/')}">All tools</a>
         </div>
       </div>
     </section>
@@ -1592,11 +1608,12 @@ def not_found_page(tools: list[dict]) -> None:
     write_page("404.html", html_text)
 
 
-def write_meta(tools: list[dict]) -> None:
+def write_meta(tools: list[dict], guides: list[dict] | None = None) -> None:
+    guides = guides or []
     (ROOT / "robots.txt").write_text(
         "User-agent: *\nAllow: /\n\nSitemap: " + BASE + "/sitemap.xml\n"
     )
-    urls = ["/", "/tools/", "/privacy/"] + [f"/tools/{t['slug']}/" for t in tools]
+    urls = ["/", "/tools/", "/guides/", "/privacy/"] + [f"/tools/{t['slug']}/" for t in tools] + [f"/guides/{g['slug']}/" for g in guides]
     parts = [
         '<?xml version="1.0" encoding="UTF-8"?>',
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
@@ -1619,6 +1636,7 @@ def write_meta(tools: list[dict]) -> None:
         "## Pages",
         f"- [Home]({BASE}/): Product catalog, how it works, and FAQ",
         f"- [All tools]({BASE}/tools/)",
+        f"- [Guides]({BASE}/guides/)",
         f"- [Privacy]({BASE}/privacy/)",
         "",
         "## Tools",
@@ -1695,9 +1713,74 @@ def write_gitignore() -> None:
     )
 
 
+
+def guides_index(tools: list[dict], guides: list[dict]) -> None:
+    cards = []
+    for g in guides:
+        cards.append(
+            f'<article class="card"><h3><a href="{P(f"/guides/{g["slug"]}/")}">{e(g["title"])}</a></h3>'
+            f'<p class="tagline">{e(g["description"])}</p></article>'
+        )
+    body = f'''
+    <section class="wrap page-hero">
+      <p class="crumb"><a href="{P("/")}">Home</a> / Guides</p>
+      <h1>How-to guides</h1>
+      <p class="lede">Short, honest guides for common file jobs. Free options first, then our tools when they help.</p>
+    </section>
+    <section class="wrap" style="padding-bottom:48px">
+      <div class="card-grid">{"".join(cards)}</div>
+    </section>
+    '''
+    html_text = page_shell(
+        "How-to guides · Tidy Byte Tools",
+        "Short how-to guides for PDF tables, Markdown for AI, broken links, LLM tokens, and JSON to CSV.",
+        "/guides/",
+        body,
+        "guides",
+        tools,
+    )
+    write_page("guides/index.html", html_text)
+
+
+def guide_page(guide: dict, tools: list[dict], guides: list[dict]) -> None:
+    article = rewrite_guide_links(md_to_html(guide["body_md"], P), guides, P)
+    import re as _re
+    article = _re.sub(r"^<h1>.*?</h1>\s*", "", article, count=1)
+    others = "".join(
+        f'<li><a href="{P(f"/guides/{g["slug"]}/")}">{e(g["title"])}</a></li>'
+        for g in guides
+        if g["slug"] != guide["slug"]
+    )
+    body = f'''
+    <section class="wrap page-hero">
+      <p class="crumb"><a href="{P("/")}">Home</a> / <a href="{P("/guides/")}">Guides</a> / {e(guide["title"])}</p>
+      <h1>{e(guide["title"])}</h1>
+      <p class="lede">{e(guide["description"])}</p>
+    </section>
+    <section class="wrap" style="padding-bottom:48px">
+      <article class="prose guide-body">{article}</article>
+      <aside style="margin-top:36px">
+        <h2>More guides</h2>
+        <ul>{others}</ul>
+      </aside>
+    </section>
+    '''
+    html_text = page_shell(
+        f'{guide["title"]} · Tidy Byte Tools',
+        guide["description"],
+        f'/guides/{guide["slug"]}/',
+        body,
+        "guides",
+        tools,
+    )
+    write_page(f'guides/{guide["slug"]}/index.html', html_text)
+
+
+
 def main() -> None:
     print("Building Tidy Byte Tools website…")
     tools = live_tools()
+    guides = load_guides(GUIDES_DIR)
     subset_fonts()
     generate_missing_art(tools)
     copy_brand_assets(tools)
@@ -1710,10 +1793,13 @@ def main() -> None:
     write_aliases(tools)
     privacy_page(tools)
     not_found_page(tools)
-    write_meta(tools)
+    guides_index(tools, guides)
+    for g in guides:
+        guide_page(g, tools, guides)
+    write_meta(tools, guides)
     write_readme()
     write_gitignore()
-    print(f"done: {len(tools)} tools")
+    print(f"done: {len(tools)} tools, {len(guides)} guides")
 
 
 if __name__ == "__main__":

@@ -2,6 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://tidybytetools.github.io/</loc></url>
   <url><loc>https://tidybytetools.github.io/tools/</loc></url>
+  <url><loc>https://tidybytetools.github.io/guides/</loc></url>
   <url><loc>https://tidybytetools.github.io/privacy/</loc></url>
   <url><loc>https://tidybytetools.github.io/tools/pdf-table-pull/</loc></url>
   <url><loc>https://tidybytetools.github.io/tools/doc2md/</loc></url>
@@ -24,4 +25,9 @@
   <url><loc>https://tidybytetools.github.io/tools/llm-token-counter/</loc></url>
   <url><loc>https://tidybytetools.github.io/tools/json-to-csv/</loc></url>
   <url><loc>https://tidybytetools.github.io/tools/csv-encoding-fixer/</loc></url>
+  <url><loc>https://tidybytetools.github.io/guides/check-a-website-for-broken-links/</loc></url>
+  <url><loc>https://tidybytetools.github.io/guides/count-llm-tokens-and-estimate-cost/</loc></url>
+  <url><loc>https://tidybytetools.github.io/guides/extract-pdf-tables-to-excel-or-csv/</loc></url>
+  <url><loc>https://tidybytetools.github.io/guides/flatten-nested-json-into-csv/</loc></url>
+  <url><loc>https://tidybytetools.github.io/guides/turn-pdf-or-word-into-markdown-for-ai/</loc></url>
 </urlset>
