@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>API — Tidy Byte Tools</title>
+  <meta name="description" content="Public JSON API and remote MCP for small text jobs. Landing page, MCP endpoint, and OpenAPI are on the Cloudflare Worker.">
+  <link rel="canonical" href="https://tidybytetools.github.io/api/">
+  
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preload" href="/assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <meta name="theme-color" content="#F4F7F5" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0D1512" media="(prefers-color-scheme: dark)">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Tidy Byte Tools">
+  <meta property="og:title" content="API — Tidy Byte Tools">
+  <meta property="og:description" content="Public JSON API and remote MCP for small text jobs. Landing page, MCP endpoint, and OpenAPI are on the Cloudflare Worker.">
+  <meta property="og:url" content="https://tidybytetools.github.io/api/">
+  <meta property="og:image" content="https://tidybytetools.github.io/assets/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="API — Tidy Byte Tools">
+  <meta name="twitter:description" content="Public JSON API and remote MCP for small text jobs. Landing page, MCP endpoint, and OpenAPI are on the Cloudflare Worker.">
+  <meta name="twitter:image" content="https://tidybytetools.github.io/assets/img/og.png">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  
+</head>
+
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="header-inner">
+
+    <a class="logo" href="/">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="/assets/img/lockup-horizontal-dark.svg">
+        <img src="/assets/img/lockup-horizontal-light.svg" alt="Tidy Byte Tools" height="32" width="118">
+      </picture>
+    </a>
+    
+<div class="header-tools">
+<nav aria-label="Primary"><ul><li><a href="/tools/">Tools</a></li><li><a href="/guides/">Guides</a></li><li><a href="/#how">How it works</a></li><li><a href="/#faq">FAQ</a></li><li><a href="/connect/">For AI agents</a></li><li><a href="/api/" aria-current="page">API</a></li><li><a href="https://github.com/tidybytetools">GitHub</a></li></ul></nav>
+<nav class="lang-switch" aria-label="Language"><ul class="lang-switch"><li><a href="/api/" lang="en" hreflang="en" title="English" aria-current="true">EN</a></li><li><a href="/es/" lang="es" hreflang="es" title="Español">ES</a></li><li><a href="/pt/" lang="pt-BR" hreflang="pt-BR" title="Português">PT</a></li><li><a href="/de/" lang="de" hreflang="de" title="Deutsch">DE</a></li><li><a href="/fr/" lang="fr" hreflang="fr" title="Français">FR</a></li><li><a href="/ja/" lang="ja" hreflang="ja" title="日本語">JA</a></li><li><a href="/zh/" lang="zh-CN" hreflang="zh-CN" title="中文">中文</a></li></ul></nav>
+</div></div></header>
+<main id="main">
+    <section class="page-hero">
+      <div class="wrap prose">
+        <p class="crumb"><a href="/">Home</a> / API</p>
+        <h1>Tidy Byte Tools API</h1>
+        <p>This is a public JSON API for small text jobs: repair JSON, hash or encode text, format data, make IDs, convert dates and units, and similar tools. It runs on a Cloudflare Worker. You can also call the same tools through a remote MCP server.</p>
+        <p>You can try it without a key (50 calls per IP each UTC day). Or post to <code>/keys</code> to get a free key and raise the cap to 200 calls per key each UTC day. Paid billing is not live. You cannot pay for this API yet.</p>
+        <h2>Where to call it</h2>
+        <ul>
+          <li>Landing page: <a href="https://tidybytetools.tidybytetools.workers.dev/">https://tidybytetools.tidybytetools.workers.dev/</a></li>
+          <li>Remote MCP: <a href="https://tidybytetools.tidybytetools.workers.dev/mcp"><code>https://tidybytetools.tidybytetools.workers.dev/mcp</code></a></li>
+          <li>OpenAPI for this API: <a href="https://tidybytetools.tidybytetools.workers.dev/openapi.json"><code>https://tidybytetools.tidybytetools.workers.dev/openapi.json</code></a></li>
+          <li>Prices: <a href="https://tidybytetools.tidybytetools.workers.dev/pricing">https://tidybytetools.tidybytetools.workers.dev/pricing</a> and <a href="https://tidybytetools.tidybytetools.workers.dev/pricing.json">https://tidybytetools.tidybytetools.workers.dev/pricing.json</a></li>
+        </ul>
+        <p>The OpenAPI file above describes the Worker API. It is not the same file as <a href="/openapi.json">https://tidybytetools.github.io/openapi.json</a>, which describes how to call public Apify actors.</p>
+        <h2>For AI agents</h2>
+        <p>Point an MCP client at <code>https://tidybytetools.tidybytetools.workers.dev/mcp</code> (Streamable HTTP). An API key is optional. A bad key is rejected with HTTP 401; it does not fall back to the anonymous cap.</p>
+        <p>Official MCP Registry name: <code>io.github.tidybytetools/api</code>. Record: <a href="https://registry.modelcontextprotocol.io/v0/servers/io.github.tidybytetools%2Fapi/versions/1.0.0">https://registry.modelcontextprotocol.io/v0/servers/io.github.tidybytetools%2Fapi/versions/1.0.0</a>.</p>
+        <p>This site also lists the API in <a href="/tools.json">/tools.json</a>, <a href="/llms.txt">/llms.txt</a>, and <a href="/.well-known/mcp.json">/.well-known/mcp.json</a>.</p>
+      </div>
+    </section>
+    </main>
+
+<footer class="site-footer">
+  
+  <section class="featured-on" aria-label="Featured on">
+    <div class="wrap">
+      <h2>Featured on</h2>
+      <p>As directories list us, their marks will show up here.</p>
+      <ul class="featured-logos"></ul>
+    </div>
+  </section>
+
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      
+    <a class="logo" href="/">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="/assets/img/lockup-horizontal-dark.svg">
+        <img src="/assets/img/lockup-horizontal-light.svg" alt="Tidy Byte Tools" height="32" width="118">
+      </picture>
+    </a>
+    
+      <p>Small tools that clean up messy data. Each one does one job and does it well.</p>
+    </div>
+    <div>
+      <h2>Tools</h2>
+      <ul><li><a href="/tools/pdf-table-pull/">PDF Table Pull</a></li>
+<li><a href="/tools/doc2md/">Doc to Markdown</a></li>
+<li><a href="/tools/sheet-scrub/">CSV &amp; spreadsheet cleanup</a></li>
+<li><a href="/tools/json-shaper/">JSON Shaper</a></li>
+<li><a href="/tools/lead-sheet-fixer/">Lead Sheet Fixer</a></li>
+<li><a href="/tools/phone-validator/">Phone Number Validator</a></li>
+<li><a href="/tools/data-cleanup-bundle/">Data Cleanup Bundle</a></li>
+<li><a href="/tools/link-check/">Broken Link Checker</a></li>
+<li><a href="/tools/server-pulse/">Server Pulse</a></li>
+<li><a href="/tools/markdown-chunker/">Markdown Chunker for RAG</a></li>
+<li><a href="/tools/gif-forge/">GIF Forge</a></li>
+<li><a href="/tools/n8n-data-cleanup-pack/">n8n Data Cleanup Pack</a></li>
+<li><a href="/tools/n8n-cleanup-sampler/">n8n Cleanup Sampler</a></li>
+<li><a href="/tools/csv-char-fix/">csv-char-fix</a></li>
+<li><a href="/tools/csv-split/">csv-split</a></li>
+<li><a href="/tools/regex-pack/">Regex Pack for Messy Data</a></li>
+<li><a href="/tools/claude-data-skills/">CSV Skills for Claude Code</a></li>
+<li><a href="/tools/base64-lite/">Base64 Encode &amp; Decode</a></li>
+<li><a href="/tools/json-repair-lite/">JSON Repair</a></li>
+<li><a href="/tools/hash-lite/">Hash &amp; Checksum</a></li>
+<li><a href="/tools/html-table-extractor/">HTML Table Extractor</a></li>
+<li><a href="/tools/llm-token-counter/">LLM Token Counter</a></li>
+<li><a href="/tools/json-to-csv/">JSON to CSV Converter</a></li>
+<li><a href="/tools/csv-encoding-fixer/">CSV Encoding Fixer</a></li>
+<li><a href="/tools/json-schema-validator/">JSON Schema Validator</a></li>
+<li><a href="/tools/link-preview/">Link Preview</a></li>
+<li><a href="/tools/language-detector/">Language Detector</a></li>
+<li><a href="/tools/date-timezone/">Date &amp; Timezone Normalizer</a></li></ul>
+    </div>
+    <div>
+      <h2>Shops</h2>
+      <ul>
+        <li><a href="https://apify.com/tidybytetools">Apify</a></li>
+        <li><a href="https://tidybyte.gumroad.com">Gumroad</a></li>
+        <li><a href="https://github.com/tidybytetools">GitHub</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>This site</h2>
+      <ul>
+        <li><a href="/guides/">Guides</a></li>
+        <li><a href="/connect/">For AI agents</a></li>
+        <li><a href="/api/">API</a></li>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/terms/">Terms</a></li>
+        <li><a href="/llms.txt">llms.txt</a></li>
+        <li><a href="/tools.json">tools.json</a></li>
+        <li><a href="/.well-known/mcp.json">mcp.json</a></li>
+        <li><a href="/openapi.json">openapi.json</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap legal">
+    <p>© 2026 Tidy Byte Tools. This site does not use tracking cookies.</p>
+  </div>
+</footer>
+
+</body></html>

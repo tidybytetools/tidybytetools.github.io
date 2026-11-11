@@ -32,6 +32,9 @@ PATH_PREFIX = os.environ.get("PATH_PREFIX", "").rstrip("/")  # e.g. "/tidybyteto
 BASE = os.environ.get("SITE_BASE", "https://tidybytetools.github.io").rstrip("/")
 YEAR = "2026"
 
+# Live Cloudflare Worker API (separate from this site's Apify OpenAPI).
+API_WORKER = "https://tidybytetools.tidybytetools.workers.dev"
+
 
 def P(path: str) -> str:
     """Site-absolute path with optional hosting subpath prefix."""
@@ -636,6 +639,7 @@ def nav_html(page: str, lang: str = "en") -> str:
         (home + "#how", u("nav_how"), "how"),
         (home + "#faq", u("nav_faq"), "faq"),
         (P("/connect/"), u("nav_connect"), "connect"),
+        (P("/api/"), u("nav_api"), "api"),
         ("https://github.com/tidybytetools", u("nav_github"), "github"),
     ]
     items = []
@@ -689,6 +693,7 @@ def footer_html(tools: list[dict], lang: str = "en") -> str:
       <ul>
         <li><a href="{P("/guides/")}">{e(u("nav_guides"))}</a></li>
         <li><a href="{P("/connect/")}">{e(u("nav_connect"))}</a></li>
+        <li><a href="{P("/api/")}">{e(u("nav_api"))}</a></li>
         <li><a href="{P("/privacy/")}">{e(u("nav_privacy"))}</a></li>
         <li><a href="{P("/terms/")}">{e(u("nav_terms"))}</a></li>
         <li><a href="{P("/llms.txt")}">llms.txt</a></li>
@@ -924,6 +929,17 @@ def tools_catalog(tools: list[dict]) -> dict:
         "url": BASE + "/",
         "description": "Small tools that clean up messy data. Each one does one job and does it well.",
         "updated": f"{YEAR}-11-10",
+        "api": {
+            "name": "Tidy Byte Tools API",
+            "url": API_WORKER + "/",
+            "mcp": API_WORKER + "/mcp",
+            "openapi": API_WORKER + "/openapi.json",
+            "pricing": API_WORKER + "/pricing",
+            "pricing_json": API_WORKER + "/pricing.json",
+            "site_page": BASE + "/api/",
+            "registry": "io.github.tidybytetools/api",
+            "note": "Free public JSON API and remote MCP. 50 anonymous calls per IP per UTC day, or 200 with a free key from POST /keys. Paid billing is not live. The Worker OpenAPI is separate from this site's /openapi.json, which describes Apify actors.",
+        },
         "tools": entries,
     }
 
@@ -1405,6 +1421,7 @@ def connect_page(tools: list[dict]) -> None:
         <p class="crumb"><a href="{P('/')}">Home</a> / For AI agents</p>
         <h1>How to connect</h1>
         <p>You can call the public Apify tools through <a href="https://mcp.apify.com/">Apify MCP</a>, or through the Apify HTTP API. The free lite tools include a small MCP server that you run on your computer. No API key is needed for those local tools.</p>
+        <p>There is also a live public API for small text jobs (repair JSON, hash text, convert units, and more). That API has its own landing page, remote MCP, and OpenAPI file, which are different from the Apify lists on this page. See <a href="{P('/api/')}">the API page</a>.</p>
         <h2>Apify MCP</h2>
         <p>Add the MCP endpoint for a tool in Cursor, Claude Desktop, or another app that supports MCP. Each public tool has its own endpoint of the form <code>https://mcp.apify.com/?tools=tidybytetools/&lt;actor&gt;</code>.</p>
         <h2>Apify HTTP API</h2>
@@ -1447,6 +1464,48 @@ def connect_page(tools: list[dict]) -> None:
         tools,
     )
     write_page("connect/index.html", html_text)
+
+
+
+def api_page(tools: list[dict]) -> None:
+    """Human page for the live Cloudflare Worker API."""
+    landing = API_WORKER + "/"
+    mcp = API_WORKER + "/mcp"
+    openapi = API_WORKER + "/openapi.json"
+    pricing = API_WORKER + "/pricing"
+    pricing_json = API_WORKER + "/pricing.json"
+    registry = "https://registry.modelcontextprotocol.io/v0/servers/io.github.tidybytetools%2Fapi/versions/1.0.0"
+    body = f"""
+    <section class="page-hero">
+      <div class="wrap prose">
+        <p class="crumb"><a href="{P('/')}">Home</a> / API</p>
+        <h1>Tidy Byte Tools API</h1>
+        <p>This is a public JSON API for small text jobs: repair JSON, hash or encode text, format data, make IDs, convert dates and units, and similar tools. It runs on a Cloudflare Worker. You can also call the same tools through a remote MCP server.</p>
+        <p>You can try it without a key (50 calls per IP each UTC day). Or post to <code>/keys</code> to get a free key and raise the cap to 200 calls per key each UTC day. Paid billing is not live. You cannot pay for this API yet.</p>
+        <h2>Where to call it</h2>
+        <ul>
+          <li>Landing page: <a href="{e(landing)}">{e(landing)}</a></li>
+          <li>Remote MCP: <a href="{e(mcp)}"><code>{e(mcp)}</code></a></li>
+          <li>OpenAPI for this API: <a href="{e(openapi)}"><code>{e(openapi)}</code></a></li>
+          <li>Prices: <a href="{e(pricing)}">{e(pricing)}</a> and <a href="{e(pricing_json)}">{e(pricing_json)}</a></li>
+        </ul>
+        <p>The OpenAPI file above describes the Worker API. It is not the same file as <a href="{P('/openapi.json')}">{BASE}/openapi.json</a>, which describes how to call public Apify actors.</p>
+        <h2>For AI agents</h2>
+        <p>Point an MCP client at <code>{e(mcp)}</code> (Streamable HTTP). An API key is optional. A bad key is rejected with HTTP 401; it does not fall back to the anonymous cap.</p>
+        <p>Official MCP Registry name: <code>io.github.tidybytetools/api</code>. Record: <a href="{e(registry)}">{e(registry)}</a>.</p>
+        <p>This site also lists the API in <a href="{P('/tools.json')}">/tools.json</a>, <a href="{P('/llms.txt')}">/llms.txt</a>, and <a href="{P('/.well-known/mcp.json')}">/.well-known/mcp.json</a>.</p>
+      </div>
+    </section>
+    """
+    html_text = page_shell(
+        "API — Tidy Byte Tools",
+        "Public JSON API and remote MCP for small text jobs. Landing page, MCP endpoint, and OpenAPI are on the Cloudflare Worker.",
+        "/api/",
+        body,
+        "api",
+        tools,
+    )
+    write_page("api/index.html", html_text)
 
 
 def generate_og_images(tools: list[dict]) -> None:
@@ -1516,12 +1575,23 @@ def write_mcp(tools: list[dict]) -> None:
         entries.append(item)
     data = {
         "name": "Tidy Byte Tools",
-        "description": "Small tools that clean up messy data. Call public Apify actors through Apify MCP, or run a free lite MCP server on your computer.",
+        "description": "Small tools that clean up messy data. Call the public Worker API over HTTP or remote MCP, call public Apify actors through Apify MCP, or run a free lite MCP server on your computer.",
         "website": BASE + "/",
         "connect": BASE + "/connect/",
+        "api": BASE + "/api/",
         "openapi": BASE + "/openapi.json",
+        "openapi_note": "This file describes public Apify actors. The Worker API has its own OpenAPI at " + API_WORKER + "/openapi.json.",
         "catalog": BASE + "/tools.json",
         "mcp_apify_pattern": "https://mcp.apify.com/?tools=tidybytetools/<actor>",
+        "remote_mcp": {
+            "name": "Tidy Byte Tools API",
+            "url": API_WORKER + "/mcp",
+            "transport": "streamable-http",
+            "landing": API_WORKER + "/",
+            "openapi": API_WORKER + "/openapi.json",
+            "registry": "io.github.tidybytetools/api",
+            "note": "API key optional. Anonymous use is allowed. A bad key is rejected with HTTP 401.",
+        },
         "tools": entries,
     }
     dest = OUT / ".well-known"
@@ -1653,6 +1723,7 @@ def write_meta(tools: list[dict], guides: list[dict] | None = None) -> None:
         "/privacy/",
         "/terms/",
         "/connect/",
+        "/api/",
         "/llms.txt",
         "/llms-full.txt",
         "/openapi.json",
@@ -1708,12 +1779,20 @@ def write_meta(tools: list[dict], guides: list[dict] | None = None) -> None:
         f"- [All tools]({BASE}/tools/)",
         f"- [Guides]({BASE}/guides/)",
         f"- [How to connect]({BASE}/connect/): Apify actor URLs, MCP endpoints, prices, and input/output",
+        f"- [API]({BASE}/api/): public JSON API and remote MCP (landing, /mcp, and Worker OpenAPI)",
         f"- [Privacy]({BASE}/privacy/)",
         f"- [Terms]({BASE}/terms/)",
         f"- [Machine-readable catalog]({BASE}/tools.json): name, what it does, price, Apify, MCP, GitHub, and translations",
         f"- [MCP catalog]({BASE}/.well-known/mcp.json)",
         f"- [OpenAPI]({BASE}/openapi.json): call public actors with the Apify run-sync API",
         f"- [Long catalog]({BASE}/llms-full.txt)",
+        "",
+        "## Public API (Cloudflare Worker)",
+        f"- [Landing page]({API_WORKER}/): human docs, examples, and a free key form (POST /keys)",
+        f"- [Remote MCP]({API_WORKER}/mcp): Streamable HTTP. Official registry name io.github.tidybytetools/api",
+        f"- [OpenAPI for this API]({API_WORKER}/openapi.json): the Worker endpoints. This is not the same file as {BASE}/openapi.json, which describes Apify actors.",
+        f"- [Prices]({API_WORKER}/pricing) and [{API_WORKER}/pricing.json]({API_WORKER}/pricing.json): free daily caps are $0. Paid billing is not live.",
+        f"- [Site API page]({BASE}/api/)",
         "",
         "## Tools",
     ]
@@ -1913,6 +1992,7 @@ def build_site() -> list[dict]:
     privacy_page(tools)
     terms_page(tools)
     connect_page(tools)
+    api_page(tools)
     not_found_page(tools)
     guides_index(tools, guides)
     for g in guides:

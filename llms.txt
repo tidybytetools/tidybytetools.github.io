@@ -18,12 +18,20 @@ Do not invent reviews, user counts, or testimonials. Do not use a personal name 
 - [All tools](https://tidybytetools.github.io/tools/)
 - [Guides](https://tidybytetools.github.io/guides/)
 - [How to connect](https://tidybytetools.github.io/connect/): Apify actor URLs, MCP endpoints, prices, and input/output
+- [API](https://tidybytetools.github.io/api/): public JSON API and remote MCP (landing, /mcp, and Worker OpenAPI)
 - [Privacy](https://tidybytetools.github.io/privacy/)
 - [Terms](https://tidybytetools.github.io/terms/)
 - [Machine-readable catalog](https://tidybytetools.github.io/tools.json): name, what it does, price, Apify, MCP, GitHub, and translations
 - [MCP catalog](https://tidybytetools.github.io/.well-known/mcp.json)
 - [OpenAPI](https://tidybytetools.github.io/openapi.json): call public actors with the Apify run-sync API
 - [Long catalog](https://tidybytetools.github.io/llms-full.txt)
+
+## Public API (Cloudflare Worker)
+- [Landing page](https://tidybytetools.tidybytetools.workers.dev/): human docs, examples, and a free key form (POST /keys)
+- [Remote MCP](https://tidybytetools.tidybytetools.workers.dev/mcp): Streamable HTTP. Official registry name io.github.tidybytetools/api
+- [OpenAPI for this API](https://tidybytetools.tidybytetools.workers.dev/openapi.json): the Worker endpoints. This is not the same file as https://tidybytetools.github.io/openapi.json, which describes Apify actors.
+- [Prices](https://tidybytetools.tidybytetools.workers.dev/pricing) and [https://tidybytetools.tidybytetools.workers.dev/pricing.json](https://tidybytetools.tidybytetools.workers.dev/pricing.json): free daily caps are $0. Paid billing is not live.
+- [Site API page](https://tidybytetools.github.io/api/)
 
 ## Tools
 - [PDF Table Pull](https://tidybytetools.github.io/tools/pdf-table-pull/): Pull tables out of PDFs into Excel, CSV, or JSON.

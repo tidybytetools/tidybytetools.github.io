@@ -1,11 +1,22 @@
 {
   "name": "Tidy Byte Tools",
-  "description": "Small tools that clean up messy data. Call public Apify actors through Apify MCP, or run a free lite MCP server on your computer.",
+  "description": "Small tools that clean up messy data. Call the public Worker API over HTTP or remote MCP, call public Apify actors through Apify MCP, or run a free lite MCP server on your computer.",
   "website": "https://tidybytetools.github.io/",
   "connect": "https://tidybytetools.github.io/connect/",
+  "api": "https://tidybytetools.github.io/api/",
   "openapi": "https://tidybytetools.github.io/openapi.json",
+  "openapi_note": "This file describes public Apify actors. The Worker API has its own OpenAPI at https://tidybytetools.tidybytetools.workers.dev/openapi.json.",
   "catalog": "https://tidybytetools.github.io/tools.json",
   "mcp_apify_pattern": "https://mcp.apify.com/?tools=tidybytetools/<actor>",
+  "remote_mcp": {
+    "name": "Tidy Byte Tools API",
+    "url": "https://tidybytetools.tidybytetools.workers.dev/mcp",
+    "transport": "streamable-http",
+    "landing": "https://tidybytetools.tidybytetools.workers.dev/",
+    "openapi": "https://tidybytetools.tidybytetools.workers.dev/openapi.json",
+    "registry": "io.github.tidybytetools/api",
+    "note": "API key optional. Anonymous use is allowed. A bad key is rejected with HTTP 401."
+  },
   "tools": [
     {
       "name": "PDF Table Pull",

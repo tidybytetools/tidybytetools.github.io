@@ -3,6 +3,17 @@
   "url": "https://tidybytetools.github.io/",
   "description": "Small tools that clean up messy data. Each one does one job and does it well.",
   "updated": "2026-11-10",
+  "api": {
+    "name": "Tidy Byte Tools API",
+    "url": "https://tidybytetools.tidybytetools.workers.dev/",
+    "mcp": "https://tidybytetools.tidybytetools.workers.dev/mcp",
+    "openapi": "https://tidybytetools.tidybytetools.workers.dev/openapi.json",
+    "pricing": "https://tidybytetools.tidybytetools.workers.dev/pricing",
+    "pricing_json": "https://tidybytetools.tidybytetools.workers.dev/pricing.json",
+    "site_page": "https://tidybytetools.github.io/api/",
+    "registry": "io.github.tidybytetools/api",
+    "note": "Free public JSON API and remote MCP. 50 anonymous calls per IP per UTC day, or 200 with a free key from POST /keys. Paid billing is not live. The Worker OpenAPI is separate from this site's /openapi.json, which describes Apify actors."
+  },
   "tools": [
     {
       "name": "PDF Table Pull",
