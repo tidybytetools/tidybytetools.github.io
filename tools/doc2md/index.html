@@ -6,10 +6,12 @@
   <title>Doc to Markdown — Tidy Byte Tools</title>
   <meta name="description" content="Turn PDFs, Word files, and web pages into clean Markdown.">
   <link rel="canonical" href="https://tidybytetools.github.io/tools/doc2md/">
+  
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preload" href="/assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#F4F7F5" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0D1512" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="website">
@@ -17,15 +19,16 @@
   <meta property="og:title" content="Doc to Markdown — Tidy Byte Tools">
   <meta property="og:description" content="Turn PDFs, Word files, and web pages into clean Markdown.">
   <meta property="og:url" content="https://tidybytetools.github.io/tools/doc2md/">
-  <meta property="og:image" content="https://tidybytetools.github.io/assets/img/og.png">
+  <meta property="og:image" content="https://tidybytetools.github.io/assets/img/og/doc2md.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Doc to Markdown — Tidy Byte Tools">
   <meta name="twitter:description" content="Turn PDFs, Word files, and web pages into clean Markdown.">
-  <meta name="twitter:image" content="https://tidybytetools.github.io/assets/img/og.png">
+  <meta name="twitter:image" content="https://tidybytetools.github.io/assets/img/og/doc2md.png">
   <link rel="stylesheet" href="/assets/css/site.css">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "SoftwareApplication", "name": "Doc to Markdown", "applicationCategory": "DeveloperApplication", "operatingSystem": "Windows, macOS, Linux", "description": "Turn PDFs, Word files, and web pages into clean Markdown.", "url": "https://tidybytetools.github.io/tools/doc2md/", "image": "https://tidybytetools.github.io/assets/img/covers/doc2md.png", "author": {"@type": "Organization", "name": "Tidy Byte Tools", "url": "https://tidybytetools.github.io"}, "offers": [{"@type": "Offer", "url": "https://apify.com/tidybytetools/doc-to-markdown", "availability": "https://schema.org/InStock", "priceCurrency": "USD", "description": "Pay per use on Apify: $0.003 per file", "price": "0.003"}, {"@type": "Offer", "url": "https://tidybyte.gumroad.com/l/frlkv", "availability": "https://schema.org/InStock", "priceCurrency": "USD", "description": "For your computer on Gumroad: $12", "price": "12"}, {"@type": "Offer", "url": "https://github.com/tidybytetools/doc2md-lite", "availability": "https://schema.org/InStock", "priceCurrency": "USD", "description": "Free lite on GitHub & PyPI: Free", "price": "0"}]}, {"@type": "WebAPI", "name": "Doc to Markdown API", "description": "Turn PDFs, Word files, and web pages into clean Markdown.", "url": "https://apify.com/tidybytetools/doc-to-markdown", "documentation": "https://apify.com/tidybytetools/doc-to-markdown", "provider": {"@type": "Organization", "name": "Tidy Byte Tools", "url": "https://tidybytetools.github.io"}, "offers": {"@type": "Offer", "url": "https://apify.com/tidybytetools/doc-to-markdown", "availability": "https://schema.org/InStock", "priceCurrency": "USD", "description": "Pay per use on Apify: $0.003 per file", "price": "0.003"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does this tool do?", "acceptedAnswer": {"@type": "Answer", "text": "Turn PDFs, Word files, and web pages into clean Markdown. Get Markdown you can use in notes, docs, or AI apps. Tables stay as Markdown tables. The paid version also writes chunks for AI search."}}, {"@type": "Question", "name": "What does it cost?", "acceptedAnswer": {"@type": "Answer", "text": "Pay per use on Apify costs $0.003 per file. First 20 PDF pages are included. Extra PDF pages are $0.0003 each. Scanned pages with OCR are $0.005. Failed files are free. For your computer on Gumroad costs $12. PDF, Word and HTML, plus RAG chunks with heading paths and page numbers. Runs offline. Free lite on GitHub & PyPI costs Free. Text PDF or HTML, one file at a time. No Word files, no folders, no RAG chunks, no OCR. Free download, $3 suggested."}}, {"@type": "Question", "name": "Will you see my files?", "acceptedAnswer": {"@type": "Answer", "text": "The download tools run on your computer, so those files stay with you. The Apify tools run in your own Apify account. This website does not take uploads."}}, {"@type": "Question", "name": "Does the free tool work with AI apps?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The free lite version includes a small MCP server. You can use it from Cursor, Claude Desktop, and other apps that support MCP. No API key is needed."}}], "url": "https://tidybytetools.github.io/tools/doc2md/"}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "SoftwareApplication", "name": "Doc to Markdown", "applicationCategory": "DeveloperApplication", "operatingSystem": "Windows, macOS, Linux", "description": "Turn PDFs, Word files, and web pages into clean Markdown.", "url": "https://tidybytetools.github.io/tools/doc2md/", "image": "https://tidybytetools.github.io/assets/img/covers/doc2md.png", "author": {"@type": "Organization", "name": "Tidy Byte Tools", "url": "https://tidybytetools.github.io"}, "inLanguage": "en", "offers": [{"@type": "Offer", "url": "https://apify.com/tidybytetools/doc-to-markdown", "availability": "https://schema.org/InStock", "priceCurrency": "USD", "description": "Pay per use on Apify: $0.003 per file", "price": "0.003"}, {"@type": "Offer", "url": "https://tidybyte.gumroad.com/l/frlkv", "availability": "https://schema.org/InStock", "priceCurrency": "USD", "description": "For your computer on Gumroad: $12", "price": "12"}, {"@type": "Offer", "url": "https://github.com/tidybytetools/doc2md-lite", "availability": "https://schema.org/InStock", "priceCurrency": "USD", "description": "Free lite on GitHub & PyPI: Free", "price": "0"}]}, {"@type": "WebAPI", "name": "Doc to Markdown API", "description": "Turn PDFs, Word files, and web pages into clean Markdown.", "url": "https://apify.com/tidybytetools/doc-to-markdown", "documentation": "https://apify.com/tidybytetools/doc-to-markdown", "provider": {"@type": "Organization", "name": "Tidy Byte Tools", "url": "https://tidybytetools.github.io"}, "offers": {"@type": "Offer", "url": "https://apify.com/tidybytetools/doc-to-markdown", "availability": "https://schema.org/InStock", "priceCurrency": "USD", "description": "Pay per use on Apify: $0.003 per file", "price": "0.003"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does this tool do?", "acceptedAnswer": {"@type": "Answer", "text": "Turn PDFs, Word files, and web pages into clean Markdown. Get Markdown you can use in notes, docs, or AI apps. Tables stay as Markdown tables. The paid version also writes chunks for AI search."}}, {"@type": "Question", "name": "What does it cost?", "acceptedAnswer": {"@type": "Answer", "text": "Pay per use on Apify costs $0.003 per file. First 20 PDF pages are included. Extra PDF pages are $0.0003 each. Scanned pages with OCR are $0.005. Failed files are free. For your computer on Gumroad costs $12. PDF, Word and HTML, plus RAG chunks with heading paths and page numbers. Runs offline. Free lite on GitHub & PyPI costs Free. Text PDF or HTML, one file at a time. No Word files, no folders, no RAG chunks, no OCR. Free download, $3 suggested."}}, {"@type": "Question", "name": "Will you see my files?", "acceptedAnswer": {"@type": "Answer", "text": "The download tools run on your computer, so those files stay with you. The Apify tools run in your own Apify account. This website does not take uploads."}}, {"@type": "Question", "name": "Does the free tool work with AI apps?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The free lite version includes a small MCP server. You can use it from Cursor, Claude Desktop, and other apps that support MCP. No API key is needed."}}], "url": "https://tidybytetools.github.io/tools/doc2md/"}]}</script><script src="/assets/js/site.js" defer></script>
 </head>
 
 <body>
@@ -39,8 +42,10 @@
       </picture>
     </a>
     
-<nav aria-label="Primary"><ul><li><a href="/tools/" aria-current="page">Tools</a></li><li><a href="/guides/">Guides</a></li><li><a href="/#how">How it works</a></li><li><a href="/#faq">FAQ</a></li><li><a href="https://github.com/tidybytetools">GitHub</a></li></ul></nav>
-</div></header>
+<div class="header-tools">
+<nav aria-label="Primary"><ul><li><a href="/tools/" aria-current="page">Tools</a></li><li><a href="/guides/">Guides</a></li><li><a href="/#how">How it works</a></li><li><a href="/#faq">FAQ</a></li><li><a href="/connect/">For AI agents</a></li><li><a href="https://github.com/tidybytetools">GitHub</a></li></ul></nav>
+<nav class="lang-switch" aria-label="Language"><ul class="lang-switch"><li><a href="/tools/doc2md/" lang="en" hreflang="en" title="English" aria-current="true">EN</a></li><li><a href="/es/" lang="es" hreflang="es" title="Español">ES</a></li><li><a href="/pt/" lang="pt-BR" hreflang="pt-BR" title="Português">PT</a></li><li><a href="/de/" lang="de" hreflang="de" title="Deutsch">DE</a></li><li><a href="/fr/" lang="fr" hreflang="fr" title="Français">FR</a></li><li><a href="/ja/" lang="ja" hreflang="ja" title="日本語">JA</a></li><li><a href="/zh/" lang="zh-CN" hreflang="zh-CN" title="中文">中文</a></li></ul></nav>
+</div></div></header>
 <main id="main">
     <article class="page-hero">
       <div class="wrap">
@@ -48,23 +53,54 @@
         <p class="cat-label">PDF &amp; docs</p>
         <h1>Doc to Markdown</h1>
         <p class="lede">Turn PDFs, Word files, and web pages into clean Markdown.</p>
+        <p class="price-line">About $1 per 333 files.</p>
+        <div class="btn-row"><a class="btn btn-primary btn-sm" href="https://apify.com/tidybytetools/doc-to-markdown">Try it on Apify</a></div><div class="btn-row"><a class="btn btn-secondary btn-sm" href="https://tidybyte.gumroad.com/l/frlkv">Buy on Gumroad</a></div><div class="btn-row"><a class="btn btn-primary btn-sm" href="https://github.com/tidybytetools/doc2md-lite">Free download</a><a class="btn btn-secondary btn-sm" href="https://pypi.org/project/doc2md-lite/">PyPI</a><a class="btn btn-secondary btn-sm" href="https://tidybyte.gumroad.com/l/doc2md-lite">Gumroad</a></div>
+        
         <div class="cover">
           <picture>
             <source type="image/webp" srcset="/assets/img/covers/doc2md.webp">
             <img src="/assets/img/covers/doc2md.png" alt="Doc to Markdown — Turn PDFs, Word files, and web pages into clean Markdown." width="1280" height="720">
           </picture>
         </div>
+        
         <div class="cover"><picture><source type="image/webp" srcset="/assets/img/galleries/doc2md.webp"><img src="/assets/img/galleries/doc2md.png" alt="A real run of doc2md turning a sample file into clean Markdown with a table kept as a table." width="1280" height="720"></picture></div>
         <div class="prose">
           <p>Get Markdown you can use in notes, docs, or AI apps. Tables stay as Markdown tables. The paid version also writes chunks for AI search.</p>
           <h2>What it does</h2>
           <ul><li>Turns text PDFs and HTML into clean Markdown (all versions).</li><li>Keeps tables as real Markdown tables.</li><li>The paid version also reads Word files, whole folders, and writes RAG chunks.</li><li>The Apify version can read scanned PDFs with OCR.</li><li>The free lite tool includes an MCP server for AI apps.</li></ul>
+        </div>
+        
+        <h2>Before and after</h2>
+        <div class="ba">
+          <div class="ba-pane before">
+            <p class="ba-label">HTML page (nav and footer included)</p>
+            <pre><code>&lt;nav&gt;Home | Shop&lt;/nav&gt;
+&lt;main&gt;&lt;h1&gt;How returns work&lt;/h1&gt;
+&lt;p&gt;You can send back most items within &lt;strong&gt;30 days&lt;/strong&gt;.&lt;/p&gt;
+&lt;table&gt;&lt;tr&gt;&lt;th&gt;Paid with&lt;/th&gt;&lt;th&gt;Refund time&lt;/th&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Card&lt;/td&gt;&lt;td&gt;3-5 days&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/main&gt;&lt;footer&gt;Copyright Example Shop&lt;/footer&gt;</code></pre>
+          </div>
+          <div class="ba-pane after">
+            <p class="ba-label">Markdown out (nav and footer dropped)</p>
+            <pre><code># How returns work
+
+You can send back most items within **30 days**.
+
+| Paid with | Refund time |
+| --- | --- |
+| Card | 3-5 days |</code></pre>
+          </div>
+        </div>
+        <p class="ba-source">From doc2md/samples/returns-help.html and samples/output/returns-help.md.</p>
+    
+        <div class="prose">
           <h2>Get it</h2>
         </div>
         <div class="version-block">
               <h3>Pay per use · Apify · $0.003 per file</h3>
               <p>First 20 PDF pages are included. Extra PDF pages are $0.0003 each. Scanned pages with OCR are $0.005. Failed files are free.</p>
-              <div class="btn-row"><a class="btn btn-secondary btn-sm" href="https://apify.com/tidybytetools/doc-to-markdown">Open in Apify</a></div>
+              <div class="btn-row"><a class="btn btn-primary btn-sm" href="https://apify.com/tidybytetools/doc-to-markdown">Try it on Apify</a></div>
             </div><div class="version-block">
               <h3>For your computer · Gumroad · $12</h3>
               <p>PDF, Word and HTML, plus RAG chunks with heading paths and page numbers. Runs offline.</p>
@@ -72,7 +108,7 @@
             </div><div class="version-block">
               <h3>Free lite · GitHub &amp; PyPI · Free</h3>
               <p>Text PDF or HTML, one file at a time. No Word files, no folders, no RAG chunks, no OCR. Free download, $3 suggested.</p>
-              <div class="btn-row"><a class="btn btn-secondary btn-sm" href="https://github.com/tidybytetools/doc2md-lite">GitHub</a><a class="btn btn-secondary btn-sm" href="https://pypi.org/project/doc2md-lite/">PyPI</a><a class="btn btn-secondary btn-sm" href="https://tidybyte.gumroad.com/l/doc2md-lite">Gumroad</a></div>
+              <div class="btn-row"><a class="btn btn-primary btn-sm" href="https://github.com/tidybytetools/doc2md-lite">Free download</a><a class="btn btn-secondary btn-sm" href="https://pypi.org/project/doc2md-lite/">PyPI</a><a class="btn btn-secondary btn-sm" href="https://tidybyte.gumroad.com/l/doc2md-lite">Gumroad</a></div>
             </div>
         <div class="faq" style="margin-top:36px"><h2>FAQ</h2><div class="faq-item"><h3>What does this tool do?</h3><p>Turn PDFs, Word files, and web pages into clean Markdown. Get Markdown you can use in notes, docs, or AI apps. Tables stay as Markdown tables. The paid version also writes chunks for AI search.</p></div><div class="faq-item"><h3>What does it cost?</h3><p>Pay per use on Apify costs $0.003 per file. First 20 PDF pages are included. Extra PDF pages are $0.0003 each. Scanned pages with OCR are $0.005. Failed files are free. For your computer on Gumroad costs $12. PDF, Word and HTML, plus RAG chunks with heading paths and page numbers. Runs offline. Free lite on GitHub &amp; PyPI costs Free. Text PDF or HTML, one file at a time. No Word files, no folders, no RAG chunks, no OCR. Free download, $3 suggested.</p></div><div class="faq-item"><h3>Will you see my files?</h3><p>The download tools run on your computer, so those files stay with you. The Apify tools run in your own Apify account. This website does not take uploads.</p></div><div class="faq-item"><h3>Does the free tool work with AI apps?</h3><p>Yes. The free lite version includes a small MCP server. You can use it from Cursor, Claude Desktop, and other apps that support MCP. No API key is needed.</p></div></div>
       </div>
@@ -80,6 +116,15 @@
     </main>
 
 <footer class="site-footer">
+  
+  <section class="featured-on" aria-label="Featured on">
+    <div class="wrap">
+      <h2>Featured on</h2>
+      <p>As directories list us, their marks will show up here.</p>
+      <ul class="featured-logos"></ul>
+    </div>
+  </section>
+
   <div class="wrap footer-grid">
     <div class="footer-brand">
       
@@ -111,10 +156,17 @@
 <li><a href="/tools/csv-split/">csv-split</a></li>
 <li><a href="/tools/regex-pack/">Regex Pack for Messy Data</a></li>
 <li><a href="/tools/claude-data-skills/">CSV Skills for Claude Code</a></li>
+<li><a href="/tools/base64-lite/">Base64 Encode &amp; Decode</a></li>
+<li><a href="/tools/json-repair-lite/">JSON Repair</a></li>
+<li><a href="/tools/hash-lite/">Hash &amp; Checksum</a></li>
 <li><a href="/tools/html-table-extractor/">HTML Table Extractor</a></li>
 <li><a href="/tools/llm-token-counter/">LLM Token Counter</a></li>
 <li><a href="/tools/json-to-csv/">JSON to CSV Converter</a></li>
-<li><a href="/tools/csv-encoding-fixer/">CSV Encoding Fixer</a></li></ul>
+<li><a href="/tools/csv-encoding-fixer/">CSV Encoding Fixer</a></li>
+<li><a href="/tools/json-schema-validator/">JSON Schema Validator</a></li>
+<li><a href="/tools/link-preview/">Link Preview</a></li>
+<li><a href="/tools/language-detector/">Language Detector</a></li>
+<li><a href="/tools/date-timezone/">Date &amp; Timezone Normalizer</a></li></ul>
     </div>
     <div>
       <h2>Shops</h2>
@@ -128,8 +180,13 @@
       <h2>This site</h2>
       <ul>
         <li><a href="/guides/">Guides</a></li>
+        <li><a href="/connect/">For AI agents</a></li>
         <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/terms/">Terms</a></li>
         <li><a href="/llms.txt">llms.txt</a></li>
+        <li><a href="/tools.json">tools.json</a></li>
+        <li><a href="/.well-known/mcp.json">mcp.json</a></li>
+        <li><a href="/openapi.json">openapi.json</a></li>
         <li><a href="/sitemap.xml">Sitemap</a></li>
       </ul>
     </div>

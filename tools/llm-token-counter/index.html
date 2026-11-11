@@ -6,10 +6,12 @@
   <title>LLM Token Counter — Tidy Byte Tools</title>
   <meta name="description" content="Count tokens and estimate cost for GPT, Claude, and Gemini.">
   <link rel="canonical" href="https://tidybytetools.github.io/tools/llm-token-counter/">
+  
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preload" href="/assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#F4F7F5" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0D1512" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="website">
@@ -17,15 +19,16 @@
   <meta property="og:title" content="LLM Token Counter — Tidy Byte Tools">
   <meta property="og:description" content="Count tokens and estimate cost for GPT, Claude, and Gemini.">
   <meta property="og:url" content="https://tidybytetools.github.io/tools/llm-token-counter/">
-  <meta property="og:image" content="https://tidybytetools.github.io/assets/img/og.png">
+  <meta property="og:image" content="https://tidybytetools.github.io/assets/img/og/llm-token-counter.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="LLM Token Counter — Tidy Byte Tools">
   <meta name="twitter:description" content="Count tokens and estimate cost for GPT, Claude, and Gemini.">
-  <meta name="twitter:image" content="https://tidybytetools.github.io/assets/img/og.png">
+  <meta name="twitter:image" content="https://tidybytetools.github.io/assets/img/og/llm-token-counter.png">
   <link rel="stylesheet" href="/assets/css/site.css">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "SoftwareApplication", "name": "LLM Token Counter", "applicationCategory": "DeveloperApplication", "operatingSystem": "Windows, macOS, Linux", "description": "Count tokens and estimate cost for GPT, Claude, and Gemini.", "url": "https://tidybytetools.github.io/tools/llm-token-counter/", "image": "https://tidybytetools.github.io/assets/img/covers/llm-token-counter.png", "author": {"@type": "Organization", "name": "Tidy Byte Tools", "url": "https://tidybytetools.github.io"}, "offers": {"@type": "Offer", "url": "https://apify.com/tidybytetools/llm-token-counter", "availability": "https://schema.org/InStock", "priceCurrency": "USD", "description": "Pay per use on Apify: $0.0005 per unique text", "price": "0.0005"}}, {"@type": "WebAPI", "name": "LLM Token Counter API", "description": "Count tokens and estimate cost for GPT, Claude, and Gemini.", "url": "https://apify.com/tidybytetools/llm-token-counter", "documentation": "https://apify.com/tidybytetools/llm-token-counter", "provider": {"@type": "Organization", "name": "Tidy Byte Tools", "url": "https://tidybytetools.github.io"}, "offers": {"@type": "Offer", "url": "https://apify.com/tidybytetools/llm-token-counter", "availability": "https://schema.org/InStock", "priceCurrency": "USD", "description": "Pay per use on Apify: $0.0005 per unique text", "price": "0.0005"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does this tool do?", "acceptedAnswer": {"@type": "Answer", "text": "Count tokens and estimate cost for GPT, Claude, and Gemini. Counts tokens offline for OpenAI models and estimates Claude and Gemini. Uses public list prices. No API key. Paste text or add file links."}}, {"@type": "Question", "name": "What does it cost?", "acceptedAnswer": {"@type": "Answer", "text": "Pay per use on Apify costs $0.0005 per unique text."}}, {"@type": "Question", "name": "Will you see my files?", "acceptedAnswer": {"@type": "Answer", "text": "The download tools run on your computer, so those files stay with you. The Apify tools run in your own Apify account. This website does not take uploads."}}], "url": "https://tidybytetools.github.io/tools/llm-token-counter/"}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "SoftwareApplication", "name": "LLM Token Counter", "applicationCategory": "DeveloperApplication", "operatingSystem": "Windows, macOS, Linux", "description": "Count tokens and estimate cost for GPT, Claude, and Gemini.", "url": "https://tidybytetools.github.io/tools/llm-token-counter/", "image": "https://tidybytetools.github.io/assets/img/covers/llm-token-counter.png", "author": {"@type": "Organization", "name": "Tidy Byte Tools", "url": "https://tidybytetools.github.io"}, "inLanguage": "en", "offers": {"@type": "Offer", "url": "https://apify.com/tidybytetools/llm-token-counter", "availability": "https://schema.org/InStock", "priceCurrency": "USD", "description": "Pay per use on Apify: $0.0005 per unique text", "price": "0.0005"}}, {"@type": "WebAPI", "name": "LLM Token Counter API", "description": "Count tokens and estimate cost for GPT, Claude, and Gemini.", "url": "https://apify.com/tidybytetools/llm-token-counter", "documentation": "https://apify.com/tidybytetools/llm-token-counter", "provider": {"@type": "Organization", "name": "Tidy Byte Tools", "url": "https://tidybytetools.github.io"}, "offers": {"@type": "Offer", "url": "https://apify.com/tidybytetools/llm-token-counter", "availability": "https://schema.org/InStock", "priceCurrency": "USD", "description": "Pay per use on Apify: $0.0005 per unique text", "price": "0.0005"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does this tool do?", "acceptedAnswer": {"@type": "Answer", "text": "Count tokens and estimate cost for GPT, Claude, and Gemini. Counts tokens offline for OpenAI models and estimates Claude and Gemini. Uses public list prices. No API key. Paste text or add file links."}}, {"@type": "Question", "name": "What does it cost?", "acceptedAnswer": {"@type": "Answer", "text": "Pay per use on Apify costs $0.0005 per unique text."}}, {"@type": "Question", "name": "Will you see my files?", "acceptedAnswer": {"@type": "Answer", "text": "The download tools run on your computer, so those files stay with you. The Apify tools run in your own Apify account. This website does not take uploads."}}], "url": "https://tidybytetools.github.io/tools/llm-token-counter/"}]}</script><script src="/assets/js/site.js" defer></script>
 </head>
 
 <body>
@@ -39,8 +42,10 @@
       </picture>
     </a>
     
-<nav aria-label="Primary"><ul><li><a href="/tools/" aria-current="page">Tools</a></li><li><a href="/guides/">Guides</a></li><li><a href="/#how">How it works</a></li><li><a href="/#faq">FAQ</a></li><li><a href="https://github.com/tidybytetools">GitHub</a></li></ul></nav>
-</div></header>
+<div class="header-tools">
+<nav aria-label="Primary"><ul><li><a href="/tools/" aria-current="page">Tools</a></li><li><a href="/guides/">Guides</a></li><li><a href="/#how">How it works</a></li><li><a href="/#faq">FAQ</a></li><li><a href="/connect/">For AI agents</a></li><li><a href="https://github.com/tidybytetools">GitHub</a></li></ul></nav>
+<nav class="lang-switch" aria-label="Language"><ul class="lang-switch"><li><a href="/tools/llm-token-counter/" lang="en" hreflang="en" title="English" aria-current="true">EN</a></li><li><a href="/es/" lang="es" hreflang="es" title="Español">ES</a></li><li><a href="/pt/" lang="pt-BR" hreflang="pt-BR" title="Português">PT</a></li><li><a href="/de/" lang="de" hreflang="de" title="Deutsch">DE</a></li><li><a href="/fr/" lang="fr" hreflang="fr" title="Français">FR</a></li><li><a href="/ja/" lang="ja" hreflang="ja" title="日本語">JA</a></li><li><a href="/zh/" lang="zh-CN" hreflang="zh-CN" title="中文">中文</a></li></ul></nav>
+</div></div></header>
 <main id="main">
     <article class="page-hero">
       <div class="wrap">
@@ -48,6 +53,9 @@
         <p class="cat-label">AI / RAG</p>
         <h1>LLM Token Counter</h1>
         <p class="lede">Count tokens and estimate cost for GPT, Claude, and Gemini.</p>
+        <p class="price-line">About $1 per 2,000 unique texts.</p>
+        <div class="btn-row"><a class="btn btn-primary btn-sm" href="https://apify.com/tidybytetools/llm-token-counter">Try it on Apify</a></div>
+        
         <div class="cover">
           <picture>
             <source type="image/webp" srcset="/assets/img/covers/llm-token-counter.webp">
@@ -55,16 +63,40 @@
           </picture>
         </div>
         
+        
         <div class="prose">
           <p>Counts tokens offline for OpenAI models and estimates Claude and Gemini. Uses public list prices. No API key. Paste text or add file links.</p>
           <h2>What it does</h2>
           <ul><li>Exact OpenAI token counts with tiktoken.</li><li>Claude and Gemini counts marked as estimates.</li><li>Shows dated public list prices for cost estimates.</li></ul>
+        </div>
+        
+        <h2>Before and after</h2>
+        <div class="ba">
+          <div class="ba-pane before">
+            <p class="ba-label">Texts and models</p>
+            <pre><code>texts:
+  Hello tokens
+  Hello tokens     (repeat, not charged again)
+  A second text
+models: gpt-4o, claude-sonnet-5.5</code></pre>
+          </div>
+          <div class="ba-pane after">
+            <p class="ba-label">What you get back (from the Actor test)</p>
+            <pre><code>&quot;Hello tokens&quot;   gpt-4o: exact token count + input cost
+                 claude-sonnet-5.5: estimate, marked as estimate
+&quot;A second text&quot;  same models, billed once
+Repeats and blank lines are free.</code></pre>
+          </div>
+        </div>
+        <p class="ba-source">From token-counter-apify/tests/test_actor.py.</p>
+    
+        <div class="prose">
           <h2>Get it</h2>
         </div>
         <div class="version-block">
               <h3>Pay per use · Apify · $0.0005 per unique text</h3>
               
-              <div class="btn-row"><a class="btn btn-secondary btn-sm" href="https://apify.com/tidybytetools/llm-token-counter">Open in Apify</a></div>
+              <div class="btn-row"><a class="btn btn-primary btn-sm" href="https://apify.com/tidybytetools/llm-token-counter">Try it on Apify</a></div>
             </div>
         <div class="faq" style="margin-top:36px"><h2>FAQ</h2><div class="faq-item"><h3>What does this tool do?</h3><p>Count tokens and estimate cost for GPT, Claude, and Gemini. Counts tokens offline for OpenAI models and estimates Claude and Gemini. Uses public list prices. No API key. Paste text or add file links.</p></div><div class="faq-item"><h3>What does it cost?</h3><p>Pay per use on Apify costs $0.0005 per unique text.</p></div><div class="faq-item"><h3>Will you see my files?</h3><p>The download tools run on your computer, so those files stay with you. The Apify tools run in your own Apify account. This website does not take uploads.</p></div></div>
       </div>
@@ -72,6 +104,15 @@
     </main>
 
 <footer class="site-footer">
+  
+  <section class="featured-on" aria-label="Featured on">
+    <div class="wrap">
+      <h2>Featured on</h2>
+      <p>As directories list us, their marks will show up here.</p>
+      <ul class="featured-logos"></ul>
+    </div>
+  </section>
+
   <div class="wrap footer-grid">
     <div class="footer-brand">
       
@@ -103,10 +144,17 @@
 <li><a href="/tools/csv-split/">csv-split</a></li>
 <li><a href="/tools/regex-pack/">Regex Pack for Messy Data</a></li>
 <li><a href="/tools/claude-data-skills/">CSV Skills for Claude Code</a></li>
+<li><a href="/tools/base64-lite/">Base64 Encode &amp; Decode</a></li>
+<li><a href="/tools/json-repair-lite/">JSON Repair</a></li>
+<li><a href="/tools/hash-lite/">Hash &amp; Checksum</a></li>
 <li><a href="/tools/html-table-extractor/">HTML Table Extractor</a></li>
 <li><a href="/tools/llm-token-counter/">LLM Token Counter</a></li>
 <li><a href="/tools/json-to-csv/">JSON to CSV Converter</a></li>
-<li><a href="/tools/csv-encoding-fixer/">CSV Encoding Fixer</a></li></ul>
+<li><a href="/tools/csv-encoding-fixer/">CSV Encoding Fixer</a></li>
+<li><a href="/tools/json-schema-validator/">JSON Schema Validator</a></li>
+<li><a href="/tools/link-preview/">Link Preview</a></li>
+<li><a href="/tools/language-detector/">Language Detector</a></li>
+<li><a href="/tools/date-timezone/">Date &amp; Timezone Normalizer</a></li></ul>
     </div>
     <div>
       <h2>Shops</h2>
@@ -120,8 +168,13 @@
       <h2>This site</h2>
       <ul>
         <li><a href="/guides/">Guides</a></li>
+        <li><a href="/connect/">For AI agents</a></li>
         <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/terms/">Terms</a></li>
         <li><a href="/llms.txt">llms.txt</a></li>
+        <li><a href="/tools.json">tools.json</a></li>
+        <li><a href="/.well-known/mcp.json">mcp.json</a></li>
+        <li><a href="/openapi.json">openapi.json</a></li>
         <li><a href="/sitemap.xml">Sitemap</a></li>
       </ul>
     </div>

@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tidy Byte Tools — ferramentas pequenas que arrumam dados bagunçados</title>
+  <meta name="description" content="Ferramentas pequenas que arrumam dados bagunçados. Use no seu computador, ou pague só pelo que usar na nuvem.">
+  <link rel="canonical" href="https://tidybytetools.github.io/pt/">
+  <link rel="alternate" hreflang="en" href="https://tidybytetools.github.io/">
+  <link rel="alternate" hreflang="es" href="https://tidybytetools.github.io/es/">
+  <link rel="alternate" hreflang="pt-BR" href="https://tidybytetools.github.io/pt/">
+  <link rel="alternate" hreflang="de" href="https://tidybytetools.github.io/de/">
+  <link rel="alternate" hreflang="fr" href="https://tidybytetools.github.io/fr/">
+  <link rel="alternate" hreflang="ja" href="https://tidybytetools.github.io/ja/">
+  <link rel="alternate" hreflang="zh-CN" href="https://tidybytetools.github.io/zh/">
+  <link rel="alternate" hreflang="x-default" href="https://tidybytetools.github.io/">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preload" href="/assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <meta name="theme-color" content="#F4F7F5" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0D1512" media="(prefers-color-scheme: dark)">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Tidy Byte Tools">
+  <meta property="og:title" content="Tidy Byte Tools — ferramentas pequenas que arrumam dados bagunçados">
+  <meta property="og:description" content="Ferramentas pequenas que arrumam dados bagunçados. Use no seu computador, ou pague só pelo que usar na nuvem.">
+  <meta property="og:url" content="https://tidybytetools.github.io/pt/">
+  <meta property="og:image" content="https://tidybytetools.github.io/assets/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tidy Byte Tools — ferramentas pequenas que arrumam dados bagunçados">
+  <meta name="twitter:description" content="Ferramentas pequenas que arrumam dados bagunçados. Use no seu computador, ou pague só pelo que usar na nuvem.">
+  <meta name="twitter:image" content="https://tidybytetools.github.io/assets/img/og.png">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "name": "Tidy Byte Tools", "url": "https://tidybytetools.github.io", "logo": "https://tidybytetools.github.io/assets/img/mark-512.png", "description": "Small tools that clean up messy data.", "sameAs": ["https://github.com/tidybytetools", "https://apify.com/tidybytetools", "https://tidybyte.gumroad.com"], "inLanguage": "pt-BR"}, {"@type": "WebSite", "name": "Tidy Byte Tools", "url": "https://tidybytetools.github.io/pt/", "description": "Ferramentas pequenas que arrumam dados bagun\u00e7ados. Use no seu computador, ou pague s\u00f3 pelo que usar na nuvem.", "inLanguage": "pt-BR", "publisher": {"@type": "Organization", "name": "Tidy Byte Tools", "url": "https://tidybytetools.github.io"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "O que \u00e9 a Tidy Byte Tools?", "acceptedAnswer": {"@type": "Answer", "text": "Uma loja pequena de ferramentas que arrumam dados bagun\u00e7ados. Vendemos downloads que rodam no seu computador e ferramentas de pagamento por uso na Apify. As ferramentas lite gr\u00e1tis est\u00e3o no GitHub e no PyPI."}}, {"@type": "Question", "name": "Voc\u00eas v\u00e3o ver meus arquivos?", "acceptedAnswer": {"@type": "Answer", "text": "As ferramentas baixadas rodam no seu computador, ent\u00e3o esses arquivos ficam com voc\u00ea. As ferramentas da Apify rodam na sua pr\u00f3pria conta da Apify. Este site n\u00e3o recebe envios de arquivos."}}, {"@type": "Question", "name": "Qual \u00e9 a diferen\u00e7a entre gr\u00e1tis e pago?", "acceptedAnswer": {"@type": "Answer", "text": "As ferramentas lite gr\u00e1tis cobrem o caso comum, como um PDF de texto ou uma lista simples de links. As vers\u00f5es pagas acrescentam coisas como sa\u00edda em Excel, p\u00e1ginas digitalizadas, arquivos Word ou pastas. Cada p\u00e1gina da ferramenta lista a diferen\u00e7a."}}, {"@type": "Question", "name": "O que significa pagamento por uso?", "acceptedAnswer": {"@type": "Answer", "text": "Na Apify voc\u00ea paga pelo que a ferramenta faz, como cada p\u00e1gina com uma tabela ou cada link checado. Itens que falham ou s\u00e3o pulados s\u00e3o gr\u00e1tis. Cada execu\u00e7\u00e3o tamb\u00e9m tem uma taxa inicial de US$ 0,00005. O pre\u00e7o exato est\u00e1 na p\u00e1gina da ferramenta e na Apify."}}, {"@type": "Question", "name": "As ferramentas gr\u00e1tis funcionam com apps de IA?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. As ferramentas lite gr\u00e1tis incluem um servidor MCP pequeno que voc\u00ea roda no seu computador. As ferramentas da Apify tamb\u00e9m podem ser chamadas pelo Apify MCP. As ferramentas locais n\u00e3o precisam de uma chave de API."}}, {"@type": "Question", "name": "Como pe\u00e7o ajuda?", "acceptedAnswer": {"@type": "Answer", "text": "Abra uma issue na p\u00e1gina do GitHub dessa ferramenta. Se a compra foi na Gumroad ou na Apify, voc\u00ea tamb\u00e9m pode usar o suporte desse site."}}], "url": "https://tidybytetools.github.io/pt/"}]}</script><script src="/assets/js/site.js" defer></script>
+</head>
+
+<body>
+<a class="skip" href="#main">Pular para o conteúdo</a>
+<header class="site-header"><div class="header-inner">
+
+    <a class="logo" href="/pt/">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="/assets/img/lockup-horizontal-dark.svg">
+        <img src="/assets/img/lockup-horizontal-light.svg" alt="Tidy Byte Tools" height="32" width="118">
+      </picture>
+    </a>
+    
+<div class="header-tools">
+<nav aria-label="Primary"><ul><li><a href="/tools/">Ferramentas</a></li><li><a href="/guides/">Guias</a></li><li><a href="/pt/#how">Como funciona</a></li><li><a href="/pt/#faq">Perguntas</a></li><li><a href="/connect/">Para agentes de IA</a></li><li><a href="https://github.com/tidybytetools">GitHub</a></li></ul></nav>
+<nav class="lang-switch" aria-label="Idioma"><ul class="lang-switch"><li><a href="/" lang="en" hreflang="en" title="English">EN</a></li><li><a href="/es/" lang="es" hreflang="es" title="Español">ES</a></li><li><a href="/pt/" lang="pt-BR" hreflang="pt-BR" title="Português" aria-current="true">PT</a></li><li><a href="/de/" lang="de" hreflang="de" title="Deutsch">DE</a></li><li><a href="/fr/" lang="fr" hreflang="fr" title="Français">FR</a></li><li><a href="/ja/" lang="ja" hreflang="ja" title="日本語">JA</a></li><li><a href="/zh/" lang="zh-CN" hreflang="zh-CN" title="中文">中文</a></li></ul></nav>
+</div></div></header>
+<main id="main">
+    <section class="hero">
+      <div class="wrap hero-inner">
+        <p class="eyebrow">Ferramentas para desenvolvedores</p>
+        <h1>Ferramentas pequenas que arrumam dados bagunçados.</h1>
+        <p class="lede">Cada uma faz um só trabalho e faz bem. Use no seu computador, ou pague só pelo que usar na nuvem.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#tools">Ver uma ferramenta</a>
+          <a class="btn btn-secondary" href="https://github.com/tidybytetools">Ferramentas grátis no GitHub</a>
+        </div>
+      </div>
+    </section>
+    <div id="tools">
+      <section>
+        <div class="wrap">
+          
+        <div class="toolbar">
+          <div class="search">
+            <span class="search-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></span>
+            <label class="sr-only" for="tool-search">Buscar ferramentas</label>
+            <input id="tool-search" type="search" placeholder="Buscar ferramentas" autocomplete="off">
+          </div>
+          <div class="cat-nav" role="group" aria-label="Todas"><button type="button" class="chip is-active" data-filter="all" aria-pressed="true">Todas</button><button type="button" class="chip" data-filter="pdf" aria-pressed="false">PDF e documentos</button><button type="button" class="chip" data-filter="data" aria-pressed="false">CSV e dados</button><button type="button" class="chip" data-filter="web" aria-pressed="false">Links e web</button><button type="button" class="chip" data-filter="ai" aria-pressed="false">IA / RAG</button><button type="button" class="chip" data-filter="media" aria-pressed="false">Imagens e vídeo</button><button type="button" class="chip" data-filter="n8n" aria-pressed="false">Fluxos do n8n</button></div>
+        </div>
+        <p id="filter-empty" class="filter-empty" hidden>Nenhuma ferramenta corresponde a essa busca.</p>
+    
+        </div>
+      </section>
+      
+        <section id="pdf" aria-labelledby="h-pdf">
+          <div class="wrap">
+            <div class="section-head">
+              <h2 id="h-pdf">PDF e documentos</h2>
+            </div>
+            <div class="grid">
+<article class="card" id="tool-pdf-table-pull" data-tool-card data-category="pdf" data-search="pdf table pull pdf-table-pull pull tables out of pdfs into excel, csv, or json. copying tables out of a pdf by hand is slow, and pasting them into excel often wrecks the columns. this tool finds the tables and saves clean rows. tire tabelas de pdfs e salve em excel, csv ou json. extraer tablas pdf pdf a excel pdf a csv tablas de un pdf extrair tabelas pdf pdf para excel pdf para csv tabelas de pdf pdf tabellen extrahieren pdf nach excel pdf nach csv tabellen aus pdf extraire tableaux pdf pdf vers excel pdf vers csv tableaux pdf pdf 表 抽出 pdf から excel pdf から csv pdf テーブル pdf 表格提取 pdf 转 excel pdf 转 csv pdf 表格">
+  <div class="card-top">
+    <div class="card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v16H4zM4 9h16M9 4v16"/></svg></div>
+    <div>
+      <p class="cat-label">PDF e documentos</p>
+      <h3><a href="/tools/pdf-table-pull/">PDF Table Pull</a></h3>
+      <p class="tagline">Tire tabelas de PDFs e salve em Excel, CSV ou JSON.</p>
+      <p class="price-line">Cerca de US$ 1 por 333 páginas com uma tabela.</p>
+    </div>
+  </div>
+  <ul class="versions"><li><div class="ver-place"><strong>Pay per use</strong><span>Apify</span></div><span class="price">$0.003/page</span><div class="btn-row"><a class="btn btn-primary btn-sm" href="https://apify.com/tidybytetools/pdf-table-pull">Try it on Apify</a></div></li><li><div class="ver-place"><strong>For your computer</strong><span>Gumroad</span></div><span class="price">$12</span><div class="btn-row"><a class="btn btn-secondary btn-sm" href="https://tidybyte.gumroad.com/l/hkxqxh">Buy on Gumroad</a></div></li><li><div class="ver-place"><strong>Free lite</strong><span>GitHub &amp; PyPI</span></div><span class="badge-free">FREE</span><div class="btn-row"><a class="btn btn-primary btn-sm" href="https://github.com/tidybytetools/pdf-table-pull-lite">Free download</a><a class="btn btn-secondary btn-sm" href="https://pypi.org/project/pdf-table-pull-lite/">PyPI</a><a class="btn btn-secondary btn-sm" href="https://tidybyte.gumroad.com/l/qrbzvo">Gumroad</a></div></li></ul>
+</article>
+
+
+<article class="card" id="tool-doc2md" data-tool-card data-category="pdf" data-search="doc to markdown doc2md turn pdfs, word files, and web pages into clean markdown. get markdown you can use in notes, docs, or ai apps. tables stay as markdown tables. the paid version also writes chunks for ai search. transforme pdfs, word e páginas web em markdown limpo. pdf a markdown word a markdown html a markdown markdown para ia pdf para markdown word para markdown html para markdown markdown para ia pdf zu markdown word zu markdown html zu markdown markdown fur ki pdf vers markdown word vers markdown html vers markdown markdown pour ia pdf を markdown word を markdown html を markdown ai 用 markdown pdf 转 markdown word 转 markdown html 转 markdown 给 ai 的 markdown">
+  <div class="card-top">
+    <div class="card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l6 6v12H7zM14 3v6h6"/></svg></div>
+    <div>
+      <p class="cat-label">PDF e documentos</p>
+      <h3><a href="/tools/doc2md/">Doc to Markdown</a></h3>
+      <p class="tagline">Transforme PDFs, Word e páginas web em Markdown limpo.</p>
+      <p class="price-line">Cerca de US$ 1 por 333 arquivos.</p>
+    </div>
+  </div>
+  <ul class="versions"><li><div class="ver-place"><strong>Pay per use</strong><span>Apify</span></div><span class="price">$0.003 per file</span><div class="btn-row"><a class="btn btn-primary btn-sm" href="https://apify.com/tidybytetools/doc-to-markdown">Try it on Apify</a></div></li><li><div class="ver-place"><strong>For your computer</strong><span>Gumroad</span></div><span class="price">$12</span><div class="btn-row"><a class="btn btn-secondary btn-sm" href="https://tidybyte.gumroad.com/l/frlkv">Buy on Gumroad</a></div></li><li><div class="ver-place"><strong>Free lite</strong><span>GitHub &amp; PyPI</span></div><span class="badge-free">FREE</span><div class="btn-row"><a class="btn btn-primary btn-sm" href="https://github.com/tidybytetools/doc2md-lite">Free download</a><a class="btn btn-secondary btn-sm" href="https://pypi.org/project/doc2md-lite/">PyPI</a><a class="btn btn-secondary btn-sm" href="https://tidybyte.gumroad.com/l/doc2md-lite">Gumroad</a></div></li></ul>
+</article>
+</div>
+          </div>
+        </section>
+        
+        <section id="data" aria-labelledby="h-data">
+          <div class="wrap">
+            <div class="section-head">
+              <h2 id="h-data">CSV e dados</h2>
+            </div>
+            <div class="grid">
+<article class="card" id="tool-sheet-scrub" data-tool-card data-category="data" data-search="csv &amp; spreadsheet cleanup sheet-scrub clean messy csv and excel files: dates, phones, emails, and duplicates. got a sheet full of extra spaces, mixed date styles, and repeat rows? these tools tidy the file and give you a clean table back. limpe csv e excel bagunçados: datas, telefones, e-mails e duplicatas. limpiar csv limpiar excel quitar duplicados arreglar fechas limpar csv limpar excel remover duplicatas arrumar datas csv bereinigen excel bereinigen duplikate entfernen daten standardisieren nettoyer csv nettoyer excel supprimer doublons corriger dates csv クリーニング excel クリーニング 重複削除 日付の整形 清理 csv 清理 excel 去重 统一日期">
+  <div class="card-top">
+    <div class="card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v14H4zM4 9h16M9 5v14M13 5v14"/></svg></div>
+    <div>
+      <p class="cat-label">CSV e dados</p>
+      <h3><a href="/tools/sheet-scrub/">CSV &amp; spreadsheet cleanup</a></h3>
+      <p class="tagline">Limpe CSV e Excel bagunçados: datas, telefones, e-mails e duplicatas.</p>
+      <p class="price-line">Cerca de US$ 1 por 2.000 linhas limpas.</p>
+    </div>
+  </div>
+  <ul class="versions"><li><div class="ver-place"><strong>Pay per use</strong><span>Apify</span></div><span class="price">$0.0005/row</span><div class="btn-row"><a class="btn btn-primary btn-sm" href="https://apify.com/tidybytetools/csv-excel-data-cleaner">Try it on Apify</a></div></li><li><div class="ver-place"><strong>For your computer</strong><span>Gumroad</span></div><span class="price">$9</span><div class="btn-row"><a class="btn btn-secondary btn-sm" href="https://tidybyte.gumroad.com/l/cknndc">Buy on Gumroad</a></div></li></ul>
+</article>
+
+
+<article class="card" id="tool-json-shaper" data-tool-card data-category="data" data-search="json shaper json-shaper turn messy notes, csv, and markdown tables into clean json. free converters do well with neat csv. json shaper is for the messy stuff: pasted notes, key: value lists, and tables. transforme notas, csv e tabelas markdown em json limpo. texto a json csv a json tabla markdown a json notas a json texto para json csv para json tabela markdown para json notas para json text zu json csv zu json markdown tabelle zu json notizen zu json texte vers json csv vers json tableau markdown vers json notes vers json テキスト を json csv を json markdown 表 を json メモ を json 文本转 json csv 转 json markdown 表格转 json 笔记转 json">
+  <div class="card-top">
+    <div class="card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 5c-2 0-3 1.5-3 3.5S6 12 8 12M16 5c2 0 3 1.5 3 3.5S18 12 16 12M8 12c-2 0-3 1.5-3 3.5S6 19 8 19M16 12c2 0 3 1.5 3 3.5S18 19 16 19"/></svg></div>
+    <div>
+      <p class="cat-label">CSV e dados</p>
+      <h3><a href="/tools/json-shaper/">JSON Shaper</a></h3>
+      <p class="tagline">Transforme notas, CSV e tabelas Markdown em JSON limpo.</p>
+      
+    </div>
+  </div>
+  <ul class="versions"><li><div class="ver-place"><strong>For your computer</strong><span>Gumroad</span></div><span class="price">From $5</span><div class="btn-row"><a class="btn btn-secondary btn-sm" href="https://tidybyte.gumroad.com/l/cznmeo">Buy on Gumroad</a></div></li><li><div class="ver-place"><strong>Free lite</strong><span>GitHub &amp; PyPI</span></div><span class="badge-free">FREE</span><div class="btn-row"><a class="btn btn-primary btn-sm" href="https://github.com/tidybytetools/json-shaper-lite">Free download</a><a class="btn btn-secondary btn-sm" href="https://pypi.org/project/json-shaper-lite/">PyPI</a><a class="btn btn-secondary btn-sm" href="https://tidybyte.gumroad.com/l/txytmi">Gumroad</a></div></li></ul>
+</article>
+
+
+<article class="card" id="tool-lead-sheet-fixer" data-tool-card data-category="data" data-search="lead sheet fixer lead-sheet-fixer clean a lead list: fix phones, check emails, and merge duplicates. clean the lead list you already have. phones are formatted, bad emails are flagged, names can be split, and duplicate rows can be merged. limpe uma lista de leads: telefones, e-mails e duplicatas. limpiar leads arreglar teléfonos validar emails fusionar duplicados limpar leads arrumar telefones validar emails juntar duplicatas leads bereinigen telefone formatieren e-mails prüfen duplikate zusammenführen nettoyer prospects formater telephones vérifier emails fusionner doublons リード クリーニング 電話番号 整形 メール 確認 重複 統合 清理线索 整理电话 检查邮箱 合并重复">
+  <div class="card-top">
+    <div class="card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 7a3 3 0 11-6 0 3 3 0 016 0zM5 19a6 6 0 0112 0"/></svg></div>
+    <div>
+      <p class="cat-label">CSV e dados</p>
+      <h3><a href="/tools/lead-sheet-fixer/">Lead Sheet Fixer</a></h3>
+      <p class="tagline">Limpe uma lista de leads: telefones, e-mails e duplicatas.</p>
+      
+    </div>
+  </div>
+  <ul class="versions"><li><div class="ver-place"><strong>For your computer</strong><span>Gumroad</span></div><span class="price">$9</span><div class="btn-row"><a class="btn btn-secondary btn-sm" href="https://tidybyte.gumroad.com/l/iaiacv">Buy on Gumroad</a></div></li></ul>
+</article>
+
+
+<article class="card" id="tool-phone-validator" data-tool-card data-category="data" data-search="phone number validator phone-validator check phone numbers and format them as e.164, in bulk, offline. see if each number is valid and write it in three common formats. the tool also shows country, line type, area, and time zone. it works offline and never calls or texts anyone. verifique telefones e formate em e.164, em lote e offline. validar teléfonos formato e.164 teléfonos en lote sin conexión validar telefones formato e.164 telefones em lote offline telefonnummern prüfen e.164 format bulk telefone offline valider telephones format e.164 telephones en lot hors ligne 電話番号 検証 e.164 一括 電話番号 オフライン 验证电话号码 e.164 格式 批量电话 离线">
+  <div class="card-top">
+    <div class="card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h4l1 5-2 1a12 12 0 006 6l1-2 5 1v4c0 1-1 2-2 2C10 20 4 14 4 5c0-1 1-2 3-2z"/></svg></div>
+    <div>
+      <p class="cat-label">CSV e dados</p>
+      <h3><a href="/tools/phone-validator/">Phone Number Validator</a></h3>
+      <p class="tagline">Verifique telefones e formate em E.164, em lote e offline.</p>
+      <p class="price-line">Cerca de US$ 1 por 1.000 números.</p>
+    </div>
+  </div>
+  <ul class="versions"><li><div class="ver-place"><strong>Pay per use</strong><span>Apify</span></div><span class="price">$0.001/number</span><div class="btn-row"><a class="btn btn-primary btn-sm" href="https://apify.com/tidybytetools/phone-number-validator-formatter">Try it on Apify</a></div></li></ul>
+</article>
+
+
+<article class="card" id="tool-data-cleanup-bundle" data-tool-card data-category="data" data-search="data cleanup bundle data-cleanup-bundle three desktop tools together: pdf tables, sheet cleanup, and json shaper. get pdf-table-pull, sheet-scrub, and json-shaper in one purchase. bought one by one they cost at least $26. the bundle is $19, so you save $7. tres ferramentas para o computador juntas: tabelas de pdf, limpeza de planilhas e json shaper. paquete de limpieza pdf excel csv herramientas offline pacote de limpeza pdf excel csv ferramentas offline cleanup bundle pdf excel csv offline tools pack nettoyage pdf excel csv outils hors ligne データ整理 セット pdf excel csv オフライン ツール 数据清理套装 pdf excel csv 离线工具">
+  <div class="card-top">
+    <div class="card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8l8-4 8 4-8 4-8-4zM4 12l8 4 8-4M4 16l8 4 8-4"/></svg></div>
+    <div>
+      <p class="cat-label">CSV e dados</p>
+      <h3><a href="/tools/data-cleanup-bundle/">Data Cleanup Bundle</a></h3>
+      <p class="tagline">Tres ferramentas para o computador juntas: tabelas de PDF, limpeza de planilhas e JSON Shaper.</p>
+      
+    </div>
+  </div>
+  <ul class="versions"><li><div class="ver-place"><strong>For your computer</strong><span>Gumroad</span></div><span class="price">$19</span><div class="btn-row"><a class="btn btn-secondary btn-sm" href="https://tidybyte.gumroad.com/l/qnlxiy">Buy on Gumroad</a></div></li></ul>
+</article>
+
+
+<article class="card" id="tool-csv-char-fix" data-tool-card data-category="data" data-search="csv-char-fix csv-char-fix fix weird characters like ã© and â€™ in csv and text files. did an export turn josé into josã© or it&#x27;s into itâ€™s? this small script puts the text back the way it should be and saves the file so excel shows accents right. corrija caractères estranhos em csv e arquivos de texto. arreglar caractères mojibake utf-8 csv letras rotas corrigir caractères mojibake utf-8 csv letras quebradas zeichen reparieren mojibake utf-8 csv kaputte umlaute corriger caractères mojibake utf-8 csv accents cassés 文字化け 修正 mojibake utf-8 csv 壊れた文字 修复乱码 mojibake utf-8 csv 奇怪字符">
+  <div class="card-top">
+    <div class="card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 17l4-10 4 10M7 13h4M15 7v10"/></svg></div>
+    <div>
+      <p class="cat-label">CSV e dados</p>
+      <h3><a href="/tools/csv-char-fix/">csv-char-fix</a></h3>
+      <p class="tagline">Corrija caractères estranhos em CSV e arquivos de texto.</p>
+      
+    </div>
+  </div>
+  <ul class="versions"><li><div class="ver-place"><strong>For your computer</strong><span>Gumroad</span></div><span class="price">$1</span><div class="btn-row"><a class="btn btn-secondary btn-sm" href="https://tidybyte.gumroad.com/l/csv-char-fix">Buy on Gumroad</a></div></li></ul>
+</article>
+
+
+<article class="card" id="tool-csv-split" data-tool-card data-category="data" data-search="csv-split csv-split split a big csv into smaller files. every new file keeps the header. use it when a csv is too big for excel, too big to upload, or when you want one file per group, like one file per state. divida um csv grande em arquivos menores. cada um mantém o cabeçalho. partir csv dividir csv csv por columna archivos más chicos dividir csv partir csv csv por coluna arquivos menores csv teilen csv splitten csv nach spalte kleinere dateien découper csv diviser csv csv par colonne fichiers plus petits csv 分割 csv を分ける 列で分割 小さいファイル 拆分 csv 切割 csv 按列拆分 小文件">
+  <div class="card-top">
+    <div class="card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v16M5 9l-2 3 2 3M19 9l2 3-2 3"/></svg></div>
+    <div>
+      <p class="cat-label">CSV e dados</p>
+      <h3><a href="/tools/csv-split/">csv-split</a></h3>
+      <p class="tagline">Divida um CSV grande em arquivos menores. Cada um mantém o cabeçalho.</p>
+      
+    </div>
+  </div>
+  <ul class="versions"><li><div class="ver-place"><strong>For your computer</strong><span>Gumroad</span></div><span class="price">$1</span><div class="btn-row"><a class="btn btn-secondary btn-sm" href="https://tidybyte.gumroad.com/l/csv-split">Buy on Gumroad</a></div></li></ul>
+</article>
+
+
+<article class="card" id="tool-regex-pack" data-tool-card data-category="data" data-search="regex pack for messy data regex-pack 49 ready-to-use regex patterns for emails, phones, dates, money, and more. copy a pattern into your tool, or use the small helper script to check or fix a csv column. every pattern comes with examples that are tested in python and javascript. 49 padrões de regex prontos para e-mails, telefones, datas, dinheiro e mais. patrones regex regex email regex teléfono regex fechas padrões regex regex email regex telefone regex datas regex muster regex e-mail regex telefon regex datum motifs regex regex email regex telephone regex dates 正規表現 パターン メール 正規表現 電話 正規表現 日付 正規表現 正则表达式 邮箱正则 电话正则 日期正则">
+  <div class="card-top">
+    <div class="card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 16V8l4 4-4 4M12 8h6M12 12h6M12 16h6"/></svg></div>
+    <div>
+      <p class="cat-label">CSV e dados</p>
+      <h3><a href="/tools/regex-pack/">Regex Pack for Messy Data</a></h3>
+      <p class="tagline">49 padrões de regex prontos para e-mails, telefones, datas, dinheiro e mais.</p>
+      
+    </div>
+  </div>
+  <ul class="versions"><li><div class="ver-place"><strong>For your computer</strong><span>Gumroad</span></div><span class="price">$2</span><div class="btn-row"><a class="btn btn-secondary btn-sm" href="https://tidybyte.gumroad.com/l/regex-pack">Buy on Gumroad</a></div></li></ul>
+</article>
+
+
+<article class="card" id="tool-base64-lite" data-tool-card data-category="data" data-search="base64 encode &amp; decode base64-lite encode or decode base64 for text and local files, on your computer. turn text or a local file into base64, or turn base64 back into text or bytes. you can also use the url-safe alphabet and data-uri output. it runs offline. codifique ou decodifique base64 para texto e arquivos locais, no seu computador. codificar base64 decodificar base64 base64 data uri codificar base64 decodificar base64 base64 data uri base64 kodieren base64 dekodieren base64 data uri encoder base64 décoder base64 base64 data uri base64 エンコード base64 デコード base64 data uri base64 编码 base64 解码 base64 data uri">
+  <div class="card-top">
+    <div class="card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8c2-3 5-3 7 0s5 3 7 0M5 16c2 3 5 3 7 0s5-3 7 0"/></svg></div>
+    <div>
+      <p class="cat-label">CSV e dados</p>
+      <h3><a href="/tools/base64-lite/">Base64 Encode &amp; Decode</a></h3>
+      <p class="tagline">Codifique ou decodifique Base64 para texto e arquivos locais, no seu computador.</p>
+      <p class="price-line">Cerca de US$ 1 por 1.000 textos únicos.</p>
+    </div>
+  </div>
+  <ul class="versions"><li><div class="ver-place"><strong>Free lite</strong><span>GitHub</span></div><span class="badge-free">FREE</span><div class="btn-row"><a class="btn btn-primary btn-sm" href="https://github.com/tidybytetools/base64-lite">Free download</a></div></li><li><div class="ver-place"><strong>Pay per use</strong><span>Apify</span></div><span class="price">$0.001/item</span></li></ul>
+</article>
+
+
+<article class="card" id="tool-json-repair-lite" data-tool-card data-category="data" data-search="json repair json-repair-lite repair broken or incomplete json, including output from language models. paste json that is missing quotes or has a trailing comma, and get valid json back. already-valid json is left alone. it runs offline. no api key is needed. repare json quebrado ou incompleto, inclusive a saída de modelos de linguagem. reparar json json roto arreglar json json de un modelo reparar json json quebrado consertar json json de um modelo json reparieren kaputtes json json fixen llm json réparer json json casse corriger json json d&#x27;un modèle json 修復 壊れた json json 修正 llm json 修复 json 损坏的 json 整理 json 模型输出 json">
+  <div class="card-top">
+    <div class="card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 5c-2 0-3 1.5-3 3.5S6 12 8 12M16 5c2 0 3 1.5 3 3.5S18 12 16 12M8 12c-2 0-3 1.5-3 3.5S6 19 8 19M16 12c2 0 3 1.5 3 3.5S18 19 16 19"/></svg></div>
+    <div>
+      <p class="cat-label">CSV e dados</p>
+      <h3><a href="/tools/json-repair-lite/">JSON Repair</a></h3>
+      <p class="tagline">Repare JSON quebrado ou incompleto, inclusive a saída de modelos de linguagem.</p>
+      <p class="price-line">Cerca de US$ 1 por 1.000 documentos.</p>
+    </div>
+  </div>
+  <ul class="versions"><li><div class="ver-place"><strong>Free lite</strong><span>GitHub</span></div><span class="badge-free">FREE</span><div class="btn-row"><a class="btn btn-primary btn-sm" href="https://github.com/tidybytetools/json-repair-lite">Free download</a></div></li><li><div class="ver-place"><strong>Pay per use</strong><span>Apify</span></div><span class="price">$0.001/document</span></li></ul>
+</article>
+
+
+<article class="card" id="tool-hash-lite" data-tool-card data-category="data" data-search="hash &amp; checksum hash-lite hash text or local files with sha-256, sha-1, md5, and optional sha-512. get hex and base64 hashes for text or a local file. sha-256, sha-1, and md5 are on by default. prefer sha-256 or sha-512 for new security work. calcule hashes de texto ou arquivos locais com sha-256, sha-1, md5 e sha-512 opcional. hash sha-256 checksum md5 sha-1 hash sha-256 checksum md5 sha-1 hash sha-256 checksum md5 sha-1 hash sha-256 somme de contrôle md5 sha-1 sha-256 ハッシュ チェックサム md5 sha-1 sha-256 哈希 校验和 md5 sha-1">
+  <div class="card-top">
+    <div class="card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l-2 14M17 5l-2 14M5 9h16M4 15h16"/></svg></div>
+    <div>
+      <p class="cat-label">CSV e dados</p>
+      <h3><a href="/tools/hash-lite/">Hash &amp; Checksum</a></h3>
+      <p class="tagline">Calcule hashes de texto ou arquivos locais com SHA-256, SHA-1, MD5 e SHA-512 opcional.</p>
+      <p class="price-line">Cerca de US$ 1 por 1.000 textos únicos.</p>
+    </div>
+  </div>
+  <ul class="versions"><li><div class="ver-place"><strong>Free lite</strong><span>GitHub</span></div><span class="badge-free">FREE</span><div class="btn-row"><a class="btn btn-primary btn-sm" href="https://github.com/tidybytetools/hash-lite">Free download</a></div></li><li><div class="ver-place"><strong>Pay per use</strong><span>Apify</span></div><span class="price">$0.001/input</span></li></ul>
+</article>
+
+
+<article class="card" id="tool-json-to-csv" data-tool-card data-category="data" data-search="json to csv converter json-to-csv flatten nested json or json lines into a csv table. turn nested json into a flat table for excel and google sheets. you pick how lists are handled. achate json aninhado ou json lines e transforme em uma tabela csv. json a csv aplanar json json lines a csv json anidado json para csv achatar json json lines para csv json aninhado json zu csv json flach machen json lines zu csv verschachteltes json json vers csv aplatir json json lines vers csv json imbriqué json を csv json 平坦化 json lines を csv 入れ子 json json 转 csv 展平 json json lines 转 csv 嵌套 json">
+  <div class="card-top">
+    <div class="card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 5c-2 0-3 1.5-3 3.5S6 12 8 12M16 5c2 0 3 1.5 3 3.5S18 12 16 12M8 12c-2 0-3 1.5-3 3.5S6 19 8 19M16 12c2 0 3 1.5 3 3.5S18 19 16 19"/></svg></div>
+    <div>
+      <p class="cat-label">CSV e dados</p>
+      <h3><a href="/tools/json-to-csv/">JSON to CSV Converter</a></h3>
+      <p class="tagline">Achate JSON aninhado ou JSON Lines e transforme em uma tabela CSV.</p>
+      <p class="price-line">Cerca de US$ 1 por 10.000 linhas.</p>
+    </div>
+  </div>
+  <ul class="versions"><li><div class="ver-place"><strong>Pay per use</strong><span>Apify</span></div><span class="price">$0.0001 per row</span><div class="btn-row"><a class="btn btn-primary btn-sm" href="https://apify.com/tidybytetools/json-to-csv-flattener">Try it on Apify</a></div></li></ul>
+</article>
+
+
+<article class="card" id="tool-csv-encoding-fixer" data-tool-card data-category="data" data-search="csv encoding fixer csv-encoding-fixer fix broken characters in csv files and split large files. fixes garbled letters such as ã© instead of é, then saves clean utf-8 that opens right in excel. can also split a large file and keep the header on every part. corrija caractères quebrados em csv e divida arquivos grandes. arreglar encoding csv mojibake csv partir csv utf-8 excel corrigir encoding csv mojibake csv dividir csv utf-8 excel csv encoding reparieren mojibake csv csv teilen utf-8 excel corriger encodage csv mojibake csv découper csv utf-8 excel csv 文字コード 修正 csv 文字化け csv 分割 excel utf-8 修复 csv 编码 csv 乱码 拆分 csv excel utf-8">
+  <div class="card-top">
+    <div class="card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 17l4-10 4 10M7 13h4M15 7v10"/></svg></div>
+    <div>
+      <p class="cat-label">CSV e dados</p>
+      <h3><a href="/tools/csv-encoding-fixer/">CSV Encoding Fixer</a></h3>
+      <p class="tagline">Corrija caractères quebrados em CSV e divida arquivos grandes.</p>
+      <p class="price-line">Cerca de US$ 1 por 100 arquivos.</p>
+    </div>
+  </div>
+  <ul class="versions"><li><div class="ver-place"><strong>Pay per use</strong><span>Apify</span></div><span class="price">$0.01 per file</span><div class="btn-row"><a class="btn btn-primary btn-sm" href="https://apify.com/tidybytetools/csv-encoding-fixer-splitter">Try it on Apify</a></div></li></ul>
+</article>
+
+
+<article class="card" id="tool-json-schema-validator" data-tool-card data-category="data" data-search="json schema validator json-schema-validator check json documents against a schema and see what failed. paste a schema and your json. each document gets a clear pass or fail, the field that broke, and a plain message. it works offline. no api key is needed. confira documentos json com um schema e veja o que falhou. validar json schema esquema json validar json errores de schema validar json schema esquema json validar json erros de schema json schema prüfen json schema json validieren schema fehler valider json schema schema json valider json erreurs de schema json schema 検証 json スキーマ json バリデーション スキーマ エラー 校验 json schema json 模式 验证 json schema 错误">
+  <div class="card-top">
+    <div class="card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l5 5L20 7"/></svg></div>
+    <div>
+      <p class="cat-label">CSV e dados</p>
+      <h3><a href="/tools/json-schema-validator/">JSON Schema Validator</a></h3>
+      <p class="tagline">Confira documentos JSON com um schema e veja o que falhou.</p>
+      <p class="price-line">Cerca de US$ 1 por 1.000 documentos.</p>
+    </div>
+  </div>
+  <ul class="versions"><li><div class="ver-place"><strong>Pay per use</strong><span>Apify</span></div><span class="price">$0.001/document</span><div class="btn-row"><a class="btn btn-primary btn-sm" href="https://apify.com/tidybytetools/json-schema-validator">Try it on Apify</a></div></li></ul>
+</article>
+
+
+<article class="card" id="tool-date-timezone" data-tool-card data-category="data" data-search="date &amp; timezone normalizer date-timezone turn messy dates into a timezone you choose, as iso 8601. it reads dates like &quot;march 5, 2024 3:30pm&quot; and dates that could be read two ways. you get iso 8601, utc, and a unix timestamp. strings it cannot parse are free. transforme datas bagunçadas no fuso que você escolher, em iso 8601. normalizar fechas zona horaria iso 8601 parsear fechas normalizar datas fuso horário iso 8601 interpretar datas daten normalisieren zeitzone iso 8601 daten parsen normaliser dates fuseau horaire iso 8601 analyser dates 日付 正規化 タイムゾーン iso 8601 日付 解析 规范化日期 时区转换 iso 8601 解析日期">
+  <div class="card-top">
+    <div class="card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4v2M18 4v2M4 8h16M5 6h14v14H5z"/></svg></div>
+    <div>
+      <p class="cat-label">CSV e dados</p>
+      <h3><a href="/tools/date-timezone/">Date &amp; Timezone Normalizer</a></h3>
+      <p class="tagline">Transforme datas bagunçadas no fuso que você escolher, em ISO 8601.</p>
+      <p class="price-line">Cerca de US$ 1 por 1.000 datas.</p>
+    </div>
+  </div>
+  <ul class="versions"><li><div class="ver-place"><strong>Pay per use</strong><span>Apify</span></div><span class="price">$0.001/date</span><div class="btn-row"><a class="btn btn-primary btn-sm" href="https://apify.com/tidybytetools/date-timezone-normalizer">Try it on Apify</a></div></li></ul>
+</article>
+</div>
+          </div>
+        </section>
+        
+        <section id="web" aria-labelledby="h-web">
+          <div class="wrap">
+            <div class="section-head">
+              <h2 id="h-web">Links e web</h2>
+            </div>
+            <div class="grid">
+<article class="card" id="tool-link-check" data-tool-card data-category="web" data-search="broken link checker link-check check a list of links for status codes, redirects, and broken pages. paste a list, give a sitemap, or scan pages for their links. get a clear report of what works, what is broken, and where redirects end up. confira uma lista de links: códigos de status, redirecionamentos e páginas quebradas. enlaces rotos comprobar links redirecciones sitemap links quebrados checar links redirecionamentos sitemap kaputte links links prüfen weiterleitungen sitemap liens cassés vérifier liens redirections sitemap リンク切れ リンク チェック リダイレクト サイトマップ 失效链接 检查链接 重定向 网站地图">
+  <div class="card-top">
+    <div class="card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 007.07 0l1.41-1.41a5 5 0 00-7.07-7.07L10 5.93M14 11a5 5 0 00-7.07 0L5.5 12.41a5 5 0 007.07 7.07L14 18.07"/></svg></div>
+    <div>
+      <p class="cat-label">Links e web</p>
+      <h3><a href="/tools/link-check/">Broken Link Checker</a></h3>
+      <p class="tagline">Confira uma lista de links: códigos de status, redirecionamentos e páginas quebradas.</p>
+      <p class="price-line">Cerca de US$ 1 por 1.000 links.</p>
+    </div>
+  </div>
+  <ul class="versions"><li><div class="ver-place"><strong>Pay per use</strong><span>Apify</span></div><span class="price">$0.001/link</span><div class="btn-row"><a class="btn btn-primary btn-sm" href="https://apify.com/tidybytetools/broken-link-checker">Try it on Apify</a></div></li><li><div class="ver-place"><strong>For your computer</strong><span>Gumroad</span></div><span class="price">$7</span><div class="btn-row"><a class="btn btn-secondary btn-sm" href="https://tidybyte.gumroad.com/l/link-check">Buy on Gumroad</a></div></li><li><div class="ver-place"><strong>Free lite</strong><span>GitHub &amp; PyPI</span></div><span class="badge-free">FREE</span><div class="btn-row"><a class="btn btn-primary btn-sm" href="https://github.com/tidybytetools/link-check-lite">Free download</a><a class="btn btn-secondary btn-sm" href="https://pypi.org/project/link-check-lite/">PyPI</a><a class="btn btn-secondary btn-sm" href="https://github.com/marketplace/actions/link-check-lite">GitHub Action</a></div></li></ul>
+</article>
+
+
+<article class="card" id="tool-server-pulse" data-tool-card data-category="web" data-search="server pulse server-pulse get a discord alert when a website or server goes down. server pulse watches a site or server and sends a discord message if it goes down. it can also post stripe and paypal donation alerts to discord. receba um alerta no discord quando um site ou servidor cair. alerta de caída monitoreo de sitio aviso discord uptime alerta de queda monitorar site aviso discord uptime ausfall alarm website überwachen discord benachrichtigung uptime alerte panne surveiller site alerte discord uptime ダウン 通知 サイト 監視 discord アラート アップタイム 宕机提醒 网站监控 discord 通知 可用性">
+  <div class="card-top">
+    <div class="card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h4l2-6 4 12 2-6h6"/></svg></div>
+    <div>
+      <p class="cat-label">Links e web</p>
+      <h3><a href="/tools/server-pulse/">Server Pulse</a></h3>
+      <p class="tagline">Receba um alerta no Discord quando um site ou servidor cair.</p>
+      
+    </div>
+  </div>
+  <ul class="versions"><li><div class="ver-place"><strong>For your computer</strong><span>Gumroad</span></div><span class="price">$19</span><div class="btn-row"><a class="btn btn-secondary btn-sm" href="https://tidybyte.gumroad.com/l/cjatbj">Buy on Gumroad</a></div></li></ul>
+</article>
+
+
+<article class="card" id="tool-html-table-extractor" data-tool-card data-category="web" data-search="html table extractor html-table-extractor pull tables from web pages into csv and json. reads html tables from a page or pasted html. keeps merged cells, handles more than one table on a page, and saves csv. honest about tables that only appear after javascript runs. tire tabelas de páginas web e salve em csv e json. extraer tablas html tablas de una web html a csv html a json extrair tabelas html tabelas de uma página html para csv html para json html tabellen extrahieren web tabellen html nach csv html nach json extraire tableaux html tableaux d&#x27;une page html vers csv html vers json html 表 抽出 ウェブ テーブル html を csv html を json 提取 html 表格 网页表格 html 转 csv html 转 json">
+  <div class="card-top">
+    <div class="card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v16H4zM4 9h16M9 4v16"/></svg></div>
+    <div>
+      <p class="cat-label">Links e web</p>
+      <h3><a href="/tools/html-table-extractor/">HTML Table Extractor</a></h3>
+      <p class="tagline">Tire tabelas de páginas web e salve em CSV e JSON.</p>
+      <p class="price-line">Cerca de US$ 1 por 2.000 linhas de dados.</p>
+    </div>
+  </div>
+  <ul class="versions"><li><div class="ver-place"><strong>Pay per use</strong><span>Apify</span></div><span class="price">$0.0005 per data row</span><div class="btn-row"><a class="btn btn-primary btn-sm" href="https://apify.com/tidybytetools/html-table-extractor">Try it on Apify</a></div></li></ul>
+</article>
+
+
+<article class="card" id="tool-link-preview" data-tool-card data-category="web" data-search="link preview link-preview pull the title, description, and image from a web page. give it a link and get a ready preview: title, description, image, and other common tags. it reads open graph, twitter card, and json-ld when they are on the page. tire o título, a descrição e a imagem de uma página web. vista prévia de enlace open graph twitter card meta tags prévia de link open graph twitter card meta tags link vorschau open graph twitter card meta tags aperçu de lien open graph twitter card balises meta リンク プレビュー open graph twitterカード メタタグ 链接预览 open graph twitter card meta 标签">
+  <div class="card-top">
+    <div class="card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12s3.5-6 9-6 9 6 9 6-3.5 6-9 6-9-6-9-6zM12 9a3 3 0 100 6 3 3 0 000-6z"/></svg></div>
+    <div>
+      <p class="cat-label">Links e web</p>
+      <h3><a href="/tools/link-preview/">Link Preview</a></h3>
+      <p class="tagline">Tire o título, a descrição e a imagem de uma página web.</p>
+      <p class="price-line">Cerca de US$ 1 por 500 páginas.</p>
+    </div>
+  </div>
+  <ul class="versions"><li><div class="ver-place"><strong>Pay per use</strong><span>Apify</span></div><span class="price">$0.002/page</span><div class="btn-row"><a class="btn btn-primary btn-sm" href="https://apify.com/tidybytetools/link-preview">Try it on Apify</a></div></li></ul>
+</article>
+</div>
+          </div>
+        </section>
+        
+        <section id="ai" aria-labelledby="h-ai">
+          <div class="wrap">
+            <div class="section-head">
+              <h2 id="h-ai">IA / RAG</h2>
+            </div>
+            <div class="grid">
+<article class="card" id="tool-markdown-chunker" data-tool-card data-category="ai" data-search="markdown chunker for rag markdown-chunker split markdown into chunks for ai search, with heading paths kept. split a markdown file by heading so each chunk stays on one topic. code blocks and tables stay whole when they fit. each chunk keeps its heading path and line numbers. this is plain code, not an ai model, so the same file always gives the same chunks. divida markdown em pedaços para busca de ia, mantendo o caminho dos títulos. trozos rag dividir markdown chunks para ia rag pedaços rag dividir markdown chunks para ia rag rag chunks markdown teilen ki suche rag morceaux rag découper markdown chunks pour ia rag rag チャンク markdown 分割 ai 検索 rag rag 分块 拆分 markdown ai 检索 rag">
+  <div class="card-top">
+    <div class="card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5h14v4H5zM5 11h14v3H5zM5 16h9v3H5z"/></svg></div>
+    <div>
+      <p class="cat-label">IA / RAG</p>
+      <h3><a href="/tools/markdown-chunker/">Markdown Chunker for RAG</a></h3>
+      <p class="tagline">Divida Markdown em pedaços para busca de IA, mantendo o caminho dos títulos.</p>
+      <p class="price-line">Cerca de US$ 1 por 10.000 trechos.</p>
+    </div>
+  </div>
+  <ul class="versions"><li><div class="ver-place"><strong>Pay per use</strong><span>Apify</span></div><span class="price">$0.0001/chunk</span><div class="btn-row"><a class="btn btn-primary btn-sm" href="https://apify.com/tidybytetools/markdown-rag-chunker">Try it on Apify</a></div></li><li><div class="ver-place"><strong>Free lite</strong><span>GitHub &amp; PyPI</span></div><span class="badge-free">FREE</span><div class="btn-row"><a class="btn btn-primary btn-sm" href="https://github.com/tidybytetools/md-chunk-lite">Free download</a><a class="btn btn-secondary btn-sm" href="https://pypi.org/project/md-chunk-lite/">PyPI</a></div></li></ul>
+</article>
+
+
+<article class="card" id="tool-claude-data-skills" data-tool-card data-category="ai" data-search="csv skills for claude code claude-data-skills 4 claude code skills that profile, diff, fix, and split csv files on your computer. claude runs a small, tested script and reads the short result, instead of loading a big csv into the chat line by line. your data stays on your computer. 4 habilidades do claude code para perfilar, comparar, corrigir e dividir csv no seu computador. claude code csv habilidades claude perfil de csv diff de csv claude code csv skills claude perfil de csv diff de csv claude code csv claude skills csv profil csv diff claude code csv skills claude profil csv diff csv claude code csv claude スキル csv プロファイル csv 差分 claude code csv claude 技能 csv 概览 csv 对比">
+  <div class="card-top">
+    <div class="card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5z"/></svg></div>
+    <div>
+      <p class="cat-label">IA / RAG</p>
+      <h3><a href="/tools/claude-data-skills/">CSV Skills for Claude Code</a></h3>
+      <p class="tagline">4 habilidades do Claude Code para perfilar, comparar, corrigir e dividir CSV no seu computador.</p>
+      
+    </div>
+  </div>
+  <ul class="versions"><li><div class="ver-place"><strong>For your computer</strong><span>Gumroad</span></div><span class="price">$3</span><div class="btn-row"><a class="btn btn-secondary btn-sm" href="https://tidybyte.gumroad.com/l/claude-data-skills">Buy on Gumroad</a></div></li></ul>
+</article>
+
+
+<article class="card" id="tool-llm-token-counter" data-tool-card data-category="ai" data-search="llm token counter llm-token-counter count tokens and estimate cost for gpt, claude, and gemini. counts tokens offline for openai models and estimates claude and gemini. uses public list prices. no api key. paste text or add file links. conte tokens e estime o custo para gpt, claude e gemini. contar tokens costo de llm tokens gpt tokens claude contar tokens custo de llm tokens gpt tokens claude tokens zählen llm kosten gpt tokens claude tokens compter tokens coût llm tokens gpt tokens claude トークン カウント llm 費用 gpt トークン claude トークン 统计 token llm 费用 gpt token claude token">
+  <div class="card-top">
+    <div class="card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 12h8M12 8v8M5 5h14v14H5z"/></svg></div>
+    <div>
+      <p class="cat-label">IA / RAG</p>
+      <h3><a href="/tools/llm-token-counter/">LLM Token Counter</a></h3>
+      <p class="tagline">Conte tokens e estime o custo para GPT, Claude e Gemini.</p>
+      <p class="price-line">Cerca de US$ 1 por 2.000 textos únicos.</p>
+    </div>
+  </div>
+  <ul class="versions"><li><div class="ver-place"><strong>Pay per use</strong><span>Apify</span></div><span class="price">$0.0005 per unique text</span><div class="btn-row"><a class="btn btn-primary btn-sm" href="https://apify.com/tidybytetools/llm-token-counter">Try it on Apify</a></div></li></ul>
+</article>
+
+
+<article class="card" id="tool-language-detector" data-tool-card data-category="ai" data-search="language detector language-detector detect the language of a text, offline, with a confidence score. paste text and get the language name, iso codes, and how sure the tool is. short or mixed texts are marked as less reliable. no api key is needed. detecte o idioma de um texto, offline, com um grau de confiança. detectar idioma código iso idioma idioma de un texto offline detectar idioma código iso de idioma idioma de um texto offline sprache erkennen iso sprachcode textsprache offline détecter la langue code iso langue langue d&#x27;un texte hors ligne 言語判定 iso 言語コード テキストの言語 オフライン 语言检测 iso 语言代码 文本语言 离线">
+  <div class="card-top">
+    <div class="card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h10M9 6c0 8-4 12-4 12M9 6c0 8 4 12 4 12M6 14h6M14 8h6l-6 12h6"/></svg></div>
+    <div>
+      <p class="cat-label">IA / RAG</p>
+      <h3><a href="/tools/language-detector/">Language Detector</a></h3>
+      <p class="tagline">Detecte o idioma de um texto, offline, com um grau de confiança.</p>
+      <p class="price-line">Cerca de US$ 1 por 1.250 textos únicos.</p>
+    </div>
+  </div>
+  <ul class="versions"><li><div class="ver-place"><strong>Pay per use</strong><span>Apify</span></div><span class="price">$0.0008/text</span><div class="btn-row"><a class="btn btn-primary btn-sm" href="https://apify.com/tidybytetools/language-detector">Try it on Apify</a></div></li></ul>
+</article>
+</div>
+          </div>
+        </section>
+        
+        <section id="media" aria-labelledby="h-media">
+          <div class="wrap">
+            <div class="section-head">
+              <h2 id="h-media">Imagens e vídeo</h2>
+            </div>
+            <div class="grid">
+<article class="card" id="tool-gif-forge" data-tool-card data-category="media" data-search="gif forge gif-forge turn a folder of videos into small, sharp gifs, offline. drop in a folder of clips and get a folder of small, sharp, looping gifs. it can also remove solid image backgrounds, all on your computer. transforme uma pasta de videos em gifs pequeños e nítidos, offline. video a gif hacer gifs quitar fondo offline video para gif fazer gifs remover fundo offline video zu gif gifs erstellen hintergrund entfernen offline video vers gif faire des gif enlever fond hors ligne 動画 を gif gif 作成 背景削除 オフライン 视频转 gif 制作 gif 去除背景 离线">
+  <div class="card-top">
+    <div class="card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 6h14v12H5zM9 10v4M9 12h2M13 10v4h2"/></svg></div>
+    <div>
+      <p class="cat-label">Imagens e vídeo</p>
+      <h3><a href="/tools/gif-forge/">GIF Forge</a></h3>
+      <p class="tagline">Transforme uma pasta de videos em GIFs pequeños e nítidos, offline.</p>
+      
+    </div>
+  </div>
+  <ul class="versions"><li><div class="ver-place"><strong>For your computer</strong><span>Gumroad</span></div><span class="price">$7</span><div class="btn-row"><a class="btn btn-secondary btn-sm" href="https://tidybyte.gumroad.com/l/vjbsqs">Buy on Gumroad</a></div></li></ul>
+</article>
+</div>
+          </div>
+        </section>
+        
+        <section id="n8n" aria-labelledby="h-n8n">
+          <div class="wrap">
+            <div class="section-head">
+              <h2 id="h-n8n">Fluxos do n8n</h2>
+            </div>
+            <div class="grid">
+<article class="card" id="tool-n8n-data-cleanup-pack" data-tool-card data-category="n8n" data-search="n8n data cleanup pack n8n-data-cleanup-pack 9 n8n workflows for messy csvs, leads, invoices, sheets, and uptime alerts. import a file, pick your logins, and run. these workflows clean messy data in n8n, using only the nodes that come with n8n. 9 fluxos n8n para csv, leads, faturas, planilhas e alertas de uptime. flujos n8n limpiar csv n8n automatización n8n alertas uptime fluxos n8n limpar csv n8n automação n8n alertas uptime n8n workflows csv in n8n n8n automatisierung uptime alerts flux n8n nettoyer csv n8n automatisation n8n alertes uptime n8n ワークフロー n8n csv 整理 n8n 自動化 稼働監視 n8n 工作流 n8n 清理 csv n8n 自动化 可用性提醒">
+  <div class="card-top">
+    <div class="card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6h5v5H6zM13 13h5v5h-5zM8.5 11v2H13"/></svg></div>
+    <div>
+      <p class="cat-label">Fluxos do n8n</p>
+      <h3><a href="/tools/n8n-data-cleanup-pack/">n8n Data Cleanup Pack</a></h3>
+      <p class="tagline">9 fluxos n8n para CSV, leads, faturas, planilhas e alertas de uptime.</p>
+      
+    </div>
+  </div>
+  <ul class="versions"><li><div class="ver-place"><strong>For n8n</strong><span>Gumroad</span></div><span class="price">$19</span><div class="btn-row"><a class="btn btn-secondary btn-sm" href="https://tidybyte.gumroad.com/l/n8n-data-cleanup-pack">Buy on Gumroad</a></div></li><li><div class="ver-place"><strong>Free sample</strong><span>Gumroad</span></div><span class="badge-free">FREE</span><div class="btn-row"><a class="btn btn-primary btn-sm" href="https://tidybyte.gumroad.com/l/n8n-cleanup-sampler">Get free on Gumroad</a></div></li></ul>
+</article>
+
+
+<article class="card" id="tool-n8n-cleanup-sampler" data-tool-card data-category="n8n" data-search="n8n cleanup sampler n8n-cleanup-sampler 2 free n8n workflows from the data cleanup pack: csv cleanup and uptime alerts. try two workflows for free before you buy the full pack. import a file, follow the setup note inside, and run. no logins are stored in the files. 2 fluxos n8n gratis do pacote: limpeza de csv e alertas de uptime. n8n gratis muestra n8n limpiar csv n8n alertas uptime n8n gratis amostra n8n limpar csv n8n alertas uptime n8n kostenlos n8n sample csv in n8n uptime alerts n8n gratuit échantillon n8n nettoyer csv n8n alertes uptime n8n 無料 n8n サンプル n8n csv 稼働監視 免费 n8n n8n 样例 n8n 清理 csv 可用性提醒">
+  <div class="card-top">
+    <div class="card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6h5v5H6zM13 13h5v5h-5zM8.5 11v2H13"/></svg></div>
+    <div>
+      <p class="cat-label">Fluxos do n8n</p>
+      <h3><a href="/tools/n8n-cleanup-sampler/">n8n Cleanup Sampler</a></h3>
+      <p class="tagline">2 fluxos n8n gratis do pacote: limpeza de CSV e alertas de uptime.</p>
+      
+    </div>
+  </div>
+  <ul class="versions"><li><div class="ver-place"><strong>Free sample</strong><span>Gumroad</span></div><span class="badge-free">FREE</span><div class="btn-row"><a class="btn btn-primary btn-sm" href="https://tidybyte.gumroad.com/l/n8n-cleanup-sampler">Get free on Gumroad</a></div></li></ul>
+</article>
+</div>
+          </div>
+        </section>
+        
+    </div>
+    <section id="how">
+      <div class="wrap">
+        <h2>Como funciona</h2>
+        <p class="section-intro">Escolha a ferramenta que combina com o seu arquivo. Você pode rodar na sua máquina ou iniciar uma execução na nuvem.</p>
+        <div class="steps">
+          <div class="step">
+            <p class="step-num">01</p>
+            <h3>Escolha uma ferramenta</h3>
+            <p>Cada ferramenta faz um só trabalho, como tirar tabelas de um PDF ou checar uma lista de links.</p>
+          </div>
+          <div class="step">
+            <p class="step-num">02</p>
+            <h3>Rode onde quiser</h3>
+            <p>Baixe uma ferramenta e use no seu computador, ou use a versão da Apify e pague só pelo que ela fizer.</p>
+          </div>
+          <div class="step">
+            <p class="step-num">03</p>
+            <h3>Receba um arquivo limpo</h3>
+            <p>Você recebe CSV, Excel, JSON ou Markdown para usar em uma planilha, um script ou um app de IA.</p>
+          </div>
+        </div>
+        <p class="section-intro" style="margin-top:28px">As ferramentas lite grátis incluem um servidor MCP, para você usá-las no Cursor, no Claude Desktop e em outros apps de IA. Não é preciso uma chave de API. As ferramentas da Apify também podem ser chamadas pelo Apify MCP.</p>
+      </div>
+    </section>
+    <section id="faq">
+      <div class="wrap">
+        <h2>Perguntas frequentes</h2>
+        <div class="faq"><div class="faq-item"><h3>O que é a Tidy Byte Tools?</h3><p>Uma loja pequena de ferramentas que arrumam dados bagunçados. Vendemos downloads que rodam no seu computador e ferramentas de pagamento por uso na Apify. As ferramentas lite grátis estão no GitHub e no PyPI.</p></div><div class="faq-item"><h3>Vocês vão ver meus arquivos?</h3><p>As ferramentas baixadas rodam no seu computador, então esses arquivos ficam com você. As ferramentas da Apify rodam na sua própria conta da Apify. Este site não recebe envios de arquivos.</p></div><div class="faq-item"><h3>Qual é a diferença entre grátis e pago?</h3><p>As ferramentas lite grátis cobrem o caso comum, como um PDF de texto ou uma lista simples de links. As versões pagas acrescentam coisas como saída em Excel, páginas digitalizadas, arquivos Word ou pastas. Cada página da ferramenta lista a diferença.</p></div><div class="faq-item"><h3>O que significa pagamento por uso?</h3><p>Na Apify você paga pelo que a ferramenta faz, como cada página com uma tabela ou cada link checado. Itens que falham ou são pulados são grátis. Cada execução também tem uma taxa inicial de US$ 0,00005. O preço exato está na página da ferramenta e na Apify.</p></div><div class="faq-item"><h3>As ferramentas grátis funcionam com apps de IA?</h3><p>Sim. As ferramentas lite grátis incluem um servidor MCP pequeno que você roda no seu computador. As ferramentas da Apify também podem ser chamadas pelo Apify MCP. As ferramentas locais não precisam de uma chave de API.</p></div><div class="faq-item"><h3>Como peço ajuda?</h3><p>Abra uma issue na página do GitHub dessa ferramenta. Se a compra foi na Gumroad ou na Apify, você também pode usar o suporte desse site.</p></div></div>
+      </div>
+    </section>
+    </main>
+
+<footer class="site-footer">
+  
+  <section class="featured-on" aria-label="Em destaque em">
+    <div class="wrap">
+      <h2>Em destaque em</h2>
+      <p>Quando diretórios nos listarem, as marcas deles aparecem aqui.</p>
+      <ul class="featured-logos"></ul>
+    </div>
+  </section>
+
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      
+    <a class="logo" href="/pt/">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="/assets/img/lockup-horizontal-dark.svg">
+        <img src="/assets/img/lockup-horizontal-light.svg" alt="Tidy Byte Tools" height="32" width="118">
+      </picture>
+    </a>
+    
+      <p>Ferramentas pequenas que arrumam dados bagunçados. Cada uma faz um só trabalho e faz bem.</p>
+    </div>
+    <div>
+      <h2>Ferramentas</h2>
+      <ul><li><a href="/tools/pdf-table-pull/">PDF Table Pull</a></li>
+<li><a href="/tools/doc2md/">Doc to Markdown</a></li>
+<li><a href="/tools/sheet-scrub/">CSV &amp; spreadsheet cleanup</a></li>
+<li><a href="/tools/json-shaper/">JSON Shaper</a></li>
+<li><a href="/tools/lead-sheet-fixer/">Lead Sheet Fixer</a></li>
+<li><a href="/tools/phone-validator/">Phone Number Validator</a></li>
+<li><a href="/tools/data-cleanup-bundle/">Data Cleanup Bundle</a></li>
+<li><a href="/tools/link-check/">Broken Link Checker</a></li>
+<li><a href="/tools/server-pulse/">Server Pulse</a></li>
+<li><a href="/tools/markdown-chunker/">Markdown Chunker for RAG</a></li>
+<li><a href="/tools/gif-forge/">GIF Forge</a></li>
+<li><a href="/tools/n8n-data-cleanup-pack/">n8n Data Cleanup Pack</a></li>
+<li><a href="/tools/n8n-cleanup-sampler/">n8n Cleanup Sampler</a></li>
+<li><a href="/tools/csv-char-fix/">csv-char-fix</a></li>
+<li><a href="/tools/csv-split/">csv-split</a></li>
+<li><a href="/tools/regex-pack/">Regex Pack for Messy Data</a></li>
+<li><a href="/tools/claude-data-skills/">CSV Skills for Claude Code</a></li>
+<li><a href="/tools/base64-lite/">Base64 Encode &amp; Decode</a></li>
+<li><a href="/tools/json-repair-lite/">JSON Repair</a></li>
+<li><a href="/tools/hash-lite/">Hash &amp; Checksum</a></li>
+<li><a href="/tools/html-table-extractor/">HTML Table Extractor</a></li>
+<li><a href="/tools/llm-token-counter/">LLM Token Counter</a></li>
+<li><a href="/tools/json-to-csv/">JSON to CSV Converter</a></li>
+<li><a href="/tools/csv-encoding-fixer/">CSV Encoding Fixer</a></li>
+<li><a href="/tools/json-schema-validator/">JSON Schema Validator</a></li>
+<li><a href="/tools/link-preview/">Link Preview</a></li>
+<li><a href="/tools/language-detector/">Language Detector</a></li>
+<li><a href="/tools/date-timezone/">Date &amp; Timezone Normalizer</a></li></ul>
+    </div>
+    <div>
+      <h2>Lojas</h2>
+      <ul>
+        <li><a href="https://apify.com/tidybytetools">Apify</a></li>
+        <li><a href="https://tidybyte.gumroad.com">Gumroad</a></li>
+        <li><a href="https://github.com/tidybytetools">GitHub</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>Este site</h2>
+      <ul>
+        <li><a href="/guides/">Guias</a></li>
+        <li><a href="/connect/">Para agentes de IA</a></li>
+        <li><a href="/privacy/">Privacidade</a></li>
+        <li><a href="/terms/">Termos</a></li>
+        <li><a href="/llms.txt">llms.txt</a></li>
+        <li><a href="/tools.json">tools.json</a></li>
+        <li><a href="/.well-known/mcp.json">mcp.json</a></li>
+        <li><a href="/openapi.json">openapi.json</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap legal">
+    <p>© 2026 Tidy Byte Tools. Este site não usa cookies de rastreamento.</p>
+  </div>
+</footer>
+
+</body></html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Base64 Encode &amp; Decode — Tidy Byte Tools</title>
+  <meta name="description" content="Encode or decode Base64 for text and local files, on your computer.">
+  <link rel="canonical" href="https://tidybytetools.github.io/tools/base64-lite/">
+  
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preload" href="/assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <meta name="theme-color" content="#F4F7F5" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0D1512" media="(prefers-color-scheme: dark)">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Tidy Byte Tools">
+  <meta property="og:title" content="Base64 Encode &amp; Decode — Tidy Byte Tools">
+  <meta property="og:description" content="Encode or decode Base64 for text and local files, on your computer.">
+  <meta property="og:url" content="https://tidybytetools.github.io/tools/base64-lite/">
+  <meta property="og:image" content="https://tidybytetools.github.io/assets/img/og/base64-lite.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Base64 Encode &amp; Decode — Tidy Byte Tools">
+  <meta name="twitter:description" content="Encode or decode Base64 for text and local files, on your computer.">
+  <meta name="twitter:image" content="https://tidybytetools.github.io/assets/img/og/base64-lite.png">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "SoftwareApplication", "name": "Base64 Encode & Decode", "applicationCategory": "DeveloperApplication", "operatingSystem": "Windows, macOS, Linux", "description": "Encode or decode Base64 for text and local files, on your computer.", "url": "https://tidybytetools.github.io/tools/base64-lite/", "image": "https://tidybytetools.github.io/assets/img/covers/base64-lite.png", "author": {"@type": "Organization", "name": "Tidy Byte Tools", "url": "https://tidybytetools.github.io"}, "inLanguage": "en", "offers": {"@type": "Offer", "url": "https://github.com/tidybytetools/base64-lite", "availability": "https://schema.org/InStock", "priceCurrency": "USD", "description": "Free lite on GitHub: Free", "price": "0"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does this tool do?", "acceptedAnswer": {"@type": "Answer", "text": "Encode or decode Base64 for text and local files, on your computer. Turn text or a local file into Base64, or turn Base64 back into text or bytes. You can also use the URL-safe alphabet and data-URI output. It runs offline."}}, {"@type": "Question", "name": "What does it cost?", "acceptedAnswer": {"@type": "Answer", "text": "Free lite on GitHub costs Free. CLI and MCP server. Install for now with: pip install git+https://github.com/tidybytetools/base64-lite. We will switch this to a PyPI install when the package is on PyPI. Pay per use on Apify costs $0.001 per unique item. Failed items are free. The public store page goes live this week. The Apify listing goes public this week."}}, {"@type": "Question", "name": "Will you see my files?", "acceptedAnswer": {"@type": "Answer", "text": "The download tools run on your computer, so those files stay with you. The Apify tools run in your own Apify account. This website does not take uploads."}}, {"@type": "Question", "name": "Does the free tool work with AI apps?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The free lite version includes a small MCP server. You can use it from Cursor, Claude Desktop, and other apps that support MCP. No API key is needed."}}], "url": "https://tidybytetools.github.io/tools/base64-lite/"}]}</script><script src="/assets/js/site.js" defer></script>
+</head>
+
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="header-inner">
+
+    <a class="logo" href="/">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="/assets/img/lockup-horizontal-dark.svg">
+        <img src="/assets/img/lockup-horizontal-light.svg" alt="Tidy Byte Tools" height="32" width="118">
+      </picture>
+    </a>
+    
+<div class="header-tools">
+<nav aria-label="Primary"><ul><li><a href="/tools/" aria-current="page">Tools</a></li><li><a href="/guides/">Guides</a></li><li><a href="/#how">How it works</a></li><li><a href="/#faq">FAQ</a></li><li><a href="/connect/">For AI agents</a></li><li><a href="https://github.com/tidybytetools">GitHub</a></li></ul></nav>
+<nav class="lang-switch" aria-label="Language"><ul class="lang-switch"><li><a href="/tools/base64-lite/" lang="en" hreflang="en" title="English" aria-current="true">EN</a></li><li><a href="/es/" lang="es" hreflang="es" title="Español">ES</a></li><li><a href="/pt/" lang="pt-BR" hreflang="pt-BR" title="Português">PT</a></li><li><a href="/de/" lang="de" hreflang="de" title="Deutsch">DE</a></li><li><a href="/fr/" lang="fr" hreflang="fr" title="Français">FR</a></li><li><a href="/ja/" lang="ja" hreflang="ja" title="日本語">JA</a></li><li><a href="/zh/" lang="zh-CN" hreflang="zh-CN" title="中文">中文</a></li></ul></nav>
+</div></div></header>
+<main id="main">
+    <article class="page-hero">
+      <div class="wrap">
+        <p class="crumb"><a href="/">Home</a> / <a href="/tools/">Tools</a> / Base64 Encode &amp; Decode</p>
+        <p class="cat-label">CSV &amp; data</p>
+        <h1>Base64 Encode &amp; Decode</h1>
+        <p class="lede">Encode or decode Base64 for text and local files, on your computer.</p>
+        <p class="price-line">About $1 per 1,000 unique texts.</p>
+        <div class="btn-row"><a class="btn btn-primary btn-sm" href="https://github.com/tidybytetools/base64-lite">Free download</a></div>
+        
+        <div class="cover">
+          <picture>
+            <source type="image/webp" srcset="/assets/img/covers/base64-lite.webp">
+            <img src="/assets/img/covers/base64-lite.png" alt="Base64 Encode &amp; Decode — Encode or decode Base64 for text and local files, on your computer." width="1280" height="720">
+          </picture>
+        </div>
+        
+        
+        <div class="prose">
+          <p>Turn text or a local file into Base64, or turn Base64 back into text or bytes. You can also use the URL-safe alphabet and data-URI output. It runs offline.</p>
+          <h2>What it does</h2>
+          <ul><li>Encodes and decodes Base64 for text and local files.</li><li>Supports the URL-safe alphabet and data-URI output.</li><li>Includes a free MCP server for AI apps. No API key is needed.</li><li>The free tool does not fetch file links from the internet. The Apify version does.</li></ul>
+        </div>
+        
+        <h2>Before and after</h2>
+        <div class="ba">
+          <div class="ba-pane before">
+            <p class="ba-label">Plain text</p>
+            <pre><code>hello world</code></pre>
+          </div>
+          <div class="ba-pane after">
+            <p class="ba-label">Base64</p>
+            <pre><code>aGVsbG8gd29ybGQ=</code></pre>
+          </div>
+        </div>
+        <p class="ba-source">From base64-lite/README.md.</p>
+    
+        <div class="prose">
+          <h2>Get it</h2>
+        </div>
+        <div class="version-block">
+              <h3>Free lite · GitHub · Free</h3>
+              <p>CLI and MCP server. Install for now with: pip install git+https://github.com/tidybytetools/base64-lite. We will switch this to a PyPI install when the package is on PyPI.</p>
+              <div class="btn-row"><a class="btn btn-primary btn-sm" href="https://github.com/tidybytetools/base64-lite">Free download</a></div>
+            </div><div class="version-block">
+              <h3>Pay per use · Apify · $0.001 per unique item</h3>
+              <p>Failed items are free. The public store page goes live this week. The Apify listing goes public this week.</p>
+              
+            </div>
+        <div class="faq" style="margin-top:36px"><h2>FAQ</h2><div class="faq-item"><h3>What does this tool do?</h3><p>Encode or decode Base64 for text and local files, on your computer. Turn text or a local file into Base64, or turn Base64 back into text or bytes. You can also use the URL-safe alphabet and data-URI output. It runs offline.</p></div><div class="faq-item"><h3>What does it cost?</h3><p>Free lite on GitHub costs Free. CLI and MCP server. Install for now with: pip install git+https://github.com/tidybytetools/base64-lite. We will switch this to a PyPI install when the package is on PyPI. Pay per use on Apify costs $0.001 per unique item. Failed items are free. The public store page goes live this week. The Apify listing goes public this week.</p></div><div class="faq-item"><h3>Will you see my files?</h3><p>The download tools run on your computer, so those files stay with you. The Apify tools run in your own Apify account. This website does not take uploads.</p></div><div class="faq-item"><h3>Does the free tool work with AI apps?</h3><p>Yes. The free lite version includes a small MCP server. You can use it from Cursor, Claude Desktop, and other apps that support MCP. No API key is needed.</p></div></div>
+      </div>
+    </article>
+    </main>
+
+<footer class="site-footer">
+  
+  <section class="featured-on" aria-label="Featured on">
+    <div class="wrap">
+      <h2>Featured on</h2>
+      <p>As directories list us, their marks will show up here.</p>
+      <ul class="featured-logos"></ul>
+    </div>
+  </section>
+
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      
+    <a class="logo" href="/">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="/assets/img/lockup-horizontal-dark.svg">
+        <img src="/assets/img/lockup-horizontal-light.svg" alt="Tidy Byte Tools" height="32" width="118">
+      </picture>
+    </a>
+    
+      <p>Small tools that clean up messy data. Each one does one job and does it well.</p>
+    </div>
+    <div>
+      <h2>Tools</h2>
+      <ul><li><a href="/tools/pdf-table-pull/">PDF Table Pull</a></li>
+<li><a href="/tools/doc2md/">Doc to Markdown</a></li>
+<li><a href="/tools/sheet-scrub/">CSV &amp; spreadsheet cleanup</a></li>
+<li><a href="/tools/json-shaper/">JSON Shaper</a></li>
+<li><a href="/tools/lead-sheet-fixer/">Lead Sheet Fixer</a></li>
+<li><a href="/tools/phone-validator/">Phone Number Validator</a></li>
+<li><a href="/tools/data-cleanup-bundle/">Data Cleanup Bundle</a></li>
+<li><a href="/tools/link-check/">Broken Link Checker</a></li>
+<li><a href="/tools/server-pulse/">Server Pulse</a></li>
+<li><a href="/tools/markdown-chunker/">Markdown Chunker for RAG</a></li>
+<li><a href="/tools/gif-forge/">GIF Forge</a></li>
+<li><a href="/tools/n8n-data-cleanup-pack/">n8n Data Cleanup Pack</a></li>
+<li><a href="/tools/n8n-cleanup-sampler/">n8n Cleanup Sampler</a></li>
+<li><a href="/tools/csv-char-fix/">csv-char-fix</a></li>
+<li><a href="/tools/csv-split/">csv-split</a></li>
+<li><a href="/tools/regex-pack/">Regex Pack for Messy Data</a></li>
+<li><a href="/tools/claude-data-skills/">CSV Skills for Claude Code</a></li>
+<li><a href="/tools/base64-lite/">Base64 Encode &amp; Decode</a></li>
+<li><a href="/tools/json-repair-lite/">JSON Repair</a></li>
+<li><a href="/tools/hash-lite/">Hash &amp; Checksum</a></li>
+<li><a href="/tools/html-table-extractor/">HTML Table Extractor</a></li>
+<li><a href="/tools/llm-token-counter/">LLM Token Counter</a></li>
+<li><a href="/tools/json-to-csv/">JSON to CSV Converter</a></li>
+<li><a href="/tools/csv-encoding-fixer/">CSV Encoding Fixer</a></li>
+<li><a href="/tools/json-schema-validator/">JSON Schema Validator</a></li>
+<li><a href="/tools/link-preview/">Link Preview</a></li>
+<li><a href="/tools/language-detector/">Language Detector</a></li>
+<li><a href="/tools/date-timezone/">Date &amp; Timezone Normalizer</a></li></ul>
+    </div>
+    <div>
+      <h2>Shops</h2>
+      <ul>
+        <li><a href="https://apify.com/tidybytetools">Apify</a></li>
+        <li><a href="https://tidybyte.gumroad.com">Gumroad</a></li>
+        <li><a href="https://github.com/tidybytetools">GitHub</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>This site</h2>
+      <ul>
+        <li><a href="/guides/">Guides</a></li>
+        <li><a href="/connect/">For AI agents</a></li>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/terms/">Terms</a></li>
+        <li><a href="/llms.txt">llms.txt</a></li>
+        <li><a href="/tools.json">tools.json</a></li>
+        <li><a href="/.well-known/mcp.json">mcp.json</a></li>
+        <li><a href="/openapi.json">openapi.json</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap legal">
+    <p>© 2026 Tidy Byte Tools. This site does not use tracking cookies.</p>
+  </div>
+</footer>
+
+</body></html>

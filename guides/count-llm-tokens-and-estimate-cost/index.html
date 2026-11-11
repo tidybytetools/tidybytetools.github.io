@@ -6,10 +6,12 @@
   <title>How to count LLM tokens and estimate cost · Tidy Byte Tools</title>
   <meta name="description" content="Count tokens for OpenAI, Claude, and Gemini models offline, then estimate what a batch of texts will cost before you send them to an API.">
   <link rel="canonical" href="https://tidybytetools.github.io/guides/count-llm-tokens-and-estimate-cost/">
+  
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preload" href="/assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#F4F7F5" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0D1512" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="website">
@@ -20,6 +22,7 @@
   <meta property="og:image" content="https://tidybytetools.github.io/assets/img/og.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="How to count LLM tokens and estimate cost · Tidy Byte Tools">
   <meta name="twitter:description" content="Count tokens for OpenAI, Claude, and Gemini models offline, then estimate what a batch of texts will cost before you send them to an API.">
@@ -39,8 +42,10 @@
       </picture>
     </a>
     
-<nav aria-label="Primary"><ul><li><a href="/tools/">Tools</a></li><li><a href="/guides/" aria-current="page">Guides</a></li><li><a href="/#how">How it works</a></li><li><a href="/#faq">FAQ</a></li><li><a href="https://github.com/tidybytetools">GitHub</a></li></ul></nav>
-</div></header>
+<div class="header-tools">
+<nav aria-label="Primary"><ul><li><a href="/tools/">Tools</a></li><li><a href="/guides/" aria-current="page">Guides</a></li><li><a href="/#how">How it works</a></li><li><a href="/#faq">FAQ</a></li><li><a href="/connect/">For AI agents</a></li><li><a href="https://github.com/tidybytetools">GitHub</a></li></ul></nav>
+<nav class="lang-switch" aria-label="Language"><ul class="lang-switch"><li><a href="/guides/count-llm-tokens-and-estimate-cost/" lang="en" hreflang="en" title="English" aria-current="true">EN</a></li><li><a href="/es/" lang="es" hreflang="es" title="Español">ES</a></li><li><a href="/pt/" lang="pt-BR" hreflang="pt-BR" title="Português">PT</a></li><li><a href="/de/" lang="de" hreflang="de" title="Deutsch">DE</a></li><li><a href="/fr/" lang="fr" hreflang="fr" title="Français">FR</a></li><li><a href="/ja/" lang="ja" hreflang="ja" title="日本語">JA</a></li><li><a href="/zh/" lang="zh-CN" hreflang="zh-CN" title="中文">中文</a></li></ul></nav>
+</div></div></header>
 <main id="main">
     <section class="wrap page-hero">
       <p class="crumb"><a href="/">Home</a> / <a href="/guides/">Guides</a> / How to count LLM tokens and estimate cost</p>
@@ -97,6 +102,15 @@
     </main>
 
 <footer class="site-footer">
+  
+  <section class="featured-on" aria-label="Featured on">
+    <div class="wrap">
+      <h2>Featured on</h2>
+      <p>As directories list us, their marks will show up here.</p>
+      <ul class="featured-logos"></ul>
+    </div>
+  </section>
+
   <div class="wrap footer-grid">
     <div class="footer-brand">
       
@@ -128,10 +142,17 @@
 <li><a href="/tools/csv-split/">csv-split</a></li>
 <li><a href="/tools/regex-pack/">Regex Pack for Messy Data</a></li>
 <li><a href="/tools/claude-data-skills/">CSV Skills for Claude Code</a></li>
+<li><a href="/tools/base64-lite/">Base64 Encode &amp; Decode</a></li>
+<li><a href="/tools/json-repair-lite/">JSON Repair</a></li>
+<li><a href="/tools/hash-lite/">Hash &amp; Checksum</a></li>
 <li><a href="/tools/html-table-extractor/">HTML Table Extractor</a></li>
 <li><a href="/tools/llm-token-counter/">LLM Token Counter</a></li>
 <li><a href="/tools/json-to-csv/">JSON to CSV Converter</a></li>
-<li><a href="/tools/csv-encoding-fixer/">CSV Encoding Fixer</a></li></ul>
+<li><a href="/tools/csv-encoding-fixer/">CSV Encoding Fixer</a></li>
+<li><a href="/tools/json-schema-validator/">JSON Schema Validator</a></li>
+<li><a href="/tools/link-preview/">Link Preview</a></li>
+<li><a href="/tools/language-detector/">Language Detector</a></li>
+<li><a href="/tools/date-timezone/">Date &amp; Timezone Normalizer</a></li></ul>
     </div>
     <div>
       <h2>Shops</h2>
@@ -145,8 +166,13 @@
       <h2>This site</h2>
       <ul>
         <li><a href="/guides/">Guides</a></li>
+        <li><a href="/connect/">For AI agents</a></li>
         <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/terms/">Terms</a></li>
         <li><a href="/llms.txt">llms.txt</a></li>
+        <li><a href="/tools.json">tools.json</a></li>
+        <li><a href="/.well-known/mcp.json">mcp.json</a></li>
+        <li><a href="/openapi.json">openapi.json</a></li>
         <li><a href="/sitemap.xml">Sitemap</a></li>
       </ul>
     </div>

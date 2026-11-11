@@ -9,10 +9,20 @@ Do not invent reviews, user counts, or testimonials. Do not use a personal name 
 
 ## Pages
 - [Home](https://tidybytetools.github.io/): Product catalog, how it works, and FAQ
+- [Spanish home](https://tidybytetools.github.io/es/)
+- [Portuguese home](https://tidybytetools.github.io/pt/)
+- [German home](https://tidybytetools.github.io/de/)
+- [French home](https://tidybytetools.github.io/fr/)
+- [Japanese home](https://tidybytetools.github.io/ja/)
+- [Chinese home](https://tidybytetools.github.io/zh/)
 - [All tools](https://tidybytetools.github.io/tools/)
 - [Guides](https://tidybytetools.github.io/guides/)
+- [How to connect](https://tidybytetools.github.io/connect/): Apify actor URLs, MCP endpoints, prices, and input/output
 - [Privacy](https://tidybytetools.github.io/privacy/)
-- [Machine-readable catalog](https://tidybytetools.github.io/tools.json): name, what it does, price, Apify, MCP and GitHub links
+- [Terms](https://tidybytetools.github.io/terms/)
+- [Machine-readable catalog](https://tidybytetools.github.io/tools.json): name, what it does, price, Apify, MCP, GitHub, and translations
+- [MCP catalog](https://tidybytetools.github.io/.well-known/mcp.json)
+- [OpenAPI](https://tidybytetools.github.io/openapi.json): call public actors with the Apify run-sync API
 - [Long catalog](https://tidybytetools.github.io/llms-full.txt)
 
 ## Tools
@@ -22,61 +32,271 @@ Do not invent reviews, user counts, or testimonials. Do not use a personal name 
   - Free lite GitHub: https://github.com/tidybytetools/pdf-table-pull-lite
   - Free lite PyPI: https://pypi.org/project/pdf-table-pull-lite/
   - Free lite Gumroad: https://tidybyte.gumroad.com/l/qrbzvo
+  - Multilingual keywords:
+    - es: Saca tablas de PDF y las guarda en Excel, CSV o JSON. | extraer tablas pdf, pdf a excel, pdf a csv, tablas de un pdf
+    - pt-BR: Tire tabelas de PDFs e salve em Excel, CSV ou JSON. | extrair tabelas pdf, pdf para excel, pdf para csv, tabelas de pdf
+    - de: Tabellen aus PDFs nach Excel, CSV oder JSON holen. | pdf tabellen extrahieren, pdf nach excel, pdf nach csv, tabellen aus pdf
+    - fr: Extraire les tableaux des PDF vers Excel, CSV ou JSON. | extraire tableaux pdf, pdf vers excel, pdf vers csv, tableaux pdf
+    - ja: PDFの表をExcel、CSV、JSONに取り出します。 | PDF 表 抽出, PDF から Excel, PDF から CSV, PDF テーブル
+    - zh-CN: 从 PDF 中提取表格，导出为 Excel、CSV 或 JSON。 | PDF 表格提取, PDF 转 Excel, PDF 转 CSV, PDF 表格
 - [Doc to Markdown](https://tidybytetools.github.io/tools/doc2md/): Turn PDFs, Word files, and web pages into clean Markdown.
   - Pay per use (Apify, $0.003 per file): https://apify.com/tidybytetools/doc-to-markdown
   - For your computer (Gumroad, $12): https://tidybyte.gumroad.com/l/frlkv
   - Free lite GitHub: https://github.com/tidybytetools/doc2md-lite
   - Free lite PyPI: https://pypi.org/project/doc2md-lite/
   - Free lite Gumroad: https://tidybyte.gumroad.com/l/doc2md-lite
+  - Multilingual keywords:
+    - es: Convierte PDF, Word y páginas web en Markdown limpio. | pdf a markdown, word a markdown, html a markdown, markdown para ia
+    - pt-BR: Transforme PDFs, Word e páginas web em Markdown limpo. | pdf para markdown, word para markdown, html para markdown, markdown para ia
+    - de: PDFs, Word-Dateien und Webseiten in sauberes Markdown verwandeln. | pdf zu markdown, word zu markdown, html zu markdown, markdown fur ki
+    - fr: Transformer des PDF, fichiers Word et pages web en Markdown propre. | pdf vers markdown, word vers markdown, html vers markdown, markdown pour ia
+    - ja: PDF、Word、ウェブページをきれいなMarkdownにします。 | PDF を Markdown, Word を Markdown, HTML を Markdown, AI 用 Markdown
+    - zh-CN: 把 PDF、Word 和网页转成干净的 Markdown。 | PDF 转 Markdown, Word 转 Markdown, HTML 转 Markdown, 给 AI 的 Markdown
 - [CSV & spreadsheet cleanup](https://tidybytetools.github.io/tools/sheet-scrub/): Clean messy CSV and Excel files: dates, phones, emails, and duplicates.
   - Pay per use (Apify, $0.0005 per clean row): https://apify.com/tidybytetools/csv-excel-data-cleaner
   - For your computer (Gumroad, $9): https://tidybyte.gumroad.com/l/cknndc
+  - Multilingual keywords:
+    - es: Limpia CSV y Excel desordenados: fechas, teléfonos, correos y duplicados. | limpiar csv, limpiar excel, quitar duplicados, arreglar fechas
+    - pt-BR: Limpe CSV e Excel bagunçados: datas, telefones, e-mails e duplicatas. | limpar csv, limpar excel, remover duplicatas, arrumar datas
+    - de: Unordentliche CSV- und Excel-Dateien bereinigen: Daten, Telefone, E-Mails und Duplikate. | csv bereinigen, excel bereinigen, duplikate entfernen, daten standardisieren
+    - fr: Nettoyer des CSV et Excel en désordre : dates, telephones, e-mails et doublons. | nettoyer csv, nettoyer excel, supprimer doublons, corriger dates
+    - ja: 乱れたCSVやExcelをきれいにします。日付、電話、メール、重複に対応します。 | CSV クリーニング, Excel クリーニング, 重複削除, 日付の整形
+    - zh-CN: 清理杂乱的 CSV 和 Excel：日期、电话、邮箱和重复行。 | 清理 CSV, 清理 Excel, 去重, 统一日期
 - [JSON Shaper](https://tidybytetools.github.io/tools/json-shaper/): Turn messy notes, CSV, and Markdown tables into clean JSON.
   - For your computer (Gumroad, From $5): https://tidybyte.gumroad.com/l/cznmeo
   - Free lite GitHub: https://github.com/tidybytetools/json-shaper-lite
   - Free lite PyPI: https://pypi.org/project/json-shaper-lite/
   - Free lite Gumroad: https://tidybyte.gumroad.com/l/txytmi
+  - Multilingual keywords:
+    - es: Convierte notas, CSV y tablas Markdown en JSON limpio. | texto a json, csv a json, tabla markdown a json, notas a json
+    - pt-BR: Transforme notas, CSV e tabelas Markdown em JSON limpo. | texto para json, csv para json, tabela markdown para json, notas para json
+    - de: Notizen, CSV und Markdown-Tabellen in sauberes JSON verwandeln. | text zu json, csv zu json, markdown tabelle zu json, notizen zu json
+    - fr: Transformer notes, CSV et tableaux Markdown en JSON propre. | texte vers json, csv vers json, tableau markdown vers json, notes vers json
+    - ja: メモ、CSV、Markdownの表をきれいなJSONにします。 | テキスト を JSON, CSV を JSON, Markdown 表 を JSON, メモ を JSON
+    - zh-CN: 把杂乱笔记、CSV 和 Markdown 表格转成干净的 JSON。 | 文本转 JSON, CSV 转 JSON, Markdown 表格转 JSON, 笔记转 JSON
 - [Lead Sheet Fixer](https://tidybytetools.github.io/tools/lead-sheet-fixer/): Clean a lead list: fix phones, check emails, and merge duplicates.
   - For your computer (Gumroad, $9): https://tidybyte.gumroad.com/l/iaiacv
+  - Multilingual keywords:
+    - es: Limpia una lista de clientes: teléfonos, correos y duplicados. | limpiar leads, arreglar teléfonos, validar emails, fusionar duplicados
+    - pt-BR: Limpe uma lista de leads: telefones, e-mails e duplicatas. | limpar leads, arrumar telefones, validar emails, juntar duplicatas
+    - de: Eine Lead-Liste bereinigen: Telefone prüfen, E-Mails prüfen, Duplikate zusammenführen. | leads bereinigen, telefone formatieren, e-mails prüfen, duplikate zusammenführen
+    - fr: Nettoyer une liste de prospects : telephones, e-mails et doublons. | nettoyer prospects, formater telephones, vérifier emails, fusionner doublons
+    - ja: リード名簿をきれいにします。電話の整形、メールの確認、重複の統合ができます。 | リード クリーニング, 電話番号 整形, メール 確認, 重複 統合
+    - zh-CN: 清理线索名单：整理电话、检查邮箱并合并重复行。 | 清理线索, 整理电话, 检查邮箱, 合并重复
 - [Phone Number Validator](https://tidybytetools.github.io/tools/phone-validator/): Check phone numbers and format them as E.164, in bulk, offline.
   - Pay per use (Apify, $0.001 per number): https://apify.com/tidybytetools/phone-number-validator-formatter
+  - Multilingual keywords:
+    - es: Comprueba teléfonos y los escribe en E.164, en lote y sin conexión. | validar teléfonos, formato e.164, teléfonos en lote, sin conexión
+    - pt-BR: Verifique telefones e formate em E.164, em lote e offline. | validar telefones, formato e.164, telefones em lote, offline
+    - de: Telefonnummern prüfen und als E.164 formatieren, in Mengen, offline. | telefonnummern prüfen, e.164 format, bulk telefone, offline
+    - fr: Vérifier des numeros de telephone et les ecrire en E.164, en lot, hors ligne. | valider telephones, format e.164, telephones en lot, hors ligne
+    - ja: 電話番号を調べ、E.164形式にまとめます。一括で、オフラインです。 | 電話番号 検証, E.164, 一括 電話番号, オフライン
+    - zh-CN: 批量离线检查电话号码，并格式化为 E.164。 | 验证电话号码, E.164 格式, 批量电话, 离线
 - [Data Cleanup Bundle](https://tidybytetools.github.io/tools/data-cleanup-bundle/): Three desktop tools together: PDF tables, sheet cleanup, and JSON Shaper.
   - For your computer (Gumroad, $19): https://tidybyte.gumroad.com/l/qnlxiy
+  - Multilingual keywords:
+    - es: Tres herramientas de escritorio juntas: tablas PDF, limpieza de hojas y JSON Shaper. | paquete de limpieza, pdf excel csv, herramientas offline
+    - pt-BR: Tres ferramentas para o computador juntas: tabelas de PDF, limpeza de planilhas e JSON Shaper. | pacote de limpeza, pdf excel csv, ferramentas offline
+    - de: Drei Desktop-Tools zusammen: PDF-Tabellen, Tabellenbereinigung und JSON Shaper. | cleanup bundle, pdf excel csv, offline tools
+    - fr: Trois outils pour l'ordinateur ensemble : tableaux PDF, nettoyage de feuilles et JSON Shaper. | pack nettoyage, pdf excel csv, outils hors ligne
+    - ja: デスクトップ用の3つのツールセット。PDFの表、表の掃除、JSON Shaperです。 | データ整理 セット, PDF Excel CSV, オフライン ツール
+    - zh-CN: 三个桌面工具打包：PDF 表格、表格清理和 JSON Shaper。 | 数据清理套装, PDF Excel CSV, 离线工具
 - [Broken Link Checker](https://tidybytetools.github.io/tools/link-check/): Check a list of links for status codes, redirects, and broken pages.
   - Pay per use (Apify, $0.001 per link): https://apify.com/tidybytetools/broken-link-checker
   - For your computer (Gumroad, $7): https://tidybyte.gumroad.com/l/link-check
   - Free lite GitHub: https://github.com/tidybytetools/link-check-lite
   - Free lite PyPI: https://pypi.org/project/link-check-lite/
   - Free lite GitHub Action: https://github.com/marketplace/actions/link-check-lite
+  - Multilingual keywords:
+    - es: Revisa una lista de enlaces: códigos de estado, redirecciones y páginas rotas. | enlaces rotos, comprobar links, redirecciones, sitemap
+    - pt-BR: Confira uma lista de links: códigos de status, redirecionamentos e páginas quebradas. | links quebrados, checar links, redirecionamentos, sitemap
+    - de: Eine Linkliste prüfen: Statuscodes, Weiterleitungen und kaputte Seiten. | kaputte links, links prüfen, weiterleitungen, sitemap
+    - fr: Vérifier une liste de liens : codes de statut, redirections et pages cassées. | liens cassés, vérifier liens, redirections, sitemap
+    - ja: リンクのリストを調べ、ステータス、リダイレクト、切れたページを報告します。 | リンク切れ, リンク チェック, リダイレクト, サイトマップ
+    - zh-CN: 检查一组链接的状态码、跳转和失效页面。 | 失效链接, 检查链接, 重定向, 网站地图
 - [Server Pulse](https://tidybytetools.github.io/tools/server-pulse/): Get a Discord alert when a website or server goes down.
   - For your computer (Gumroad, $19): https://tidybyte.gumroad.com/l/cjatbj
+  - Multilingual keywords:
+    - es: Recibe un aviso en Discord cuando un sitio o servidor se cae. | alerta de caída, monitoreo de sitio, aviso discord, uptime
+    - pt-BR: Receba um alerta no Discord quando um site ou servidor cair. | alerta de queda, monitorar site, aviso discord, uptime
+    - de: Eine Discord-Nachricht erhalten, wenn eine Website oder ein Server ausfällt. | ausfall alarm, website überwachen, discord benachrichtigung, uptime
+    - fr: Recevoir une alerte Discord quand un site ou un serveur tombe. | alerte panne, surveiller site, alerte discord, uptime
+    - ja: サイトやサーバが落ちたとき、Discordに知らせます。 | ダウン 通知, サイト 監視, Discord アラート, アップタイム
+    - zh-CN: 网站或服务器宕机时，在 Discord 收到提醒。 | 宕机提醒, 网站监控, Discord 通知, 可用性
 - [Markdown Chunker for RAG](https://tidybytetools.github.io/tools/markdown-chunker/): Split Markdown into chunks for AI search, with heading paths kept.
   - Pay per use (Apify, $0.0001 per chunk): https://apify.com/tidybytetools/markdown-rag-chunker
   - Free lite GitHub: https://github.com/tidybytetools/md-chunk-lite
   - Free lite PyPI: https://pypi.org/project/md-chunk-lite/
+  - Multilingual keywords:
+    - es: Parte Markdown en trozos para búsqueda de IA, conservando la ruta de títulos. | trozos rag, dividir markdown, chunks para ia, rag
+    - pt-BR: Divida Markdown em pedaços para busca de IA, mantendo o caminho dos títulos. | pedaços rag, dividir markdown, chunks para ia, rag
+    - de: Markdown in Abschnitte für die KI-Suche teilen, mit behaltenem Überschriftenpfad. | rag chunks, markdown teilen, ki suche, rag
+    - fr: Découper du Markdown en morceaux pour la recherche IA, en gardant le chemin des titres. | morceaux rag, découper markdown, chunks pour ia, rag
+    - ja: MarkdownをAI検索用のチャンクに分割し、見出しの道筋を残します。 | RAG チャンク, Markdown 分割, AI 検索, RAG
+    - zh-CN: 按标题把 Markdown 切成供 AI 检索的分块，并保留标题路径。 | RAG 分块, 拆分 Markdown, AI 检索, RAG
 - [GIF Forge](https://tidybytetools.github.io/tools/gif-forge/): Turn a folder of videos into small, sharp GIFs, offline.
   - For your computer (Gumroad, $7): https://tidybyte.gumroad.com/l/vjbsqs
+  - Multilingual keywords:
+    - es: Convierte una carpeta de videos en GIFs pequeños y nítidos, sin conexión. | video a gif, hacer gifs, quitar fondo, offline
+    - pt-BR: Transforme uma pasta de videos em GIFs pequeños e nítidos, offline. | video para gif, fazer gifs, remover fundo, offline
+    - de: Einen Ordner mit Videos offline in kleine, scharfe GIFs verwandeln. | video zu gif, gifs erstellen, hintergrund entfernen, offline
+    - fr: Transformer un dossier de videos en GIF petits et nets, hors ligne. | video vers gif, faire des gif, enlever fond, hors ligne
+    - ja: 動画のフォルダを、小さくて鮮明なGIFにします。オフラインです。 | 動画 を GIF, GIF 作成, 背景削除, オフライン
+    - zh-CN: 把一文件夹视频离线转成小而清晰的 GIF。 | 视频转 GIF, 制作 GIF, 去除背景, 离线
 - [n8n Data Cleanup Pack](https://tidybytetools.github.io/tools/n8n-data-cleanup-pack/): 9 n8n workflows for messy CSVs, leads, invoices, sheets, and uptime alerts.
   - For n8n (Gumroad, $19): https://tidybyte.gumroad.com/l/n8n-data-cleanup-pack
   - Free sample (Gumroad, Free): https://tidybyte.gumroad.com/l/n8n-cleanup-sampler
+  - Multilingual keywords:
+    - es: 9 flujos de n8n para CSV, clientes, facturas, hojas y avisos de actividad. | flujos n8n, limpiar csv n8n, automatización n8n, alertas uptime
+    - pt-BR: 9 fluxos n8n para CSV, leads, faturas, planilhas e alertas de uptime. | fluxos n8n, limpar csv n8n, automação n8n, alertas uptime
+    - de: 9 n8n-Workflows für CSV, Leads, Rechnungen, Tabellen und Uptime-Hinweise. | n8n workflows, csv in n8n, n8n automatisierung, uptime alerts
+    - fr: 9 flux n8n pour CSV, prospects, factures, feuilles et alertes de disponibilité. | flux n8n, nettoyer csv n8n, automatisation n8n, alertes uptime
+    - ja: CSV、リード、請求、表、稼働監視向けのn8nワークフローが9本あります。 | n8n ワークフロー, n8n CSV 整理, n8n 自動化, 稼働監視
+    - zh-CN: 9 个 n8n 工作流，用于杂乱 CSV、线索、发票、表格和在线状态提醒。 | n8n 工作流, n8n 清理 CSV, n8n 自动化, 可用性提醒
 - [n8n Cleanup Sampler](https://tidybytetools.github.io/tools/n8n-cleanup-sampler/): 2 free n8n workflows from the Data Cleanup Pack: CSV cleanup and uptime alerts.
   - Free sample (Gumroad, Free): https://tidybyte.gumroad.com/l/n8n-cleanup-sampler
+  - Multilingual keywords:
+    - es: 2 flujos n8n gratis del paquete: limpieza de CSV y avisos de actividad. | n8n gratis, muestra n8n, limpiar csv n8n, alertas uptime
+    - pt-BR: 2 fluxos n8n gratis do pacote: limpeza de CSV e alertas de uptime. | n8n gratis, amostra n8n, limpar csv n8n, alertas uptime
+    - de: 2 kostenlose n8n-Workflows aus dem Paket: CSV-Bereinigung und Uptime-Hinweise. | n8n kostenlos, n8n sample, csv in n8n, uptime alerts
+    - fr: 2 flux n8n gratuits du pack : nettoyage CSV et alertes de disponibilité. | n8n gratuit, échantillon n8n, nettoyer csv n8n, alertes uptime
+    - ja: パックから無料のn8nワークフローが2本。CSVの整理と稼働の知らせです。 | n8n 無料, n8n サンプル, n8n CSV, 稼働監視
+    - zh-CN: 从套装中免费提供 2 个 n8n 工作流：CSV 清理和在线状态提醒。 | 免费 n8n, n8n 样例, n8n 清理 CSV, 可用性提醒
 - [csv-char-fix](https://tidybytetools.github.io/tools/csv-char-fix/): Fix weird characters like Ã© and â€™ in CSV and text files.
   - For your computer (Gumroad, $1): https://tidybyte.gumroad.com/l/csv-char-fix
+  - Multilingual keywords:
+    - es: Corrige letras raras como caractères rotos en archivos CSV y de texto. | arreglar caractères, mojibake, utf-8 csv, letras rotas
+    - pt-BR: Corrija caractères estranhos em CSV e arquivos de texto. | corrigir caractères, mojibake, utf-8 csv, letras quebradas
+    - de: Kaputte Zeichen in CSV- und Textdateien reparieren. | zeichen reparieren, mojibake, utf-8 csv, kaputte umlaute
+    - fr: Corriger les caractères bizarres dans des fichiers CSV et texte. | corriger caractères, mojibake, utf-8 csv, accents cassés
+    - ja: CSVやテキストの文字化けを直します。 | 文字化け 修正, mojibake, UTF-8 CSV, 壊れた文字
+    - zh-CN: 修复 CSV 和文本文件里的乱码。 | 修复乱码, mojibake, UTF-8 CSV, 奇怪字符
 - [csv-split](https://tidybytetools.github.io/tools/csv-split/): Split a big CSV into smaller files. Every new file keeps the header.
   - For your computer (Gumroad, $1): https://tidybyte.gumroad.com/l/csv-split
+  - Multilingual keywords:
+    - es: Parte un CSV grande en archivos más pequeños. Cada uno conserva la cabecera. | partir csv, dividir csv, csv por columna, archivos más chicos
+    - pt-BR: Divida um CSV grande em arquivos menores. Cada um mantém o cabeçalho. | dividir csv, partir csv, csv por coluna, arquivos menores
+    - de: Eine große CSV-Datei in kleinere Dateien teilen. Jede behält die Kopfzeile. | csv teilen, csv splitten, csv nach spalte, kleinere dateien
+    - fr: Découper un gros CSV en fichiers plus petits. Chaque fichier garde l'en-tête. | découper csv, diviser csv, csv par colonne, fichiers plus petits
+    - ja: 大きなCSVを小さなファイルに分けます。どのファイルにも見出し行が残ります。 | CSV 分割, CSV を分ける, 列で分割, 小さいファイル
+    - zh-CN: 把大的 CSV 拆成更小的文件。每个新文件都保留表头。 | 拆分 CSV, 切割 CSV, 按列拆分, 小文件
 - [Regex Pack for Messy Data](https://tidybytetools.github.io/tools/regex-pack/): 49 ready-to-use regex patterns for emails, phones, dates, money, and more.
   - For your computer (Gumroad, $2): https://tidybyte.gumroad.com/l/regex-pack
+  - Multilingual keywords:
+    - es: 49 patrones de regex listos para correos, teléfonos, fechas, dinero y más. | patrones regex, regex email, regex teléfono, regex fechas
+    - pt-BR: 49 padrões de regex prontos para e-mails, telefones, datas, dinheiro e mais. | padrões regex, regex email, regex telefone, regex datas
+    - de: 49 fertige Regex-Muster für E-Mails, Telefone, Daten, Geld und mehr. | regex muster, regex e-mail, regex telefon, regex datum
+    - fr: 49 motifs regex prêts à l'emploi pour e-mails, telephones, dates, argent et plus. | motifs regex, regex email, regex telephone, regex dates
+    - ja: メール、電話、日付、金額などに使える正規表現が49個あります。 | 正規表現 パターン, メール 正規表現, 電話 正規表現, 日付 正規表現
+    - zh-CN: 49 个现成的正则，用于邮箱、电话、日期、金额等。 | 正则表达式, 邮箱正则, 电话正则, 日期正则
 - [CSV Skills for Claude Code](https://tidybytetools.github.io/tools/claude-data-skills/): 4 Claude Code skills that profile, diff, fix, and split CSV files on your computer.
   - For your computer (Gumroad, $3): https://tidybyte.gumroad.com/l/claude-data-skills
+  - Multilingual keywords:
+    - es: 4 habilidades de Claude Code para perfilar, comparar, arreglar y partir CSV en tu computadora. | claude code csv, habilidades claude, perfil de csv, diff de csv
+    - pt-BR: 4 habilidades do Claude Code para perfilar, comparar, corrigir e dividir CSV no seu computador. | claude code csv, skills claude, perfil de csv, diff de csv
+    - de: 4 Claude-Code-Skills, die CSV-Dateien auf deinem Rechner profilieren, vergleichen, reparieren und teilen. | claude code csv, claude skills, csv profil, csv diff
+    - fr: 4 compétences Claude Code pour profiler, comparer, réparer et découper des CSV sur votre ordinateur. | claude code csv, skills claude, profil csv, diff csv
+    - ja: Claude Code用のスキルが4つ。コンピュータ上でCSVの概要、比較、修正、分割ができます。 | Claude Code CSV, Claude スキル, CSV プロファイル, CSV 差分
+    - zh-CN: 4 个 Claude Code 技能，在你的电脑上对 CSV 做概览、对比、修复和拆分。 | Claude Code CSV, Claude 技能, CSV 概览, CSV 对比
+- [Base64 Encode & Decode](https://tidybytetools.github.io/tools/base64-lite/): Encode or decode Base64 for text and local files, on your computer.
+  - Free lite GitHub: https://github.com/tidybytetools/base64-lite
+  - Multilingual keywords:
+    - es: Codifica o decodifica Base64 para texto y archivos locales, en tu computadora. | codificar base64, decodificar base64, base64, data uri
+    - pt-BR: Codifique ou decodifique Base64 para texto e arquivos locais, no seu computador. | codificar base64, decodificar base64, base64, data uri
+    - de: Base64 für Text und lokale Dateien auf deinem Rechner kodieren oder dekodieren. | base64 kodieren, base64 dekodieren, base64, data uri
+    - fr: Encoder ou décoder du Base64 pour du texte et des fichiers locaux, sur votre ordinateur. | encoder base64, décoder base64, base64, data uri
+    - ja: テキストや手元のファイルを、自分のコンピュータでBase64に変換、または元に戻します。 | Base64 エンコード, Base64 デコード, Base64, data URI
+    - zh-CN: 在自己的电脑上，对文本或本地文件做 Base64 编码或解码。 | Base64 编码, Base64 解码, Base64, data URI
+- [JSON Repair](https://tidybytetools.github.io/tools/json-repair-lite/): Repair broken or incomplete JSON, including output from language models.
+  - Free lite GitHub: https://github.com/tidybytetools/json-repair-lite
+  - Multilingual keywords:
+    - es: Repara JSON roto o incompleto, incluso la salida de modelos de lenguaje. | reparar json, json roto, arreglar json, json de un modelo
+    - pt-BR: Repare JSON quebrado ou incompleto, inclusive a saída de modelos de linguagem. | reparar json, json quebrado, consertar json, json de um modelo
+    - de: Kaputtes oder unvollständiges JSON reparieren, auch die Ausgabe von Sprachmodellen. | json reparieren, kaputtes json, json fixen, llm json
+    - fr: Réparer du JSON cassé ou incomplet, y compris la sortie des modèles de langue. | réparer json, json casse, corriger json, json d'un modèle
+    - ja: 壊れたJSONや途中までのJSONを直します。言語モデルの出力にも使えます。 | JSON 修復, 壊れた JSON, JSON 修正, LLM JSON
+    - zh-CN: 修复损坏或不完整的 JSON，包括语言模型的输出。 | 修复 JSON, 损坏的 JSON, 整理 JSON, 模型输出 JSON
+- [Hash & Checksum](https://tidybytetools.github.io/tools/hash-lite/): Hash text or local files with SHA-256, SHA-1, MD5, and optional SHA-512.
+  - Free lite GitHub: https://github.com/tidybytetools/hash-lite
+  - Multilingual keywords:
+    - es: Calcula hashes de texto o archivos locales con SHA-256, SHA-1, MD5 y SHA-512 opcional. | hash sha-256, checksum, md5, sha-1
+    - pt-BR: Calcule hashes de texto ou arquivos locais com SHA-256, SHA-1, MD5 e SHA-512 opcional. | hash sha-256, checksum, md5, sha-1
+    - de: Text oder lokale Dateien mit SHA-256, SHA-1, MD5 und optional SHA-512 hashen. | hash sha-256, checksum, md5, sha-1
+    - fr: Calculer des empreintes de texte ou de fichiers locaux avec SHA-256, SHA-1, MD5 et SHA-512 en option. | hash sha-256, somme de contrôle, md5, sha-1
+    - ja: テキストや手元のファイルをSHA-256、SHA-1、MD5、必要ならSHA-512でハッシュします。 | SHA-256 ハッシュ, チェックサム, MD5, SHA-1
+    - zh-CN: 用 SHA-256、SHA-1、MD5 以及可选的 SHA-512，给文本或本地文件做哈希。 | SHA-256 哈希, 校验和, MD5, SHA-1
 - [HTML Table Extractor](https://tidybytetools.github.io/tools/html-table-extractor/): Pull tables from web pages into CSV and JSON.
   - Pay per use (Apify, $0.0005 per data row): https://apify.com/tidybytetools/html-table-extractor
+  - Multilingual keywords:
+    - es: Saca tablas de páginas web y las guarda en CSV y JSON. | extraer tablas html, tablas de una web, html a csv, html a json
+    - pt-BR: Tire tabelas de páginas web e salve em CSV e JSON. | extrair tabelas html, tabelas de uma página, html para csv, html para json
+    - de: Tabellen von Webseiten nach CSV und JSON holen. | html tabellen extrahieren, web tabellen, html nach csv, html nach json
+    - fr: Extraire les tableaux de pages web vers CSV et JSON. | extraire tableaux html, tableaux d'une page, html vers csv, html vers json
+    - ja: ウェブページの表をCSVとJSONに取り出します。 | HTML 表 抽出, ウェブ テーブル, HTML を CSV, HTML を JSON
+    - zh-CN: 从网页提取表格，导出为 CSV 和 JSON。 | 提取 HTML 表格, 网页表格, HTML 转 CSV, HTML 转 JSON
 - [LLM Token Counter](https://tidybytetools.github.io/tools/llm-token-counter/): Count tokens and estimate cost for GPT, Claude, and Gemini.
   - Pay per use (Apify, $0.0005 per unique text): https://apify.com/tidybytetools/llm-token-counter
+  - Multilingual keywords:
+    - es: Cuenta tokens y estima el costo para GPT, Claude y Gemini. | contar tokens, costo de llm, tokens gpt, tokens claude
+    - pt-BR: Conte tokens e estime o custo para GPT, Claude e Gemini. | contar tokens, custo de llm, tokens gpt, tokens claude
+    - de: Tokens zählen und Kosten für GPT, Claude und Gemini schätzen. | tokens zählen, llm kosten, gpt tokens, claude tokens
+    - fr: Compter les jetons et estimer le coût pour GPT, Claude et Gemini. | compter tokens, coût llm, tokens gpt, tokens claude
+    - ja: GPT、Claude、Geminiのトークン数を数え、費用の目安を出します。 | トークン カウント, LLM 費用, GPT トークン, Claude トークン
+    - zh-CN: 统计 GPT、Claude 和 Gemini 的 token，并估算费用。 | 统计 token, LLM 费用, GPT token, Claude token
 - [JSON to CSV Converter](https://tidybytetools.github.io/tools/json-to-csv/): Flatten nested JSON or JSON Lines into a CSV table.
   - Pay per use (Apify, $0.0001 per row): https://apify.com/tidybytetools/json-to-csv-flattener
+  - Multilingual keywords:
+    - es: Aplana JSON anidado o JSON Lines y lo convierte en una tabla CSV. | json a csv, aplanar json, json lines a csv, json anidado
+    - pt-BR: Achate JSON aninhado ou JSON Lines e transforme em uma tabela CSV. | json para csv, achatar json, json lines para csv, json aninhado
+    - de: Verschachteltes JSON oder JSON Lines in eine CSV-Tabelle flach machen. | json zu csv, json flach machen, json lines zu csv, verschachteltes json
+    - fr: Aplatir du JSON imbriqué ou du JSON Lines en un tableau CSV. | json vers csv, aplatir json, json lines vers csv, json imbriqué
+    - ja: 入れ子のJSONやJSON Linesを平坦にしてCSV表にします。 | JSON を CSV, JSON 平坦化, JSON Lines を CSV, 入れ子 JSON
+    - zh-CN: 把嵌套 JSON 或 JSON Lines 展平为 CSV 表。 | JSON 转 CSV, 展平 JSON, JSON Lines 转 CSV, 嵌套 JSON
 - [CSV Encoding Fixer](https://tidybytetools.github.io/tools/csv-encoding-fixer/): Fix broken characters in CSV files and split large files.
   - Pay per use (Apify, $0.01 per file): https://apify.com/tidybytetools/csv-encoding-fixer-splitter
+  - Multilingual keywords:
+    - es: Corrige caractères rotos en CSV y puede partir archivos grandes. | arreglar encoding csv, mojibake csv, partir csv, utf-8 excel
+    - pt-BR: Corrija caractères quebrados em CSV e divida arquivos grandes. | corrigir encoding csv, mojibake csv, dividir csv, utf-8 excel
+    - de: Kaputte Zeichen in CSV-Dateien reparieren und große Dateien teilen. | csv encoding reparieren, mojibake csv, csv teilen, utf-8 excel
+    - fr: Corriger les caractères cassés dans des CSV et découper les gros fichiers. | corriger encodage csv, mojibake csv, découper csv, utf-8 excel
+    - ja: CSVの文字化けを直し、大きなファイルを分割することもできます。 | CSV 文字コード 修正, CSV 文字化け, CSV 分割, Excel UTF-8
+    - zh-CN: 修复 CSV 中的乱码，也可以拆分大文件。 | 修复 CSV 编码, CSV 乱码, 拆分 CSV, Excel UTF-8
+- [JSON Schema Validator](https://tidybytetools.github.io/tools/json-schema-validator/): Check JSON documents against a schema and see what failed.
+  - Pay per use (Apify, $0.001 per document): https://apify.com/tidybytetools/json-schema-validator
+  - Multilingual keywords:
+    - es: Comprueba documentos JSON contra un esquema y te dice qué falló. | validar json schema, esquema json, validar json, errores de schema
+    - pt-BR: Confira documentos JSON com um schema e veja o que falhou. | validar json schema, esquema json, validar json, erros de schema
+    - de: JSON-Dokumente gegen ein Schema prüfen und sehen, was fehlgeschlagen ist. | json schema prüfen, json schema, json validieren, schema fehler
+    - fr: Vérifier des documents JSON par rapport a un schema et voir ce qui a échoué. | valider json schema, schema json, valider json, erreurs de schema
+    - ja: JSON文書をスキーマと照らし、どこが失敗したかを示します。 | JSON Schema 検証, JSON スキーマ, JSON バリデーション, スキーマ エラー
+    - zh-CN: 按 JSON Schema 检查文档，并说明哪里未通过。 | 校验 JSON Schema, JSON 模式, 验证 JSON, Schema 错误
+- [Link Preview](https://tidybytetools.github.io/tools/link-preview/): Pull the title, description, and image from a web page.
+  - Pay per use (Apify, $0.002 per page): https://apify.com/tidybytetools/link-preview
+  - Multilingual keywords:
+    - es: Saca el título, la descripción y la imagen de una página web. | vista prévia de enlace, open graph, twitter card, meta tags
+    - pt-BR: Tire o título, a descrição e a imagem de uma página web. | prévia de link, open graph, twitter card, meta tags
+    - de: Titel, Beschreibung und Bild einer Webseite auslesen. | link vorschau, open graph, twitter card, meta tags
+    - fr: Récupérer le titre, la description et l'image d'une page web. | aperçu de lien, open graph, twitter card, balises meta
+    - ja: ウェブページからタイトル、説明、画像を取り出します。 | リンク プレビュー, Open Graph, Twitterカード, メタタグ
+    - zh-CN: 取出网页的标题、描述和图片。 | 链接预览, Open Graph, Twitter Card, meta 标签
+- [Language Detector](https://tidybytetools.github.io/tools/language-detector/): Detect the language of a text, offline, with a confidence score.
+  - Pay per use (Apify, $0.0008 per unique text): https://apify.com/tidybytetools/language-detector
+  - Multilingual keywords:
+    - es: Detecta el idioma de un texto, sin conexión, con un grado de certeza. | detectar idioma, código iso idioma, idioma de un texto, offline
+    - pt-BR: Detecte o idioma de um texto, offline, com um grau de confiança. | detectar idioma, código iso de idioma, idioma de um texto, offline
+    - de: Die Sprache eines Textes offline erkennen, mit einem Sicherheitswert. | sprache erkennen, iso sprachcode, textsprache, offline
+    - fr: Détecter la langue d'un texte, hors ligne, avec un score de confiance. | détecter la langue, code iso langue, langue d'un texte, hors ligne
+    - ja: テキストの言語をオフラインで判定し、確信度も出します。 | 言語判定, ISO 言語コード, テキストの言語, オフライン
+    - zh-CN: 离线检测文本的语言，并给出置信度。 | 语言检测, ISO 语言代码, 文本语言, 离线
+- [Date & Timezone Normalizer](https://tidybytetools.github.io/tools/date-timezone/): Turn messy dates into a timezone you choose, as ISO 8601.
+  - Pay per use (Apify, $0.001 per date): https://apify.com/tidybytetools/date-timezone-normalizer
+  - Multilingual keywords:
+    - es: Convierte fechas desordenadas a la zona horaria que elijas, en ISO 8601. | normalizar fechas, zona horaria, iso 8601, parsear fechas
+    - pt-BR: Transforme datas bagunçadas no fuso que você escolher, em ISO 8601. | normalizar datas, fuso horário, iso 8601, interpretar datas
+    - de: Unordentliche Daten in eine gewählte Zeitzone als ISO 8601 umwandeln. | daten normalisieren, zeitzone, iso 8601, daten parsen
+    - fr: Transformer des dates en désordre vers le fuseau que vous choisissez, en ISO 8601. | normaliser dates, fuseau horaire, iso 8601, analyser dates
+    - ja: 乱れた日付を、選んだタイムゾーンのISO 8601に整えます。 | 日付 正規化, タイムゾーン, ISO 8601, 日付 解析
+    - zh-CN: 把杂乱日期转到你选定的时区，并写成 ISO 8601。 | 规范化日期, 时区转换, ISO 8601, 解析日期
 
 ## Shops
 - [Apify](https://apify.com/tidybytetools)
@@ -219,6 +439,33 @@ Claude runs a small, tested script and reads the short result, instead of loadin
 - fix-chars and split-csv: fix garbled characters, or split a big file while keeping the header.
 - For your computer (Gumroad, $3): Made for Claude Code. Scripts also run on their own with Python 3.8+. CSV and text only, not .xlsx.
 
+### Base64 Encode & Decode
+Turn text or a local file into Base64, or turn Base64 back into text or bytes. You can also use the URL-safe alphabet and data-URI output. It runs offline.
+- Encodes and decodes Base64 for text and local files.
+- Supports the URL-safe alphabet and data-URI output.
+- Includes a free MCP server for AI apps. No API key is needed.
+- The free tool does not fetch file links from the internet. The Apify version does.
+- Free lite (GitHub, Free): CLI and MCP server. Install for now with: pip install git+https://github.com/tidybytetools/base64-lite. We will switch this to a PyPI install when the package is on PyPI.
+- Pay per use (Apify, $0.001 per unique item): Failed items are free. The public store page goes live this week. The Apify listing goes public this week.
+
+### JSON Repair
+Paste JSON that is missing quotes or has a trailing comma, and get valid JSON back. Already-valid JSON is left alone. It runs offline. No API key is needed.
+- Repairs broken or incomplete JSON, including common model output.
+- Can also repair JSON Lines, one document per line.
+- Includes a free MCP server for AI apps. No API key is needed.
+- This is a repair step, not a language model. Some text cannot be repaired.
+- Free lite (GitHub, Free): CLI and MCP server. Install for now with: pip install git+https://github.com/tidybytetools/json-repair-lite. We will switch this to a PyPI install when the package is on PyPI.
+- Pay per use (Apify, $0.001 per document): Empty or unreadable input is free. The public store page goes live this week. The Apify listing goes public this week.
+
+### Hash & Checksum
+Get hex and Base64 hashes for text or a local file. SHA-256, SHA-1, and MD5 are on by default. Prefer SHA-256 or SHA-512 for new security work.
+- Hashes text or local files with SHA-256, SHA-1, MD5, and optional SHA-512.
+- Returns both hex and Base64 forms.
+- Includes a free MCP server for AI apps. No API key is needed.
+- MD5 and SHA-1 are included for checks, but they are not safe for new security work.
+- Free lite (GitHub, Free): CLI and MCP server. Install for now with: pip install git+https://github.com/tidybytetools/hash-lite. We will switch this to a PyPI install when the package is on PyPI.
+- Pay per use (Apify, $0.001 per unique input): All selected hashes are included. Repeats in the same run are free. The public store page goes live this week. The Apify listing goes public this week.
+
 ### HTML Table Extractor
 Reads HTML tables from a page or pasted HTML. Keeps merged cells, handles more than one table on a page, and saves CSV. Honest about tables that only appear after JavaScript runs.
 - Finds HTML tables on a page or in pasted HTML.
@@ -243,4 +490,36 @@ Fixes garbled letters such as Ã© instead of é, then saves clean UTF-8 that op
 - Reads UTF-8, UTF-16, and old Windows files.
 - Can split big files into parts that each keep the header.
 
+### JSON Schema Validator
+Paste a schema and your JSON. Each document gets a clear pass or fail, the field that broke, and a plain message. It works offline. No API key is needed.
+- Checks one or many JSON documents against a schema you paste or load from a link.
+- Accepts one JSON value, a JSON array, or JSON Lines.
+- Supports Draft 7, 2019-09, and 2020-12, or reads the draft from $schema.
+- If the schema itself is not valid, documents are not charged.
+
+### Link Preview
+Give it a link and get a ready preview: title, description, image, and other common tags. It reads Open Graph, Twitter Card, and JSON-LD when they are on the page.
+- Fetches each page and reads the title, description, image, and other common meta tags.
+- Reads Open Graph, Twitter Card, canonical link, favicon, author, and keywords.
+- Can also return JSON-LD blocks, often used for articles, products, and events.
+- Failed pages and exact repeat links in the same run are free.
+- Pay per use (Apify, $0.002 per page): Failed pages and exact repeat links in the same run are free.
+
+### Language Detector
+Paste text and get the language name, ISO codes, and how sure the tool is. Short or mixed texts are marked as less reliable. No API key is needed.
+- Detects the language of each text you paste, list, or load from a file.
+- Returns the language name, ISO 639-1 and ISO 639-3 codes, and a confidence score.
+- Lists a few close alternatives when the result is not a clear winner.
+- Marks short or mixed texts as less reliable. Blank lines and repeats are free.
+- Pay per use (Apify, $0.0008 per unique text): Blank lines and repeats are free.
+
+### Date & Timezone Normalizer
+It reads dates like "March 5, 2024 3:30pm" and dates that could be read two ways. You get ISO 8601, UTC, and a Unix timestamp. Strings it cannot parse are free.
+- Parses messy dates, times, and relative phrases like "tomorrow at 2pm".
+- Converts each result to a timezone you choose.
+- Returns ISO 8601, UTC, a Unix timestamp, and an optional custom format.
+- Marks numeric dates that could be read two ways (for example 03/04/05) as ambiguous.
+- Pay per use (Apify, $0.001 per date): Blank lines, repeats, and strings we cannot parse are free.
+
 Do not list tools that are not public yet.
+Do not advertise a private Apify Console URL as a public store page.

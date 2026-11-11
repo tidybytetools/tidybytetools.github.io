@@ -1,0 +1,639 @@
+{
+  "en": {
+    "skip": "Skip to content",
+    "nav_tools": "Tools",
+    "nav_guides": "Guides",
+    "nav_how": "How it works",
+    "nav_faq": "FAQ",
+    "nav_github": "GitHub",
+    "nav_connect": "For AI agents",
+    "nav_privacy": "Privacy",
+    "nav_terms": "Terms",
+    "lang_label": "Language",
+    "eyebrow": "Developer tools",
+    "hero_title": "Small tools that clean up messy data.",
+    "hero_lede": "Each one does one job and does it well. Run it on your computer, or pay only for what you use in the cloud.",
+    "cta_try": "Try a tool",
+    "cta_github": "Free tools on GitHub",
+    "search_label": "Search tools",
+    "search_placeholder": "Search tools",
+    "filter_all": "All",
+    "filter_empty": "No tools match that search.",
+    "cats": {
+      "pdf": "PDF & docs",
+      "data": "CSV & data",
+      "web": "Links & web",
+      "ai": "AI / RAG",
+      "media": "Images & video",
+      "n8n": "n8n workflows"
+    },
+    "how_title": "How it works",
+    "how_intro": "Pick the tool that matches your file. You can run it yourself, or start a run in the cloud.",
+    "how_1_title": "Pick a tool",
+    "how_1_body": "Every tool does one job, like pulling tables from a PDF or checking a list of links.",
+    "how_2_title": "Run it where you want",
+    "how_2_body": "Download a tool and run it on your computer, or use the Apify version and pay only for what it does.",
+    "how_3_title": "Get a clean file back",
+    "how_3_body": "You get CSV, Excel, JSON, or Markdown you can use in a sheet, a script, or an AI app.",
+    "how_mcp": "The free lite tools include an MCP server, so you can use them from Cursor, Claude Desktop, and other AI apps. No API key is needed. Apify tools can also be called from Apify MCP.",
+    "faq_title": "FAQ",
+    "faqs": [
+      [
+        "What is Tidy Byte Tools?",
+        "A small shop of tools that clean up messy data. We sell downloads you run on your computer, and pay-per-use tools on Apify. Free lite tools are on GitHub and PyPI."
+      ],
+      [
+        "Will you see my files?",
+        "The download tools run on your computer, so those files stay with you. The Apify tools run in your own Apify account. This website does not take uploads."
+      ],
+      [
+        "What is the difference between free and paid?",
+        "The free lite tools cover the common case, like a text PDF or a simple list of links. Paid versions add things like Excel output, scanned pages, Word files, or folder support. Each tool page lists the difference."
+      ],
+      [
+        "What does pay per use mean?",
+        "On Apify you pay for what the tool does, such as each page with a table or each link checked. Failed or skipped items are free. Each run also has a $0.00005 start fee. The exact price is on the tool page and on Apify."
+      ],
+      [
+        "Do the free tools work with AI apps?",
+        "Yes. The free lite tools include a small MCP server you run on your computer. The Apify tools can also be called from Apify MCP. No API key is needed for the local tools."
+      ],
+      [
+        "How do I get help?",
+        "Open an issue on the GitHub page for that tool. For a Gumroad or Apify purchase, you can also use the support option on that site."
+      ]
+    ],
+    "footer_tagline": "Small tools that clean up messy data. Each one does one job and does it well.",
+    "footer_tools": "Tools",
+    "footer_shops": "Shops",
+    "footer_site": "This site",
+    "footer_legal": "© {year} Tidy Byte Tools. This site does not use tracking cookies.",
+    "footer_featured": "Featured on",
+    "footer_featured_note": "As directories list us, their marks will show up here.",
+    "home_title": "Tidy Byte Tools — small tools that clean up messy data",
+    "home_desc": "Small tools that clean up messy data. Run them on your computer, or pay only for what you use in the cloud.",
+    "try_apify": "Try it on Apify",
+    "free_download": "Free download",
+    "about_price": "About $1 per {n} {unit}.",
+    "units": {
+      "pages_with_table": "pages with a table",
+      "files": "files",
+      "clean_rows": "clean rows",
+      "numbers": "numbers",
+      "links": "links",
+      "chunks": "chunks",
+      "data_rows": "data rows",
+      "unique_texts": "unique texts",
+      "rows": "rows",
+      "documents": "documents",
+      "pages": "pages",
+      "dates": "dates"
+    }
+  },
+  "es": {
+    "skip": "Saltar al contenido",
+    "nav_tools": "Herramientas",
+    "nav_guides": "Guías",
+    "nav_how": "Cómo funciona",
+    "nav_faq": "Preguntas",
+    "nav_github": "GitHub",
+    "nav_connect": "Para agentes de IA",
+    "nav_privacy": "Privacidad",
+    "nav_terms": "Términos",
+    "lang_label": "Idioma",
+    "eyebrow": "Herramientas para desarrolladores",
+    "hero_title": "Herramientas pequeñas que limpian datos enredados.",
+    "hero_lede": "Cada una hace un solo trabajo y lo hace bien. Úsala en tu computadora, o paga solo por lo que uses en la nube.",
+    "cta_try": "Ver una herramienta",
+    "cta_github": "Herramientas gratis en GitHub",
+    "search_label": "Buscar herramientas",
+    "search_placeholder": "Buscar herramientas",
+    "filter_all": "Todas",
+    "filter_empty": "Ninguna herramienta coincide con esa búsqueda.",
+    "cats": {
+      "pdf": "PDF y documentos",
+      "data": "CSV y datos",
+      "web": "Enlaces y web",
+      "ai": "IA / RAG",
+      "media": "Imágenes y video",
+      "n8n": "Flujos de n8n"
+    },
+    "how_title": "Cómo funciona",
+    "how_intro": "Elige la herramienta que encaje con tu archivo. Puedes usarla tú, o lanzarla en la nube.",
+    "how_1_title": "Elige una herramienta",
+    "how_1_body": "Cada herramienta hace un solo trabajo, como sacar tablas de un PDF o revisar una lista de enlaces.",
+    "how_2_title": "Úsala donde quieras",
+    "how_2_body": "Descarga una herramienta y úsala en tu computadora, o usa la versión de Apify y paga solo por lo que hace.",
+    "how_3_title": "Recibe un archivo limpio",
+    "how_3_body": "Obtienes CSV, Excel, JSON o Markdown para usar en una hoja, un script o una app de IA.",
+    "how_mcp": "Las herramientas lite gratis incluyen un servidor MCP, para usarlas desde Cursor, Claude Desktop y otras apps de IA. No hace falta una clave de API. Las herramientas de Apify también se pueden llamar desde Apify MCP.",
+    "faq_title": "Preguntas frecuentes",
+    "faqs": [
+      [
+        "¿Qué es Tidy Byte Tools?",
+        "Una tienda pequeña de herramientas que limpian datos enredados. Vendemos descargas que corren en tu computadora, y herramientas de pago por uso en Apify. Las herramientas lite gratis están en GitHub y PyPI."
+      ],
+      [
+        "¿Verán mis archivos?",
+        "Las herramientas descargadas corren en tu computadora, así que esos archivos se quedan contigo. Las herramientas de Apify corren en tu propia cuenta de Apify. Este sitio no recibe archivos."
+      ],
+      [
+        "¿Cuál es la diferencia entre gratis y de pago?",
+        "Las herramientas lite gratis cubren el caso común, como un PDF de texto o una lista simple de enlaces. Las versiones de pago agregan cosas como salida a Excel, páginas escaneadas, archivos Word o carpetas. Cada página de herramienta explica la diferencia."
+      ],
+      [
+        "¿Qué significa pago por uso?",
+        "En Apify pagas por lo que hace la herramienta, como cada página con una tabla o cada enlace revisado. Los elementos fallidos o saltados son gratis. Cada ejecución también tiene una tarifa de inicio de 0,00005 $. El precio exacto está en la página de la herramienta y en Apify."
+      ],
+      [
+        "¿Las herramientas gratis funcionan con apps de IA?",
+        "Sí. Las herramientas lite gratis incluyen un servidor MCP pequeño que corres en tu computadora. Las herramientas de Apify también se pueden llamar desde Apify MCP. Las herramientas locales no necesitan una clave de API."
+      ],
+      [
+        "¿Cómo pido ayuda?",
+        "Abre un issue en la página de GitHub de esa herramienta. Si compraste en Gumroad o Apify, también puedes usar la opción de soporte de ese sitio."
+      ]
+    ],
+    "footer_tagline": "Herramientas pequeñas que limpian datos enredados. Cada una hace un solo trabajo y lo hace bien.",
+    "footer_tools": "Herramientas",
+    "footer_shops": "Tiendas",
+    "footer_site": "Este sitio",
+    "footer_legal": "© {year} Tidy Byte Tools. Este sitio no usa cookies de seguimiento.",
+    "footer_featured": "Destacados en",
+    "footer_featured_note": "Cuando los directorios nos listen, sus marcas aparecerán aquí.",
+    "home_title": "Tidy Byte Tools — herramientas pequeñas que limpian datos enredados",
+    "home_desc": "Herramientas pequeñas que limpian datos enredados. Úsalas en tu computadora, o paga solo por lo que uses en la nube.",
+    "try_apify": "Probar en Apify",
+    "free_download": "Descarga gratis",
+    "about_price": "Unos 1 $ por {n} {unit}.",
+    "units": {
+      "pages_with_table": "páginas con una tabla",
+      "files": "archivos",
+      "clean_rows": "filas limpias",
+      "numbers": "números",
+      "links": "enlaces",
+      "chunks": "fragmentos",
+      "data_rows": "filas de datos",
+      "unique_texts": "textos únicos",
+      "rows": "filas",
+      "documents": "documentos",
+      "pages": "páginas",
+      "dates": "fechas"
+    }
+  },
+  "pt-BR": {
+    "skip": "Pular para o conteúdo",
+    "nav_tools": "Ferramentas",
+    "nav_guides": "Guias",
+    "nav_how": "Como funciona",
+    "nav_faq": "Perguntas",
+    "nav_github": "GitHub",
+    "nav_connect": "Para agentes de IA",
+    "nav_privacy": "Privacidade",
+    "nav_terms": "Termos",
+    "lang_label": "Idioma",
+    "eyebrow": "Ferramentas para desenvolvedores",
+    "hero_title": "Ferramentas pequenas que arrumam dados bagunçados.",
+    "hero_lede": "Cada uma faz um só trabalho e faz bem. Use no seu computador, ou pague só pelo que usar na nuvem.",
+    "cta_try": "Ver uma ferramenta",
+    "cta_github": "Ferramentas grátis no GitHub",
+    "search_label": "Buscar ferramentas",
+    "search_placeholder": "Buscar ferramentas",
+    "filter_all": "Todas",
+    "filter_empty": "Nenhuma ferramenta corresponde a essa busca.",
+    "cats": {
+      "pdf": "PDF e documentos",
+      "data": "CSV e dados",
+      "web": "Links e web",
+      "ai": "IA / RAG",
+      "media": "Imagens e vídeo",
+      "n8n": "Fluxos do n8n"
+    },
+    "how_title": "Como funciona",
+    "how_intro": "Escolha a ferramenta que combina com o seu arquivo. Você pode rodar na sua máquina ou iniciar uma execução na nuvem.",
+    "how_1_title": "Escolha uma ferramenta",
+    "how_1_body": "Cada ferramenta faz um só trabalho, como tirar tabelas de um PDF ou checar uma lista de links.",
+    "how_2_title": "Rode onde quiser",
+    "how_2_body": "Baixe uma ferramenta e use no seu computador, ou use a versão da Apify e pague só pelo que ela fizer.",
+    "how_3_title": "Receba um arquivo limpo",
+    "how_3_body": "Você recebe CSV, Excel, JSON ou Markdown para usar em uma planilha, um script ou um app de IA.",
+    "how_mcp": "As ferramentas lite grátis incluem um servidor MCP, para você usá-las no Cursor, no Claude Desktop e em outros apps de IA. Não é preciso uma chave de API. As ferramentas da Apify também podem ser chamadas pelo Apify MCP.",
+    "faq_title": "Perguntas frequentes",
+    "faqs": [
+      [
+        "O que é a Tidy Byte Tools?",
+        "Uma loja pequena de ferramentas que arrumam dados bagunçados. Vendemos downloads que rodam no seu computador e ferramentas de pagamento por uso na Apify. As ferramentas lite grátis estão no GitHub e no PyPI."
+      ],
+      [
+        "Vocês vão ver meus arquivos?",
+        "As ferramentas baixadas rodam no seu computador, então esses arquivos ficam com você. As ferramentas da Apify rodam na sua própria conta da Apify. Este site não recebe envios de arquivos."
+      ],
+      [
+        "Qual é a diferença entre grátis e pago?",
+        "As ferramentas lite grátis cobrem o caso comum, como um PDF de texto ou uma lista simples de links. As versões pagas acrescentam coisas como saída em Excel, páginas digitalizadas, arquivos Word ou pastas. Cada página da ferramenta lista a diferença."
+      ],
+      [
+        "O que significa pagamento por uso?",
+        "Na Apify você paga pelo que a ferramenta faz, como cada página com uma tabela ou cada link checado. Itens que falham ou são pulados são grátis. Cada execução também tem uma taxa inicial de US$ 0,00005. O preço exato está na página da ferramenta e na Apify."
+      ],
+      [
+        "As ferramentas grátis funcionam com apps de IA?",
+        "Sim. As ferramentas lite grátis incluem um servidor MCP pequeno que você roda no seu computador. As ferramentas da Apify também podem ser chamadas pelo Apify MCP. As ferramentas locais não precisam de uma chave de API."
+      ],
+      [
+        "Como peço ajuda?",
+        "Abra uma issue na página do GitHub dessa ferramenta. Se a compra foi na Gumroad ou na Apify, você também pode usar o suporte desse site."
+      ]
+    ],
+    "footer_tagline": "Ferramentas pequenas que arrumam dados bagunçados. Cada uma faz um só trabalho e faz bem.",
+    "footer_tools": "Ferramentas",
+    "footer_shops": "Lojas",
+    "footer_site": "Este site",
+    "footer_legal": "© {year} Tidy Byte Tools. Este site não usa cookies de rastreamento.",
+    "footer_featured": "Em destaque em",
+    "footer_featured_note": "Quando diretórios nos listarem, as marcas deles aparecem aqui.",
+    "home_title": "Tidy Byte Tools — ferramentas pequenas que arrumam dados bagunçados",
+    "home_desc": "Ferramentas pequenas que arrumam dados bagunçados. Use no seu computador, ou pague só pelo que usar na nuvem.",
+    "try_apify": "Experimentar na Apify",
+    "free_download": "Download grátis",
+    "about_price": "Cerca de US$ 1 por {n} {unit}.",
+    "units": {
+      "pages_with_table": "páginas com uma tabela",
+      "files": "arquivos",
+      "clean_rows": "linhas limpas",
+      "numbers": "números",
+      "links": "links",
+      "chunks": "trechos",
+      "data_rows": "linhas de dados",
+      "unique_texts": "textos únicos",
+      "rows": "linhas",
+      "documents": "documentos",
+      "pages": "páginas",
+      "dates": "datas"
+    }
+  },
+  "de": {
+    "skip": "Zum Inhalt springen",
+    "nav_tools": "Werkzeuge",
+    "nav_guides": "Anleitungen",
+    "nav_how": "So funktioniert's",
+    "nav_faq": "FAQ",
+    "nav_github": "GitHub",
+    "nav_connect": "Für KI-Agenten",
+    "nav_privacy": "Datenschutz",
+    "nav_terms": "Nutzungsbedingungen",
+    "lang_label": "Sprache",
+    "eyebrow": "Werkzeuge für Entwickler",
+    "hero_title": "Kleine Werkzeuge, die unordentliche Daten aufräumen.",
+    "hero_lede": "Jedes erledigt eine Aufgabe und macht das gut. Nutze es auf deinem Rechner, oder zahle nur für das, was du in der Cloud verwendest.",
+    "cta_try": "Ein Werkzeug ansehen",
+    "cta_github": "Kostenlose Tools auf GitHub",
+    "search_label": "Werkzeuge suchen",
+    "search_placeholder": "Werkzeuge suchen",
+    "filter_all": "Alle",
+    "filter_empty": "Kein Werkzeug passt zu dieser Suche.",
+    "cats": {
+      "pdf": "PDF und Dokumente",
+      "data": "CSV und Daten",
+      "web": "Links und Web",
+      "ai": "KI / RAG",
+      "media": "Bilder und Video",
+      "n8n": "n8n-Workflows"
+    },
+    "how_title": "So funktioniert's",
+    "how_intro": "Wähle das Werkzeug, das zu deiner Datei passt. Du kannst es selbst ausführen oder einen Lauf in der Cloud starten.",
+    "how_1_title": "Wähle ein Werkzeug",
+    "how_1_body": "Jedes Werkzeug erledigt eine Aufgabe, zum Beispiel Tabellen aus einem PDF ziehen oder eine Linkliste prüfen.",
+    "how_2_title": "Führe es aus, wo du willst",
+    "how_2_body": "Lade ein Werkzeug herunter und nutze es auf deinem Rechner, oder nutze die Apify-Version und zahle nur für das, was sie tut.",
+    "how_3_title": "Hol dir eine saubere Datei zurück",
+    "how_3_body": "Du bekommst CSV, Excel, JSON oder Markdown für eine Tabelle, ein Skript oder eine KI-App.",
+    "how_mcp": "Die kostenlosen Lite-Werkzeuge enthalten einen MCP-Server, damit du sie in Cursor, Claude Desktop und anderen KI-Apps nutzen kannst. Es wird kein API-Schlüssel gebraucht. Apify-Werkzeuge können auch über Apify MCP aufgerufen werden.",
+    "faq_title": "Häufige Fragen",
+    "faqs": [
+      [
+        "Was ist Tidy Byte Tools?",
+        "Ein kleiner Laden mit Werkzeugen, die unordentliche Daten aufräumen. Wir verkaufen Downloads für deinen Rechner und nutzungsbasierte Werkzeuge auf Apify. Kostenlose Lite-Werkzeuge liegen auf GitHub und PyPI."
+      ],
+      [
+        "Seht ihr meine Dateien?",
+        "Die Download-Werkzeuge laufen auf deinem Rechner, deshalb bleiben diese Dateien bei dir. Die Apify-Werkzeuge laufen in deinem eigenen Apify-Konto. Diese Website nimmt keine Uploads entgegen."
+      ],
+      [
+        "Was ist der Unterschied zwischen kostenlos und kostenpflichtig?",
+        "Die kostenlosen Lite-Werkzeuge decken den üblichen Fall ab, etwa ein Text-PDF oder eine einfache Linkliste. Bezahlte Versionen ergänzen Dinge wie Excel-Ausgabe, gescannte Seiten, Word-Dateien oder Ordner. Jede Werkzeugseite nennt den Unterschied."
+      ],
+      [
+        "Was bedeutet nutzungsbasiert?",
+        "Auf Apify zahlst du für das, was das Werkzeug tut, zum Beispiel jede Seite mit einer Tabelle oder jeden geprüften Link. Fehlgeschlagene oder übersprungene Elemente sind kostenlos. Jeder Lauf hat außerdem eine Startgebühr von 0,00005 $. Der genaue Preis steht auf der Werkzeugseite und bei Apify."
+      ],
+      [
+        "Funktionieren die kostenlosen Werkzeuge mit KI-Apps?",
+        "Ja. Die kostenlosen Lite-Werkzeuge enthalten einen kleinen MCP-Server, den du auf deinem Rechner ausführst. Die Apify-Werkzeuge können auch über Apify MCP aufgerufen werden. Für die lokalen Werkzeuge brauchst du keinen API-Schlüssel."
+      ],
+      [
+        "Wie bekomme ich Hilfe?",
+        "Öffne ein Issue auf der GitHub-Seite des Werkzeugs. Bei einem Kauf über Gumroad oder Apify kannst du auch den Support dort nutzen."
+      ]
+    ],
+    "footer_tagline": "Kleine Werkzeuge, die unordentliche Daten aufräumen. Jedes erledigt eine Aufgabe und macht das gut.",
+    "footer_tools": "Werkzeuge",
+    "footer_shops": "Shops",
+    "footer_site": "Diese Website",
+    "footer_legal": "© {year} Tidy Byte Tools. Diese Website verwendet keine Tracking-Cookies.",
+    "footer_featured": "Erwähnt auf",
+    "footer_featured_note": "Wenn Verzeichnisse uns listen, erscheinen ihre Zeichen hier.",
+    "home_title": "Tidy Byte Tools — kleine Werkzeuge, die unordentliche Daten aufräumen",
+    "home_desc": "Kleine Werkzeuge, die unordentliche Daten aufräumen. Nutze sie auf deinem Rechner, oder zahle nur für das, was du in der Cloud verwendest.",
+    "try_apify": "Bei Apify ausprobieren",
+    "free_download": "Kostenlos herunterladen",
+    "about_price": "Etwa 1 $ pro {n} {unit}.",
+    "units": {
+      "pages_with_table": "Seiten mit einer Tabelle",
+      "files": "Dateien",
+      "clean_rows": "bereinigte Zeilen",
+      "numbers": "Nummern",
+      "links": "Links",
+      "chunks": "Abschnitte",
+      "data_rows": "Datenzeilen",
+      "unique_texts": "eindeutige Texte",
+      "rows": "Zeilen",
+      "documents": "Dokumente",
+      "pages": "Seiten",
+      "dates": "Daten"
+    }
+  },
+  "fr": {
+    "skip": "Aller au contenu",
+    "nav_tools": "Outils",
+    "nav_guides": "Guides",
+    "nav_how": "Comment ça marche",
+    "nav_faq": "FAQ",
+    "nav_github": "GitHub",
+    "nav_connect": "Pour les agents IA",
+    "nav_privacy": "Confidentialité",
+    "nav_terms": "Conditions",
+    "lang_label": "Langue",
+    "eyebrow": "Outils pour développeurs",
+    "hero_title": "De petits outils qui rangent les données en désordre.",
+    "hero_lede": "Chacun fait un seul travail, et le fait bien. Utilisez-le sur votre ordinateur, ou payez seulement pour ce que vous utilisez dans le nuage.",
+    "cta_try": "Voir un outil",
+    "cta_github": "Outils gratuits sur GitHub",
+    "search_label": "Rechercher des outils",
+    "search_placeholder": "Rechercher des outils",
+    "filter_all": "Tous",
+    "filter_empty": "Aucun outil ne correspond à cette recherche.",
+    "cats": {
+      "pdf": "PDF et documents",
+      "data": "CSV et données",
+      "web": "Liens et web",
+      "ai": "IA / RAG",
+      "media": "Images et vidéo",
+      "n8n": "Flux n8n"
+    },
+    "how_title": "Comment ça marche",
+    "how_intro": "Choisissez l’outil qui correspond à votre fichier. Vous pouvez le lancer vous-même, ou démarrer une exécution dans le nuage.",
+    "how_1_title": "Choisissez un outil",
+    "how_1_body": "Chaque outil fait un seul travail, comme extraire des tableaux d’un PDF ou vérifier une liste de liens.",
+    "how_2_title": "Lancez-le où vous voulez",
+    "how_2_body": "Téléchargez un outil et utilisez-le sur votre ordinateur, ou utilisez la version Apify et payez seulement pour ce qu’elle fait.",
+    "how_3_title": "Récupérez un fichier propre",
+    "how_3_body": "Vous obtenez du CSV, Excel, JSON ou Markdown à utiliser dans une feuille, un script ou une appli d’IA.",
+    "how_mcp": "Les outils lite gratuits incluent un serveur MCP, pour les utiliser depuis Cursor, Claude Desktop et d’autres applis d’IA. Aucune clé d’API n’est nécessaire. Les outils Apify peuvent aussi être appelés depuis Apify MCP.",
+    "faq_title": "Questions fréquentes",
+    "faqs": [
+      [
+        "Qu’est-ce que Tidy Byte Tools ?",
+        "Une petite boutique d’outils qui rangent les données en désordre. Nous vendons des téléchargements à lancer sur votre ordinateur, et des outils à l’usage sur Apify. Les outils lite gratuits sont sur GitHub et PyPI."
+      ],
+      [
+        "Verrez-vous mes fichiers ?",
+        "Les outils téléchargés tournent sur votre ordinateur, donc ces fichiers restent chez vous. Les outils Apify tournent dans votre propre compte Apify. Ce site n’accepte pas de fichiers."
+      ],
+      [
+        "Quelle est la différence entre gratuit et payant ?",
+        "Les outils lite gratuits couvrent le cas courant, comme un PDF texte ou une simple liste de liens. Les versions payantes ajoutent des choses comme une sortie Excel, des pages scannées, des fichiers Word ou des dossiers. Chaque page d’outil indique la différence."
+      ],
+      [
+        "Que signifie le paiement à l’usage ?",
+        "Sur Apify, vous payez pour ce que l’outil fait, par exemple chaque page avec un tableau ou chaque lien vérifié. Les éléments en échec ou ignorés sont gratuits. Chaque exécution a aussi des frais de démarrage de 0,00005 $. Le prix exact est sur la page de l’outil et sur Apify."
+      ],
+      [
+        "Les outils gratuits fonctionnent-ils avec des applis d’IA ?",
+        "Oui. Les outils lite gratuits incluent un petit serveur MCP que vous lancez sur votre ordinateur. Les outils Apify peuvent aussi être appelés depuis Apify MCP. Les outils locaux n’ont pas besoin d’une clé d’API."
+      ],
+      [
+        "Comment obtenir de l’aide ?",
+        "Ouvrez une issue sur la page GitHub de cet outil. Pour un achat Gumroad ou Apify, vous pouvez aussi utiliser l’option d’assistance de ce site."
+      ]
+    ],
+    "footer_tagline": "De petits outils qui rangent les données en désordre. Chacun fait un seul travail, et le fait bien.",
+    "footer_tools": "Outils",
+    "footer_shops": "Boutiques",
+    "footer_site": "Ce site",
+    "footer_legal": "© {year} Tidy Byte Tools. Ce site n’utilise pas de cookies de suivi.",
+    "footer_featured": "Mis en avant sur",
+    "footer_featured_note": "Lorsque des annuaires nous référencent, leurs marques apparaîtront ici.",
+    "home_title": "Tidy Byte Tools — de petits outils qui rangent les données en désordre",
+    "home_desc": "De petits outils qui rangent les données en désordre. Utilisez-les sur votre ordinateur, ou payez seulement pour ce que vous utilisez dans le nuage.",
+    "try_apify": "Essayer sur Apify",
+    "free_download": "Téléchargement gratuit",
+    "about_price": "Environ 1 $ pour {n} {unit}.",
+    "units": {
+      "pages_with_table": "pages avec un tableau",
+      "files": "fichiers",
+      "clean_rows": "lignes nettoyées",
+      "numbers": "numéros",
+      "links": "liens",
+      "chunks": "morceaux",
+      "data_rows": "lignes de données",
+      "unique_texts": "textes uniques",
+      "rows": "lignes",
+      "documents": "documents",
+      "pages": "pages",
+      "dates": "dates"
+    }
+  },
+  "ja": {
+    "skip": "本文へスキップ",
+    "nav_tools": "ツール",
+    "nav_guides": "ガイド",
+    "nav_how": "使い方",
+    "nav_faq": "よくある質問",
+    "nav_github": "GitHub",
+    "nav_connect": "AIエージェント向け",
+    "nav_privacy": "プライバシー",
+    "nav_terms": "利用規約",
+    "lang_label": "言語",
+    "eyebrow": "開発者向けツール",
+    "hero_title": "散らかったデータを整える、小さなツール。",
+    "hero_lede": "ひとつひとつがひとつの仕事を、きちんとこなします。自分のコンピュータで使うか、クラウドでは使った分だけ支払います。",
+    "cta_try": "ツールを見る",
+    "cta_github": "GitHubの無料ツール",
+    "search_label": "ツールを検索",
+    "search_placeholder": "ツールを検索",
+    "filter_all": "すべて",
+    "filter_empty": "その検索に合うツールはありません。",
+    "cats": {
+      "pdf": "PDFと文書",
+      "data": "CSVとデータ",
+      "web": "リンクとウェブ",
+      "ai": "AI / RAG",
+      "media": "画像と動画",
+      "n8n": "n8nワークフロー"
+    },
+    "how_title": "使い方",
+    "how_intro": "ファイルに合うツールを選びます。自分で実行することも、クラウドで実行を始めることもできます。",
+    "how_1_title": "ツールを選ぶ",
+    "how_1_body": "どのツールもひとつの仕事だけをします。たとえばPDFから表を取り出す、リンクの一覧を調べる、などです。",
+    "how_2_title": "好きな場所で実行する",
+    "how_2_body": "ツールをダウンロードして自分のコンピュータで使うか、Apify版を使って、処理した分だけ支払います。",
+    "how_3_title": "きれいなファイルを受け取る",
+    "how_3_body": "CSV、Excel、JSON、Markdownが返ってきます。表計算、スクリプト、AIアプリで使えます。",
+    "how_mcp": "無料のliteツールにはMCPサーバーが付いているので、Cursor、Claude Desktop、その他のAIアプリから使えます。APIキーは不要です。ApifyのツールはApify MCPからも呼び出せます。",
+    "faq_title": "よくある質問",
+    "faqs": [
+      [
+        "Tidy Byte Toolsとは何ですか？",
+        "散らかったデータを整える小さなツール店です。自分のコンピュータで動かすダウンロード版と、Apifyの従量課金ツールを扱っています。無料のliteツールはGitHubとPyPIにあります。"
+      ],
+      [
+        "ファイルを見られますか？",
+        "ダウンロード版は自分のコンピュータで動くので、そのファイルは手元に残ります。Apifyのツールは、あなた自身のApifyアカウントで動きます。このサイトはファイルを受け取りません。"
+      ],
+      [
+        "無料と有料の違いは何ですか？",
+        "無料のliteツールはよくあるケース向けです。たとえばテキストのPDFや、単純なリンク一覧です。有料版は、Excel出力、スキャンしたページ、Wordファイル、フォルダ対応などを足します。違いは各ツールのページに書いてあります。"
+      ],
+      [
+        "従量課金とは何ですか？",
+        "Apifyでは、ツールがしたことに対して支払います。たとえば表があるページごと、調べたリンクごとです。失敗した項目やスキップした項目は無料です。実行ごとに0.00005ドルの開始料もあります。正確な料金はツールのページとApifyにあります。"
+      ],
+      [
+        "無料ツールはAIアプリで使えますか？",
+        "はい。無料のliteツールには、自分のコンピュータで動かす小さなMCPサーバーが付いています。ApifyのツールはApify MCPからも呼び出せます。ローカルのツールにAPIキーは不要です。"
+      ],
+      [
+        "助けが必要なときは？",
+        "そのツールのGitHubページでissueを開いてください。GumroadやApifyで購入した場合は、そのサイトのサポートも使えます。"
+      ]
+    ],
+    "footer_tagline": "散らかったデータを整える、小さなツール。ひとつひとつがひとつの仕事を、きちんとこなします。",
+    "footer_tools": "ツール",
+    "footer_shops": "ショップ",
+    "footer_site": "このサイト",
+    "footer_legal": "© {year} Tidy Byte Tools. このサイトは追跡用クッキーを使いません。",
+    "footer_featured": "紹介された場所",
+    "footer_featured_note": "ディレクトリに掲載されたら、そのマークをここに表示します。",
+    "home_title": "Tidy Byte Tools — 散らかったデータを整える小さなツール",
+    "home_desc": "散らかったデータを整える小さなツール。自分のコンピュータで使うか、クラウドでは使った分だけ支払います。",
+    "try_apify": "Apifyで試す",
+    "free_download": "無料ダウンロード",
+    "about_price": "約1ドルで{n}{unit}。",
+    "units": {
+      "pages_with_table": "個の表つきページ",
+      "files": "個のファイル",
+      "clean_rows": "行のきれいなデータ",
+      "numbers": "件の番号",
+      "links": "件のリンク",
+      "chunks": "個のチャンク",
+      "data_rows": "行のデータ",
+      "unique_texts": "件のユニークなテキスト",
+      "rows": "行",
+      "documents": "件の文書",
+      "pages": "ページ",
+      "dates": "件の日付"
+    }
+  },
+  "zh-CN": {
+    "skip": "跳到正文",
+    "nav_tools": "工具",
+    "nav_guides": "指南",
+    "nav_how": "使用方法",
+    "nav_faq": "常见问题",
+    "nav_github": "GitHub",
+    "nav_connect": "面向 AI 代理",
+    "nav_privacy": "隐私",
+    "nav_terms": "条款",
+    "lang_label": "语言",
+    "eyebrow": "开发者工具",
+    "hero_title": "把凌乱数据整理干净的小工具。",
+    "hero_lede": "每个工具只做一件事，并且把它做好。你可以在自己的电脑上运行，也可以按云端实际用量付费。",
+    "cta_try": "查看工具",
+    "cta_github": "GitHub 上的免费工具",
+    "search_label": "搜索工具",
+    "search_placeholder": "搜索工具",
+    "filter_all": "全部",
+    "filter_empty": "没有符合该搜索的工具。",
+    "cats": {
+      "pdf": "PDF 与文档",
+      "data": "CSV 与数据",
+      "web": "链接与网页",
+      "ai": "AI / RAG",
+      "media": "图片与视频",
+      "n8n": "n8n 工作流"
+    },
+    "how_title": "使用方法",
+    "how_intro": "选择适合你文件的工具。你可以自己运行，也可以在云端开始一次处理。",
+    "how_1_title": "选一个工具",
+    "how_1_body": "每个工具只做一件事，比如从 PDF 里抽出表格，或检查一份链接列表。",
+    "how_2_title": "在你想用的地方运行",
+    "how_2_body": "下载工具并在自己的电脑上使用，或使用 Apify 版本，只为自己实际处理的内容付费。",
+    "how_3_title": "拿回一份干净的文件",
+    "how_3_body": "你会得到 CSV、Excel、JSON 或 Markdown，可以用在表格、脚本或 AI 应用里。",
+    "how_mcp": "免费的 lite 工具带有 MCP 服务器，你可以在 Cursor、Claude Desktop 和其他 AI 应用里使用。不需要 API 密钥。Apify 工具也可以通过 Apify MCP 调用。",
+    "faq_title": "常见问题",
+    "faqs": [
+      [
+        "Tidy Byte Tools 是什么？",
+        "一家整理凌乱数据的小工具店。我们出售在你电脑上运行的下载版，以及 Apify 上按次付费的工具。免费 lite 工具放在 GitHub 和 PyPI 上。"
+      ],
+      [
+        "你们会看到我的文件吗？",
+        "下载版工具在你的电脑上运行，所以这些文件留在你这边。Apify 工具在你自己的 Apify 账户里运行。本网站不接收上传。"
+      ],
+      [
+        "免费和付费有什么不同？",
+        "免费 lite 工具覆盖常见情况，比如文本 PDF，或一份简单的链接列表。付费版会加上 Excel 输出、扫描页、Word 文件或文件夹支持。每个工具页面都写了区别。"
+      ],
+      [
+        "按次付费是什么意思？",
+        "在 Apify 上，你为工具实际做的事情付费，比如每一张带表格的页面，或每一条被检查的链接。失败或跳过的项目免费。每次运行还有 0.00005 美元的启动费。准确价格写在工具页面和 Apify 上。"
+      ],
+      [
+        "免费工具能和 AI 应用一起用吗？",
+        "可以。免费 lite 工具带有一个在你电脑上运行的小型 MCP 服务器。Apify 工具也可以通过 Apify MCP 调用。本地工具不需要 API 密钥。"
+      ],
+      [
+        "如何获得帮助？",
+        "在该工具的 GitHub 页面开一个 issue。如果是在 Gumroad 或 Apify 购买的，也可以使用那个网站的支持选项。"
+      ]
+    ],
+    "footer_tagline": "把凌乱数据整理干净的小工具。每个工具只做一件事，并且把它做好。",
+    "footer_tools": "工具",
+    "footer_shops": "商店",
+    "footer_site": "本站",
+    "footer_legal": "© {year} Tidy Byte Tools。本站不使用跟踪 Cookie。",
+    "footer_featured": "出现在",
+    "footer_featured_note": "等目录收录我们之后，他们的标识会出现在这里。",
+    "home_title": "Tidy Byte Tools — 把凌乱数据整理干净的小工具",
+    "home_desc": "把凌乱数据整理干净的小工具。你可以在自己的电脑上运行，也可以按云端实际用量付费。",
+    "try_apify": "在 Apify 上试用",
+    "free_download": "免费下载",
+    "about_price": "大约 1 美元可处理 {n} {unit}。",
+    "units": {
+      "pages_with_table": "个带表格的页面",
+      "files": "个文件",
+      "clean_rows": "行清理后的数据",
+      "numbers": "个号码",
+      "links": "条链接",
+      "chunks": "个分段",
+      "data_rows": "行数据",
+      "unique_texts": "条不重复文本",
+      "rows": "行",
+      "documents": "份文档",
+      "pages": "个页面",
+      "dates": "个日期"
+    }
+  }
+}

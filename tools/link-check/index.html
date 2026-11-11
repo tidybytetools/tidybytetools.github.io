@@ -6,10 +6,12 @@
   <title>Broken Link Checker — Tidy Byte Tools</title>
   <meta name="description" content="Check a list of links for status codes, redirects, and broken pages.">
   <link rel="canonical" href="https://tidybytetools.github.io/tools/link-check/">
+  
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preload" href="/assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#F4F7F5" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0D1512" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="website">
@@ -17,15 +19,16 @@
   <meta property="og:title" content="Broken Link Checker — Tidy Byte Tools">
   <meta property="og:description" content="Check a list of links for status codes, redirects, and broken pages.">
   <meta property="og:url" content="https://tidybytetools.github.io/tools/link-check/">
-  <meta property="og:image" content="https://tidybytetools.github.io/assets/img/og.png">
+  <meta property="og:image" content="https://tidybytetools.github.io/assets/img/og/link-check.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Broken Link Checker — Tidy Byte Tools">
   <meta name="twitter:description" content="Check a list of links for status codes, redirects, and broken pages.">
-  <meta name="twitter:image" content="https://tidybytetools.github.io/assets/img/og.png">
+  <meta name="twitter:image" content="https://tidybytetools.github.io/assets/img/og/link-check.png">
   <link rel="stylesheet" href="/assets/css/site.css">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "SoftwareApplication", "name": "Broken Link Checker", "applicationCategory": "DeveloperApplication", "operatingSystem": "Windows, macOS, Linux", "description": "Check a list of links for status codes, redirects, and broken pages.", "url": "https://tidybytetools.github.io/tools/link-check/", "image": "https://tidybytetools.github.io/assets/img/covers/link-check.png", "author": {"@type": "Organization", "name": "Tidy Byte Tools", "url": "https://tidybytetools.github.io"}, "offers": [{"@type": "Offer", "url": "https://apify.com/tidybytetools/broken-link-checker", "availability": "https://schema.org/InStock", "priceCurrency": "USD", "description": "Pay per use on Apify: $0.001 per link", "price": "0.001"}, {"@type": "Offer", "url": "https://tidybyte.gumroad.com/l/link-check", "availability": "https://schema.org/InStock", "priceCurrency": "USD", "description": "For your computer on Gumroad: $7", "price": "7"}, {"@type": "Offer", "url": "https://github.com/tidybytetools/link-check-lite", "availability": "https://schema.org/InStock", "priceCurrency": "USD", "description": "Free lite on GitHub & PyPI: Free", "price": "0"}]}, {"@type": "WebAPI", "name": "Broken Link Checker API", "description": "Check a list of links for status codes, redirects, and broken pages.", "url": "https://apify.com/tidybytetools/broken-link-checker", "documentation": "https://apify.com/tidybytetools/broken-link-checker", "provider": {"@type": "Organization", "name": "Tidy Byte Tools", "url": "https://tidybytetools.github.io"}, "offers": {"@type": "Offer", "url": "https://apify.com/tidybytetools/broken-link-checker", "availability": "https://schema.org/InStock", "priceCurrency": "USD", "description": "Pay per use on Apify: $0.001 per link", "price": "0.001"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does this tool do?", "acceptedAnswer": {"@type": "Answer", "text": "Check a list of links for status codes, redirects, and broken pages. Paste a list, give a sitemap, or scan pages for their links. Get a clear report of what works, what is broken, and where redirects end up."}}, {"@type": "Question", "name": "What does it cost?", "acceptedAnswer": {"@type": "Answer", "text": "Pay per use on Apify costs $0.001 per link. Scanning a page for links is $0.002 per page. Duplicates and links skipped by robots.txt are free. For your computer on Gumroad costs $7. Sitemaps, speed checks, look-alike domain warnings, and CSV reports. Runs offline. Free lite on GitHub & PyPI costs Free. Checks a text file of links. CLI, MCP server, and a GitHub Action. No sitemap input, no speed flags, no CSV report in the lite version."}}, {"@type": "Question", "name": "Will you see my files?", "acceptedAnswer": {"@type": "Answer", "text": "The download tools run on your computer, so those files stay with you. The Apify tools run in your own Apify account. This website does not take uploads."}}, {"@type": "Question", "name": "Does the free tool work with AI apps?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The free lite version includes a small MCP server. You can use it from Cursor, Claude Desktop, and other apps that support MCP. No API key is needed."}}], "url": "https://tidybytetools.github.io/tools/link-check/"}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "SoftwareApplication", "name": "Broken Link Checker", "applicationCategory": "DeveloperApplication", "operatingSystem": "Windows, macOS, Linux", "description": "Check a list of links for status codes, redirects, and broken pages.", "url": "https://tidybytetools.github.io/tools/link-check/", "image": "https://tidybytetools.github.io/assets/img/covers/link-check.png", "author": {"@type": "Organization", "name": "Tidy Byte Tools", "url": "https://tidybytetools.github.io"}, "inLanguage": "en", "offers": [{"@type": "Offer", "url": "https://apify.com/tidybytetools/broken-link-checker", "availability": "https://schema.org/InStock", "priceCurrency": "USD", "description": "Pay per use on Apify: $0.001 per link", "price": "0.001"}, {"@type": "Offer", "url": "https://tidybyte.gumroad.com/l/link-check", "availability": "https://schema.org/InStock", "priceCurrency": "USD", "description": "For your computer on Gumroad: $7", "price": "7"}, {"@type": "Offer", "url": "https://github.com/tidybytetools/link-check-lite", "availability": "https://schema.org/InStock", "priceCurrency": "USD", "description": "Free lite on GitHub & PyPI: Free", "price": "0"}]}, {"@type": "WebAPI", "name": "Broken Link Checker API", "description": "Check a list of links for status codes, redirects, and broken pages.", "url": "https://apify.com/tidybytetools/broken-link-checker", "documentation": "https://apify.com/tidybytetools/broken-link-checker", "provider": {"@type": "Organization", "name": "Tidy Byte Tools", "url": "https://tidybytetools.github.io"}, "offers": {"@type": "Offer", "url": "https://apify.com/tidybytetools/broken-link-checker", "availability": "https://schema.org/InStock", "priceCurrency": "USD", "description": "Pay per use on Apify: $0.001 per link", "price": "0.001"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does this tool do?", "acceptedAnswer": {"@type": "Answer", "text": "Check a list of links for status codes, redirects, and broken pages. Paste a list, give a sitemap, or scan pages for their links. Get a clear report of what works, what is broken, and where redirects end up."}}, {"@type": "Question", "name": "What does it cost?", "acceptedAnswer": {"@type": "Answer", "text": "Pay per use on Apify costs $0.001 per link. Scanning a page for links is $0.002 per page. Duplicates and links skipped by robots.txt are free. For your computer on Gumroad costs $7. Sitemaps, speed checks, look-alike domain warnings, and CSV reports. Runs offline. Free lite on GitHub & PyPI costs Free. Checks a text file of links. CLI, MCP server, and a GitHub Action. No sitemap input, no speed flags, no CSV report in the lite version."}}, {"@type": "Question", "name": "Will you see my files?", "acceptedAnswer": {"@type": "Answer", "text": "The download tools run on your computer, so those files stay with you. The Apify tools run in your own Apify account. This website does not take uploads."}}, {"@type": "Question", "name": "Does the free tool work with AI apps?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The free lite version includes a small MCP server. You can use it from Cursor, Claude Desktop, and other apps that support MCP. No API key is needed."}}], "url": "https://tidybytetools.github.io/tools/link-check/"}]}</script><script src="/assets/js/site.js" defer></script>
 </head>
 
 <body>
@@ -39,8 +42,10 @@
       </picture>
     </a>
     
-<nav aria-label="Primary"><ul><li><a href="/tools/" aria-current="page">Tools</a></li><li><a href="/guides/">Guides</a></li><li><a href="/#how">How it works</a></li><li><a href="/#faq">FAQ</a></li><li><a href="https://github.com/tidybytetools">GitHub</a></li></ul></nav>
-</div></header>
+<div class="header-tools">
+<nav aria-label="Primary"><ul><li><a href="/tools/" aria-current="page">Tools</a></li><li><a href="/guides/">Guides</a></li><li><a href="/#how">How it works</a></li><li><a href="/#faq">FAQ</a></li><li><a href="/connect/">For AI agents</a></li><li><a href="https://github.com/tidybytetools">GitHub</a></li></ul></nav>
+<nav class="lang-switch" aria-label="Language"><ul class="lang-switch"><li><a href="/tools/link-check/" lang="en" hreflang="en" title="English" aria-current="true">EN</a></li><li><a href="/es/" lang="es" hreflang="es" title="Español">ES</a></li><li><a href="/pt/" lang="pt-BR" hreflang="pt-BR" title="Português">PT</a></li><li><a href="/de/" lang="de" hreflang="de" title="Deutsch">DE</a></li><li><a href="/fr/" lang="fr" hreflang="fr" title="Français">FR</a></li><li><a href="/ja/" lang="ja" hreflang="ja" title="日本語">JA</a></li><li><a href="/zh/" lang="zh-CN" hreflang="zh-CN" title="中文">中文</a></li></ul></nav>
+</div></div></header>
 <main id="main">
     <article class="page-hero">
       <div class="wrap">
@@ -48,23 +53,47 @@
         <p class="cat-label">Links &amp; web</p>
         <h1>Broken Link Checker</h1>
         <p class="lede">Check a list of links for status codes, redirects, and broken pages.</p>
+        <p class="price-line">About $1 per 1,000 links.</p>
+        <div class="btn-row"><a class="btn btn-primary btn-sm" href="https://apify.com/tidybytetools/broken-link-checker">Try it on Apify</a></div><div class="btn-row"><a class="btn btn-secondary btn-sm" href="https://tidybyte.gumroad.com/l/link-check">Buy on Gumroad</a></div><div class="btn-row"><a class="btn btn-primary btn-sm" href="https://github.com/tidybytetools/link-check-lite">Free download</a><a class="btn btn-secondary btn-sm" href="https://pypi.org/project/link-check-lite/">PyPI</a><a class="btn btn-secondary btn-sm" href="https://github.com/marketplace/actions/link-check-lite">GitHub Action</a></div>
+        
         <div class="cover">
           <picture>
             <source type="image/webp" srcset="/assets/img/covers/link-check.webp">
             <img src="/assets/img/covers/link-check.png" alt="Broken Link Checker — Check a list of links for status codes, redirects, and broken pages." width="1280" height="720">
           </picture>
         </div>
+        
         <div class="cover"><picture><source type="image/webp" srcset="/assets/img/galleries/link-check.webp"><img src="/assets/img/galleries/link-check.png" alt="A sample run of link-check showing status codes and redirect results for a list of URLs." width="1280" height="720"></picture></div>
         <div class="prose">
           <p>Paste a list, give a sitemap, or scan pages for their links. Get a clear report of what works, what is broken, and where redirects end up.</p>
           <h2>What it does</h2>
           <ul><li>Shows the status code, redirect chain, and final URL for each link.</li><li>The paid download and the Apify version can also read a sitemap, check speed, and flag look-alike domains.</li><li>The Apify version can scan pages for links and follows robots.txt.</li><li>The free lite tool checks a text file of links on your computer, includes an MCP server, and is also on the GitHub Marketplace as an Action.</li></ul>
+        </div>
+        
+        <h2>Before and after</h2>
+        <div class="ba">
+          <div class="ba-pane before">
+            <p class="ba-label">A list of links</p>
+            <pre><code>https://example.com/
+https://github.com/tidybytetools/this-page-does-not-exist
+https://httpbin.org/redirect/3</code></pre>
+          </div>
+          <div class="ba-pane after">
+            <p class="ba-label">Report (from the sample run)</p>
+            <pre><code>https://example.com/                                       200  ok
+https://github.com/tidybytetools/this-page-does-not-exist  404  broken
+https://httpbin.org/redirect/3                             200  3 hops → https://httpbin.org/get</code></pre>
+          </div>
+        </div>
+        <p class="ba-source">From link-check/samples/links.txt and report.md.</p>
+    
+        <div class="prose">
           <h2>Get it</h2>
         </div>
         <div class="version-block">
               <h3>Pay per use · Apify · $0.001 per link</h3>
               <p>Scanning a page for links is $0.002 per page. Duplicates and links skipped by robots.txt are free.</p>
-              <div class="btn-row"><a class="btn btn-secondary btn-sm" href="https://apify.com/tidybytetools/broken-link-checker">Open in Apify</a></div>
+              <div class="btn-row"><a class="btn btn-primary btn-sm" href="https://apify.com/tidybytetools/broken-link-checker">Try it on Apify</a></div>
             </div><div class="version-block">
               <h3>For your computer · Gumroad · $7</h3>
               <p>Sitemaps, speed checks, look-alike domain warnings, and CSV reports. Runs offline.</p>
@@ -72,7 +101,7 @@
             </div><div class="version-block">
               <h3>Free lite · GitHub &amp; PyPI · Free</h3>
               <p>Checks a text file of links. CLI, MCP server, and a GitHub Action. No sitemap input, no speed flags, no CSV report in the lite version.</p>
-              <div class="btn-row"><a class="btn btn-secondary btn-sm" href="https://github.com/tidybytetools/link-check-lite">GitHub</a><a class="btn btn-secondary btn-sm" href="https://pypi.org/project/link-check-lite/">PyPI</a><a class="btn btn-secondary btn-sm" href="https://github.com/marketplace/actions/link-check-lite">GitHub Action</a></div>
+              <div class="btn-row"><a class="btn btn-primary btn-sm" href="https://github.com/tidybytetools/link-check-lite">Free download</a><a class="btn btn-secondary btn-sm" href="https://pypi.org/project/link-check-lite/">PyPI</a><a class="btn btn-secondary btn-sm" href="https://github.com/marketplace/actions/link-check-lite">GitHub Action</a></div>
             </div>
         <div class="faq" style="margin-top:36px"><h2>FAQ</h2><div class="faq-item"><h3>What does this tool do?</h3><p>Check a list of links for status codes, redirects, and broken pages. Paste a list, give a sitemap, or scan pages for their links. Get a clear report of what works, what is broken, and where redirects end up.</p></div><div class="faq-item"><h3>What does it cost?</h3><p>Pay per use on Apify costs $0.001 per link. Scanning a page for links is $0.002 per page. Duplicates and links skipped by robots.txt are free. For your computer on Gumroad costs $7. Sitemaps, speed checks, look-alike domain warnings, and CSV reports. Runs offline. Free lite on GitHub &amp; PyPI costs Free. Checks a text file of links. CLI, MCP server, and a GitHub Action. No sitemap input, no speed flags, no CSV report in the lite version.</p></div><div class="faq-item"><h3>Will you see my files?</h3><p>The download tools run on your computer, so those files stay with you. The Apify tools run in your own Apify account. This website does not take uploads.</p></div><div class="faq-item"><h3>Does the free tool work with AI apps?</h3><p>Yes. The free lite version includes a small MCP server. You can use it from Cursor, Claude Desktop, and other apps that support MCP. No API key is needed.</p></div></div>
       </div>
@@ -80,6 +109,15 @@
     </main>
 
 <footer class="site-footer">
+  
+  <section class="featured-on" aria-label="Featured on">
+    <div class="wrap">
+      <h2>Featured on</h2>
+      <p>As directories list us, their marks will show up here.</p>
+      <ul class="featured-logos"></ul>
+    </div>
+  </section>
+
   <div class="wrap footer-grid">
     <div class="footer-brand">
       
@@ -111,10 +149,17 @@
 <li><a href="/tools/csv-split/">csv-split</a></li>
 <li><a href="/tools/regex-pack/">Regex Pack for Messy Data</a></li>
 <li><a href="/tools/claude-data-skills/">CSV Skills for Claude Code</a></li>
+<li><a href="/tools/base64-lite/">Base64 Encode &amp; Decode</a></li>
+<li><a href="/tools/json-repair-lite/">JSON Repair</a></li>
+<li><a href="/tools/hash-lite/">Hash &amp; Checksum</a></li>
 <li><a href="/tools/html-table-extractor/">HTML Table Extractor</a></li>
 <li><a href="/tools/llm-token-counter/">LLM Token Counter</a></li>
 <li><a href="/tools/json-to-csv/">JSON to CSV Converter</a></li>
-<li><a href="/tools/csv-encoding-fixer/">CSV Encoding Fixer</a></li></ul>
+<li><a href="/tools/csv-encoding-fixer/">CSV Encoding Fixer</a></li>
+<li><a href="/tools/json-schema-validator/">JSON Schema Validator</a></li>
+<li><a href="/tools/link-preview/">Link Preview</a></li>
+<li><a href="/tools/language-detector/">Language Detector</a></li>
+<li><a href="/tools/date-timezone/">Date &amp; Timezone Normalizer</a></li></ul>
     </div>
     <div>
       <h2>Shops</h2>
@@ -128,8 +173,13 @@
       <h2>This site</h2>
       <ul>
         <li><a href="/guides/">Guides</a></li>
+        <li><a href="/connect/">For AI agents</a></li>
         <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/terms/">Terms</a></li>
         <li><a href="/llms.txt">llms.txt</a></li>
+        <li><a href="/tools.json">tools.json</a></li>
+        <li><a href="/.well-known/mcp.json">mcp.json</a></li>
+        <li><a href="/openapi.json">openapi.json</a></li>
         <li><a href="/sitemap.xml">Sitemap</a></li>
       </ul>
     </div>

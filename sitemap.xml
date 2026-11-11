@@ -1,11 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://tidybytetools.github.io/</loc></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://tidybytetools.github.io/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tidybytetools.github.io/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tidybytetools.github.io/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://tidybytetools.github.io/pt/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://tidybytetools.github.io/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tidybytetools.github.io/fr/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tidybytetools.github.io/ja/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://tidybytetools.github.io/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tidybytetools.github.io/"/>
+  </url>
   <url><loc>https://tidybytetools.github.io/tools/</loc></url>
   <url><loc>https://tidybytetools.github.io/tools.json</loc></url>
   <url><loc>https://tidybytetools.github.io/guides/</loc></url>
   <url><loc>https://tidybytetools.github.io/privacy/</loc></url>
+  <url><loc>https://tidybytetools.github.io/terms/</loc></url>
+  <url><loc>https://tidybytetools.github.io/connect/</loc></url>
   <url><loc>https://tidybytetools.github.io/llms.txt</loc></url>
+  <url><loc>https://tidybytetools.github.io/llms-full.txt</loc></url>
+  <url><loc>https://tidybytetools.github.io/openapi.json</loc></url>
+  <url><loc>https://tidybytetools.github.io/.well-known/mcp.json</loc></url>
+  <url>
+    <loc>https://tidybytetools.github.io/es/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tidybytetools.github.io/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tidybytetools.github.io/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://tidybytetools.github.io/pt/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://tidybytetools.github.io/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tidybytetools.github.io/fr/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tidybytetools.github.io/ja/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://tidybytetools.github.io/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tidybytetools.github.io/"/>
+  </url>
+  <url>
+    <loc>https://tidybytetools.github.io/pt/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tidybytetools.github.io/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tidybytetools.github.io/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://tidybytetools.github.io/pt/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://tidybytetools.github.io/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tidybytetools.github.io/fr/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tidybytetools.github.io/ja/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://tidybytetools.github.io/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tidybytetools.github.io/"/>
+  </url>
+  <url>
+    <loc>https://tidybytetools.github.io/de/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tidybytetools.github.io/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tidybytetools.github.io/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://tidybytetools.github.io/pt/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://tidybytetools.github.io/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tidybytetools.github.io/fr/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tidybytetools.github.io/ja/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://tidybytetools.github.io/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tidybytetools.github.io/"/>
+  </url>
+  <url>
+    <loc>https://tidybytetools.github.io/fr/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tidybytetools.github.io/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tidybytetools.github.io/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://tidybytetools.github.io/pt/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://tidybytetools.github.io/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tidybytetools.github.io/fr/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tidybytetools.github.io/ja/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://tidybytetools.github.io/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tidybytetools.github.io/"/>
+  </url>
+  <url>
+    <loc>https://tidybytetools.github.io/ja/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tidybytetools.github.io/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tidybytetools.github.io/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://tidybytetools.github.io/pt/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://tidybytetools.github.io/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tidybytetools.github.io/fr/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tidybytetools.github.io/ja/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://tidybytetools.github.io/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tidybytetools.github.io/"/>
+  </url>
+  <url>
+    <loc>https://tidybytetools.github.io/zh/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tidybytetools.github.io/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tidybytetools.github.io/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://tidybytetools.github.io/pt/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://tidybytetools.github.io/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tidybytetools.github.io/fr/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tidybytetools.github.io/ja/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://tidybytetools.github.io/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tidybytetools.github.io/"/>
+  </url>
   <url><loc>https://tidybytetools.github.io/tools/pdf-table-pull/</loc></url>
   <url><loc>https://tidybytetools.github.io/tools/doc2md/</loc></url>
   <url><loc>https://tidybytetools.github.io/tools/sheet-scrub/</loc></url>
@@ -23,10 +105,17 @@
   <url><loc>https://tidybytetools.github.io/tools/csv-split/</loc></url>
   <url><loc>https://tidybytetools.github.io/tools/regex-pack/</loc></url>
   <url><loc>https://tidybytetools.github.io/tools/claude-data-skills/</loc></url>
+  <url><loc>https://tidybytetools.github.io/tools/base64-lite/</loc></url>
+  <url><loc>https://tidybytetools.github.io/tools/json-repair-lite/</loc></url>
+  <url><loc>https://tidybytetools.github.io/tools/hash-lite/</loc></url>
   <url><loc>https://tidybytetools.github.io/tools/html-table-extractor/</loc></url>
   <url><loc>https://tidybytetools.github.io/tools/llm-token-counter/</loc></url>
   <url><loc>https://tidybytetools.github.io/tools/json-to-csv/</loc></url>
   <url><loc>https://tidybytetools.github.io/tools/csv-encoding-fixer/</loc></url>
+  <url><loc>https://tidybytetools.github.io/tools/json-schema-validator/</loc></url>
+  <url><loc>https://tidybytetools.github.io/tools/link-preview/</loc></url>
+  <url><loc>https://tidybytetools.github.io/tools/language-detector/</loc></url>
+  <url><loc>https://tidybytetools.github.io/tools/date-timezone/</loc></url>
   <url><loc>https://tidybytetools.github.io/guides/check-a-website-for-broken-links/</loc></url>
   <url><loc>https://tidybytetools.github.io/guides/count-llm-tokens-and-estimate-cost/</loc></url>
   <url><loc>https://tidybytetools.github.io/guides/extract-pdf-tables-to-excel-or-csv/</loc></url>

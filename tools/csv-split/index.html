@@ -6,10 +6,12 @@
   <title>csv-split — Tidy Byte Tools</title>
   <meta name="description" content="Split a big CSV into smaller files. Every new file keeps the header.">
   <link rel="canonical" href="https://tidybytetools.github.io/tools/csv-split/">
+  
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preload" href="/assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#F4F7F5" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0D1512" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="website">
@@ -17,15 +19,16 @@
   <meta property="og:title" content="csv-split — Tidy Byte Tools">
   <meta property="og:description" content="Split a big CSV into smaller files. Every new file keeps the header.">
   <meta property="og:url" content="https://tidybytetools.github.io/tools/csv-split/">
-  <meta property="og:image" content="https://tidybytetools.github.io/assets/img/og.png">
+  <meta property="og:image" content="https://tidybytetools.github.io/assets/img/og/csv-split.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="csv-split — Tidy Byte Tools">
   <meta name="twitter:description" content="Split a big CSV into smaller files. Every new file keeps the header.">
-  <meta name="twitter:image" content="https://tidybytetools.github.io/assets/img/og.png">
+  <meta name="twitter:image" content="https://tidybytetools.github.io/assets/img/og/csv-split.png">
   <link rel="stylesheet" href="/assets/css/site.css">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "SoftwareApplication", "name": "csv-split", "applicationCategory": "DeveloperApplication", "operatingSystem": "Windows, macOS, Linux", "description": "Split a big CSV into smaller files. Every new file keeps the header.", "url": "https://tidybytetools.github.io/tools/csv-split/", "image": "https://tidybytetools.github.io/assets/img/covers/csv-split.png", "author": {"@type": "Organization", "name": "Tidy Byte Tools", "url": "https://tidybytetools.github.io"}, "offers": {"@type": "Offer", "url": "https://tidybyte.gumroad.com/l/csv-split", "availability": "https://schema.org/InStock", "priceCurrency": "USD", "description": "For your computer on Gumroad: $1", "price": "1"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does this tool do?", "acceptedAnswer": {"@type": "Answer", "text": "Split a big CSV into smaller files. Every new file keeps the header. Use it when a CSV is too big for Excel, too big to upload, or when you want one file per group, like one file per state."}}, {"@type": "Question", "name": "What does it cost?", "acceptedAnswer": {"@type": "Answer", "text": "For your computer on Gumroad costs $1. One Python script. Needs Python 3.8+. CSV and text files only, not .xlsx."}}, {"@type": "Question", "name": "Will you see my files?", "acceptedAnswer": {"@type": "Answer", "text": "The download tools run on your computer, so those files stay with you. The Apify tools run in your own Apify account. This website does not take uploads."}}], "url": "https://tidybytetools.github.io/tools/csv-split/"}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "SoftwareApplication", "name": "csv-split", "applicationCategory": "DeveloperApplication", "operatingSystem": "Windows, macOS, Linux", "description": "Split a big CSV into smaller files. Every new file keeps the header.", "url": "https://tidybytetools.github.io/tools/csv-split/", "image": "https://tidybytetools.github.io/assets/img/covers/csv-split.png", "author": {"@type": "Organization", "name": "Tidy Byte Tools", "url": "https://tidybytetools.github.io"}, "inLanguage": "en", "offers": {"@type": "Offer", "url": "https://tidybyte.gumroad.com/l/csv-split", "availability": "https://schema.org/InStock", "priceCurrency": "USD", "description": "For your computer on Gumroad: $1", "price": "1"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does this tool do?", "acceptedAnswer": {"@type": "Answer", "text": "Split a big CSV into smaller files. Every new file keeps the header. Use it when a CSV is too big for Excel, too big to upload, or when you want one file per group, like one file per state."}}, {"@type": "Question", "name": "What does it cost?", "acceptedAnswer": {"@type": "Answer", "text": "For your computer on Gumroad costs $1. One Python script. Needs Python 3.8+. CSV and text files only, not .xlsx."}}, {"@type": "Question", "name": "Will you see my files?", "acceptedAnswer": {"@type": "Answer", "text": "The download tools run on your computer, so those files stay with you. The Apify tools run in your own Apify account. This website does not take uploads."}}], "url": "https://tidybytetools.github.io/tools/csv-split/"}]}</script><script src="/assets/js/site.js" defer></script>
 </head>
 
 <body>
@@ -39,8 +42,10 @@
       </picture>
     </a>
     
-<nav aria-label="Primary"><ul><li><a href="/tools/" aria-current="page">Tools</a></li><li><a href="/guides/">Guides</a></li><li><a href="/#how">How it works</a></li><li><a href="/#faq">FAQ</a></li><li><a href="https://github.com/tidybytetools">GitHub</a></li></ul></nav>
-</div></header>
+<div class="header-tools">
+<nav aria-label="Primary"><ul><li><a href="/tools/" aria-current="page">Tools</a></li><li><a href="/guides/">Guides</a></li><li><a href="/#how">How it works</a></li><li><a href="/#faq">FAQ</a></li><li><a href="/connect/">For AI agents</a></li><li><a href="https://github.com/tidybytetools">GitHub</a></li></ul></nav>
+<nav class="lang-switch" aria-label="Language"><ul class="lang-switch"><li><a href="/tools/csv-split/" lang="en" hreflang="en" title="English" aria-current="true">EN</a></li><li><a href="/es/" lang="es" hreflang="es" title="Español">ES</a></li><li><a href="/pt/" lang="pt-BR" hreflang="pt-BR" title="Português">PT</a></li><li><a href="/de/" lang="de" hreflang="de" title="Deutsch">DE</a></li><li><a href="/fr/" lang="fr" hreflang="fr" title="Français">FR</a></li><li><a href="/ja/" lang="ja" hreflang="ja" title="日本語">JA</a></li><li><a href="/zh/" lang="zh-CN" hreflang="zh-CN" title="中文">中文</a></li></ul></nav>
+</div></div></header>
 <main id="main">
     <article class="page-hero">
       <div class="wrap">
@@ -48,6 +53,9 @@
         <p class="cat-label">CSV &amp; data</p>
         <h1>csv-split</h1>
         <p class="lede">Split a big CSV into smaller files. Every new file keeps the header.</p>
+        
+        <div class="btn-row"><a class="btn btn-secondary btn-sm" href="https://tidybyte.gumroad.com/l/csv-split">Buy on Gumroad</a></div>
+        
         <div class="cover">
           <picture>
             <source type="image/webp" srcset="/assets/img/covers/csv-split.webp">
@@ -55,10 +63,33 @@
           </picture>
         </div>
         
+        
         <div class="prose">
           <p>Use it when a CSV is too big for Excel, too big to upload, or when you want one file per group, like one file per state.</p>
           <h2>What it does</h2>
           <ul><li>Splits by row count, number of parts, file size, or a column value.</li><li>Keeps the header on every new file.</li><li>Reads the file bit by bit, so it can handle files bigger than your computer&#x27;s memory.</li></ul>
+        </div>
+        
+        <h2>Before and after</h2>
+        <div class="ba">
+          <div class="ba-pane before">
+            <p class="ba-label">One big orders.csv</p>
+            <pre><code>Order ID,Date,Customer,State,Total
+A00001,2026-02-02,Ben Ode,NY,35.43
+A00002,2026-03-03,Dev Patel,FL,50.72
+A00003,2026-04-04,Ana Ruiz,CA,123.47
+… 1,197 more rows (1,200 rows total)</code></pre>
+          </div>
+          <div class="ba-pane after">
+            <p class="ba-label">Split by the State column</p>
+            <pre><code>orders-CA.csv  (header + only CA rows)
+orders-FL.csv  (header + only FL rows)
+orders-NY.csv  (header + only NY rows)</code></pre>
+          </div>
+        </div>
+        <p class="ba-source">From csv-split/samples/orders.csv (1,200 rows) and the README example.</p>
+    
+        <div class="prose">
           <h2>Get it</h2>
         </div>
         <div class="version-block">
@@ -72,6 +103,15 @@
     </main>
 
 <footer class="site-footer">
+  
+  <section class="featured-on" aria-label="Featured on">
+    <div class="wrap">
+      <h2>Featured on</h2>
+      <p>As directories list us, their marks will show up here.</p>
+      <ul class="featured-logos"></ul>
+    </div>
+  </section>
+
   <div class="wrap footer-grid">
     <div class="footer-brand">
       
@@ -103,10 +143,17 @@
 <li><a href="/tools/csv-split/">csv-split</a></li>
 <li><a href="/tools/regex-pack/">Regex Pack for Messy Data</a></li>
 <li><a href="/tools/claude-data-skills/">CSV Skills for Claude Code</a></li>
+<li><a href="/tools/base64-lite/">Base64 Encode &amp; Decode</a></li>
+<li><a href="/tools/json-repair-lite/">JSON Repair</a></li>
+<li><a href="/tools/hash-lite/">Hash &amp; Checksum</a></li>
 <li><a href="/tools/html-table-extractor/">HTML Table Extractor</a></li>
 <li><a href="/tools/llm-token-counter/">LLM Token Counter</a></li>
 <li><a href="/tools/json-to-csv/">JSON to CSV Converter</a></li>
-<li><a href="/tools/csv-encoding-fixer/">CSV Encoding Fixer</a></li></ul>
+<li><a href="/tools/csv-encoding-fixer/">CSV Encoding Fixer</a></li>
+<li><a href="/tools/json-schema-validator/">JSON Schema Validator</a></li>
+<li><a href="/tools/link-preview/">Link Preview</a></li>
+<li><a href="/tools/language-detector/">Language Detector</a></li>
+<li><a href="/tools/date-timezone/">Date &amp; Timezone Normalizer</a></li></ul>
     </div>
     <div>
       <h2>Shops</h2>
@@ -120,8 +167,13 @@
       <h2>This site</h2>
       <ul>
         <li><a href="/guides/">Guides</a></li>
+        <li><a href="/connect/">For AI agents</a></li>
         <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/terms/">Terms</a></li>
         <li><a href="/llms.txt">llms.txt</a></li>
+        <li><a href="/tools.json">tools.json</a></li>
+        <li><a href="/.well-known/mcp.json">mcp.json</a></li>
+        <li><a href="/openapi.json">openapi.json</a></li>
         <li><a href="/sitemap.xml">Sitemap</a></li>
       </ul>
     </div>

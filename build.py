@@ -14,10 +14,16 @@ from pathlib import Path
 from PIL import Image
 
 from guide_build import load_guides, md_to_html, rewrite_guide_links
+from catalog import (
+    TOOLS, OPTIONAL_APIFY, CATEGORIES, GALLERIES, ALIASES, HOME_FAQS,
+    PRODUCTS_DIR as CATALOG_PRODUCTS, ACTOR_START_USD,
+)
+import i18n as I18N
 
 ROOT = Path(__file__).resolve().parent
 SRC = ROOT / "src"
 ASSETS = ROOT / "assets"
+OUT = ROOT
 BRAND = Path("/workspace/design/brand")
 PRODUCTS_DIR = Path("/workspace/products")
 GUIDES_DIR = PRODUCTS_DIR / "guides"
@@ -35,795 +41,208 @@ def P(path: str) -> str:
         return PATH_PREFIX + path
     return path
 
-# ---------------------------------------------------------------------------
-# Live catalog. Only include public, working listings.
-# Rechecked at build time for the two Apify actors that may still be unpublished.
-# ---------------------------------------------------------------------------
 
-CATEGORIES = [
-    ("pdf", "PDF & docs"),
-    ("data", "CSV & data"),
-    ("web", "Links & web"),
-    ("ai", "AI / RAG"),
-    ("media", "Images & video"),
-    ("n8n", "n8n workflows"),
-]
+def configure() -> None:
+    """Set BASE, PATH_PREFIX, and OUT from the environment."""
+    global PATH_PREFIX, BASE, OUT, ASSETS
+    PATH_PREFIX = os.environ.get("PATH_PREFIX", "").rstrip("/")
+    BASE = os.environ.get("SITE_BASE", "https://tidybytetools.github.io").rstrip("/")
+    dest = os.environ.get("DEST")
+    OUT = Path(dest).resolve() if dest else ROOT
+    ASSETS = OUT / "assets"
+    OUT.mkdir(parents=True, exist_ok=True)
 
 
-def V(place, label, price, url=None, urls=None, note=None, cta=None, card_price=None):
-    return {
-        "place": place,
-        "label": label,
-        "price": price,
-        "url": url,
-        "urls": urls or [],
-        "note": note,
-        "cta": cta,
-        "card_price": card_price or price,
-    }
+def lang_href(lang_code: str, path: str = "/") -> str:
+    info = I18N.LANG_BY_CODE[lang_code]
+    prefix = info["prefix"]
+    if not path.startswith("/"):
+        path = "/" + path
+    if path == "/":
+        return P(f"/{prefix}/") if prefix else P("/")
+    return P(f"/{prefix}{path}") if prefix else P(path)
 
 
-TOOLS = [
-    {
-        "slug": "pdf-table-pull",
-        "name": "PDF Table Pull",
-        "category": "pdf",
-        "tagline": "Pull tables out of PDFs into Excel, CSV, or JSON.",
-        "summary": (
-            "Copying tables out of a PDF by hand is slow, and pasting them into Excel "
-            "often wrecks the columns. This tool finds the tables and saves clean rows."
-        ),
-        "does": [
-            "Finds tables in a PDF, including tables that run across pages (paid and Apify).",
-            "Saves Excel, CSV, or JSON (the free lite version saves CSV only).",
-            "Reads scanned pages with OCR in the paid and Apify versions.",
-            "The free lite tool also works as an MCP server for AI apps.",
-        ],
-        "thumb": PRODUCTS_DIR / "pdf-table-pull" / "thumb.png",
-        "cover": PRODUCTS_DIR / "pdf-table-pull" / "cover.png",
-        "versions": [
-            V(
-                "Apify",
-                "Pay per use",
-                "$0.003 per page with a table",
-                "https://apify.com/tidybytetools/pdf-table-pull",
-                card_price="$0.003/page",
-                note="Pages with no tables are free. Scanned pages read with OCR are $0.01 each.",
-                cta="Open in Apify",
-            ),
-            V(
-                "Gumroad",
-                "For your computer",
-                "$12",
-                "https://tidybyte.gumroad.com/l/hkxqxh",
-                note="Excel, CSV and JSON output, scanned PDFs, and tables that run across pages.",
-                cta="Buy on Gumroad",
-            ),
-            V(
-                "GitHub & PyPI",
-                "Free lite",
-                "Free",
-                urls=[
-                    ("GitHub", "https://github.com/tidybytetools/pdf-table-pull-lite"),
-                    ("PyPI", "https://pypi.org/project/pdf-table-pull-lite/"),
-                    ("Gumroad", "https://tidybyte.gumroad.com/l/qrbzvo"),
-                ],
-                note="Text PDFs to CSV. CLI and MCP server. No Excel, no OCR, no joining tables across pages.",
-            ),
-        ],
-        "repos": ["pdf-table-pull-lite"],
-    },
-    {
-        "slug": "doc2md",
-        "name": "Doc to Markdown",
-        "category": "pdf",
-        "tagline": "Turn PDFs, Word files, and web pages into clean Markdown.",
-        "summary": (
-            "Get Markdown you can use in notes, docs, or AI apps. Tables stay as "
-            "Markdown tables. The paid version also writes chunks for AI search."
-        ),
-        "does": [
-            "Turns text PDFs and HTML into clean Markdown (all versions).",
-            "Keeps tables as real Markdown tables.",
-            "The paid version also reads Word files, whole folders, and writes RAG chunks.",
-            "The Apify version can read scanned PDFs with OCR.",
-            "The free lite tool includes an MCP server for AI apps.",
-        ],
-        "thumb": PRODUCTS_DIR / "doc2md" / "thumb.png",
-        "cover": PRODUCTS_DIR / "doc2md" / "cover.png",
-        "versions": [
-            V(
-                "Apify",
-                "Pay per use",
-                "$0.003 per file",
-                "https://apify.com/tidybytetools/doc-to-markdown",
-                note="First 20 PDF pages are included. Extra PDF pages are $0.0003 each. Scanned pages with OCR are $0.005. Failed files are free.",
-                cta="Open in Apify",
-            ),
-            V(
-                "Gumroad",
-                "For your computer",
-                "$12",
-                "https://tidybyte.gumroad.com/l/frlkv",
-                note="PDF, Word and HTML, plus RAG chunks with heading paths and page numbers. Runs offline.",
-                cta="Buy on Gumroad",
-            ),
-            V(
-                "GitHub & PyPI",
-                "Free lite",
-                "Free",
-                urls=[
-                    ("GitHub", "https://github.com/tidybytetools/doc2md-lite"),
-                    ("PyPI", "https://pypi.org/project/doc2md-lite/"),
-                    ("Gumroad", "https://tidybyte.gumroad.com/l/doc2md-lite"),
-                ],
-                note="Text PDF or HTML, one file at a time. No Word files, no folders, no RAG chunks, no OCR. Free download, $3 suggested.",
-            ),
-        ],
-        "repos": ["doc2md-lite"],
-    },
-    {
-        "slug": "sheet-scrub",
-        "name": "CSV & spreadsheet cleanup",
-        "category": "data",
-        "tagline": "Clean messy CSV and Excel files: dates, phones, emails, and duplicates.",
-        "summary": (
-            "Got a sheet full of extra spaces, mixed date styles, and repeat rows? "
-            "These tools tidy the file and give you a clean table back."
-        ),
-        "does": [
-            "Fixes messy column names and extra spaces.",
-            "Makes dates, emails, and phone numbers look the same.",
-            "Removes duplicate and empty rows.",
-            "Works on CSV and Excel (the Apify tool also reads JSON tables).",
-        ],
-        "thumb": PRODUCTS_DIR / "sheet-scrub" / "thumb.png",
-        "cover": PRODUCTS_DIR / "sheet-scrub" / "cover.png",
-        "versions": [
-            V(
-                "Apify",
-                "Pay per use",
-                "$0.0005 per clean row",
-                "https://apify.com/tidybytetools/csv-excel-data-cleaner",
-                card_price="$0.0005/row",
-                note="Removed rows are free. Gives you a clean CSV and a short report of what changed.",
-                cta="Open in Apify",
-            ),
-            V(
-                "Gumroad",
-                "For your computer",
-                "$9",
-                "https://tidybyte.gumroad.com/l/cknndc",
-                note="sheet-scrub: one command for messy Excel and CSV files. Runs on your computer.",
-                cta="Buy on Gumroad",
-            ),
-        ],
-        "repos": [],
-    },
-    {
-        "slug": "json-shaper",
-        "name": "JSON Shaper",
-        "category": "data",
-        "tagline": "Turn messy notes, CSV, and Markdown tables into clean JSON.",
-        "summary": (
-            "Free converters do well with neat CSV. JSON Shaper is for the messy stuff: "
-            "pasted notes, key: value lists, and tables."
-        ),
-        "does": [
-            "Turns key: value notes, CSV/TSV, and Markdown tables into typed JSON.",
-            "The paid version also parses app logs and splits a one-line US address.",
-            "The free lite tool is a CLI and an MCP server, and runs with no extra packages for the core tool.",
-        ],
-        "thumb": PRODUCTS_DIR / "json-shaper" / "thumb.png",
-        "cover": PRODUCTS_DIR / "json-shaper" / "cover.png",
-        "versions": [
-            V(
-                "Gumroad",
-                "For your computer",
-                "From $5",
-                "https://tidybyte.gumroad.com/l/cznmeo",
-                note="Pay what you want, $5 minimum. Adds app logs and a US address splitter.",
-                cta="Buy on Gumroad",
-            ),
-            V(
-                "GitHub & PyPI",
-                "Free lite",
-                "Free",
-                urls=[
-                    ("GitHub", "https://github.com/tidybytetools/json-shaper-lite"),
-                    ("PyPI", "https://pypi.org/project/json-shaper-lite/"),
-                    ("Gumroad", "https://tidybyte.gumroad.com/l/txytmi"),
-                ],
-                note="Notes, CSV/TSV and Markdown tables. CLI and MCP server. No log parsing, no address splitter.",
-            ),
-        ],
-        "repos": ["json-shaper-lite"],
-    },
-    {
-        "slug": "lead-sheet-fixer",
-        "name": "Lead Sheet Fixer",
-        "category": "data",
-        "tagline": "Clean a lead list: fix phones, check emails, and merge duplicates.",
-        "summary": (
-            "Clean the lead list you already have. Phones are formatted, bad emails "
-            "are flagged, names can be split, and duplicate rows can be merged."
-        ),
-        "does": [
-            "Fixes and formats phone numbers.",
-            "Flags bad or odd email addresses.",
-            "Merges duplicate rows.",
-            "Works on CSV and Excel. Runs on your computer.",
-        ],
-        "thumb": PRODUCTS_DIR / "lead-sheet-fixer" / "thumb.png",
-        "cover": PRODUCTS_DIR / "lead-sheet-fixer" / "cover.png",
-        "versions": [
-            V(
-                "Gumroad",
-                "For your computer",
-                "$9",
-                "https://tidybyte.gumroad.com/l/iaiacv",
-                cta="Buy on Gumroad",
-            ),
-        ],
-        "repos": [],
-    },
-    {
-        "slug": "phone-validator",
-        "name": "Phone Number Validator",
-        "category": "data",
-        "tagline": "Check phone numbers and format them as E.164, in bulk, offline.",
-        "summary": (
-            "See if each number is valid and write it in three common formats. "
-            "The tool also shows country, line type, area, and time zone. "
-            "It works offline and never calls or texts anyone."
-        ),
-        "does": [
-            "Says if each number is valid and possible.",
-            "Writes the number as E.164, international, and national.",
-            "Shows country, line type, area, and time zones.",
-            "Removes repeats for free.",
-            "Uses Google's open phone rules. Nothing is called or texted.",
-        ],
-        "thumb": None,  # generated
-        "cover": None,
-        "gen_art": {
-            "title": "phone-validator",
-            "sub": "Bulk phones to E.164, offline",
-            "badge": "PAY PER USE",
-            "vis": "phone",
-        },
-        "versions": [
-            V(
-                "Apify",
-                "Pay per use",
-                "$0.001 per number",
-                "https://apify.com/tidybytetools/phone-number-validator-formatter",
-                card_price="$0.001/number",
-                cta="Open in Apify",
-            ),
-        ],
-        "repos": [],
-    },
-    {
-        "slug": "data-cleanup-bundle",
-        "name": "Data Cleanup Bundle",
-        "category": "data",
-        "tagline": "Three desktop tools together: PDF tables, sheet cleanup, and JSON Shaper.",
-        "summary": (
-            "Get pdf-table-pull, sheet-scrub, and json-shaper in one purchase. "
-            "Bought one by one they cost at least $26. The bundle is $19, so you save $7."
-        ),
-        "does": [
-            "pdf-table-pull: PDF tables to Excel, CSV, or JSON, including scans.",
-            "sheet-scrub: clean messy Excel and CSV files.",
-            "json-shaper: notes, tables, and logs into clean JSON.",
-            "All three run on your computer.",
-        ],
-        "thumb": PRODUCTS_DIR / "data-cleanup-bundle" / "thumb.png",
-        "cover": PRODUCTS_DIR / "data-cleanup-bundle" / "cover.png",
-        "versions": [
-            V(
-                "Gumroad",
-                "For your computer",
-                "$19",
-                "https://tidybyte.gumroad.com/l/qnlxiy",
-                note="Saves $7 versus buying the three tools separately at their listed prices ($12 + $9 + $5).",
-                cta="Buy on Gumroad",
-            ),
-        ],
-        "repos": [],
-    },
-    {
-        "slug": "link-check",
-        "name": "Broken Link Checker",
-        "category": "web",
-        "tagline": "Check a list of links for status codes, redirects, and broken pages.",
-        "summary": (
-            "Paste a list, give a sitemap, or scan pages for their links. "
-            "Get a clear report of what works, what is broken, and where redirects end up."
-        ),
-        "does": [
-            "Shows the status code, redirect chain, and final URL for each link.",
-            "The paid download and the Apify version can also read a sitemap, check speed, and flag look-alike domains.",
-            "The Apify version can scan pages for links and follows robots.txt.",
-            "The free lite tool checks a text file of links on your computer, includes an MCP server, and is also on the GitHub Marketplace as an Action.",
-        ],
-        "thumb": PRODUCTS_DIR / "link-check" / "thumb.png",
-        "cover": PRODUCTS_DIR / "link-check" / "cover.png",
-        "versions": [
-            V(
-                "Apify",
-                "Pay per use",
-                "$0.001 per link",
-                "https://apify.com/tidybytetools/broken-link-checker",
-                card_price="$0.001/link",
-                note="Scanning a page for links is $0.002 per page. Duplicates and links skipped by robots.txt are free.",
-                cta="Open in Apify",
-            ),
-            V(
-                "Gumroad",
-                "For your computer",
-                "$7",
-                "https://tidybyte.gumroad.com/l/link-check",
-                note="Sitemaps, speed checks, look-alike domain warnings, and CSV reports. Runs offline.",
-                cta="Buy on Gumroad",
-            ),
-            V(
-                "GitHub & PyPI",
-                "Free lite",
-                "Free",
-                urls=[
-                    ("GitHub", "https://github.com/tidybytetools/link-check-lite"),
-                    ("PyPI", "https://pypi.org/project/link-check-lite/"),
-                    ("GitHub Action", "https://github.com/marketplace/actions/link-check-lite"),
-                ],
-                note="Checks a text file of links. CLI, MCP server, and a GitHub Action. No sitemap input, no speed flags, no CSV report in the lite version.",
-            ),
-        ],
-        "repos": ["link-check-lite"],
-    },
-    {
-        "slug": "server-pulse",
-        "name": "Server Pulse",
-        "category": "web",
-        "tagline": "Get a Discord alert when a website or server goes down.",
-        "summary": (
-            "Server Pulse watches a site or server and sends a Discord message if it goes down. "
-            "It can also post Stripe and PayPal donation alerts to Discord."
-        ),
-        "does": [
-            "Watches a website or server and alerts you in Discord when it is down.",
-            "Can also send Stripe and PayPal donation alerts to Discord.",
-            "Runs on your computer.",
-        ],
-        "thumb": PRODUCTS_DIR / "server-pulse" / "thumb.png",
-        "cover": PRODUCTS_DIR / "server-pulse" / "cover.png",
-        "versions": [
-            V(
-                "Gumroad",
-                "For your computer",
-                "$19",
-                "https://tidybyte.gumroad.com/l/cjatbj",
-                cta="Buy on Gumroad",
-            ),
-        ],
-        "repos": [],
-    },
-    {
-        "slug": "markdown-chunker",
-        "name": "Markdown Chunker for RAG",
-        "category": "ai",
-        "tagline": "Split Markdown into chunks for AI search, with heading paths kept.",
-        "summary": (
-            "Split a Markdown file by heading so each chunk stays on one topic. "
-            "Code blocks and tables stay whole when they fit. Each chunk keeps its heading path and line numbers. "
-            "This is plain code, not an AI model, so the same file always gives the same chunks."
-        ),
-        "does": [
-            "Splits by headings first, so each chunk stays on one topic.",
-            "Avoids cutting a code block or table in the middle when it fits.",
-            "Gives each chunk an id, heading path, and line numbers.",
-            "The free lite tool is a CLI and an MCP server you run on your computer.",
-        ],
-        "thumb": None,
-        "cover": None,
-        "gen_art": {
-            "title": "markdown-chunker",
-            "sub": "Split Markdown by heading for RAG",
-            "badge": None,
-            "vis": "chunk",
-        },
-        "versions": [
-            V(
-                "Apify",
-                "Pay per use",
-                "$0.0001 per chunk",
-                "https://apify.com/tidybytetools/markdown-rag-chunker",
-                card_price="$0.0001/chunk",
-                cta="Open in Apify",
-            ),
-            V(
-                "GitHub & PyPI",
-                "Free lite",
-                "Free",
-                urls=[
-                    ("GitHub", "https://github.com/tidybytetools/md-chunk-lite"),
-                    ("PyPI", "https://pypi.org/project/md-chunk-lite/"),
-                ],
-                note="Markdown and plain text. CLI and MCP server. It does not read PDF or Word files.",
-            ),
-        ],
-        "repos": ["md-chunk-lite"],
-    },
-    {
-        "slug": "gif-forge",
-        "name": "GIF Forge",
-        "category": "media",
-        "tagline": "Turn a folder of videos into small, sharp GIFs, offline.",
-        "summary": (
-            "Drop in a folder of clips and get a folder of small, sharp, looping GIFs. "
-            "It can also remove solid image backgrounds, all on your computer."
-        ),
-        "does": [
-            "Turns videos into small, sharp GIFs in batches.",
-            "Can remove solid backgrounds from images.",
-            "Runs offline on your computer.",
-        ],
-        "thumb": PRODUCTS_DIR / "gif-forge" / "thumb.png",
-        "cover": PRODUCTS_DIR / "gif-forge" / "cover.png",
-        "versions": [
-            V(
-                "Gumroad",
-                "For your computer",
-                "$7",
-                "https://tidybyte.gumroad.com/l/vjbsqs",
-                cta="Buy on Gumroad",
-            ),
-        ],
-        "repos": [],
-    },
-    {
-        "slug": "n8n-data-cleanup-pack",
-        "name": "n8n Data Cleanup Pack",
-        "category": "n8n",
-        "tagline": "9 n8n workflows for messy CSVs, leads, invoices, sheets, and uptime alerts.",
-        "summary": (
-            "Import a file, pick your logins, and run. These workflows clean messy data "
-            "in n8n, using only the nodes that come with n8n."
-        ),
-        "does": [
-            "Nine ready-to-import workflows, including CSV cleanup, lead cleanup, invoice email to Sheets, and uptime alerts.",
-            "Only nodes that come with n8n. No community nodes and no paid APIs.",
-            "Each workflow has plain setup steps inside it.",
-        ],
-        "thumb": PRODUCTS_DIR / "n8n-data-cleanup-pack" / "thumb.png",
-        "cover": PRODUCTS_DIR / "n8n-data-cleanup-pack" / "cover.png",
-        "versions": [
-            V(
-                "Gumroad",
-                "For n8n",
-                "$19",
-                "https://tidybyte.gumroad.com/l/n8n-data-cleanup-pack",
-                cta="Buy on Gumroad",
-                note="Tested on self-hosted n8n 2.46.4. Workflows that read files from disk need self-hosted n8n.",
-            ),
-            V(
-                "Gumroad",
-                "Free sample",
-                "Free",
-                "https://tidybyte.gumroad.com/l/n8n-cleanup-sampler",
-                cta="Get free on Gumroad",
-                note="Two workflows from the pack: CSV cleanup and uptime alerts.",
-            ),
-        ],
-        "repos": [],
-    },
-    {
-        "slug": "n8n-cleanup-sampler",
-        "name": "n8n Cleanup Sampler",
-        "category": "n8n",
-        "tagline": "2 free n8n workflows from the Data Cleanup Pack: CSV cleanup and uptime alerts.",
-        "summary": (
-            "Try two workflows for free before you buy the full pack. Import a file, "
-            "follow the setup note inside, and run. No logins are stored in the files."
-        ),
-        "does": [
-            "Includes CSV cleanup and dedupe, plus website uptime alerts to Discord or Slack.",
-            "Uses only nodes that come with n8n. No community nodes and no paid APIs.",
-            "Leads to the full n8n Data Cleanup Pack ($19) with 9 workflows.",
-        ],
-        "thumb": PRODUCTS_DIR / "n8n-cleanup-sampler" / "thumb.png",
-        "cover": PRODUCTS_DIR / "n8n-cleanup-sampler" / "cover.png",
-        "versions": [
-            V(
-                "Gumroad",
-                "Free sample",
-                "Free",
-                "https://tidybyte.gumroad.com/l/n8n-cleanup-sampler",
-                cta="Get free on Gumroad",
-                note="Two workflows from the $19 n8n Data Cleanup Pack. The CSV cleanup workflow needs self-hosted n8n.",
-            ),
-        ],
-        "repos": [],
-    },
-    {
-        "slug": "csv-char-fix",
-        "name": "csv-char-fix",
-        "category": "data",
-        "tagline": "Fix weird characters like Ã© and â€™ in CSV and text files.",
-        "summary": (
-            "Did an export turn José into JosÃ© or it's into itâ€™s? This small script "
-            "puts the text back the way it should be and saves the file so Excel shows accents right."
-        ),
-        "does": [
-            "Fixes garbled letters that were broken once, twice, or three times.",
-            "Leaves normal accented text alone.",
-            "Reads UTF-8, UTF-16, and Windows-1252 files, and never changes your original.",
-        ],
-        "thumb": PRODUCTS_DIR / "csv-char-fix" / "thumb.png",
-        "cover": PRODUCTS_DIR / "csv-char-fix" / "cover.png",
-        "versions": [
-            V(
-                "Gumroad",
-                "For your computer",
-                "$1",
-                "https://tidybyte.gumroad.com/l/csv-char-fix",
-                cta="Buy on Gumroad",
-                note="One Python script. Needs Python 3.8+. CSV and text files only, not .xlsx.",
-            ),
-        ],
-        "repos": [],
-    },
-    {
-        "slug": "csv-split",
-        "name": "csv-split",
-        "category": "data",
-        "tagline": "Split a big CSV into smaller files. Every new file keeps the header.",
-        "summary": (
-            "Use it when a CSV is too big for Excel, too big to upload, or when you want "
-            "one file per group, like one file per state."
-        ),
-        "does": [
-            "Splits by row count, number of parts, file size, or a column value.",
-            "Keeps the header on every new file.",
-            "Reads the file bit by bit, so it can handle files bigger than your computer's memory.",
-        ],
-        "thumb": PRODUCTS_DIR / "csv-split" / "thumb.png",
-        "cover": PRODUCTS_DIR / "csv-split" / "cover.png",
-        "versions": [
-            V(
-                "Gumroad",
-                "For your computer",
-                "$1",
-                "https://tidybyte.gumroad.com/l/csv-split",
-                cta="Buy on Gumroad",
-                note="One Python script. Needs Python 3.8+. CSV and text files only, not .xlsx.",
-            ),
-        ],
-        "repos": [],
-    },
-    {
-        "slug": "regex-pack",
-        "name": "Regex Pack for Messy Data",
-        "category": "data",
-        "tagline": "49 ready-to-use regex patterns for emails, phones, dates, money, and more.",
-        "summary": (
-            "Copy a pattern into your tool, or use the small helper script to check or fix "
-            "a CSV column. Every pattern comes with examples that are tested in Python and JavaScript."
-        ),
-        "does": [
-            "49 patterns for contact info, web links, dates, money, text cleanup, and IDs.",
-            "Includes a printable cheat sheet, Markdown, JSON, and a helper script.",
-            "Every example is tested in Python and JavaScript.",
-        ],
-        "thumb": PRODUCTS_DIR / "regex-pack" / "thumb.png",
-        "cover": PRODUCTS_DIR / "regex-pack" / "cover.png",
-        "versions": [
-            V(
-                "Gumroad",
-                "For your computer",
-                "$2",
-                "https://tidybyte.gumroad.com/l/regex-pack",
-                cta="Buy on Gumroad",
-                note="Patterns are tested in Python and JavaScript. A regex checks shape, not whether a value is real.",
-            ),
-        ],
-        "repos": [],
-    },
-    {
-        "slug": "claude-data-skills",
-        "name": "CSV Skills for Claude Code",
-        "category": "ai",
-        "tagline": "4 Claude Code skills that profile, diff, fix, and split CSV files on your computer.",
-        "summary": (
-            "Claude runs a small, tested script and reads the short result, instead of "
-            "loading a big CSV into the chat line by line. Your data stays on your computer."
-        ),
-        "does": [
-            "csv-profile: a quick look at every column, blanks, duplicates, and broken rows.",
-            "csv-diff: compares two CSV files by a key column and shows what changed.",
-            "fix-chars and split-csv: fix garbled characters, or split a big file while keeping the header.",
-        ],
-        "thumb": PRODUCTS_DIR / "claude-data-skills" / "thumb.png",
-        "cover": PRODUCTS_DIR / "claude-data-skills" / "cover.png",
-        "versions": [
-            V(
-                "Gumroad",
-                "For your computer",
-                "$3",
-                "https://tidybyte.gumroad.com/l/claude-data-skills",
-                cta="Buy on Gumroad",
-                note="Made for Claude Code. Scripts also run on their own with Python 3.8+. CSV and text only, not .xlsx.",
-            ),
-        ],
-        "repos": [],
-    },
-]
+def about_price_line(tool: dict, lang: str = "en") -> str | None:
+    ev = tool.get("event")
+    if not ev or not ev.get("price_usd"):
+        return None
+    usd = float(ev["price_usd"])
+    if usd <= 0:
+        return None
+    n = int(round(1 / usd))
+    unit_key = I18N.UNIT_KEY.get(ev.get("unit") or "", "")
+    units = I18N.ui(lang, "units")
+    unit = units.get(unit_key) if isinstance(units, dict) else ev.get("unit")
+    unit = unit or ev.get("unit") or "uses"
+    tmpl = I18N.ui(lang, "about_price")
+    return tmpl.format(n=I18N.format_count(n, lang), unit=unit)
 
-# Optional Apify actors: include if the store page is live, otherwise use the working Console URL.
 
-OPTIONAL_APIFY = [
-    {
-        "slug": "html-table-extractor",
-        "name": "HTML Table Extractor",
-        "category": "web",
-        "tagline": "Pull tables from web pages into CSV and JSON.",
-        "summary": (
-            "Reads HTML tables from a page or pasted HTML. Keeps merged cells, "
-            "handles more than one table on a page, and saves CSV. Honest about "
-            "tables that only appear after JavaScript runs."
-        ),
-        "does": [
-            "Finds HTML tables on a page or in pasted HTML.",
-            "Handles merged cells and more than one table.",
-            "Saves CSV and JSON rows. Failed pages are free.",
-        ],
-        "thumb": None,
-        "cover": None,
-        "gen_art": {
-            "title": "html-table-extractor",
-            "sub": "Web tables to CSV & JSON",
-            "badge": "PAY PER USE",
-        },
-        "versions": [
-            V(
-                "Apify",
-                "Pay per use",
-                "$0.0005 per data row",
-                "https://apify.com/tidybytetools/html-table-extractor",
-                cta="Open in Apify",
-            ),
-        ],
-        "repos": [],
-        "apify_url": "https://apify.com/tidybytetools/html-table-extractor",
-        "console_url": "https://console.apify.com/actors/tidybytetools~html-table-extractor",
-    },
-    {
-        "slug": "llm-token-counter",
-        "name": "LLM Token Counter",
-        "category": "ai",
-        "tagline": "Count tokens and estimate cost for GPT, Claude, and Gemini.",
-        "summary": (
-            "Counts tokens offline for OpenAI models and estimates Claude and Gemini. "
-            "Uses public list prices. No API key. Paste text or add file links."
-        ),
-        "does": [
-            "Exact OpenAI token counts with tiktoken.",
-            "Claude and Gemini counts marked as estimates.",
-            "Shows dated public list prices for cost estimates.",
-        ],
-        "thumb": None,
-        "cover": None,
-        "gen_art": {
-            "title": "llm-token-counter",
-            "sub": "Tokens & cost, offline",
-            "badge": "PAY PER USE",
-        },
-        "versions": [
-            V(
-                "Apify",
-                "Pay per use",
-                "$0.0005 per unique text",
-                "https://apify.com/tidybytetools/llm-token-counter",
-                cta="Open in Apify",
-            ),
-        ],
-        "repos": [],
-        "apify_url": "https://apify.com/tidybytetools/llm-token-counter",
-        "console_url": "https://console.apify.com/actors/tidybytetools~llm-token-counter",
-    },
+def minify_css(src: str) -> str:
+    src = re.sub(r"/\*.*?\*/", "", src, flags=re.S)
+    src = re.sub(r"\s+", " ", src)
+    src = re.sub(r"\s*([{}:;,])\s*", r"\1", src)
+    return src.strip()
 
-    {
-        "slug": "json-to-csv",
-        "name": "JSON to CSV Converter",
-        "category": "data",
-        "tagline": "Flatten nested JSON or JSON Lines into a CSV table.",
-        "summary": (
-            "Turn nested JSON into a flat table for Excel and Google Sheets. "
-            "You pick how lists are handled."
-        ),
-        "does": [
-            "Flattens nested objects, such as user.name and user.address.city.",
-            "Reads JSON, JSON Lines, and Apify dataset links.",
-            "Saves a CSV file and also puts rows in the dataset.",
-        ],
-        "thumb": None,
-        "cover": None,
-        "gen_art": {
-            "title": "json-to-csv",
-            "sub": "Flatten nested JSON for Excel",
-            "badge": "PAY PER USE",
-        },
-        "versions": [
-            V(
-                "Apify",
-                "Pay per use",
-                "$0.0001 per row",
-                "https://apify.com/tidybytetools/json-to-csv-flattener",
-                cta="Open in Apify",
-            ),
-        ],
-        "repos": [],
-        "apify_url": "https://apify.com/tidybytetools/json-to-csv-flattener",
-        "console_url": "https://console.apify.com/actors/tidybytetools~json-to-csv-flattener",
-    },
-    {
-        "slug": "csv-encoding-fixer",
-        "name": "CSV Encoding Fixer",
-        "category": "data",
-        "tagline": "Fix broken characters in CSV files and split large files.",
-        "summary": (
-            "Fixes garbled letters such as Ã© instead of é, then saves clean UTF-8 "
-            "that opens right in Excel. Can also split a large file and keep the header on every part."
-        ),
-        "does": [
-            "Finds and fixes garbled letters like Ã©, â€™ and Ã¼.",
-            "Reads UTF-8, UTF-16, and old Windows files.",
-            "Can split big files into parts that each keep the header.",
-        ],
-        "thumb": None,
-        "cover": None,
-        "gen_art": {
-            "title": "csv-encoding-fixer",
-            "sub": "Fix mojibake, split big CSVs",
-            "badge": "PAY PER USE",
-        },
-        "versions": [
-            V(
-                "Apify",
-                "Pay per use",
-                "$0.01 per file",
-                "https://apify.com/tidybytetools/csv-encoding-fixer-splitter",
-                cta="Open in Apify",
-            ),
-        ],
-        "repos": [],
-        "apify_url": "https://apify.com/tidybytetools/csv-encoding-fixer-splitter",
-        "console_url": "https://console.apify.com/actors/tidybytetools~csv-encoding-fixer-splitter",
-    },
-]
+
+def minify_js(src: str) -> str:
+    src = re.sub(r"/\*.*?\*/", "", src, flags=re.S)
+    lines = []
+    for line in src.splitlines():
+        cut = line.find("//")
+        if cut >= 0:
+            # keep URLs like https://
+            if cut > 0 and line[cut-1] == ":":
+                pass
+            else:
+                line = line[:cut]
+        lines.append(line)
+    src = "\n".join(lines)
+    src = re.sub(r"[ \t]+", " ", src)
+    src = re.sub(r"\n+", "\n", src)
+    return src.strip()
+
+
+ICONS = {
+    "table": "M4 4h16v16H4zM4 9h16M9 4v16",
+    "doc": "M7 3h7l6 6v12H7zM14 3v6h6",
+    "sheet": "M4 5h16v14H4zM4 9h16M9 5v14M13 5v14",
+    "json": "M8 5c-2 0-3 1.5-3 3.5S6 12 8 12M16 5c2 0 3 1.5 3 3.5S18 12 16 12M8 12c-2 0-3 1.5-3 3.5S6 19 8 19M16 12c2 0 3 1.5 3 3.5S18 19 16 19",
+    "leads": "M16 7a3 3 0 11-6 0 3 3 0 016 0zM5 19a6 6 0 0112 0",
+    "phone": "M7 3h4l1 5-2 1a12 12 0 006 6l1-2 5 1v4c0 1-1 2-2 2C10 20 4 14 4 5c0-1 1-2 3-2z",
+    "bundle": "M4 8l8-4 8 4-8 4-8-4zM4 12l8 4 8-4M4 16l8 4 8-4",
+    "link": "M10 13a5 5 0 007.07 0l1.41-1.41a5 5 0 00-7.07-7.07L10 5.93M14 11a5 5 0 00-7.07 0L5.5 12.41a5 5 0 007.07 7.07L14 18.07",
+    "pulse": "M3 12h4l2-6 4 12 2-6h6",
+    "chunk": "M5 5h14v4H5zM5 11h14v3H5zM5 16h9v3H5z",
+    "gif": "M5 6h14v12H5zM9 10v4M9 12h2M13 10v4h2",
+    "workflow": "M6 6h5v5H6zM13 13h5v5h-5zM8.5 11v2H13",
+    "letters": "M5 17l4-10 4 10M7 13h4M15 7v10",
+    "split": "M12 4v16M5 9l-2 3 2 3M19 9l2 3-2 3",
+    "regex": "M6 16V8l4 4-4 4M12 8h6M12 12h6M12 16h6",
+    "skills": "M12 3l2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5z",
+    "tokens": "M8 12h8M12 8v8M5 5h14v14H5z",
+    "check": "M5 13l5 5L20 7",
+    "preview": "M3 12s3.5-6 9-6 9 6 9 6-3.5 6-9 6-9-6-9-6zM12 9a3 3 0 100 6 3 3 0 000-6z",
+    "lang": "M4 6h10M9 6c0 8-4 12-4 12M9 6c0 8 4 12 4 12M6 14h6M14 8h6l-6 12h6",
+    "date": "M6 4v2M18 4v2M4 8h16M5 6h14v14H5z",
+    "base64": "M5 8c2-3 5-3 7 0s5 3 7 0M5 16c2 3 5 3 7 0s5-3 7 0",
+    "hash": "M9 5l-2 14M17 5l-2 14M5 9h16M4 15h16",
+}
+
+
+def icon_svg(name: str, size: int = 24) -> str:
+    d = ICONS.get(name) or ICONS["doc"]
+    # Some icons use a path with multiple subpaths; use polyline/path mix via a single path if possible.
+    # For line icons, stroke a path.
+    return (
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" '
+        f'viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" '
+        f'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
+        f'<path d="{e(d)}"/></svg>'
+    )
+
+
+def highlight(text: str, lang: str) -> str:
+    """Light syntax coloring for short before/after samples."""
+    raw = text
+    esc = e(text)
+    if lang in {"json", "js"}:
+        def repl_str(m):
+            return f'<span class="token-str">{e(m.group(0))}</span>'
+        tmp = re.sub(r'"(\\.|[^"\\])*"', lambda m: f"\x00S{m.group(0)}\x00", raw)
+        tmp = re.sub(r"\b-?\d+(?:\.\d+)?\b", lambda m: f"\x00N{m.group(0)}\x00", tmp)
+        tmp = e(tmp)
+        tmp = re.sub(r"\x00S(.*?)\x00", lambda m: f'<span class="token-str">{m.group(1)}</span>', tmp)
+        tmp = re.sub(r"\x00N(.*?)\x00", lambda m: f'<span class="token-num">{m.group(1)}</span>', tmp)
+        return tmp
+    if lang in {"csv", "html", "markdown", "text"}:
+        return esc
+    return esc
+
+
+def hreflang_tags(en_path: str, current_lang: str) -> str:
+    """Alternate language tags. Only homepages are translated so far."""
+    tags = []
+    # en_path is "/" for homes; other pages only get self + x-default English.
+    if en_path == "/":
+        for lang in I18N.LANGS:
+            href = BASE + (f"/{lang['prefix']}/" if lang["prefix"] else "/")
+            tags.append(f'<link rel="alternate" hreflang="{e(lang["hreflang"])}" href="{e(href)}">')
+        tags.append(f'<link rel="alternate" hreflang="x-default" href="{e(BASE + "/")}">')
+    return "\n  ".join(tags)
+
+
+def lang_switcher(current_lang: str, en_path: str = "/") -> str:
+    items = []
+    for lang in I18N.LANGS:
+        # Untranslated pages fall back to that language's home.
+        if en_path == "/" or lang["code"] == "en":
+            href = lang_href(lang["code"], en_path if lang["code"] == "en" or en_path == "/" else "/")
+            if lang["code"] != "en" and en_path != "/":
+                href = lang_href(lang["code"], "/")
+        else:
+            href = lang_href(lang["code"], "/")
+        cur = ' aria-current="true"' if lang["code"] == current_lang else ""
+        items.append(
+            f'<li><a href="{e(href)}" lang="{e(lang["hreflang"])}" hreflang="{e(lang["hreflang"])}"'
+            f' title="{e(lang["name"])}"{cur}>{e(lang["short"])}</a></li>'
+        )
+    label = I18N.ui(current_lang, "lang_label")
+    return f'<nav class="lang-switch" aria-label="{e(label)}"><ul class="lang-switch">{"".join(items)}</ul></nav>'
+
 
 
 def e(text: str) -> str:
     return html.escape(text, quote=True)
 
 
+_HTTP_OK_CACHE: dict[str, bool] = {}
+
+
 def http_ok(url: str, timeout: int = 20) -> bool:
+    if url in _HTTP_OK_CACHE:
+        return _HTTP_OK_CACHE[url]
+    ok = False
     try:
         req = urllib.request.Request(url, method="HEAD", headers={"User-Agent": "TidyByteToolsSiteBot/1.0"})
         with urllib.request.urlopen(req, timeout=timeout) as res:
-            return 200 <= res.status < 400
+            ok = 200 <= res.status < 400
     except Exception:
         try:
             req = urllib.request.Request(url, headers={"User-Agent": "TidyByteToolsSiteBot/1.0"})
             with urllib.request.urlopen(req, timeout=timeout) as res:
-                return 200 <= res.status < 400
+                ok = 200 <= res.status < 400
         except Exception:
-            return False
+            ok = False
+    _HTTP_OK_CACHE[url] = ok
+    return ok
+
+
+def _sanitize_apify_versions(tool: dict) -> dict:
+    """Drop store links that are not public yet, and keep an honest note."""
+    tool = dict(tool)
+    versions = []
+    store = tool.get("apify_url")
+    pending = tool.get("apify_pending")
+    for ver in tool.get("versions") or []:
+        ver = dict(ver)
+        url = ver.get("url")
+        if ver.get("place") == "Apify" and url and url.startswith("https://apify.com/") and not http_ok(url):
+            print(f"hiding unpublished Apify store link for {tool.get('slug')}")
+            ver["url"] = None
+            ver["cta"] = None
+            note = ver.get("note") or ""
+            extra = pending or "The public store page is not up yet."
+            if extra not in note:
+                ver["note"] = (note + " " + extra).strip()
+        versions.append(ver)
+    tool["versions"] = versions
+    return tool
 
 
 def live_tools() -> list[dict]:
-    tools = list(TOOLS)
+    tools = [_sanitize_apify_versions(dict(t)) for t in TOOLS]
     for item in OPTIONAL_APIFY:
         item = dict(item)
         store = item["apify_url"]
@@ -861,6 +280,16 @@ def subset_fonts() -> None:
 
     outdir = ASSETS / "fonts"
     outdir.mkdir(parents=True, exist_ok=True)
+    src_fonts = ROOT / "assets" / "fonts"
+    if OUT.resolve() != ROOT.resolve() and (src_fonts / "geist-latin.woff2").exists():
+        for name in ("OFL.txt", "geist-latin.woff2", "geist-mono-latin.woff2"):
+            src = src_fonts / name
+            if not src.exists() and name == "OFL.txt":
+                src = BRAND / "fonts" / "OFL.txt"
+            if src.exists():
+                shutil.copyfile(src, outdir / name)
+        print("copied fonts from existing site build")
+        return
     shutil.copyfile(BRAND / "fonts" / "OFL.txt", outdir / "OFL.txt")
 
     # Basic Latin, Latin-1, Latin Extended-A, plus common punctuation and arrows.
@@ -933,6 +362,15 @@ def generate_missing_art(tools: list[dict]) -> None:
     art_dir = ASSETS / "img" / "generated"
     art_dir.mkdir(parents=True, exist_ok=True)
     for tool in tools:
+        root_art = ROOT / "assets" / "img" / "generated"
+        if not tool.get("thumb") or not Path(tool.get("thumb") or "").exists():
+            existing = root_art / f"{tool['slug']}-thumb.png"
+            if existing.exists():
+                tool["thumb"] = existing
+        if not tool.get("cover") or not Path(tool.get("cover") or "").exists():
+            existing = root_art / f"{tool['slug']}-cover.png"
+            if existing.exists():
+                tool["cover"] = existing
         if tool.get("thumb") and Path(tool["thumb"]).exists() and tool.get("cover") and Path(tool["cover"]).exists():
             continue
         info = tool.get("gen_art") or {"title": tool["slug"], "sub": tool["tagline"], "badge": None}
@@ -996,46 +434,6 @@ def generate_missing_art(tools: list[dict]) -> None:
 
 
 
-GALLERIES = {
-    "pdf-table-pull": {
-        "src": Path("/tmp/tbt-galleries/assets/img/tools/pdf-table-pull-gallery.png"),
-        "alt": "A real run of pdf-table-pull: a sample PDF goes in, and an Excel file comes out with real numbers. The value (40) became -40, and a table that ran across two pages was joined.",
-    },
-    "doc2md": {
-        "src": Path("/tmp/tbt-galleries/assets/img/tools/doc2md-gallery.png"),
-        "alt": "A real run of doc2md turning a sample file into clean Markdown with a table kept as a table.",
-    },
-    "gif-forge": {
-        "src": Path("/tmp/tbt-galleries/assets/img/tools/gif-forge-gallery.png"),
-        "alt": "A sample of gif-forge turning a short clip into a GIF and removing a solid background from a sprite.",
-    },
-    "json-shaper": {
-        "src": Path("/tmp/tbt-galleries/assets/img/tools/json-shaper-gallery.png"),
-        "alt": "A real run of json-shaper turning a sample log file and a Markdown table into clean JSON.",
-    },
-    "lead-sheet-fixer": {
-        "src": Path("/tmp/tbt-galleries/assets/img/tools/lead-sheet-fixer-gallery.png"),
-        "alt": "A real run of lead-sheet-fixer cleaning a messy lead list: names split, phones made consistent, and duplicates merged.",
-    },
-    "link-check": {
-        "src": Path("/tmp/tbt-galleries/assets/img/tools/link-check-gallery.png"),
-        "alt": "A sample run of link-check showing status codes and redirect results for a list of URLs.",
-    },
-    "server-pulse": {
-        "src": Path("/tmp/tbt-galleries/assets/img/tools/server-pulse-gallery.png"),
-        "alt": "Sample Discord alerts from server-pulse: a down alert, an up alert, and a donation alert.",
-    },
-    "sheet-scrub": {
-        "src": Path("/tmp/tbt-galleries/assets/img/tools/sheet-scrub-gallery.png"),
-        "alt": "A before and after of sheet-scrub cleaning a messy contact list: names cased, phones and dates made consistent, a duplicate row removed, and a bad email flagged.",
-    },
-}
-
-ALIASES = {
-    "phone-number-validator": "phone-validator",
-    "csv-excel-data-cleaner": "sheet-scrub",
-}
-
 
 def copy_galleries(tools):
     dest_dir = ASSETS / "img" / "galleries"
@@ -1049,8 +447,8 @@ def copy_galleries(tools):
             print("missing gallery", src)
             continue
         optimize_image(src, dest_dir / slug, 1280, 80)
-        by_slug[slug]["gallery_src"] = "/assets/img/galleries/%s.webp" % slug
-        by_slug[slug]["gallery_png"] = "/assets/img/galleries/%s.png" % slug
+        by_slug[slug]["gallery_src"] = P("/assets/img/galleries/%s.webp" % slug)
+        by_slug[slug]["gallery_png"] = P("/assets/img/galleries/%s.png" % slug)
         by_slug[slug]["gallery_alt"] = info["alt"]
         print("gallery", slug)
 
@@ -1072,7 +470,7 @@ def write_aliases(tools):
             "</head>\n<body>\n"
             "  <p>This page has moved to <a href=\"%s\">%s</a>.</p>\n"
             "</body>\n</html>\n"
-        ) % (e(BASE + dest), e(dest), e(dest), e(BASE + dest))
+        ) % (e(BASE + dest), e(P(dest)), e(P(dest)), e(BASE + dest))
         write_page("tools/%s/index.html" % alias, html_text)
 
 
@@ -1080,10 +478,10 @@ def copy_brand_assets(tools: list[dict]) -> None:
     img = ASSETS / "img"
     img.mkdir(parents=True, exist_ok=True)
     # Icons
-    shutil.copyfile(BRAND / "favicon.ico", ROOT / "favicon.ico")
+    shutil.copyfile(BRAND / "favicon.ico", OUT / "favicon.ico")
     shutil.copyfile(BRAND / "png" / "favicon-32.png", img / "favicon-32.png")
     shutil.copyfile(BRAND / "png" / "favicon-16.png", img / "favicon-16.png")
-    shutil.copyfile(BRAND / "png" / "apple-touch-icon-180.png", ROOT / "apple-touch-icon.png")
+    shutil.copyfile(BRAND / "png" / "apple-touch-icon-180.png", OUT / "apple-touch-icon.png")
     shutil.copyfile(BRAND / "png" / "mark-512.png", img / "mark-512.png")
     shutil.copyfile(BRAND / "mark.svg", img / "mark.svg")
     shutil.copyfile(BRAND / "lockup-horizontal-light.svg", img / "lockup-horizontal-light.svg")
@@ -1119,43 +517,60 @@ def copy_brand_assets(tools: list[dict]) -> None:
         optimize_image(cover, covers / tool["slug"], 1280, 80)
         tool["thumb_src"] = P(f"/assets/img/thumbs/{tool['slug']}.webp")
         tool["thumb_png"] = P(f"/assets/img/thumbs/{tool['slug']}.png")
-        tool["cover_src"] = f"/assets/img/covers/{tool['slug']}.webp"
-        tool["cover_png"] = f"/assets/img/covers/{tool['slug']}.png"
+        tool["cover_src"] = P(f"/assets/img/covers/{tool['slug']}.webp")
+        tool["cover_png"] = P(f"/assets/img/covers/{tool['slug']}.png")
 
 
 def write_css() -> None:
     css_src = (SRC / "site.css").read_text()
-    font_css = """
-@font-face {
+    font_url = P("/assets/fonts/geist-latin.woff2")
+    mono_url = P("/assets/fonts/geist-mono-latin.woff2")
+    font_css = f"""
+@font-face {{
   font-family: "Geist";
-  src: url("/assets/fonts/geist-latin.woff2") format("woff2");
+  src: url("{font_url}") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
-}
-@font-face {
+}}
+@font-face {{
   font-family: "Geist Mono";
-  src: url("/assets/fonts/geist-mono-latin.woff2") format("woff2");
+  src: url("{mono_url}") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
-}
+}}
 """
     dest = ASSETS / "css"
     dest.mkdir(parents=True, exist_ok=True)
-    (dest / "site.css").write_text(font_css.strip() + "\n\n" + css_src)
+    combined = font_css.strip() + "\n\n" + css_src
+    (dest / "site.css").write_text(minify_css(combined) + "\n")
+    js_src = SRC / "site.js"
+    if js_src.exists():
+        js_dest = ASSETS / "js"
+        js_dest.mkdir(parents=True, exist_ok=True)
+        (js_dest / "site.js").write_text(minify_js(js_src.read_text()) + "\n")
 
 
 def version_links(ver: dict) -> str:
     items = []
     if ver.get("url"):
-        items.append((ver.get("cta") or "Open", ver["url"]))
-    items.extend(ver.get("urls") or [])
+        label = ver.get("cta") or "Open"
+        if ver.get("place") == "Apify":
+            label = ver.get("cta") or I18N.ui("en", "try_apify")
+        items.append((label, ver["url"], "primary" if ver.get("place") == "Apify" or (ver.get("price") or "").lower() == "free" and ver.get("cta") else "secondary"))
+    for label, url in ver.get("urls") or []:
+        kind = "primary" if label == "GitHub" and (ver.get("price") or "").lower() == "free" and not ver.get("url") else "secondary"
+        if label == "GitHub" and (ver.get("price") or "").lower() == "free":
+            items.append((I18N.ui("en", "free_download"), url, "primary" if not any(k=="primary" for _,_,k in items) else "secondary"))
+        else:
+            items.append((label, url, kind))
     if not items:
         return ""
     parts = []
-    for label, url in items:
-        parts.append(f'<a class="btn btn-secondary btn-sm" href="{e(url)}">{e(label)}</a>')
+    for label, url, kind in items:
+        cls = "btn btn-primary btn-sm" if kind == "primary" else "btn btn-secondary btn-sm"
+        parts.append(f'<a class="{cls}" href="{e(url)}">{e(label)}</a>')
     return '<div class="btn-row">' + "".join(parts) + "</div>"
 
 
@@ -1176,30 +591,34 @@ def versions_list(tool: dict, compact: bool = True) -> str:
     return '<ul class="versions">' + "".join(rows) + "</ul>"
 
 
-def card(tool: dict) -> str:
-    return f'''
-<article class="card" id="tool-{e(tool["slug"])}">
+def card(tool: dict, lang: str = "en") -> str:
+    price = about_price_line(tool, lang)
+    price_html = f'<p class="price-line">{e(price)}</p>' if price else ""
+    tagline = I18N.tool_description(tool, lang)
+    cat = (I18N.ui(lang, "cats") or {}).get(tool["category"], dict(CATEGORIES)[tool["category"]])
+    search = " ".join([
+        tool["name"], tool["slug"], tool["tagline"], tool["summary"], tagline,
+        " ".join(sum((tr.get("keywords") or [] for tr in I18N.tool_translations_obj(tool["slug"]).values()), [])),
+    ]).lower()
+    return f"""
+<article class="card" id="tool-{e(tool["slug"])}" data-tool-card data-category="{e(tool["category"])}" data-search="{e(search)}">
   <div class="card-top">
-    <a class="card-thumb" href="{P("/tools/")}{e(tool["slug"])}/" aria-hidden="true" tabindex="-1">
-      <picture>
-        <source type="image/webp" srcset="{e(tool["thumb_src"])}">
-        <img src="{e(tool["thumb_png"])}" alt="" width="96" height="96">
-      </picture>
-    </a>
+    <div class="card-icon" aria-hidden="true">{icon_svg(tool.get("icon") or "doc")}</div>
     <div>
-      <p class="cat-label">{e(dict(CATEGORIES)[tool["category"]])}</p>
+      <p class="cat-label">{e(cat)}</p>
       <h3><a href="{P("/tools/")}{e(tool["slug"])}/">{e(tool["name"])}</a></h3>
-      <p class="tagline">{e(tool["tagline"])}</p>
+      <p class="tagline">{e(tagline)}</p>
+      {price_html}
     </div>
   </div>
   {versions_list(tool, compact=True)}
 </article>
-'''
+"""
 
 
-def logo_html() -> str:
+def logo_html(lang: str = "en") -> str:
     return f'''
-    <a class="logo" href="{P("/")}">
+    <a class="logo" href="{lang_href(lang, "/")}">
       <picture>
         <source media="(prefers-color-scheme: dark)" srcset="{P("/assets/img/lockup-horizontal-dark.svg")}">
         <img src="{P("/assets/img/lockup-horizontal-light.svg")}" alt="Tidy Byte Tools" height="32" width="118">
@@ -1208,13 +627,16 @@ def logo_html() -> str:
     '''
 
 
-def nav_html(page: str) -> str:
+def nav_html(page: str, lang: str = "en") -> str:
+    u = lambda k: I18N.ui(lang, k)
+    home = lang_href(lang, "/")
     links = [
-        (P("/tools/"), "Tools", "tools"),
-        (P("/guides/"), "Guides", "guides"),
-        (P("/#how"), "How it works", "how"),
-        (P("/#faq"), "FAQ", "faq"),
-        ("https://github.com/tidybytetools", "GitHub", "github"),
+        (P("/tools/"), u("nav_tools"), "tools"),
+        (P("/guides/"), u("nav_guides"), "guides"),
+        (home + "#how", u("nav_how"), "how"),
+        (home + "#faq", u("nav_faq"), "faq"),
+        (P("/connect/"), u("nav_connect"), "connect"),
+        ("https://github.com/tidybytetools", u("nav_github"), "github"),
     ]
     items = []
     for href, label, key in links:
@@ -1223,23 +645,39 @@ def nav_html(page: str) -> str:
     return "<nav aria-label=\"Primary\"><ul>" + "".join(items) + "</ul></nav>"
 
 
-def footer_html(tools: list[dict]) -> str:
+def featured_on_html(lang: str = "en") -> str:
+    items = []  # badges go here when a directory lists us
+    logos = "".join(items)
+    return f"""
+  <section class="featured-on" aria-label="{e(I18N.ui(lang, "footer_featured"))}">
+    <div class="wrap">
+      <h2>{e(I18N.ui(lang, "footer_featured"))}</h2>
+      <p>{e(I18N.ui(lang, "footer_featured_note"))}</p>
+      <ul class="featured-logos">{logos}</ul>
+    </div>
+  </section>
+"""
+
+
+def footer_html(tools: list[dict], lang: str = "en") -> str:
     tool_links = "\n".join(
         f'<li><a href="{P("/tools/")}{e(t["slug"])}/">{e(t["name"])}</a></li>' for t in tools
     )
-    return f'''
+    u = lambda k: I18N.ui(lang, k)
+    return f"""
 <footer class="site-footer">
+  {featured_on_html(lang)}
   <div class="wrap footer-grid">
     <div class="footer-brand">
-      {logo_html()}
-      <p>Small tools that clean up messy data. Each one does one job and does it well.</p>
+      {logo_html(lang)}
+      <p>{e(u("footer_tagline"))}</p>
     </div>
     <div>
-      <h2>Tools</h2>
+      <h2>{e(u("footer_tools"))}</h2>
       <ul>{tool_links}</ul>
     </div>
     <div>
-      <h2>Shops</h2>
+      <h2>{e(u("footer_shops"))}</h2>
       <ul>
         <li><a href="https://apify.com/tidybytetools">Apify</a></li>
         <li><a href="https://tidybyte.gumroad.com">Gumroad</a></li>
@@ -1247,20 +685,40 @@ def footer_html(tools: list[dict]) -> str:
       </ul>
     </div>
     <div>
-      <h2>This site</h2>
+      <h2>{e(u("footer_site"))}</h2>
       <ul>
-        <li><a href="{P('/guides/')}">Guides</a></li>
-        <li><a href="{P('/privacy/')}">Privacy</a></li>
-        <li><a href="{P('/llms.txt')}">llms.txt</a></li>
-        <li><a href="{P('/sitemap.xml')}">Sitemap</a></li>
+        <li><a href="{P("/guides/")}">{e(u("nav_guides"))}</a></li>
+        <li><a href="{P("/connect/")}">{e(u("nav_connect"))}</a></li>
+        <li><a href="{P("/privacy/")}">{e(u("nav_privacy"))}</a></li>
+        <li><a href="{P("/terms/")}">{e(u("nav_terms"))}</a></li>
+        <li><a href="{P("/llms.txt")}">llms.txt</a></li>
+        <li><a href="{P("/tools.json")}">tools.json</a></li>
+        <li><a href="{P("/.well-known/mcp.json")}">mcp.json</a></li>
+        <li><a href="{P("/openapi.json")}">openapi.json</a></li>
+        <li><a href="{P("/sitemap.xml")}">Sitemap</a></li>
       </ul>
     </div>
   </div>
   <div class="wrap legal">
-    <p>© {YEAR} Tidy Byte Tools. This site does not use tracking cookies.</p>
+    <p>{e(u("footer_legal").format(year=YEAR))}</p>
   </div>
 </footer>
-'''
+"""
+
+
+def org_ld() -> dict:
+    return {
+        "@type": "Organization",
+        "name": "Tidy Byte Tools",
+        "url": BASE,
+        "logo": BASE + "/assets/img/mark-512.png",
+        "description": "Small tools that clean up messy data.",
+        "sameAs": [
+            "https://github.com/tidybytetools",
+            "https://apify.com/tidybytetools",
+            "https://tidybyte.gumroad.com",
+        ],
+    }
 
 
 def head_html(
@@ -1269,21 +727,33 @@ def head_html(
     path: str,
     page_type: str = "website",
     extra: str = "",
+    lang: str = "en",
+    en_path: str | None = None,
+    og_path: str | None = None,
 ) -> str:
-    canon = BASE + path
-    og_img = BASE + "/assets/img/og.png"
-    return f'''<!DOCTYPE html>
-<html lang="en">
+    info = I18N.LANG_BY_CODE[lang]
+    # English pages always canonicalize to themselves. Translated homes canonicalize to themselves too.
+    if lang == "en":
+        canon = BASE + path
+    else:
+        canon = BASE + path
+    og_img = BASE + (og_path or "/assets/img/og.png")
+    hreflang = hreflang_tags(en_path if en_path is not None else ("/" if path in {"/", f"/{info['prefix']}/"} else path), lang)
+    font = P("/assets/fonts/geist-latin.woff2")
+    return f"""<!DOCTYPE html>
+<html lang="{e(info["hreflang"])}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{e(title)}</title>
   <meta name="description" content="{e(description)}">
   <link rel="canonical" href="{e(canon)}">
-  <link rel="icon" href="{P('/favicon.ico')}" sizes="any">
-  <link rel="icon" type="image/svg+xml" href="{P('/assets/img/favicon.svg')}">
-  <link rel="icon" type="image/png" sizes="32x32" href="{P('/assets/img/favicon-32.png')}">
-  <link rel="apple-touch-icon" href="{P('/apple-touch-icon.png')}">
+  {hreflang}
+  <link rel="icon" href="{P("/favicon.ico")}" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="{P("/assets/img/favicon.svg")}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{P("/assets/img/favicon-32.png")}">
+  <link rel="apple-touch-icon" href="{P("/apple-touch-icon.png")}">
+  <link rel="preload" href="{font}" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#F4F7F5" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0D1512" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="{e(page_type)}">
@@ -1294,29 +764,16 @@ def head_html(
   <meta property="og:image" content="{e(og_img)}">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="{e(info["hreflang"].replace("-", "_"))}">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{e(title)}">
   <meta name="twitter:description" content="{e(description)}">
   <meta name="twitter:image" content="{e(og_img)}">
-  <link rel="stylesheet" href="{P('/assets/css/site.css')}">
+  <link rel="stylesheet" href="{P("/assets/css/site.css")}">
   {extra}
 </head>
-'''
+"""
 
-
-ORG_LD = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Tidy Byte Tools",
-    "url": BASE,
-    "logo": BASE + "/assets/img/mark-512.png",
-    "description": "Small tools that clean up messy data.",
-    "sameAs": [
-        "https://github.com/tidybytetools",
-        "https://apify.com/tidybytetools",
-        "https://tidybyte.gumroad.com",
-    ],
-}
 
 
 def ld_script(data) -> str:
@@ -1444,6 +901,8 @@ def tools_catalog(tools: list[dict]) -> dict:
             if ver["place"] == "Apify" and ver.get("url"):
                 apify = ver["url"]
         github, mcp = tool_github_and_mcp(tool)
+        actor = tool.get("actor")
+        apify_mcp = f"https://mcp.apify.com/?tools=tidybytetools/{actor}" if actor and apify else None
         entries.append({
             "name": tool["name"],
             "slug": tool["slug"],
@@ -1453,8 +912,12 @@ def tools_catalog(tools: list[dict]) -> dict:
             "category": tool["category"],
             "price": prices,
             "apify": apify,
-            "mcp": mcp,
+            "apify_mcp": apify_mcp,
+            "mcp": mcp or apify_mcp,
             "github": github,
+            "input": tool.get("input"),
+            "output": tool.get("output"),
+            "translations": I18N.tool_translations_obj(tool["slug"]),
         })
     return {
         "name": "Tidy Byte Tools",
@@ -1465,150 +928,196 @@ def tools_catalog(tools: list[dict]) -> dict:
     }
 
 
-HOME_FAQS = [
-    ("What is Tidy Byte Tools?", "A small shop of tools that clean up messy data. We sell downloads you run on your computer, and pay-per-use tools on Apify. Free lite tools are on GitHub and PyPI."),
-    ("Will you see my files?", "The download tools run on your computer, so those files stay with you. The Apify tools run in your own Apify account. This website does not take uploads."),
-    ("What is the difference between free and paid?", "The free lite tools cover the common case, like a text PDF or a simple list of links. Paid versions add things like Excel output, scanned pages, Word files, or folder support. Each tool page lists the difference."),
-    ("What does pay per use mean?", "On Apify you pay for what the tool does, such as each page with a table or each link checked. Failed or skipped items are free. The exact price is on the tool page and on Apify."),
-    ("Do the free tools work with AI apps?", "Yes. The free lite tools include a small MCP server. You can use them from Cursor, Claude Desktop, and other apps that support MCP. No API key is needed."),
-    ("How do I get help?", "Open an issue on the GitHub page for that tool. For a Gumroad or Apify purchase, you can also use the support option on that site."),
-]
-
-
-
-
-def page_shell(title, description, path, body, nav_page, tools, extra_head=""):
+def page_shell(title, description, path, body, nav_page, tools, extra_head="", lang="en", en_path=None, og_path=None):
+    if en_path is None:
+        en_path = path if lang == "en" else "/"
+    js = ""
+    if (SRC / "site.js").exists() and nav_page in {"home", "tools"}:
+        js = f'<script src="{P("/assets/js/site.js")}" defer></script>'
     return "\n".join([
-        head_html(title, description, path, extra=extra_head),
+        head_html(title, description, path, extra=extra_head + js, lang=lang, en_path=en_path, og_path=og_path),
         "<body>",
-        '<a class="skip" href="#main">Skip to content</a>',
+        f'<a class="skip" href="#main">{e(I18N.ui(lang, "skip"))}</a>',
         '<header class="site-header"><div class="header-inner">',
-        logo_html(),
-        nav_html(nav_page),
-        "</div></header>",
+        logo_html(lang),
+        '<div class="header-tools">',
+        nav_html(nav_page, lang),
+        lang_switcher(lang, en_path if en_path != path or lang=="en" else "/"),
+        "</div></div></header>",
         f'<main id="main">{body}</main>',
-        footer_html(tools),
+        footer_html(tools, lang),
         "</body></html>\n",
     ])
 
 
+
 def write_page(rel: str, html_text: str) -> None:
-    dest = ROOT / rel
+    dest = OUT / rel
     dest.parent.mkdir(parents=True, exist_ok=True)
     dest.write_text(html_text)
-    print("wrote", dest.relative_to(ROOT))
+    print("wrote", dest.relative_to(OUT))
 
 
-def home_page(tools: list[dict]) -> None:
+def example_html(tool: dict) -> str:
+    ex = tool.get("example")
+    if not ex or not ex.get("before") or not ex.get("after"):
+        return ""
+    lang = ex.get("lang") or "text"
+    before = highlight(ex["before"], lang)
+    after = highlight(ex["after"], lang)
+    source = f'<p class="ba-source">{e(ex["source"])}</p>' if ex.get("source") else ""
+    return f'''
+        <h2>Before and after</h2>
+        <div class="ba">
+          <div class="ba-pane before">
+            <p class="ba-label">{e(ex.get("before_label") or "Before")}</p>
+            <pre><code>{before}</code></pre>
+          </div>
+          <div class="ba-pane after">
+            <p class="ba-label">{e(ex.get("after_label") or "After")}</p>
+            <pre><code>{after}</code></pre>
+          </div>
+        </div>
+        {source}
+    '''
+
+
+def toolbar_html(tools: list[dict], lang: str) -> str:
+    u = lambda k: I18N.ui(lang, k)
+    cats = I18N.ui(lang, "cats") or {}
+    chips = [
+        f'<button type="button" class="chip is-active" data-filter="all" aria-pressed="true">{e(u("filter_all"))}</button>'
+    ]
+    for key, label in CATEGORIES:
+        if not any(t["category"] == key for t in tools):
+            continue
+        shown = cats.get(key, label)
+        chips.append(
+            f'<button type="button" class="chip" data-filter="{e(key)}" aria-pressed="false">{e(shown)}</button>'
+        )
+    magnifier = (
+        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" '
+        'stroke="currentColor" stroke-width="1.75" stroke-linecap="round" '
+        'stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/>'
+        '<path d="M20 20l-3.5-3.5"/></svg>'
+    )
+    return f'''
+        <div class="toolbar">
+          <div class="search">
+            <span class="search-icon">{magnifier}</span>
+            <label class="sr-only" for="tool-search">{e(u("search_label"))}</label>
+            <input id="tool-search" type="search" placeholder="{e(u("search_placeholder"))}" autocomplete="off">
+          </div>
+          <div class="cat-nav" role="group" aria-label="{e(u("filter_all"))}">{"".join(chips)}</div>
+        </div>
+        <p id="filter-empty" class="filter-empty" hidden>{e(u("filter_empty"))}</p>
+    '''
+
+
+def home_page(tools: list[dict], lang: str = "en") -> None:
+    u = lambda k: I18N.ui(lang, k)
+    cats = u("cats") or {}
     groups = []
     for key, label in CATEGORIES:
         items = [t for t in tools if t["category"] == key]
         if not items:
             continue
-        cards = "\n".join(card(t) for t in items)
+        shown = cats.get(key, label)
+        cards = "\n".join(card(t, lang) for t in items)
         groups.append(f'''
         <section id="{e(key)}" aria-labelledby="h-{e(key)}">
           <div class="wrap">
             <div class="section-head">
-              <h2 id="h-{e(key)}">{e(label)}</h2>
+              <h2 id="h-{e(key)}">{e(shown)}</h2>
             </div>
             <div class="grid">{cards}</div>
           </div>
         </section>
         ''')
-    chips = "\n".join(
-        f'<a class="chip" href="#{e(key)}">{e(label)}</a>'
-        for key, label in CATEGORIES
-        if any(t["category"] == key for t in tools)
-    )
-    desc = "Small tools that clean up messy data. Run them on your computer, or pay only for what you use in the cloud."
+    faqs = u("faqs")
+    faq_items = "".join(f'<div class="faq-item"><h3>{e(q)}</h3><p>{e(a)}</p></div>' for q, a in faqs)
+    path = "/" if lang == "en" else f"/{I18N.LANG_BY_CODE[lang]['prefix']}/"
+    canon = BASE + path
     body = f'''
     <section class="hero">
       <div class="wrap hero-inner">
-        <p class="eyebrow">Developer tools</p>
-        <h1>Small tools that clean up messy data.</h1>
-        <p class="lede">Each one does one job and does it well. Run it on your computer, or pay only for what you use in the cloud.</p>
+        <p class="eyebrow">{e(u("eyebrow"))}</p>
+        <h1>{e(u("hero_title"))}</h1>
+        <p class="lede">{e(u("hero_lede"))}</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#tools">See the tools</a>
-          <a class="btn btn-secondary" href="https://github.com/tidybytetools">Free tools on GitHub</a>
+          <a class="btn btn-primary" href="#tools">{e(u("cta_try"))}</a>
+          <a class="btn btn-secondary" href="https://github.com/tidybytetools">{e(u("cta_github"))}</a>
         </div>
-        <div class="cat-nav" role="navigation" aria-label="Tool groups">{chips}</div>
       </div>
     </section>
-    <div id="tools">{"".join(groups)}</div>
+    <div id="tools">
+      <section>
+        <div class="wrap">
+          {toolbar_html(tools, lang)}
+        </div>
+      </section>
+      {"".join(groups)}
+    </div>
     <section id="how">
       <div class="wrap">
-        <h2>How it works</h2>
-        <p class="section-intro">Pick the tool that matches your file. You can run it yourself, or start a run in the cloud.</p>
+        <h2>{e(u("how_title"))}</h2>
+        <p class="section-intro">{e(u("how_intro"))}</p>
         <div class="steps">
           <div class="step">
             <p class="step-num">01</p>
-            <h3>Pick a tool</h3>
-            <p>Every tool does one job, like pulling tables from a PDF or checking a list of links.</p>
+            <h3>{e(u("how_1_title"))}</h3>
+            <p>{e(u("how_1_body"))}</p>
           </div>
           <div class="step">
             <p class="step-num">02</p>
-            <h3>Run it where you want</h3>
-            <p>Download a tool and run it on your computer, or use the Apify version and pay only for what it does.</p>
+            <h3>{e(u("how_2_title"))}</h3>
+            <p>{e(u("how_2_body"))}</p>
           </div>
           <div class="step">
             <p class="step-num">03</p>
-            <h3>Get a clean file back</h3>
-            <p>You get CSV, Excel, JSON, or Markdown you can use in a sheet, a script, or an AI app.</p>
+            <h3>{e(u("how_3_title"))}</h3>
+            <p>{e(u("how_3_body"))}</p>
           </div>
         </div>
-        <p class="section-intro" style="margin-top:28px">The free lite tools include an MCP server, so you can use them from Cursor, Claude Desktop, and other AI apps. No API key is needed.</p>
+        <p class="section-intro" style="margin-top:28px">{e(u("how_mcp"))}</p>
       </div>
     </section>
     <section id="faq">
       <div class="wrap">
-        <h2>FAQ</h2>
-        <div class="faq">
-          <div class="faq-item">
-            <h3>What is Tidy Byte Tools?</h3>
-            <p>A small shop of tools that clean up messy data. We sell downloads you run on your computer, and pay-per-use tools on Apify. Free lite tools are on GitHub and PyPI.</p>
-          </div>
-          <div class="faq-item">
-            <h3>Will you see my files?</h3>
-            <p>The download tools run on your computer, so those files stay with you. The Apify tools run in your own Apify account. This website does not take uploads.</p>
-          </div>
-          <div class="faq-item">
-            <h3>What is the difference between free and paid?</h3>
-            <p>The free lite tools cover the common case, like a text PDF or a simple list of links. Paid versions add things like Excel output, scanned pages, Word files, or folder support. Each tool page lists the difference.</p>
-          </div>
-          <div class="faq-item">
-            <h3>What does pay per use mean?</h3>
-            <p>On Apify you pay for what the tool does, such as each page with a table or each link checked. Failed or skipped items are free. The exact price is on the tool page and on Apify.</p>
-          </div>
-          <div class="faq-item">
-            <h3>Do the free tools work with AI apps?</h3>
-            <p>Yes. The free lite tools include a small MCP server. You can use them from Cursor, Claude Desktop, and other apps that support MCP. No API key is needed.</p>
-          </div>
-          <div class="faq-item">
-            <h3>How do I get help?</h3>
-            <p>Open an issue on the GitHub page for that tool. For a Gumroad or Apify purchase, you can also use the support option on that site.</p>
-          </div>
-        </div>
+        <h2>{e(u("faq_title"))}</h2>
+        <div class="faq">{faq_items}</div>
       </div>
     </section>
     '''
     extra = ld_script({
         "@context": "https://schema.org",
         "@graph": [
-            {k: v for k, v in ORG_LD.items() if k != "@context"},
-            faq_page_ld(HOME_FAQS, BASE + "/"),
+            {**org_ld(), "inLanguage": I18N.LANG_BY_CODE[lang]["hreflang"]},
+            {
+                "@type": "WebSite",
+                "name": "Tidy Byte Tools",
+                "url": canon,
+                "description": u("home_desc"),
+                "inLanguage": I18N.LANG_BY_CODE[lang]["hreflang"],
+                "publisher": {"@type": "Organization", "name": "Tidy Byte Tools", "url": BASE},
+            },
+            faq_page_ld(list(tuple(x) for x in faqs), canon),
         ],
     })
     html_text = page_shell(
-        "Tidy Byte Tools — small tools that clean up messy data",
-        desc,
-        "/",
+        u("home_title"),
+        u("home_desc"),
+        path,
         body,
         "home",
         tools,
         extra_head=extra,
+        lang=lang,
+        en_path="/",
+        og_path="/assets/img/og.png",
     )
-    write_page("index.html", html_text)
+    rel = "index.html" if lang == "en" else f"{I18N.LANG_BY_CODE[lang]['prefix']}/index.html"
+    write_page(rel, html_text)
 
 
 def tools_index(tools: list[dict]) -> None:
@@ -1619,6 +1128,7 @@ def tools_index(tools: list[dict]) -> None:
         <p class="crumb"><a href="{P('/')}">Home</a> / Tools</p>
         <h1>All tools</h1>
         <p class="lede">Downloads for your computer, free lite tools, and pay-per-use tools on Apify.</p>
+        {toolbar_html(tools, "en")}
       </div>
     </section>
     <section>
@@ -1656,6 +1166,13 @@ def tool_page(tool: dict, tools: list[dict]) -> None:
             offers.append(offer)
     page_url = f"{BASE}/tools/{tool['slug']}/"
     faqs = tool_faqs(tool)
+    cover_src = tool.get("cover_src")
+    cover_png = tool.get("cover_png")
+    origin = BASE
+    if PATH_PREFIX and origin.endswith(PATH_PREFIX):
+        origin = origin[: -len(PATH_PREFIX)]
+    png_path = cover_png or "/assets/img/og.png"
+    image_url = origin + png_path if png_path.startswith("/") else origin + "/" + png_path
     ld_app = {
         "@type": "SoftwareApplication",
         "name": tool["name"],
@@ -1663,8 +1180,9 @@ def tool_page(tool: dict, tools: list[dict]) -> None:
         "operatingSystem": "Windows, macOS, Linux",
         "description": tool["tagline"],
         "url": page_url,
-        "image": BASE + tool["cover_png"],
+        "image": image_url,
         "author": {"@type": "Organization", "name": "Tidy Byte Tools", "url": BASE},
+        "inLanguage": "en",
     }
     if offers:
         ld_app["offers"] = offers if len(offers) > 1 else offers[0]
@@ -1694,24 +1212,42 @@ def tool_page(tool: dict, tools: list[dict]) -> None:
             f'<img src="{e(tool["gallery_png"])}" alt="{e(tool["gallery_alt"])}" width="1280" height="720">'
             '</picture></div>'
         )
+    cover_html = ""
+    if cover_src and cover_png:
+        cover_html = f'''
+        <div class="cover">
+          <picture>
+            <source type="image/webp" srcset="{e(cover_src)}">
+            <img src="{e(cover_png)}" alt="{e(tool["name"] + " — " + tool["tagline"])}" width="1280" height="720">
+          </picture>
+        </div>
+        '''
+    price = about_price_line(tool)
+    price_html = f'<p class="price-line">{e(price)}</p>' if price else ""
+    # Prominent top CTAs: first free download + public Apify link
+    top_ctas = []
+    for ver in tool["versions"]:
+        top_ctas.append(version_links(ver))
+    top_cta_html = "".join(top_ctas)
+    cat = dict(CATEGORIES)[tool["category"]]
     body = f'''
     <article class="page-hero">
       <div class="wrap">
         <p class="crumb"><a href="{P('/')}">Home</a> / <a href="{P('/tools/')}">Tools</a> / {e(tool["name"])}</p>
-        <p class="cat-label">{e(dict(CATEGORIES)[tool["category"]])}</p>
+        <p class="cat-label">{e(cat)}</p>
         <h1>{e(tool["name"])}</h1>
         <p class="lede">{e(tool["tagline"])}</p>
-        <div class="cover">
-          <picture>
-            <source type="image/webp" srcset="{e(tool["cover_src"])}">
-            <img src="{e(tool["cover_png"])}" alt="{e(tool["name"] + " — " + tool["tagline"])}" width="1280" height="720">
-          </picture>
-        </div>
+        {price_html}
+        {top_cta_html}
+        {cover_html}
         {gallery_html}
         <div class="prose">
           <p>{e(tool["summary"])}</p>
           <h2>What it does</h2>
           <ul>{bullets}</ul>
+        </div>
+        {example_html(tool)}
+        <div class="prose">
           <h2>Get it</h2>
         </div>
         {"".join(version_blocks)}
@@ -1719,6 +1255,7 @@ def tool_page(tool: dict, tools: list[dict]) -> None:
       </div>
     </article>
     '''
+    og_path = tool.get("og_path") or "/assets/img/og.png"
     html_text = page_shell(
         f"{tool['name']} — Tidy Byte Tools",
         tool["tagline"],
@@ -1727,6 +1264,7 @@ def tool_page(tool: dict, tools: list[dict]) -> None:
         "tools",
         tools,
         extra_head=ld_script(ld),
+        og_path=og_path,
     )
     write_page(f"tools/{tool['slug']}/index.html", html_text)
 
@@ -1737,18 +1275,19 @@ def privacy_page(tools: list[dict]) -> None:
       <div class="wrap prose">
         <p class="crumb"><a href="{P('/')}">Home</a> / Privacy</p>
         <h1>Privacy</h1>
-        <p>This is a static website. It has no accounts, no contact forms, and no tracking cookies. We do not run analytics on this site.</p>
+        <p>This is a static website. It has no accounts, no contact forms, and no tracking cookies. We do not run analytics on this site, and we do not set tracking cookies.</p>
+        <p>The free lite tools run on your own computer. They read the files you give them and write the result back to you. Those tools do not send your files to us.</p>
+        <p>Paid download tools sold on Gumroad also run on your own computer. They do not send your files to us.</p>
+        <p>The tools on Apify run in your own Apify account. They process the input you give them so they can return a result. We do not use that input for advertising, training, or any other purpose. Apify is a separate company and has its own rules for how it handles data. Read the <a href="https://docs.apify.com/legal/privacy-policy">Apify privacy policy</a>.</p>
         <p>Links on this site go to other places, such as GitHub, Gumroad, Apify, and PyPI. Those sites have their own privacy policies. If you buy a tool or start a run there, your data is handled by that site.</p>
-        <p>The download tools sold on Gumroad run on your own computer. Those tools do not send your files to us. The tools on Apify run in your Apify account.</p>
-        <p>If you open a GitHub issue, GitHub will have the information you post there.</p>
-        <p>This site is run by Tidy Byte Tools. We do not list a personal email address here. For help, open an issue on the GitHub page for the tool you are using.</p>
-        <p>Last updated: November 9, {YEAR}.</p>
+        <p>This site is run by Tidy Byte Tools. We do not list a personal email address here. For help or a privacy question, open an issue at <a href="https://github.com/tidybytetools">github.com/tidybytetools</a>, on the page for the tool you are using.</p>
+        <p>Last updated: November 10, {YEAR}.</p>
       </div>
     </section>
     '''
     html_text = page_shell(
         "Privacy — Tidy Byte Tools",
-        "This site has no accounts and no tracking cookies. A short privacy note from Tidy Byte Tools.",
+        "This site has no accounts and no tracking cookies. Lite tools run on your computer. A short privacy note from Tidy Byte Tools.",
         "/privacy/",
         body,
         "privacy",
@@ -1757,8 +1296,37 @@ def privacy_page(tools: list[dict]) -> None:
     write_page("privacy/index.html", html_text)
 
 
+def terms_page(tools: list[dict]) -> None:
+    body = f'''
+    <section class="page-hero">
+      <div class="wrap prose">
+        <p class="crumb"><a href="{P('/')}">Home</a> / Terms</p>
+        <h1>Terms</h1>
+        <p>This website is a catalog of tools from Tidy Byte Tools. The pages describe the tools in plain language. They are not a contract for a paid run or a paid download.</p>
+        <p>The free lite tools are released under the license in each GitHub repository. Read that license before you use the tool.</p>
+        <p>Paid downloads sold on Gumroad are covered by the terms of that sale and by the license that comes with the download.</p>
+        <p>Tools you run on Apify are also covered by Apify’s terms, including the <a href="https://docs.apify.com/legal/general-terms-and-conditions">Apify General Terms and Conditions</a> and the <a href="https://docs.apify.com/legal/actor-terms-and-conditions">Apify Actor Terms and Conditions</a>. Prices shown here are the public pay-per-event prices we know about. The price you pay is the price Apify shows you when you start a run. Each run also has a $0.00005 start fee charged by Apify.</p>
+        <p>The tools are offered as-is. We work to make them accurate, but we do not promise that a result will be perfect or fit a particular purpose. You are responsible for checking the output before you rely on it.</p>
+        <p>This site does not use tracking cookies and does not take uploads. See the <a href="{P('/privacy/')}">privacy page</a> for how data is handled.</p>
+        <p>These terms are for this website. If a word here disagrees with the license of a specific tool or with the terms of Gumroad or Apify for a purchase, the terms of that purchase or license come first.</p>
+        <p>For questions, open an issue at <a href="https://github.com/tidybytetools">github.com/tidybytetools</a>.</p>
+        <p>Last updated: November 10, {YEAR}.</p>
+      </div>
+    </section>
+    '''
+    html_text = page_shell(
+        "Terms — Tidy Byte Tools",
+        "Plain terms for the Tidy Byte Tools website, free lite tools, paid downloads, and Apify runs.",
+        "/terms/",
+        body,
+        "terms",
+        tools,
+    )
+    write_page("terms/index.html", html_text)
+
+
 def not_found_page(tools: list[dict]) -> None:
-    body = '''
+    body = f'''
     <section class="empty">
       <div class="wrap">
         <h1>Page not found</h1>
@@ -1781,20 +1349,343 @@ def not_found_page(tools: list[dict]) -> None:
     write_page("404.html", html_text)
 
 
+def _apify_store_url(tool: dict) -> str | None:
+    for ver in tool["versions"]:
+        if ver.get("place") == "Apify" and ver.get("url"):
+            return ver["url"]
+    return None
+
+
+def _event_price_line(tool: dict) -> str:
+    ev = tool.get("event")
+    if not ev:
+        return "No pay-per-use price. This tool is a download or a free lite tool."
+    usd = ev.get("price_usd")
+    unit = ev.get("unit") or "use"
+    title = ev.get("title") or ev.get("id") or "event"
+    line = f"${usd} per {unit} ({title})."
+    about = about_price_line(tool)
+    if about:
+        line += " " + about
+    line += f" Each Apify run also has a ${ACTOR_START_USD} start fee."
+    return line
+
+
+def connect_page(tools: list[dict]) -> None:
+    rows = []
+    for tool in tools:
+        actor = tool.get("actor")
+        store = _apify_store_url(tool)
+        if actor and store:
+            actor_cell = f'<a href="{e(store)}">tidybytetools/{e(actor)}</a>'
+            mcp_cell = f'<a href="https://mcp.apify.com/?tools=tidybytetools/{e(actor)}"><code>https://mcp.apify.com/?tools=tidybytetools/{e(actor)}</code></a>'
+        elif actor:
+            actor_cell = f'tidybytetools/{e(actor)} <span class="note">(public store page is not up yet)</span>'
+            mcp_cell = "Available when the public store page is up."
+        else:
+            actor_cell = "No Apify actor."
+            mcp_cell = "—"
+        github, local_mcp = tool_github_and_mcp(tool)
+        if local_mcp:
+            mcp_cell += f'<br>Local lite MCP: <a href="{e(local_mcp)}">{e(local_mcp)}</a>'
+        price = _event_price_line(tool) if actor else "Free or paid download. See the tool page."
+        rows.append(
+            "<tr>"
+            f'<td><a href="{P("/tools/")}{e(tool["slug"])}/">{e(tool["name"])}</a></td>'
+            f"<td>{actor_cell}</td>"
+            f"<td>{mcp_cell}</td>"
+            f"<td>{e(price)}</td>"
+            f"<td>{e(tool.get('input') or 'See the tool page.')}</td>"
+            f"<td>{e(tool.get('output') or 'See the tool page.')}</td>"
+            "</tr>"
+        )
+    body = f'''
+    <section class="page-hero">
+      <div class="wrap prose">
+        <p class="crumb"><a href="{P('/')}">Home</a> / For AI agents</p>
+        <h1>How to connect</h1>
+        <p>You can call the public Apify tools through <a href="https://mcp.apify.com/">Apify MCP</a>, or through the Apify HTTP API. The free lite tools include a small MCP server that you run on your computer. No API key is needed for those local tools.</p>
+        <h2>Apify MCP</h2>
+        <p>Add the MCP endpoint for a tool in Cursor, Claude Desktop, or another app that supports MCP. Each public tool has its own endpoint of the form <code>https://mcp.apify.com/?tools=tidybytetools/&lt;actor&gt;</code>.</p>
+        <h2>Apify HTTP API</h2>
+        <p>You can also start a run with <code>POST https://api.apify.com/v2/acts/tidybytetools~&lt;actor&gt;/run-sync-get-dataset-items</code>. The OpenAPI file for that shape is at <a href="{P('/openapi.json')}">{BASE}/openapi.json</a>. You will need an Apify token for the HTTP API.</p>
+        <h2>Local lite MCP</h2>
+        <p>For a free lite tool, install it from GitHub and run its MCP server on your computer. Some tools are not on PyPI yet. For those, install with <code>pip install git+https://github.com/tidybytetools/&lt;repo&gt;</code> until a PyPI package is up. Then point your app at the local MCP command shown in that tool’s README.</p>
+        <p>Machine-readable lists of the same tools are at <a href="{P('/.well-known/mcp.json')}">/.well-known/mcp.json</a>, <a href="{P('/tools.json')}">/tools.json</a>, and <a href="{P('/llms.txt')}">/llms.txt</a>.</p>
+        <p>Each Apify run has a ${ACTOR_START_USD} start fee in addition to the event price below. Failed or skipped items are free, as described on each tool page.</p>
+      </div>
+    </section>
+    <section>
+      <div class="wrap">
+        <h2>Tools you can call</h2>
+        <div class="agent-table-wrap">
+          <table class="agent-table">
+            <thead>
+              <tr>
+                <th>Tool</th>
+                <th>Apify actor</th>
+                <th>MCP endpoint</th>
+                <th>Price per event</th>
+                <th>Input</th>
+                <th>Output</th>
+              </tr>
+            </thead>
+            <tbody>
+              {"".join(rows)}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+    '''
+    html_text = page_shell(
+        "How to connect — Tidy Byte Tools",
+        "Connect Tidy Byte Tools to an AI app with Apify MCP, the Apify HTTP API, or a local lite MCP server.",
+        "/connect/",
+        body,
+        "connect",
+        tools,
+    )
+    write_page("connect/index.html", html_text)
+
+
+def generate_og_images(tools: list[dict]) -> None:
+    """Make a 1200×630 Open Graph image for each tool from its cover."""
+    dest = ASSETS / "img" / "og"
+    dest.mkdir(parents=True, exist_ok=True)
+    default = ASSETS / "img" / "og.png"
+    for tool in tools:
+        out = dest / f"{tool['slug']}.png"
+        src = Path(tool["cover"]) if tool.get("cover") else None
+        if src and src.exists():
+            im = Image.open(src).convert("RGB")
+            w, h = im.size
+            target_ratio = 1200 / 630
+            src_ratio = w / h
+            if src_ratio > target_ratio:
+                new_w = int(h * target_ratio)
+                left = (w - new_w) // 2
+                im = im.crop((left, 0, left + new_w, h))
+            else:
+                new_h = int(w / target_ratio)
+                top = (h - new_h) // 2
+                im = im.crop((0, top, w, top + new_h))
+            im = im.resize((1200, 630), Image.Resampling.LANCZOS)
+            im.save(out, "PNG", optimize=True)
+        elif default.exists() and not out.exists():
+            shutil.copyfile(default, out)
+        if out.exists():
+            tool["og_path"] = f"/assets/img/og/{tool['slug']}.png"
+        print("og", tool["slug"])
+
+
+def write_mcp(tools: list[dict]) -> None:
+    entries = []
+    for tool in tools:
+        actor = tool.get("actor")
+        store = _apify_store_url(tool)
+        ev = tool.get("event")
+        github, local_mcp = tool_github_and_mcp(tool)
+        item = {
+            "name": tool["name"],
+            "slug": tool["slug"],
+            "description": tool["tagline"],
+            "url": f"{BASE}/tools/{tool['slug']}/",
+            "github": github,
+            "input": tool.get("input"),
+            "output": tool.get("output"),
+            "translations": I18N.tool_translations_obj(tool["slug"]),
+        }
+        if actor:
+            item["actor"] = f"tidybytetools/{actor}"
+            if store:
+                item["apify"] = store
+                item["mcp"] = f"https://mcp.apify.com/?tools=tidybytetools/{actor}"
+            else:
+                item["apify_status"] = "The public store page is not up yet."
+        if ev:
+            item["price"] = {
+                "event": ev.get("id"),
+                "title": ev.get("title"),
+                "usd": ev.get("price_usd"),
+                "unit": ev.get("unit"),
+                "start_fee_usd": ACTOR_START_USD,
+            }
+        if local_mcp:
+            item["local_mcp"] = local_mcp
+        entries.append(item)
+    data = {
+        "name": "Tidy Byte Tools",
+        "description": "Small tools that clean up messy data. Call public Apify actors through Apify MCP, or run a free lite MCP server on your computer.",
+        "website": BASE + "/",
+        "connect": BASE + "/connect/",
+        "openapi": BASE + "/openapi.json",
+        "catalog": BASE + "/tools.json",
+        "mcp_apify_pattern": "https://mcp.apify.com/?tools=tidybytetools/<actor>",
+        "tools": entries,
+    }
+    dest = OUT / ".well-known"
+    dest.mkdir(parents=True, exist_ok=True)
+    (dest / "mcp.json").write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n")
+    print("wrote .well-known/mcp.json")
+
+
+def write_openapi(tools: list[dict]) -> None:
+    paths = {}
+    schemas = {}
+    for tool in tools:
+        actor = tool.get("actor")
+        store = _apify_store_url(tool)
+        if not actor or not store:
+            continue
+        actor_id = f"tidybytetools~{actor}"
+        path = f"/acts/{actor_id}/run-sync-get-dataset-items"
+        ev = tool.get("event") or {}
+        desc = (
+            f"{tool['name']}: {tool['tagline']} "
+            f"Input: {tool.get('input') or 'See the tool page.'} "
+            f"Output: {tool.get('output') or 'See the tool page.'}"
+        )
+        if ev:
+            desc += f" Price: ${ev.get('price_usd')} per {ev.get('unit')} ({ev.get('title')}). Start fee ${ACTOR_START_USD}."
+        paths[path] = {
+            "post": {
+                "operationId": f"run_{tool['slug'].replace('-', '_')}",
+                "summary": tool["name"],
+                "description": desc,
+                "tags": [tool["name"]],
+                "security": [{"ApifyToken": []}],
+                "requestBody": {
+                    "required": True,
+                    "content": {
+                        "application/json": {
+                            "schema": {"type": "object", "additionalProperties": True},
+                        }
+                    },
+                },
+                "responses": {
+                    "201": {
+                        "description": "Dataset items from a finished run.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {"type": "object", "additionalProperties": True},
+                                }
+                            }
+                        },
+                    }
+                },
+            }
+        }
+    spec = {
+        "openapi": "3.0.3",
+        "info": {
+            "title": "Tidy Byte Tools Apify API",
+            "description": (
+                "Call public Tidy Byte Tools actors with the Apify run-sync API. "
+                "POST the actor input as JSON. You need an Apify API token. "
+                "See also https://mcp.apify.com/ and this site's /connect/ page. "
+                "Actors whose public store page is not up yet are omitted here."
+            ),
+            "version": f"{YEAR}-11-10",
+        },
+        "servers": [{"url": "https://api.apify.com/v2", "description": "Apify API"}],
+        "paths": paths,
+        "components": {
+            "securitySchemes": {
+                "ApifyToken": {
+                    "type": "apiKey",
+                    "in": "header",
+                    "name": "Authorization",
+                    "description": "Use 'Bearer <APIFY_TOKEN>'.",
+                }
+            }
+        },
+    }
+    (OUT / "openapi.json").write_text(json.dumps(spec, indent=2, ensure_ascii=False) + "\n")
+    print("wrote openapi.json", "paths", len(paths))
+
+
 def write_meta(tools: list[dict], guides: list[dict] | None = None) -> None:
     guides = guides or []
-    (ROOT / "robots.txt").write_text(
-        "User-agent: *\nAllow: /\n\nSitemap: " + BASE + "/sitemap.xml\n"
-    )
-    urls = ["/", "/tools/", "/tools.json", "/guides/", "/privacy/", "/llms.txt"] + [f"/tools/{t['slug']}/" for t in tools] + [f"/guides/{g['slug']}/" for g in guides]
+    robots = [
+        "User-agent: *",
+        "Allow: /",
+        "",
+        "User-agent: GPTBot",
+        "Allow: /",
+        "",
+        "User-agent: ChatGPT-User",
+        "Allow: /",
+        "",
+        "User-agent: ClaudeBot",
+        "Allow: /",
+        "",
+        "User-agent: anthropic-ai",
+        "Allow: /",
+        "",
+        "User-agent: Google-Extended",
+        "Allow: /",
+        "",
+        "User-agent: Applebot-Extended",
+        "Allow: /",
+        "",
+        "User-agent: PerplexityBot",
+        "Allow: /",
+        "",
+        "User-agent: CCBot",
+        "Allow: /",
+        "",
+        "User-agent: Bytespider",
+        "Allow: /",
+        "",
+        f"Sitemap: {BASE}/sitemap.xml",
+        "",
+    ]
+    (OUT / "robots.txt").write_text("\n".join(robots))
+
+    urls = [
+        "/",
+        "/tools/",
+        "/tools.json",
+        "/guides/",
+        "/privacy/",
+        "/terms/",
+        "/connect/",
+        "/llms.txt",
+        "/llms-full.txt",
+        "/openapi.json",
+        "/.well-known/mcp.json",
+    ]
+    for lang in I18N.LANGS:
+        if lang["prefix"]:
+            urls.append(f"/{lang['prefix']}/")
+    urls += [f"/tools/{t['slug']}/" for t in tools]
+    urls += [f"/guides/{g['slug']}/" for g in guides]
+
     parts = [
         '<?xml version="1.0" encoding="UTF-8"?>',
-        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"',
+        '        xmlns:xhtml="http://www.w3.org/1999/xhtml">',
     ]
+    home_paths = {"/"} | {f"/{lang['prefix']}/" for lang in I18N.LANGS if lang["prefix"]}
     for path in urls:
-        parts.append(f"  <url><loc>{e(BASE + path)}</loc></url>")
+        loc = e(BASE + path)
+        extras = []
+        if path in home_paths:
+            for lang in I18N.LANGS:
+                href = BASE + (f"/{lang['prefix']}/" if lang["prefix"] else "/")
+                extras.append(
+                    f'    <xhtml:link rel="alternate" hreflang="{e(lang["hreflang"])}" href="{e(href)}"/>'
+                )
+            extras.append(f'    <xhtml:link rel="alternate" hreflang="x-default" href="{e(BASE + "/")}"/>')
+        if extras:
+            parts.append(f"  <url>\n    <loc>{loc}</loc>\n" + "\n".join(extras) + "\n  </url>")
+        else:
+            parts.append(f"  <url><loc>{loc}</loc></url>")
     parts.append("</urlset>\n")
-    (ROOT / "sitemap.xml").write_text("\n".join(parts))
+    (OUT / "sitemap.xml").write_text("\n".join(parts))
 
     lines = [
         "# Tidy Byte Tools",
@@ -1808,10 +1699,20 @@ def write_meta(tools: list[dict], guides: list[dict] | None = None) -> None:
         "",
         "## Pages",
         f"- [Home]({BASE}/): Product catalog, how it works, and FAQ",
+        f"- [Spanish home]({BASE}/es/)",
+        f"- [Portuguese home]({BASE}/pt/)",
+        f"- [German home]({BASE}/de/)",
+        f"- [French home]({BASE}/fr/)",
+        f"- [Japanese home]({BASE}/ja/)",
+        f"- [Chinese home]({BASE}/zh/)",
         f"- [All tools]({BASE}/tools/)",
         f"- [Guides]({BASE}/guides/)",
+        f"- [How to connect]({BASE}/connect/): Apify actor URLs, MCP endpoints, prices, and input/output",
         f"- [Privacy]({BASE}/privacy/)",
-        f"- [Machine-readable catalog]({BASE}/tools.json): name, what it does, price, Apify, MCP and GitHub links",
+        f"- [Terms]({BASE}/terms/)",
+        f"- [Machine-readable catalog]({BASE}/tools.json): name, what it does, price, Apify, MCP, GitHub, and translations",
+        f"- [MCP catalog]({BASE}/.well-known/mcp.json)",
+        f"- [OpenAPI]({BASE}/openapi.json): call public actors with the Apify run-sync API",
         f"- [Long catalog]({BASE}/llms-full.txt)",
         "",
         "## Tools",
@@ -1823,6 +1724,12 @@ def write_meta(tools: list[dict], guides: list[dict] | None = None) -> None:
                 lines.append(f"  - {ver['label']} ({ver['place']}, {ver['price']}): {ver['url']}")
             for label, url in ver.get("urls") or []:
                 lines.append(f"  - {ver['label']} {label}: {url}")
+        tr = I18N.tool_translations_obj(t["slug"])
+        if tr:
+            lines.append("  - Multilingual keywords:")
+            for code, pack in tr.items():
+                kws = ", ".join(pack.get("keywords") or [])
+                lines.append(f"    - {code}: {pack.get('description', '')} | {kws}")
     lines += [
         "",
         "## Shops",
@@ -1831,7 +1738,7 @@ def write_meta(tools: list[dict], guides: list[dict] | None = None) -> None:
         "- [GitHub](https://github.com/tidybytetools)",
         "",
     ]
-    (ROOT / "llms.txt").write_text("\n".join(lines + ["", "Full catalog: %s/llms-full.txt" % BASE, ""]))
+    (OUT / "llms.txt").write_text("\n".join(lines + ["", f"Full catalog: {BASE}/llms-full.txt", ""]))
     full = list(lines)
     full.append("## Full product notes")
     full.append("")
@@ -1845,12 +1752,15 @@ def write_meta(tools: list[dict], guides: list[dict] | None = None) -> None:
                 full.append("- %s (%s, %s): %s" % (ver["label"], ver["place"], ver["price"], ver["note"]))
         full.append("")
     full.append("Do not list tools that are not public yet.")
+    full.append("Do not advertise a private Apify Console URL as a public store page.")
     full.append("")
-    (ROOT / "llms-full.txt").write_text("\n".join(full))
+    (OUT / "llms-full.txt").write_text("\n".join(full))
     catalog = tools_catalog(tools)
-    (ROOT / "tools.json").write_text(json.dumps(catalog, indent=2, ensure_ascii=True) + "\n")
+    (OUT / "tools.json").write_text(json.dumps(catalog, indent=2, ensure_ascii=False) + "\n")
     print("wrote tools.json")
-    (ROOT / ".nojekyll").write_text("")
+    write_mcp(tools)
+    write_openapi(tools)
+    (OUT / ".nojekyll").write_text("")
 
 
 def write_readme() -> None:
@@ -1859,7 +1769,7 @@ def write_readme() -> None:
 
 This is the public homepage for [Tidy Byte Tools](https://tidybytetools.github.io).
 
-Small tools that clean up messy data. The site lists every live product, with real links and real prices, and is hosted for free on GitHub Pages. A machine-readable catalog is at [tools.json](https://tidybytetools.github.io/tools.json).
+Small tools that clean up messy data. The site lists every live product, with real links and real prices, and is hosted for free on GitHub Pages. A machine-readable catalog is at [tools.json](https://tidybytetools.github.io/tools.json). Agents can also read [llms.txt](https://tidybytetools.github.io/llms.txt), [/.well-known/mcp.json](https://tidybytetools.github.io/.well-known/mcp.json), and [openapi.json](https://tidybytetools.github.io/openapi.json).
 
 ## Rebuild
 
@@ -1889,7 +1799,6 @@ def write_gitignore() -> None:
             ]
         )
     )
-
 
 
 def guides_index(tools: list[dict], guides: list[dict]) -> None:
@@ -1954,30 +1863,74 @@ def guide_page(guide: dict, tools: list[dict], guides: list[dict]) -> None:
     write_page(f'guides/{guide["slug"]}/index.html', html_text)
 
 
+def pack_snowrsps() -> None:
+    """Rebuild the snowrsps.com copy and zip it with shutil.make_archive."""
+    parent = Path("/workspace/products/site-snowrsps")
+    dest = parent / "tidybytetools"
+    dest.mkdir(parents=True, exist_ok=True)
+    ht = dest / ".htaccess"
+    ht_text = ht.read_text() if ht.exists() else "DirectoryIndex index.html index.php\nOptions -Indexes\n"
+    for child in list(dest.iterdir()):
+        if child.name == ".htaccess":
+            continue
+        if child.is_dir():
+            shutil.rmtree(child)
+        else:
+            child.unlink()
+    env = os.environ.copy()
+    env["SITE_BASE"] = "https://snowrsps.com/tidybytetools"
+    env["PATH_PREFIX"] = "/tidybytetools"
+    env["DEST"] = str(dest)
+    print("packing snowrsps copy into", dest)
+    subprocess.check_call([sys.executable, str(ROOT / "build.py"), "--no-pack"], env=env, cwd=str(ROOT))
+    ht.write_text(ht_text)
+    zip_path = parent / "tidybytetools.zip"
+    if zip_path.exists():
+        zip_path.unlink()
+    shutil.make_archive(str(parent / "tidybytetools"), "zip", root_dir=str(parent), base_dir="tidybytetools")
+    file_count = sum(1 for p in dest.rglob("*") if p.is_file())
+    print(f"wrote {zip_path} ({file_count} files in tidybytetools/)")
 
-def main() -> None:
-    print("Building Tidy Byte Tools website…")
+
+def build_site() -> list[dict]:
+    print("Building Tidy Byte Tools website…", "BASE=", BASE, "OUT=", OUT)
     tools = live_tools()
     guides = load_guides(GUIDES_DIR)
     subset_fonts()
     generate_missing_art(tools)
     copy_brand_assets(tools)
     copy_galleries(tools)
+    generate_og_images(tools)
     write_css()
     home_page(tools)
+    for lang in I18N.LANGS:
+        if lang["code"] != "en":
+            home_page(tools, lang=lang["code"])
     tools_index(tools)
     for tool in tools:
         tool_page(tool, tools)
     write_aliases(tools)
     privacy_page(tools)
+    terms_page(tools)
+    connect_page(tools)
     not_found_page(tools)
     guides_index(tools, guides)
     for g in guides:
         guide_page(g, tools, guides)
     write_meta(tools, guides)
-    write_readme()
-    write_gitignore()
-    print(f"done: {len(tools)} tools, {len(guides)} guides")
+    if OUT.resolve() == ROOT.resolve():
+        write_readme()
+        write_gitignore()
+    print(f"done: {len(tools)} tools, {len(guides)} guides, out={OUT}")
+    return tools
+
+
+def main() -> None:
+    args = set(sys.argv[1:])
+    configure()
+    build_site()
+    if "--no-pack" not in args and OUT.resolve() == ROOT.resolve():
+        pack_snowrsps()
 
 
 if __name__ == "__main__":

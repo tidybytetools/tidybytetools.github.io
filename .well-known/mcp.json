@@ -1,0 +1,2000 @@
+{
+  "name": "Tidy Byte Tools",
+  "description": "Small tools that clean up messy data. Call public Apify actors through Apify MCP, or run a free lite MCP server on your computer.",
+  "website": "https://tidybytetools.github.io/",
+  "connect": "https://tidybytetools.github.io/connect/",
+  "openapi": "https://tidybytetools.github.io/openapi.json",
+  "catalog": "https://tidybytetools.github.io/tools.json",
+  "mcp_apify_pattern": "https://mcp.apify.com/?tools=tidybytetools/<actor>",
+  "tools": [
+    {
+      "name": "PDF Table Pull",
+      "slug": "pdf-table-pull",
+      "description": "Pull tables out of PDFs into Excel, CSV, or JSON.",
+      "url": "https://tidybytetools.github.io/tools/pdf-table-pull/",
+      "github": "https://github.com/tidybytetools/pdf-table-pull-lite",
+      "input": "A PDF file or a link to a PDF.",
+      "output": "Tables as Excel, CSV, or JSON. Numbers like (40) become -40.",
+      "translations": {
+        "es": {
+          "description": "Saca tablas de PDF y las guarda en Excel, CSV o JSON.",
+          "keywords": [
+            "extraer tablas pdf",
+            "pdf a excel",
+            "pdf a csv",
+            "tablas de un pdf"
+          ]
+        },
+        "pt-BR": {
+          "description": "Tire tabelas de PDFs e salve em Excel, CSV ou JSON.",
+          "keywords": [
+            "extrair tabelas pdf",
+            "pdf para excel",
+            "pdf para csv",
+            "tabelas de pdf"
+          ]
+        },
+        "de": {
+          "description": "Tabellen aus PDFs nach Excel, CSV oder JSON holen.",
+          "keywords": [
+            "pdf tabellen extrahieren",
+            "pdf nach excel",
+            "pdf nach csv",
+            "tabellen aus pdf"
+          ]
+        },
+        "fr": {
+          "description": "Extraire les tableaux des PDF vers Excel, CSV ou JSON.",
+          "keywords": [
+            "extraire tableaux pdf",
+            "pdf vers excel",
+            "pdf vers csv",
+            "tableaux pdf"
+          ]
+        },
+        "ja": {
+          "description": "PDFの表をExcel、CSV、JSONに取り出します。",
+          "keywords": [
+            "PDF 表 抽出",
+            "PDF から Excel",
+            "PDF から CSV",
+            "PDF テーブル"
+          ]
+        },
+        "zh-CN": {
+          "description": "从 PDF 中提取表格，导出为 Excel、CSV 或 JSON。",
+          "keywords": [
+            "PDF 表格提取",
+            "PDF 转 Excel",
+            "PDF 转 CSV",
+            "PDF 表格"
+          ]
+        }
+      },
+      "actor": "tidybytetools/pdf-table-pull",
+      "apify": "https://apify.com/tidybytetools/pdf-table-pull",
+      "mcp": "https://mcp.apify.com/?tools=tidybytetools/pdf-table-pull",
+      "price": {
+        "event": "table-page",
+        "title": "Page with a table",
+        "usd": 0.003,
+        "unit": "pages with a table",
+        "start_fee_usd": 5e-05
+      },
+      "local_mcp": "https://github.com/tidybytetools/pdf-table-pull-lite"
+    },
+    {
+      "name": "Doc to Markdown",
+      "slug": "doc2md",
+      "description": "Turn PDFs, Word files, and web pages into clean Markdown.",
+      "url": "https://tidybytetools.github.io/tools/doc2md/",
+      "github": "https://github.com/tidybytetools/doc2md-lite",
+      "input": "A PDF, Word file, HTML file, or a page link.",
+      "output": "Clean Markdown. Tables stay as Markdown tables. Paid runs can also write RAG chunks.",
+      "translations": {
+        "es": {
+          "description": "Convierte PDF, Word y páginas web en Markdown limpio.",
+          "keywords": [
+            "pdf a markdown",
+            "word a markdown",
+            "html a markdown",
+            "markdown para ia"
+          ]
+        },
+        "pt-BR": {
+          "description": "Transforme PDFs, Word e páginas web em Markdown limpo.",
+          "keywords": [
+            "pdf para markdown",
+            "word para markdown",
+            "html para markdown",
+            "markdown para ia"
+          ]
+        },
+        "de": {
+          "description": "PDFs, Word-Dateien und Webseiten in sauberes Markdown verwandeln.",
+          "keywords": [
+            "pdf zu markdown",
+            "word zu markdown",
+            "html zu markdown",
+            "markdown fur ki"
+          ]
+        },
+        "fr": {
+          "description": "Transformer des PDF, fichiers Word et pages web en Markdown propre.",
+          "keywords": [
+            "pdf vers markdown",
+            "word vers markdown",
+            "html vers markdown",
+            "markdown pour ia"
+          ]
+        },
+        "ja": {
+          "description": "PDF、Word、ウェブページをきれいなMarkdownにします。",
+          "keywords": [
+            "PDF を Markdown",
+            "Word を Markdown",
+            "HTML を Markdown",
+            "AI 用 Markdown"
+          ]
+        },
+        "zh-CN": {
+          "description": "把 PDF、Word 和网页转成干净的 Markdown。",
+          "keywords": [
+            "PDF 转 Markdown",
+            "Word 转 Markdown",
+            "HTML 转 Markdown",
+            "给 AI 的 Markdown"
+          ]
+        }
+      },
+      "actor": "tidybytetools/doc-to-markdown",
+      "apify": "https://apify.com/tidybytetools/doc-to-markdown",
+      "mcp": "https://mcp.apify.com/?tools=tidybytetools/doc-to-markdown",
+      "price": {
+        "event": "document-converted",
+        "title": "File converted",
+        "usd": 0.003,
+        "unit": "files",
+        "start_fee_usd": 5e-05
+      },
+      "local_mcp": "https://github.com/tidybytetools/doc2md-lite"
+    },
+    {
+      "name": "CSV & spreadsheet cleanup",
+      "slug": "sheet-scrub",
+      "description": "Clean messy CSV and Excel files: dates, phones, emails, and duplicates.",
+      "url": "https://tidybytetools.github.io/tools/sheet-scrub/",
+      "github": null,
+      "input": "A CSV, Excel, or JSON table.",
+      "output": "A clean CSV and a short report of what changed. Removed rows are free.",
+      "translations": {
+        "es": {
+          "description": "Limpia CSV y Excel desordenados: fechas, teléfonos, correos y duplicados.",
+          "keywords": [
+            "limpiar csv",
+            "limpiar excel",
+            "quitar duplicados",
+            "arreglar fechas"
+          ]
+        },
+        "pt-BR": {
+          "description": "Limpe CSV e Excel bagunçados: datas, telefones, e-mails e duplicatas.",
+          "keywords": [
+            "limpar csv",
+            "limpar excel",
+            "remover duplicatas",
+            "arrumar datas"
+          ]
+        },
+        "de": {
+          "description": "Unordentliche CSV- und Excel-Dateien bereinigen: Daten, Telefone, E-Mails und Duplikate.",
+          "keywords": [
+            "csv bereinigen",
+            "excel bereinigen",
+            "duplikate entfernen",
+            "daten standardisieren"
+          ]
+        },
+        "fr": {
+          "description": "Nettoyer des CSV et Excel en désordre : dates, telephones, e-mails et doublons.",
+          "keywords": [
+            "nettoyer csv",
+            "nettoyer excel",
+            "supprimer doublons",
+            "corriger dates"
+          ]
+        },
+        "ja": {
+          "description": "乱れたCSVやExcelをきれいにします。日付、電話、メール、重複に対応します。",
+          "keywords": [
+            "CSV クリーニング",
+            "Excel クリーニング",
+            "重複削除",
+            "日付の整形"
+          ]
+        },
+        "zh-CN": {
+          "description": "清理杂乱的 CSV 和 Excel：日期、电话、邮箱和重复行。",
+          "keywords": [
+            "清理 CSV",
+            "清理 Excel",
+            "去重",
+            "统一日期"
+          ]
+        }
+      },
+      "actor": "tidybytetools/csv-excel-data-cleaner",
+      "apify": "https://apify.com/tidybytetools/csv-excel-data-cleaner",
+      "mcp": "https://mcp.apify.com/?tools=tidybytetools/csv-excel-data-cleaner",
+      "price": {
+        "event": "row-cleaned",
+        "title": "Clean row saved",
+        "usd": 0.0005,
+        "unit": "clean rows",
+        "start_fee_usd": 5e-05
+      }
+    },
+    {
+      "name": "JSON Shaper",
+      "slug": "json-shaper",
+      "description": "Turn messy notes, CSV, and Markdown tables into clean JSON.",
+      "url": "https://tidybytetools.github.io/tools/json-shaper/",
+      "github": "https://github.com/tidybytetools/json-shaper-lite",
+      "input": "Notes, a CSV or TSV file, or a Markdown table. Paid also reads app logs.",
+      "output": "Typed JSON. Numbers, booleans, and nulls stay as real types.",
+      "translations": {
+        "es": {
+          "description": "Convierte notas, CSV y tablas Markdown en JSON limpio.",
+          "keywords": [
+            "texto a json",
+            "csv a json",
+            "tabla markdown a json",
+            "notas a json"
+          ]
+        },
+        "pt-BR": {
+          "description": "Transforme notas, CSV e tabelas Markdown em JSON limpo.",
+          "keywords": [
+            "texto para json",
+            "csv para json",
+            "tabela markdown para json",
+            "notas para json"
+          ]
+        },
+        "de": {
+          "description": "Notizen, CSV und Markdown-Tabellen in sauberes JSON verwandeln.",
+          "keywords": [
+            "text zu json",
+            "csv zu json",
+            "markdown tabelle zu json",
+            "notizen zu json"
+          ]
+        },
+        "fr": {
+          "description": "Transformer notes, CSV et tableaux Markdown en JSON propre.",
+          "keywords": [
+            "texte vers json",
+            "csv vers json",
+            "tableau markdown vers json",
+            "notes vers json"
+          ]
+        },
+        "ja": {
+          "description": "メモ、CSV、Markdownの表をきれいなJSONにします。",
+          "keywords": [
+            "テキスト を JSON",
+            "CSV を JSON",
+            "Markdown 表 を JSON",
+            "メモ を JSON"
+          ]
+        },
+        "zh-CN": {
+          "description": "把杂乱笔记、CSV 和 Markdown 表格转成干净的 JSON。",
+          "keywords": [
+            "文本转 JSON",
+            "CSV 转 JSON",
+            "Markdown 表格转 JSON",
+            "笔记转 JSON"
+          ]
+        }
+      },
+      "local_mcp": "https://github.com/tidybytetools/json-shaper-lite"
+    },
+    {
+      "name": "Lead Sheet Fixer",
+      "slug": "lead-sheet-fixer",
+      "description": "Clean a lead list: fix phones, check emails, and merge duplicates.",
+      "url": "https://tidybytetools.github.io/tools/lead-sheet-fixer/",
+      "github": null,
+      "input": "A CSV or Excel lead list.",
+      "output": "A clean sheet with split names, formatted phones, email status, and merged duplicates.",
+      "translations": {
+        "es": {
+          "description": "Limpia una lista de clientes: teléfonos, correos y duplicados.",
+          "keywords": [
+            "limpiar leads",
+            "arreglar teléfonos",
+            "validar emails",
+            "fusionar duplicados"
+          ]
+        },
+        "pt-BR": {
+          "description": "Limpe uma lista de leads: telefones, e-mails e duplicatas.",
+          "keywords": [
+            "limpar leads",
+            "arrumar telefones",
+            "validar emails",
+            "juntar duplicatas"
+          ]
+        },
+        "de": {
+          "description": "Eine Lead-Liste bereinigen: Telefone prüfen, E-Mails prüfen, Duplikate zusammenführen.",
+          "keywords": [
+            "leads bereinigen",
+            "telefone formatieren",
+            "e-mails prüfen",
+            "duplikate zusammenführen"
+          ]
+        },
+        "fr": {
+          "description": "Nettoyer une liste de prospects : telephones, e-mails et doublons.",
+          "keywords": [
+            "nettoyer prospects",
+            "formater telephones",
+            "vérifier emails",
+            "fusionner doublons"
+          ]
+        },
+        "ja": {
+          "description": "リード名簿をきれいにします。電話の整形、メールの確認、重複の統合ができます。",
+          "keywords": [
+            "リード クリーニング",
+            "電話番号 整形",
+            "メール 確認",
+            "重複 統合"
+          ]
+        },
+        "zh-CN": {
+          "description": "清理线索名单：整理电话、检查邮箱并合并重复行。",
+          "keywords": [
+            "清理线索",
+            "整理电话",
+            "检查邮箱",
+            "合并重复"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Phone Number Validator",
+      "slug": "phone-validator",
+      "description": "Check phone numbers and format them as E.164, in bulk, offline.",
+      "url": "https://tidybytetools.github.io/tools/phone-validator/",
+      "github": null,
+      "input": "A list of phone numbers, plus a default country for numbers with no country code.",
+      "output": "Valid or not, plus E.164, international, and national forms, country, and line type.",
+      "translations": {
+        "es": {
+          "description": "Comprueba teléfonos y los escribe en E.164, en lote y sin conexión.",
+          "keywords": [
+            "validar teléfonos",
+            "formato e.164",
+            "teléfonos en lote",
+            "sin conexión"
+          ]
+        },
+        "pt-BR": {
+          "description": "Verifique telefones e formate em E.164, em lote e offline.",
+          "keywords": [
+            "validar telefones",
+            "formato e.164",
+            "telefones em lote",
+            "offline"
+          ]
+        },
+        "de": {
+          "description": "Telefonnummern prüfen und als E.164 formatieren, in Mengen, offline.",
+          "keywords": [
+            "telefonnummern prüfen",
+            "e.164 format",
+            "bulk telefone",
+            "offline"
+          ]
+        },
+        "fr": {
+          "description": "Vérifier des numeros de telephone et les ecrire en E.164, en lot, hors ligne.",
+          "keywords": [
+            "valider telephones",
+            "format e.164",
+            "telephones en lot",
+            "hors ligne"
+          ]
+        },
+        "ja": {
+          "description": "電話番号を調べ、E.164形式にまとめます。一括で、オフラインです。",
+          "keywords": [
+            "電話番号 検証",
+            "E.164",
+            "一括 電話番号",
+            "オフライン"
+          ]
+        },
+        "zh-CN": {
+          "description": "批量离线检查电话号码，并格式化为 E.164。",
+          "keywords": [
+            "验证电话号码",
+            "E.164 格式",
+            "批量电话",
+            "离线"
+          ]
+        }
+      },
+      "actor": "tidybytetools/phone-number-validator-formatter",
+      "apify": "https://apify.com/tidybytetools/phone-number-validator-formatter",
+      "mcp": "https://mcp.apify.com/?tools=tidybytetools/phone-number-validator-formatter",
+      "price": {
+        "event": "phone-checked",
+        "title": "Phone number checked",
+        "usd": 0.001,
+        "unit": "numbers",
+        "start_fee_usd": 5e-05
+      }
+    },
+    {
+      "name": "Data Cleanup Bundle",
+      "slug": "data-cleanup-bundle",
+      "description": "Three desktop tools together: PDF tables, sheet cleanup, and JSON Shaper.",
+      "url": "https://tidybytetools.github.io/tools/data-cleanup-bundle/",
+      "github": null,
+      "input": "The same inputs as the three tools: PDFs, Excel or CSV files, and messy notes or tables.",
+      "output": "The same clean Excel, CSV, JSON, or Markdown each tool would give you on its own.",
+      "translations": {
+        "es": {
+          "description": "Tres herramientas de escritorio juntas: tablas PDF, limpieza de hojas y JSON Shaper.",
+          "keywords": [
+            "paquete de limpieza",
+            "pdf excel csv",
+            "herramientas offline"
+          ]
+        },
+        "pt-BR": {
+          "description": "Tres ferramentas para o computador juntas: tabelas de PDF, limpeza de planilhas e JSON Shaper.",
+          "keywords": [
+            "pacote de limpeza",
+            "pdf excel csv",
+            "ferramentas offline"
+          ]
+        },
+        "de": {
+          "description": "Drei Desktop-Tools zusammen: PDF-Tabellen, Tabellenbereinigung und JSON Shaper.",
+          "keywords": [
+            "cleanup bundle",
+            "pdf excel csv",
+            "offline tools"
+          ]
+        },
+        "fr": {
+          "description": "Trois outils pour l'ordinateur ensemble : tableaux PDF, nettoyage de feuilles et JSON Shaper.",
+          "keywords": [
+            "pack nettoyage",
+            "pdf excel csv",
+            "outils hors ligne"
+          ]
+        },
+        "ja": {
+          "description": "デスクトップ用の3つのツールセット。PDFの表、表の掃除、JSON Shaperです。",
+          "keywords": [
+            "データ整理 セット",
+            "PDF Excel CSV",
+            "オフライン ツール"
+          ]
+        },
+        "zh-CN": {
+          "description": "三个桌面工具打包：PDF 表格、表格清理和 JSON Shaper。",
+          "keywords": [
+            "数据清理套装",
+            "PDF Excel CSV",
+            "离线工具"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Broken Link Checker",
+      "slug": "link-check",
+      "description": "Check a list of links for status codes, redirects, and broken pages.",
+      "url": "https://tidybytetools.github.io/tools/link-check/",
+      "github": "https://github.com/tidybytetools/link-check-lite",
+      "input": "A list of links, a sitemap, or pages to scan for links.",
+      "output": "Status code, redirect chain, final URL, and a short report of broken links.",
+      "translations": {
+        "es": {
+          "description": "Revisa una lista de enlaces: códigos de estado, redirecciones y páginas rotas.",
+          "keywords": [
+            "enlaces rotos",
+            "comprobar links",
+            "redirecciones",
+            "sitemap"
+          ]
+        },
+        "pt-BR": {
+          "description": "Confira uma lista de links: códigos de status, redirecionamentos e páginas quebradas.",
+          "keywords": [
+            "links quebrados",
+            "checar links",
+            "redirecionamentos",
+            "sitemap"
+          ]
+        },
+        "de": {
+          "description": "Eine Linkliste prüfen: Statuscodes, Weiterleitungen und kaputte Seiten.",
+          "keywords": [
+            "kaputte links",
+            "links prüfen",
+            "weiterleitungen",
+            "sitemap"
+          ]
+        },
+        "fr": {
+          "description": "Vérifier une liste de liens : codes de statut, redirections et pages cassées.",
+          "keywords": [
+            "liens cassés",
+            "vérifier liens",
+            "redirections",
+            "sitemap"
+          ]
+        },
+        "ja": {
+          "description": "リンクのリストを調べ、ステータス、リダイレクト、切れたページを報告します。",
+          "keywords": [
+            "リンク切れ",
+            "リンク チェック",
+            "リダイレクト",
+            "サイトマップ"
+          ]
+        },
+        "zh-CN": {
+          "description": "检查一组链接的状态码、跳转和失效页面。",
+          "keywords": [
+            "失效链接",
+            "检查链接",
+            "重定向",
+            "网站地图"
+          ]
+        }
+      },
+      "actor": "tidybytetools/broken-link-checker",
+      "apify": "https://apify.com/tidybytetools/broken-link-checker",
+      "mcp": "https://mcp.apify.com/?tools=tidybytetools/broken-link-checker",
+      "price": {
+        "event": "link-checked",
+        "title": "Link checked",
+        "usd": 0.001,
+        "unit": "links",
+        "start_fee_usd": 5e-05
+      },
+      "local_mcp": "https://github.com/tidybytetools/link-check-lite"
+    },
+    {
+      "name": "Server Pulse",
+      "slug": "server-pulse",
+      "description": "Get a Discord alert when a website or server goes down.",
+      "url": "https://tidybytetools.github.io/tools/server-pulse/",
+      "github": null,
+      "input": "A small config file with the sites or ports to watch, and a Discord webhook.",
+      "output": "A Discord message when a site goes down or comes back. A local check prints UP or DOWN.",
+      "translations": {
+        "es": {
+          "description": "Recibe un aviso en Discord cuando un sitio o servidor se cae.",
+          "keywords": [
+            "alerta de caída",
+            "monitoreo de sitio",
+            "aviso discord",
+            "uptime"
+          ]
+        },
+        "pt-BR": {
+          "description": "Receba um alerta no Discord quando um site ou servidor cair.",
+          "keywords": [
+            "alerta de queda",
+            "monitorar site",
+            "aviso discord",
+            "uptime"
+          ]
+        },
+        "de": {
+          "description": "Eine Discord-Nachricht erhalten, wenn eine Website oder ein Server ausfällt.",
+          "keywords": [
+            "ausfall alarm",
+            "website überwachen",
+            "discord benachrichtigung",
+            "uptime"
+          ]
+        },
+        "fr": {
+          "description": "Recevoir une alerte Discord quand un site ou un serveur tombe.",
+          "keywords": [
+            "alerte panne",
+            "surveiller site",
+            "alerte discord",
+            "uptime"
+          ]
+        },
+        "ja": {
+          "description": "サイトやサーバが落ちたとき、Discordに知らせます。",
+          "keywords": [
+            "ダウン 通知",
+            "サイト 監視",
+            "Discord アラート",
+            "アップタイム"
+          ]
+        },
+        "zh-CN": {
+          "description": "网站或服务器宕机时，在 Discord 收到提醒。",
+          "keywords": [
+            "宕机提醒",
+            "网站监控",
+            "Discord 通知",
+            "可用性"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Markdown Chunker for RAG",
+      "slug": "markdown-chunker",
+      "description": "Split Markdown into chunks for AI search, with heading paths kept.",
+      "url": "https://tidybytetools.github.io/tools/markdown-chunker/",
+      "github": "https://github.com/tidybytetools/md-chunk-lite",
+      "input": "Markdown or plain text, plus a max chunk size.",
+      "output": "JSON lines with text, heading path, line numbers, and an id for each chunk.",
+      "translations": {
+        "es": {
+          "description": "Parte Markdown en trozos para búsqueda de IA, conservando la ruta de títulos.",
+          "keywords": [
+            "trozos rag",
+            "dividir markdown",
+            "chunks para ia",
+            "rag"
+          ]
+        },
+        "pt-BR": {
+          "description": "Divida Markdown em pedaços para busca de IA, mantendo o caminho dos títulos.",
+          "keywords": [
+            "pedaços rag",
+            "dividir markdown",
+            "chunks para ia",
+            "rag"
+          ]
+        },
+        "de": {
+          "description": "Markdown in Abschnitte für die KI-Suche teilen, mit behaltenem Überschriftenpfad.",
+          "keywords": [
+            "rag chunks",
+            "markdown teilen",
+            "ki suche",
+            "rag"
+          ]
+        },
+        "fr": {
+          "description": "Découper du Markdown en morceaux pour la recherche IA, en gardant le chemin des titres.",
+          "keywords": [
+            "morceaux rag",
+            "découper markdown",
+            "chunks pour ia",
+            "rag"
+          ]
+        },
+        "ja": {
+          "description": "MarkdownをAI検索用のチャンクに分割し、見出しの道筋を残します。",
+          "keywords": [
+            "RAG チャンク",
+            "Markdown 分割",
+            "AI 検索",
+            "RAG"
+          ]
+        },
+        "zh-CN": {
+          "description": "按标题把 Markdown 切成供 AI 检索的分块，并保留标题路径。",
+          "keywords": [
+            "RAG 分块",
+            "拆分 Markdown",
+            "AI 检索",
+            "RAG"
+          ]
+        }
+      },
+      "actor": "tidybytetools/markdown-rag-chunker",
+      "apify": "https://apify.com/tidybytetools/markdown-rag-chunker",
+      "mcp": "https://mcp.apify.com/?tools=tidybytetools/markdown-rag-chunker",
+      "price": {
+        "event": "chunk-created",
+        "title": "Chunk created",
+        "usd": 0.0001,
+        "unit": "chunks",
+        "start_fee_usd": 5e-05
+      },
+      "local_mcp": "https://github.com/tidybytetools/md-chunk-lite"
+    },
+    {
+      "name": "GIF Forge",
+      "slug": "gif-forge",
+      "description": "Turn a folder of videos into small, sharp GIFs, offline.",
+      "url": "https://tidybytetools.github.io/tools/gif-forge/",
+      "github": null,
+      "input": "A folder of video clips, or an image with a solid background.",
+      "output": "A folder of looping GIFs, or a PNG with the solid background removed.",
+      "translations": {
+        "es": {
+          "description": "Convierte una carpeta de videos en GIFs pequeños y nítidos, sin conexión.",
+          "keywords": [
+            "video a gif",
+            "hacer gifs",
+            "quitar fondo",
+            "offline"
+          ]
+        },
+        "pt-BR": {
+          "description": "Transforme uma pasta de videos em GIFs pequeños e nítidos, offline.",
+          "keywords": [
+            "video para gif",
+            "fazer gifs",
+            "remover fundo",
+            "offline"
+          ]
+        },
+        "de": {
+          "description": "Einen Ordner mit Videos offline in kleine, scharfe GIFs verwandeln.",
+          "keywords": [
+            "video zu gif",
+            "gifs erstellen",
+            "hintergrund entfernen",
+            "offline"
+          ]
+        },
+        "fr": {
+          "description": "Transformer un dossier de videos en GIF petits et nets, hors ligne.",
+          "keywords": [
+            "video vers gif",
+            "faire des gif",
+            "enlever fond",
+            "hors ligne"
+          ]
+        },
+        "ja": {
+          "description": "動画のフォルダを、小さくて鮮明なGIFにします。オフラインです。",
+          "keywords": [
+            "動画 を GIF",
+            "GIF 作成",
+            "背景削除",
+            "オフライン"
+          ]
+        },
+        "zh-CN": {
+          "description": "把一文件夹视频离线转成小而清晰的 GIF。",
+          "keywords": [
+            "视频转 GIF",
+            "制作 GIF",
+            "去除背景",
+            "离线"
+          ]
+        }
+      }
+    },
+    {
+      "name": "n8n Data Cleanup Pack",
+      "slug": "n8n-data-cleanup-pack",
+      "description": "9 n8n workflows for messy CSVs, leads, invoices, sheets, and uptime alerts.",
+      "url": "https://tidybytetools.github.io/tools/n8n-data-cleanup-pack/",
+      "github": null,
+      "input": "A messy CSV, a lead list, invoice text, or a sitemap, imported into n8n.",
+      "output": "A clean CSV or a JSONL file, made by the workflow.",
+      "translations": {
+        "es": {
+          "description": "9 flujos de n8n para CSV, clientes, facturas, hojas y avisos de actividad.",
+          "keywords": [
+            "flujos n8n",
+            "limpiar csv n8n",
+            "automatización n8n",
+            "alertas uptime"
+          ]
+        },
+        "pt-BR": {
+          "description": "9 fluxos n8n para CSV, leads, faturas, planilhas e alertas de uptime.",
+          "keywords": [
+            "fluxos n8n",
+            "limpar csv n8n",
+            "automação n8n",
+            "alertas uptime"
+          ]
+        },
+        "de": {
+          "description": "9 n8n-Workflows für CSV, Leads, Rechnungen, Tabellen und Uptime-Hinweise.",
+          "keywords": [
+            "n8n workflows",
+            "csv in n8n",
+            "n8n automatisierung",
+            "uptime alerts"
+          ]
+        },
+        "fr": {
+          "description": "9 flux n8n pour CSV, prospects, factures, feuilles et alertes de disponibilité.",
+          "keywords": [
+            "flux n8n",
+            "nettoyer csv n8n",
+            "automatisation n8n",
+            "alertes uptime"
+          ]
+        },
+        "ja": {
+          "description": "CSV、リード、請求、表、稼働監視向けのn8nワークフローが9本あります。",
+          "keywords": [
+            "n8n ワークフロー",
+            "n8n CSV 整理",
+            "n8n 自動化",
+            "稼働監視"
+          ]
+        },
+        "zh-CN": {
+          "description": "9 个 n8n 工作流，用于杂乱 CSV、线索、发票、表格和在线状态提醒。",
+          "keywords": [
+            "n8n 工作流",
+            "n8n 清理 CSV",
+            "n8n 自动化",
+            "可用性提醒"
+          ]
+        }
+      }
+    },
+    {
+      "name": "n8n Cleanup Sampler",
+      "slug": "n8n-cleanup-sampler",
+      "description": "2 free n8n workflows from the Data Cleanup Pack: CSV cleanup and uptime alerts.",
+      "url": "https://tidybytetools.github.io/tools/n8n-cleanup-sampler/",
+      "github": null,
+      "input": "A messy CSV, or a list of sites to watch.",
+      "output": "A clean CSV, or a Discord or Slack message when a site goes down.",
+      "translations": {
+        "es": {
+          "description": "2 flujos n8n gratis del paquete: limpieza de CSV y avisos de actividad.",
+          "keywords": [
+            "n8n gratis",
+            "muestra n8n",
+            "limpiar csv n8n",
+            "alertas uptime"
+          ]
+        },
+        "pt-BR": {
+          "description": "2 fluxos n8n gratis do pacote: limpeza de CSV e alertas de uptime.",
+          "keywords": [
+            "n8n gratis",
+            "amostra n8n",
+            "limpar csv n8n",
+            "alertas uptime"
+          ]
+        },
+        "de": {
+          "description": "2 kostenlose n8n-Workflows aus dem Paket: CSV-Bereinigung und Uptime-Hinweise.",
+          "keywords": [
+            "n8n kostenlos",
+            "n8n sample",
+            "csv in n8n",
+            "uptime alerts"
+          ]
+        },
+        "fr": {
+          "description": "2 flux n8n gratuits du pack : nettoyage CSV et alertes de disponibilité.",
+          "keywords": [
+            "n8n gratuit",
+            "échantillon n8n",
+            "nettoyer csv n8n",
+            "alertes uptime"
+          ]
+        },
+        "ja": {
+          "description": "パックから無料のn8nワークフローが2本。CSVの整理と稼働の知らせです。",
+          "keywords": [
+            "n8n 無料",
+            "n8n サンプル",
+            "n8n CSV",
+            "稼働監視"
+          ]
+        },
+        "zh-CN": {
+          "description": "从套装中免费提供 2 个 n8n 工作流：CSV 清理和在线状态提醒。",
+          "keywords": [
+            "免费 n8n",
+            "n8n 样例",
+            "n8n 清理 CSV",
+            "可用性提醒"
+          ]
+        }
+      }
+    },
+    {
+      "name": "csv-char-fix",
+      "slug": "csv-char-fix",
+      "description": "Fix weird characters like Ã© and â€™ in CSV and text files.",
+      "url": "https://tidybytetools.github.io/tools/csv-char-fix/",
+      "github": null,
+      "input": "A CSV or text file with broken letters such as JosÃ©.",
+      "output": "The same file with letters fixed, saved as Excel-friendly UTF-8.",
+      "translations": {
+        "es": {
+          "description": "Corrige letras raras como caractères rotos en archivos CSV y de texto.",
+          "keywords": [
+            "arreglar caractères",
+            "mojibake",
+            "utf-8 csv",
+            "letras rotas"
+          ]
+        },
+        "pt-BR": {
+          "description": "Corrija caractères estranhos em CSV e arquivos de texto.",
+          "keywords": [
+            "corrigir caractères",
+            "mojibake",
+            "utf-8 csv",
+            "letras quebradas"
+          ]
+        },
+        "de": {
+          "description": "Kaputte Zeichen in CSV- und Textdateien reparieren.",
+          "keywords": [
+            "zeichen reparieren",
+            "mojibake",
+            "utf-8 csv",
+            "kaputte umlaute"
+          ]
+        },
+        "fr": {
+          "description": "Corriger les caractères bizarres dans des fichiers CSV et texte.",
+          "keywords": [
+            "corriger caractères",
+            "mojibake",
+            "utf-8 csv",
+            "accents cassés"
+          ]
+        },
+        "ja": {
+          "description": "CSVやテキストの文字化けを直します。",
+          "keywords": [
+            "文字化け 修正",
+            "mojibake",
+            "UTF-8 CSV",
+            "壊れた文字"
+          ]
+        },
+        "zh-CN": {
+          "description": "修复 CSV 和文本文件里的乱码。",
+          "keywords": [
+            "修复乱码",
+            "mojibake",
+            "UTF-8 CSV",
+            "奇怪字符"
+          ]
+        }
+      }
+    },
+    {
+      "name": "csv-split",
+      "slug": "csv-split",
+      "description": "Split a big CSV into smaller files. Every new file keeps the header.",
+      "url": "https://tidybytetools.github.io/tools/csv-split/",
+      "github": null,
+      "input": "One CSV file, plus how you want it split (by rows, size, parts, or a column).",
+      "output": "Smaller CSV files that each start with the same header row.",
+      "translations": {
+        "es": {
+          "description": "Parte un CSV grande en archivos más pequeños. Cada uno conserva la cabecera.",
+          "keywords": [
+            "partir csv",
+            "dividir csv",
+            "csv por columna",
+            "archivos más chicos"
+          ]
+        },
+        "pt-BR": {
+          "description": "Divida um CSV grande em arquivos menores. Cada um mantém o cabeçalho.",
+          "keywords": [
+            "dividir csv",
+            "partir csv",
+            "csv por coluna",
+            "arquivos menores"
+          ]
+        },
+        "de": {
+          "description": "Eine große CSV-Datei in kleinere Dateien teilen. Jede behält die Kopfzeile.",
+          "keywords": [
+            "csv teilen",
+            "csv splitten",
+            "csv nach spalte",
+            "kleinere dateien"
+          ]
+        },
+        "fr": {
+          "description": "Découper un gros CSV en fichiers plus petits. Chaque fichier garde l'en-tête.",
+          "keywords": [
+            "découper csv",
+            "diviser csv",
+            "csv par colonne",
+            "fichiers plus petits"
+          ]
+        },
+        "ja": {
+          "description": "大きなCSVを小さなファイルに分けます。どのファイルにも見出し行が残ります。",
+          "keywords": [
+            "CSV 分割",
+            "CSV を分ける",
+            "列で分割",
+            "小さいファイル"
+          ]
+        },
+        "zh-CN": {
+          "description": "把大的 CSV 拆成更小的文件。每个新文件都保留表头。",
+          "keywords": [
+            "拆分 CSV",
+            "切割 CSV",
+            "按列拆分",
+            "小文件"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Regex Pack for Messy Data",
+      "slug": "regex-pack",
+      "description": "49 ready-to-use regex patterns for emails, phones, dates, money, and more.",
+      "url": "https://tidybytetools.github.io/tools/regex-pack/",
+      "github": null,
+      "input": "A value or a CSV column you want to check or tidy.",
+      "output": "A match, a cleaned value, or a yes/no, depending on the pattern.",
+      "translations": {
+        "es": {
+          "description": "49 patrones de regex listos para correos, teléfonos, fechas, dinero y más.",
+          "keywords": [
+            "patrones regex",
+            "regex email",
+            "regex teléfono",
+            "regex fechas"
+          ]
+        },
+        "pt-BR": {
+          "description": "49 padrões de regex prontos para e-mails, telefones, datas, dinheiro e mais.",
+          "keywords": [
+            "padrões regex",
+            "regex email",
+            "regex telefone",
+            "regex datas"
+          ]
+        },
+        "de": {
+          "description": "49 fertige Regex-Muster für E-Mails, Telefone, Daten, Geld und mehr.",
+          "keywords": [
+            "regex muster",
+            "regex e-mail",
+            "regex telefon",
+            "regex datum"
+          ]
+        },
+        "fr": {
+          "description": "49 motifs regex prêts à l'emploi pour e-mails, telephones, dates, argent et plus.",
+          "keywords": [
+            "motifs regex",
+            "regex email",
+            "regex telephone",
+            "regex dates"
+          ]
+        },
+        "ja": {
+          "description": "メール、電話、日付、金額などに使える正規表現が49個あります。",
+          "keywords": [
+            "正規表現 パターン",
+            "メール 正規表現",
+            "電話 正規表現",
+            "日付 正規表現"
+          ]
+        },
+        "zh-CN": {
+          "description": "49 个现成的正则，用于邮箱、电话、日期、金额等。",
+          "keywords": [
+            "正则表达式",
+            "邮箱正则",
+            "电话正则",
+            "日期正则"
+          ]
+        }
+      }
+    },
+    {
+      "name": "CSV Skills for Claude Code",
+      "slug": "claude-data-skills",
+      "description": "4 Claude Code skills that profile, diff, fix, and split CSV files on your computer.",
+      "url": "https://tidybytetools.github.io/tools/claude-data-skills/",
+      "github": null,
+      "input": "A CSV or text file on your computer, opened in Claude Code.",
+      "output": "A short profile, a diff, a fixed file, or smaller split files. The original can stay unchanged.",
+      "translations": {
+        "es": {
+          "description": "4 habilidades de Claude Code para perfilar, comparar, arreglar y partir CSV en tu computadora.",
+          "keywords": [
+            "claude code csv",
+            "habilidades claude",
+            "perfil de csv",
+            "diff de csv"
+          ]
+        },
+        "pt-BR": {
+          "description": "4 habilidades do Claude Code para perfilar, comparar, corrigir e dividir CSV no seu computador.",
+          "keywords": [
+            "claude code csv",
+            "skills claude",
+            "perfil de csv",
+            "diff de csv"
+          ]
+        },
+        "de": {
+          "description": "4 Claude-Code-Skills, die CSV-Dateien auf deinem Rechner profilieren, vergleichen, reparieren und teilen.",
+          "keywords": [
+            "claude code csv",
+            "claude skills",
+            "csv profil",
+            "csv diff"
+          ]
+        },
+        "fr": {
+          "description": "4 compétences Claude Code pour profiler, comparer, réparer et découper des CSV sur votre ordinateur.",
+          "keywords": [
+            "claude code csv",
+            "skills claude",
+            "profil csv",
+            "diff csv"
+          ]
+        },
+        "ja": {
+          "description": "Claude Code用のスキルが4つ。コンピュータ上でCSVの概要、比較、修正、分割ができます。",
+          "keywords": [
+            "Claude Code CSV",
+            "Claude スキル",
+            "CSV プロファイル",
+            "CSV 差分"
+          ]
+        },
+        "zh-CN": {
+          "description": "4 个 Claude Code 技能，在你的电脑上对 CSV 做概览、对比、修复和拆分。",
+          "keywords": [
+            "Claude Code CSV",
+            "Claude 技能",
+            "CSV 概览",
+            "CSV 对比"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Base64 Encode & Decode",
+      "slug": "base64-lite",
+      "description": "Encode or decode Base64 for text and local files, on your computer.",
+      "url": "https://tidybytetools.github.io/tools/base64-lite/",
+      "github": "https://github.com/tidybytetools/base64-lite",
+      "input": "Text or a local file, plus encode, decode, or auto.",
+      "output": "Base64 text, a data URI, or the decoded text or bytes.",
+      "translations": {
+        "es": {
+          "description": "Codifica o decodifica Base64 para texto y archivos locales, en tu computadora.",
+          "keywords": [
+            "codificar base64",
+            "decodificar base64",
+            "base64",
+            "data uri"
+          ]
+        },
+        "pt-BR": {
+          "description": "Codifique ou decodifique Base64 para texto e arquivos locais, no seu computador.",
+          "keywords": [
+            "codificar base64",
+            "decodificar base64",
+            "base64",
+            "data uri"
+          ]
+        },
+        "de": {
+          "description": "Base64 für Text und lokale Dateien auf deinem Rechner kodieren oder dekodieren.",
+          "keywords": [
+            "base64 kodieren",
+            "base64 dekodieren",
+            "base64",
+            "data uri"
+          ]
+        },
+        "fr": {
+          "description": "Encoder ou décoder du Base64 pour du texte et des fichiers locaux, sur votre ordinateur.",
+          "keywords": [
+            "encoder base64",
+            "décoder base64",
+            "base64",
+            "data uri"
+          ]
+        },
+        "ja": {
+          "description": "テキストや手元のファイルを、自分のコンピュータでBase64に変換、または元に戻します。",
+          "keywords": [
+            "Base64 エンコード",
+            "Base64 デコード",
+            "Base64",
+            "data URI"
+          ]
+        },
+        "zh-CN": {
+          "description": "在自己的电脑上，对文本或本地文件做 Base64 编码或解码。",
+          "keywords": [
+            "Base64 编码",
+            "Base64 解码",
+            "Base64",
+            "data URI"
+          ]
+        }
+      },
+      "actor": "tidybytetools/base64-encode-decode",
+      "apify_status": "The public store page is not up yet.",
+      "price": {
+        "event": "item-converted",
+        "title": "Item converted",
+        "usd": 0.001,
+        "unit": "unique texts",
+        "start_fee_usd": 5e-05
+      },
+      "local_mcp": "https://github.com/tidybytetools/base64-lite"
+    },
+    {
+      "name": "JSON Repair",
+      "slug": "json-repair-lite",
+      "description": "Repair broken or incomplete JSON, including output from language models.",
+      "url": "https://tidybytetools.github.io/tools/json-repair-lite/",
+      "github": "https://github.com/tidybytetools/json-repair-lite",
+      "input": "Broken or incomplete JSON, or a local JSON or JSON Lines file.",
+      "output": "Valid JSON. Already-valid input is left alone and marked as wasValid.",
+      "translations": {
+        "es": {
+          "description": "Repara JSON roto o incompleto, incluso la salida de modelos de lenguaje.",
+          "keywords": [
+            "reparar json",
+            "json roto",
+            "arreglar json",
+            "json de un modelo"
+          ]
+        },
+        "pt-BR": {
+          "description": "Repare JSON quebrado ou incompleto, inclusive a saída de modelos de linguagem.",
+          "keywords": [
+            "reparar json",
+            "json quebrado",
+            "consertar json",
+            "json de um modelo"
+          ]
+        },
+        "de": {
+          "description": "Kaputtes oder unvollständiges JSON reparieren, auch die Ausgabe von Sprachmodellen.",
+          "keywords": [
+            "json reparieren",
+            "kaputtes json",
+            "json fixen",
+            "llm json"
+          ]
+        },
+        "fr": {
+          "description": "Réparer du JSON cassé ou incomplet, y compris la sortie des modèles de langue.",
+          "keywords": [
+            "réparer json",
+            "json casse",
+            "corriger json",
+            "json d'un modèle"
+          ]
+        },
+        "ja": {
+          "description": "壊れたJSONや途中までのJSONを直します。言語モデルの出力にも使えます。",
+          "keywords": [
+            "JSON 修復",
+            "壊れた JSON",
+            "JSON 修正",
+            "LLM JSON"
+          ]
+        },
+        "zh-CN": {
+          "description": "修复损坏或不完整的 JSON，包括语言模型的输出。",
+          "keywords": [
+            "修复 JSON",
+            "损坏的 JSON",
+            "整理 JSON",
+            "模型输出 JSON"
+          ]
+        }
+      },
+      "actor": "tidybytetools/json-repair",
+      "apify_status": "The public store page is not up yet.",
+      "price": {
+        "event": "document-repaired",
+        "title": "Document saved",
+        "usd": 0.001,
+        "unit": "documents",
+        "start_fee_usd": 5e-05
+      },
+      "local_mcp": "https://github.com/tidybytetools/json-repair-lite"
+    },
+    {
+      "name": "Hash & Checksum",
+      "slug": "hash-lite",
+      "description": "Hash text or local files with SHA-256, SHA-1, MD5, and optional SHA-512.",
+      "url": "https://tidybytetools.github.io/tools/hash-lite/",
+      "github": "https://github.com/tidybytetools/hash-lite",
+      "input": "Text or a local file, plus the hash algorithms to use.",
+      "output": "Hex and Base64 hashes for each selected algorithm.",
+      "translations": {
+        "es": {
+          "description": "Calcula hashes de texto o archivos locales con SHA-256, SHA-1, MD5 y SHA-512 opcional.",
+          "keywords": [
+            "hash sha-256",
+            "checksum",
+            "md5",
+            "sha-1"
+          ]
+        },
+        "pt-BR": {
+          "description": "Calcule hashes de texto ou arquivos locais com SHA-256, SHA-1, MD5 e SHA-512 opcional.",
+          "keywords": [
+            "hash sha-256",
+            "checksum",
+            "md5",
+            "sha-1"
+          ]
+        },
+        "de": {
+          "description": "Text oder lokale Dateien mit SHA-256, SHA-1, MD5 und optional SHA-512 hashen.",
+          "keywords": [
+            "hash sha-256",
+            "checksum",
+            "md5",
+            "sha-1"
+          ]
+        },
+        "fr": {
+          "description": "Calculer des empreintes de texte ou de fichiers locaux avec SHA-256, SHA-1, MD5 et SHA-512 en option.",
+          "keywords": [
+            "hash sha-256",
+            "somme de contrôle",
+            "md5",
+            "sha-1"
+          ]
+        },
+        "ja": {
+          "description": "テキストや手元のファイルをSHA-256、SHA-1、MD5、必要ならSHA-512でハッシュします。",
+          "keywords": [
+            "SHA-256 ハッシュ",
+            "チェックサム",
+            "MD5",
+            "SHA-1"
+          ]
+        },
+        "zh-CN": {
+          "description": "用 SHA-256、SHA-1、MD5 以及可选的 SHA-512，给文本或本地文件做哈希。",
+          "keywords": [
+            "SHA-256 哈希",
+            "校验和",
+            "MD5",
+            "SHA-1"
+          ]
+        }
+      },
+      "actor": "tidybytetools/hash-checksum",
+      "apify_status": "The public store page is not up yet.",
+      "price": {
+        "event": "input-hashed",
+        "title": "Input hashed",
+        "usd": 0.001,
+        "unit": "unique texts",
+        "start_fee_usd": 5e-05
+      },
+      "local_mcp": "https://github.com/tidybytetools/hash-lite"
+    },
+    {
+      "name": "HTML Table Extractor",
+      "slug": "html-table-extractor",
+      "description": "Pull tables from web pages into CSV and JSON.",
+      "url": "https://tidybytetools.github.io/tools/html-table-extractor/",
+      "github": null,
+      "input": "Page links, or pasted HTML that contains tables.",
+      "output": "One CSV per table, and one dataset row per data row. Header rows are free.",
+      "translations": {
+        "es": {
+          "description": "Saca tablas de páginas web y las guarda en CSV y JSON.",
+          "keywords": [
+            "extraer tablas html",
+            "tablas de una web",
+            "html a csv",
+            "html a json"
+          ]
+        },
+        "pt-BR": {
+          "description": "Tire tabelas de páginas web e salve em CSV e JSON.",
+          "keywords": [
+            "extrair tabelas html",
+            "tabelas de uma página",
+            "html para csv",
+            "html para json"
+          ]
+        },
+        "de": {
+          "description": "Tabellen von Webseiten nach CSV und JSON holen.",
+          "keywords": [
+            "html tabellen extrahieren",
+            "web tabellen",
+            "html nach csv",
+            "html nach json"
+          ]
+        },
+        "fr": {
+          "description": "Extraire les tableaux de pages web vers CSV et JSON.",
+          "keywords": [
+            "extraire tableaux html",
+            "tableaux d'une page",
+            "html vers csv",
+            "html vers json"
+          ]
+        },
+        "ja": {
+          "description": "ウェブページの表をCSVとJSONに取り出します。",
+          "keywords": [
+            "HTML 表 抽出",
+            "ウェブ テーブル",
+            "HTML を CSV",
+            "HTML を JSON"
+          ]
+        },
+        "zh-CN": {
+          "description": "从网页提取表格，导出为 CSV 和 JSON。",
+          "keywords": [
+            "提取 HTML 表格",
+            "网页表格",
+            "HTML 转 CSV",
+            "HTML 转 JSON"
+          ]
+        }
+      },
+      "actor": "tidybytetools/html-table-extractor",
+      "apify": "https://apify.com/tidybytetools/html-table-extractor",
+      "mcp": "https://mcp.apify.com/?tools=tidybytetools/html-table-extractor",
+      "price": {
+        "event": "table-row",
+        "title": "Table row saved",
+        "usd": 0.0005,
+        "unit": "data rows",
+        "start_fee_usd": 5e-05
+      }
+    },
+    {
+      "name": "LLM Token Counter",
+      "slug": "llm-token-counter",
+      "description": "Count tokens and estimate cost for GPT, Claude, and Gemini.",
+      "url": "https://tidybytetools.github.io/tools/llm-token-counter/",
+      "github": null,
+      "input": "Pasted text, a list of texts, or file links, plus the models to count.",
+      "output": "Token counts per model (exact or estimate) and a cost estimate from public list prices.",
+      "translations": {
+        "es": {
+          "description": "Cuenta tokens y estima el costo para GPT, Claude y Gemini.",
+          "keywords": [
+            "contar tokens",
+            "costo de llm",
+            "tokens gpt",
+            "tokens claude"
+          ]
+        },
+        "pt-BR": {
+          "description": "Conte tokens e estime o custo para GPT, Claude e Gemini.",
+          "keywords": [
+            "contar tokens",
+            "custo de llm",
+            "tokens gpt",
+            "tokens claude"
+          ]
+        },
+        "de": {
+          "description": "Tokens zählen und Kosten für GPT, Claude und Gemini schätzen.",
+          "keywords": [
+            "tokens zählen",
+            "llm kosten",
+            "gpt tokens",
+            "claude tokens"
+          ]
+        },
+        "fr": {
+          "description": "Compter les jetons et estimer le coût pour GPT, Claude et Gemini.",
+          "keywords": [
+            "compter tokens",
+            "coût llm",
+            "tokens gpt",
+            "tokens claude"
+          ]
+        },
+        "ja": {
+          "description": "GPT、Claude、Geminiのトークン数を数え、費用の目安を出します。",
+          "keywords": [
+            "トークン カウント",
+            "LLM 費用",
+            "GPT トークン",
+            "Claude トークン"
+          ]
+        },
+        "zh-CN": {
+          "description": "统计 GPT、Claude 和 Gemini 的 token，并估算费用。",
+          "keywords": [
+            "统计 token",
+            "LLM 费用",
+            "GPT token",
+            "Claude token"
+          ]
+        }
+      },
+      "actor": "tidybytetools/llm-token-counter",
+      "apify": "https://apify.com/tidybytetools/llm-token-counter",
+      "mcp": "https://mcp.apify.com/?tools=tidybytetools/llm-token-counter",
+      "price": {
+        "event": "text-counted",
+        "title": "Text counted",
+        "usd": 0.0005,
+        "unit": "unique texts",
+        "start_fee_usd": 5e-05
+      }
+    },
+    {
+      "name": "JSON to CSV Converter",
+      "slug": "json-to-csv",
+      "description": "Flatten nested JSON or JSON Lines into a CSV table.",
+      "url": "https://tidybytetools.github.io/tools/json-to-csv/",
+      "github": null,
+      "input": "JSON, JSON Lines, or a dataset link. You pick how lists are flattened.",
+      "output": "A flat CSV table, with columns like user.name and user.tags.",
+      "translations": {
+        "es": {
+          "description": "Aplana JSON anidado o JSON Lines y lo convierte en una tabla CSV.",
+          "keywords": [
+            "json a csv",
+            "aplanar json",
+            "json lines a csv",
+            "json anidado"
+          ]
+        },
+        "pt-BR": {
+          "description": "Achate JSON aninhado ou JSON Lines e transforme em uma tabela CSV.",
+          "keywords": [
+            "json para csv",
+            "achatar json",
+            "json lines para csv",
+            "json aninhado"
+          ]
+        },
+        "de": {
+          "description": "Verschachteltes JSON oder JSON Lines in eine CSV-Tabelle flach machen.",
+          "keywords": [
+            "json zu csv",
+            "json flach machen",
+            "json lines zu csv",
+            "verschachteltes json"
+          ]
+        },
+        "fr": {
+          "description": "Aplatir du JSON imbriqué ou du JSON Lines en un tableau CSV.",
+          "keywords": [
+            "json vers csv",
+            "aplatir json",
+            "json lines vers csv",
+            "json imbriqué"
+          ]
+        },
+        "ja": {
+          "description": "入れ子のJSONやJSON Linesを平坦にしてCSV表にします。",
+          "keywords": [
+            "JSON を CSV",
+            "JSON 平坦化",
+            "JSON Lines を CSV",
+            "入れ子 JSON"
+          ]
+        },
+        "zh-CN": {
+          "description": "把嵌套 JSON 或 JSON Lines 展平为 CSV 表。",
+          "keywords": [
+            "JSON 转 CSV",
+            "展平 JSON",
+            "JSON Lines 转 CSV",
+            "嵌套 JSON"
+          ]
+        }
+      },
+      "actor": "tidybytetools/json-to-csv-flattener",
+      "apify": "https://apify.com/tidybytetools/json-to-csv-flattener",
+      "mcp": "https://mcp.apify.com/?tools=tidybytetools/json-to-csv-flattener",
+      "price": {
+        "event": "row-converted",
+        "title": "Row converted",
+        "usd": 0.0001,
+        "unit": "rows",
+        "start_fee_usd": 5e-05
+      }
+    },
+    {
+      "name": "CSV Encoding Fixer",
+      "slug": "csv-encoding-fixer",
+      "description": "Fix broken characters in CSV files and split large files.",
+      "url": "https://tidybytetools.github.io/tools/csv-encoding-fixer/",
+      "github": null,
+      "input": "A CSV file or pasted CSV text. Optional: split into parts after the fix.",
+      "output": "A clean UTF-8 CSV that opens right in Excel. Split parts each keep the header.",
+      "translations": {
+        "es": {
+          "description": "Corrige caractères rotos en CSV y puede partir archivos grandes.",
+          "keywords": [
+            "arreglar encoding csv",
+            "mojibake csv",
+            "partir csv",
+            "utf-8 excel"
+          ]
+        },
+        "pt-BR": {
+          "description": "Corrija caractères quebrados em CSV e divida arquivos grandes.",
+          "keywords": [
+            "corrigir encoding csv",
+            "mojibake csv",
+            "dividir csv",
+            "utf-8 excel"
+          ]
+        },
+        "de": {
+          "description": "Kaputte Zeichen in CSV-Dateien reparieren und große Dateien teilen.",
+          "keywords": [
+            "csv encoding reparieren",
+            "mojibake csv",
+            "csv teilen",
+            "utf-8 excel"
+          ]
+        },
+        "fr": {
+          "description": "Corriger les caractères cassés dans des CSV et découper les gros fichiers.",
+          "keywords": [
+            "corriger encodage csv",
+            "mojibake csv",
+            "découper csv",
+            "utf-8 excel"
+          ]
+        },
+        "ja": {
+          "description": "CSVの文字化けを直し、大きなファイルを分割することもできます。",
+          "keywords": [
+            "CSV 文字コード 修正",
+            "CSV 文字化け",
+            "CSV 分割",
+            "Excel UTF-8"
+          ]
+        },
+        "zh-CN": {
+          "description": "修复 CSV 中的乱码，也可以拆分大文件。",
+          "keywords": [
+            "修复 CSV 编码",
+            "CSV 乱码",
+            "拆分 CSV",
+            "Excel UTF-8"
+          ]
+        }
+      },
+      "actor": "tidybytetools/csv-encoding-fixer-splitter",
+      "apify": "https://apify.com/tidybytetools/csv-encoding-fixer-splitter",
+      "mcp": "https://mcp.apify.com/?tools=tidybytetools/csv-encoding-fixer-splitter",
+      "price": {
+        "event": "file-fixed",
+        "title": "File fixed",
+        "usd": 0.01,
+        "unit": "files",
+        "start_fee_usd": 5e-05
+      }
+    },
+    {
+      "name": "JSON Schema Validator",
+      "slug": "json-schema-validator",
+      "description": "Check JSON documents against a schema and see what failed.",
+      "url": "https://tidybytetools.github.io/tools/json-schema-validator/",
+      "github": null,
+      "input": "A JSON Schema, plus JSON documents (one value, an array, or JSON Lines).",
+      "output": "A pass or fail for each document, the field path, and a plain error message.",
+      "translations": {
+        "es": {
+          "description": "Comprueba documentos JSON contra un esquema y te dice qué falló.",
+          "keywords": [
+            "validar json schema",
+            "esquema json",
+            "validar json",
+            "errores de schema"
+          ]
+        },
+        "pt-BR": {
+          "description": "Confira documentos JSON com um schema e veja o que falhou.",
+          "keywords": [
+            "validar json schema",
+            "esquema json",
+            "validar json",
+            "erros de schema"
+          ]
+        },
+        "de": {
+          "description": "JSON-Dokumente gegen ein Schema prüfen und sehen, was fehlgeschlagen ist.",
+          "keywords": [
+            "json schema prüfen",
+            "json schema",
+            "json validieren",
+            "schema fehler"
+          ]
+        },
+        "fr": {
+          "description": "Vérifier des documents JSON par rapport a un schema et voir ce qui a échoué.",
+          "keywords": [
+            "valider json schema",
+            "schema json",
+            "valider json",
+            "erreurs de schema"
+          ]
+        },
+        "ja": {
+          "description": "JSON文書をスキーマと照らし、どこが失敗したかを示します。",
+          "keywords": [
+            "JSON Schema 検証",
+            "JSON スキーマ",
+            "JSON バリデーション",
+            "スキーマ エラー"
+          ]
+        },
+        "zh-CN": {
+          "description": "按 JSON Schema 检查文档，并说明哪里未通过。",
+          "keywords": [
+            "校验 JSON Schema",
+            "JSON 模式",
+            "验证 JSON",
+            "Schema 错误"
+          ]
+        }
+      },
+      "actor": "tidybytetools/json-schema-validator",
+      "apify": "https://apify.com/tidybytetools/json-schema-validator",
+      "mcp": "https://mcp.apify.com/?tools=tidybytetools/json-schema-validator",
+      "price": {
+        "event": "document-validated",
+        "title": "Document validated",
+        "usd": 0.001,
+        "unit": "documents",
+        "start_fee_usd": 5e-05
+      }
+    },
+    {
+      "name": "Link Preview",
+      "slug": "link-preview",
+      "description": "Pull the title, description, and image from a web page.",
+      "url": "https://tidybytetools.github.io/tools/link-preview/",
+      "github": null,
+      "input": "One or more page links.",
+      "output": "A preview object with title, description, image, canonical URL, and optional JSON-LD.",
+      "translations": {
+        "es": {
+          "description": "Saca el título, la descripción y la imagen de una página web.",
+          "keywords": [
+            "vista prévia de enlace",
+            "open graph",
+            "twitter card",
+            "meta tags"
+          ]
+        },
+        "pt-BR": {
+          "description": "Tire o título, a descrição e a imagem de uma página web.",
+          "keywords": [
+            "prévia de link",
+            "open graph",
+            "twitter card",
+            "meta tags"
+          ]
+        },
+        "de": {
+          "description": "Titel, Beschreibung und Bild einer Webseite auslesen.",
+          "keywords": [
+            "link vorschau",
+            "open graph",
+            "twitter card",
+            "meta tags"
+          ]
+        },
+        "fr": {
+          "description": "Récupérer le titre, la description et l'image d'une page web.",
+          "keywords": [
+            "aperçu de lien",
+            "open graph",
+            "twitter card",
+            "balises meta"
+          ]
+        },
+        "ja": {
+          "description": "ウェブページからタイトル、説明、画像を取り出します。",
+          "keywords": [
+            "リンク プレビュー",
+            "Open Graph",
+            "Twitterカード",
+            "メタタグ"
+          ]
+        },
+        "zh-CN": {
+          "description": "取出网页的标题、描述和图片。",
+          "keywords": [
+            "链接预览",
+            "Open Graph",
+            "Twitter Card",
+            "meta 标签"
+          ]
+        }
+      },
+      "actor": "tidybytetools/link-preview",
+      "apify": "https://apify.com/tidybytetools/link-preview",
+      "mcp": "https://mcp.apify.com/?tools=tidybytetools/link-preview",
+      "price": {
+        "event": "page-previewed",
+        "title": "Page previewed",
+        "usd": 0.002,
+        "unit": "pages",
+        "start_fee_usd": 5e-05
+      }
+    },
+    {
+      "name": "Language Detector",
+      "slug": "language-detector",
+      "description": "Detect the language of a text, offline, with a confidence score.",
+      "url": "https://tidybytetools.github.io/tools/language-detector/",
+      "github": null,
+      "input": "Pasted text, a list of texts, or file links.",
+      "output": "Language name, ISO 639-1 and 639-3 codes, a confidence score, and close alternatives.",
+      "translations": {
+        "es": {
+          "description": "Detecta el idioma de un texto, sin conexión, con un grado de certeza.",
+          "keywords": [
+            "detectar idioma",
+            "código iso idioma",
+            "idioma de un texto",
+            "offline"
+          ]
+        },
+        "pt-BR": {
+          "description": "Detecte o idioma de um texto, offline, com um grau de confiança.",
+          "keywords": [
+            "detectar idioma",
+            "código iso de idioma",
+            "idioma de um texto",
+            "offline"
+          ]
+        },
+        "de": {
+          "description": "Die Sprache eines Textes offline erkennen, mit einem Sicherheitswert.",
+          "keywords": [
+            "sprache erkennen",
+            "iso sprachcode",
+            "textsprache",
+            "offline"
+          ]
+        },
+        "fr": {
+          "description": "Détecter la langue d'un texte, hors ligne, avec un score de confiance.",
+          "keywords": [
+            "détecter la langue",
+            "code iso langue",
+            "langue d'un texte",
+            "hors ligne"
+          ]
+        },
+        "ja": {
+          "description": "テキストの言語をオフラインで判定し、確信度も出します。",
+          "keywords": [
+            "言語判定",
+            "ISO 言語コード",
+            "テキストの言語",
+            "オフライン"
+          ]
+        },
+        "zh-CN": {
+          "description": "离线检测文本的语言，并给出置信度。",
+          "keywords": [
+            "语言检测",
+            "ISO 语言代码",
+            "文本语言",
+            "离线"
+          ]
+        }
+      },
+      "actor": "tidybytetools/language-detector",
+      "apify": "https://apify.com/tidybytetools/language-detector",
+      "mcp": "https://mcp.apify.com/?tools=tidybytetools/language-detector",
+      "price": {
+        "event": "text-detected",
+        "title": "Text language detected",
+        "usd": 0.0008,
+        "unit": "unique texts",
+        "start_fee_usd": 5e-05
+      }
+    },
+    {
+      "name": "Date & Timezone Normalizer",
+      "slug": "date-timezone",
+      "description": "Turn messy dates into a timezone you choose, as ISO 8601.",
+      "url": "https://tidybytetools.github.io/tools/date-timezone/",
+      "github": null,
+      "input": "A list of date strings, a source timezone, and a target timezone.",
+      "output": "ISO 8601, UTC, a Unix timestamp, and a flag if the date could be read two ways.",
+      "translations": {
+        "es": {
+          "description": "Convierte fechas desordenadas a la zona horaria que elijas, en ISO 8601.",
+          "keywords": [
+            "normalizar fechas",
+            "zona horaria",
+            "iso 8601",
+            "parsear fechas"
+          ]
+        },
+        "pt-BR": {
+          "description": "Transforme datas bagunçadas no fuso que você escolher, em ISO 8601.",
+          "keywords": [
+            "normalizar datas",
+            "fuso horário",
+            "iso 8601",
+            "interpretar datas"
+          ]
+        },
+        "de": {
+          "description": "Unordentliche Daten in eine gewählte Zeitzone als ISO 8601 umwandeln.",
+          "keywords": [
+            "daten normalisieren",
+            "zeitzone",
+            "iso 8601",
+            "daten parsen"
+          ]
+        },
+        "fr": {
+          "description": "Transformer des dates en désordre vers le fuseau que vous choisissez, en ISO 8601.",
+          "keywords": [
+            "normaliser dates",
+            "fuseau horaire",
+            "iso 8601",
+            "analyser dates"
+          ]
+        },
+        "ja": {
+          "description": "乱れた日付を、選んだタイムゾーンのISO 8601に整えます。",
+          "keywords": [
+            "日付 正規化",
+            "タイムゾーン",
+            "ISO 8601",
+            "日付 解析"
+          ]
+        },
+        "zh-CN": {
+          "description": "把杂乱日期转到你选定的时区，并写成 ISO 8601。",
+          "keywords": [
+            "规范化日期",
+            "时区转换",
+            "ISO 8601",
+            "解析日期"
+          ]
+        }
+      },
+      "actor": "tidybytetools/date-timezone-normalizer",
+      "apify": "https://apify.com/tidybytetools/date-timezone-normalizer",
+      "mcp": "https://mcp.apify.com/?tools=tidybytetools/date-timezone-normalizer",
+      "price": {
+        "event": "date-normalized",
+        "title": "Date normalized",
+        "usd": 0.001,
+        "unit": "dates",
+        "start_fee_usd": 5e-05
+      }
+    }
+  ]
+}

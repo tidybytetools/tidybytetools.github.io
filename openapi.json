@@ -1,0 +1,614 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Tidy Byte Tools Apify API",
+    "description": "Call public Tidy Byte Tools actors with the Apify run-sync API. POST the actor input as JSON. You need an Apify API token. See also https://mcp.apify.com/ and this site's /connect/ page. Actors whose public store page is not up yet are omitted here.",
+    "version": "2026-11-10"
+  },
+  "servers": [
+    {
+      "url": "https://api.apify.com/v2",
+      "description": "Apify API"
+    }
+  ],
+  "paths": {
+    "/acts/tidybytetools~pdf-table-pull/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_pdf_table_pull",
+        "summary": "PDF Table Pull",
+        "description": "PDF Table Pull: Pull tables out of PDFs into Excel, CSV, or JSON. Input: A PDF file or a link to a PDF. Output: Tables as Excel, CSV, or JSON. Numbers like (40) become -40. Price: $0.003 per pages with a table (Page with a table). Start fee $5e-05.",
+        "tags": [
+          "PDF Table Pull"
+        ],
+        "security": [
+          {
+            "ApifyToken": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Dataset items from a finished run.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/tidybytetools~doc-to-markdown/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_doc2md",
+        "summary": "Doc to Markdown",
+        "description": "Doc to Markdown: Turn PDFs, Word files, and web pages into clean Markdown. Input: A PDF, Word file, HTML file, or a page link. Output: Clean Markdown. Tables stay as Markdown tables. Paid runs can also write RAG chunks. Price: $0.003 per files (File converted). Start fee $5e-05.",
+        "tags": [
+          "Doc to Markdown"
+        ],
+        "security": [
+          {
+            "ApifyToken": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Dataset items from a finished run.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/tidybytetools~csv-excel-data-cleaner/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_sheet_scrub",
+        "summary": "CSV & spreadsheet cleanup",
+        "description": "CSV & spreadsheet cleanup: Clean messy CSV and Excel files: dates, phones, emails, and duplicates. Input: A CSV, Excel, or JSON table. Output: A clean CSV and a short report of what changed. Removed rows are free. Price: $0.0005 per clean rows (Clean row saved). Start fee $5e-05.",
+        "tags": [
+          "CSV & spreadsheet cleanup"
+        ],
+        "security": [
+          {
+            "ApifyToken": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Dataset items from a finished run.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/tidybytetools~phone-number-validator-formatter/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_phone_validator",
+        "summary": "Phone Number Validator",
+        "description": "Phone Number Validator: Check phone numbers and format them as E.164, in bulk, offline. Input: A list of phone numbers, plus a default country for numbers with no country code. Output: Valid or not, plus E.164, international, and national forms, country, and line type. Price: $0.001 per numbers (Phone number checked). Start fee $5e-05.",
+        "tags": [
+          "Phone Number Validator"
+        ],
+        "security": [
+          {
+            "ApifyToken": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Dataset items from a finished run.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/tidybytetools~broken-link-checker/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_link_check",
+        "summary": "Broken Link Checker",
+        "description": "Broken Link Checker: Check a list of links for status codes, redirects, and broken pages. Input: A list of links, a sitemap, or pages to scan for links. Output: Status code, redirect chain, final URL, and a short report of broken links. Price: $0.001 per links (Link checked). Start fee $5e-05.",
+        "tags": [
+          "Broken Link Checker"
+        ],
+        "security": [
+          {
+            "ApifyToken": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Dataset items from a finished run.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/tidybytetools~markdown-rag-chunker/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_markdown_chunker",
+        "summary": "Markdown Chunker for RAG",
+        "description": "Markdown Chunker for RAG: Split Markdown into chunks for AI search, with heading paths kept. Input: Markdown or plain text, plus a max chunk size. Output: JSON lines with text, heading path, line numbers, and an id for each chunk. Price: $0.0001 per chunks (Chunk created). Start fee $5e-05.",
+        "tags": [
+          "Markdown Chunker for RAG"
+        ],
+        "security": [
+          {
+            "ApifyToken": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Dataset items from a finished run.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/tidybytetools~html-table-extractor/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_html_table_extractor",
+        "summary": "HTML Table Extractor",
+        "description": "HTML Table Extractor: Pull tables from web pages into CSV and JSON. Input: Page links, or pasted HTML that contains tables. Output: One CSV per table, and one dataset row per data row. Header rows are free. Price: $0.0005 per data rows (Table row saved). Start fee $5e-05.",
+        "tags": [
+          "HTML Table Extractor"
+        ],
+        "security": [
+          {
+            "ApifyToken": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Dataset items from a finished run.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/tidybytetools~llm-token-counter/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_llm_token_counter",
+        "summary": "LLM Token Counter",
+        "description": "LLM Token Counter: Count tokens and estimate cost for GPT, Claude, and Gemini. Input: Pasted text, a list of texts, or file links, plus the models to count. Output: Token counts per model (exact or estimate) and a cost estimate from public list prices. Price: $0.0005 per unique texts (Text counted). Start fee $5e-05.",
+        "tags": [
+          "LLM Token Counter"
+        ],
+        "security": [
+          {
+            "ApifyToken": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Dataset items from a finished run.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/tidybytetools~json-to-csv-flattener/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_json_to_csv",
+        "summary": "JSON to CSV Converter",
+        "description": "JSON to CSV Converter: Flatten nested JSON or JSON Lines into a CSV table. Input: JSON, JSON Lines, or a dataset link. You pick how lists are flattened. Output: A flat CSV table, with columns like user.name and user.tags. Price: $0.0001 per rows (Row converted). Start fee $5e-05.",
+        "tags": [
+          "JSON to CSV Converter"
+        ],
+        "security": [
+          {
+            "ApifyToken": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Dataset items from a finished run.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/tidybytetools~csv-encoding-fixer-splitter/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_csv_encoding_fixer",
+        "summary": "CSV Encoding Fixer",
+        "description": "CSV Encoding Fixer: Fix broken characters in CSV files and split large files. Input: A CSV file or pasted CSV text. Optional: split into parts after the fix. Output: A clean UTF-8 CSV that opens right in Excel. Split parts each keep the header. Price: $0.01 per files (File fixed). Start fee $5e-05.",
+        "tags": [
+          "CSV Encoding Fixer"
+        ],
+        "security": [
+          {
+            "ApifyToken": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Dataset items from a finished run.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/tidybytetools~json-schema-validator/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_json_schema_validator",
+        "summary": "JSON Schema Validator",
+        "description": "JSON Schema Validator: Check JSON documents against a schema and see what failed. Input: A JSON Schema, plus JSON documents (one value, an array, or JSON Lines). Output: A pass or fail for each document, the field path, and a plain error message. Price: $0.001 per documents (Document validated). Start fee $5e-05.",
+        "tags": [
+          "JSON Schema Validator"
+        ],
+        "security": [
+          {
+            "ApifyToken": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Dataset items from a finished run.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/tidybytetools~link-preview/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_link_preview",
+        "summary": "Link Preview",
+        "description": "Link Preview: Pull the title, description, and image from a web page. Input: One or more page links. Output: A preview object with title, description, image, canonical URL, and optional JSON-LD. Price: $0.002 per pages (Page previewed). Start fee $5e-05.",
+        "tags": [
+          "Link Preview"
+        ],
+        "security": [
+          {
+            "ApifyToken": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Dataset items from a finished run.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/tidybytetools~language-detector/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_language_detector",
+        "summary": "Language Detector",
+        "description": "Language Detector: Detect the language of a text, offline, with a confidence score. Input: Pasted text, a list of texts, or file links. Output: Language name, ISO 639-1 and 639-3 codes, a confidence score, and close alternatives. Price: $0.0008 per unique texts (Text language detected). Start fee $5e-05.",
+        "tags": [
+          "Language Detector"
+        ],
+        "security": [
+          {
+            "ApifyToken": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Dataset items from a finished run.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/tidybytetools~date-timezone-normalizer/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_date_timezone",
+        "summary": "Date & Timezone Normalizer",
+        "description": "Date & Timezone Normalizer: Turn messy dates into a timezone you choose, as ISO 8601. Input: A list of date strings, a source timezone, and a target timezone. Output: ISO 8601, UTC, a Unix timestamp, and a flag if the date could be read two ways. Price: $0.001 per dates (Date normalized). Start fee $5e-05.",
+        "tags": [
+          "Date & Timezone Normalizer"
+        ],
+        "security": [
+          {
+            "ApifyToken": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Dataset items from a finished run.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "ApifyToken": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "Authorization",
+        "description": "Use 'Bearer <APIFY_TOKEN>'."
+      }
+    }
+  }
+}
