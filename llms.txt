@@ -208,6 +208,7 @@ Do not invent reviews, user counts, or testimonials. Do not use a personal name 
     - zh-CN: 4 个 Claude Code 技能，在你的电脑上对 CSV 做概览、对比、修复和拆分。 | Claude Code CSV, Claude 技能, CSV 概览, CSV 对比
 - [Base64 Encode & Decode](https://tidybytetools.github.io/tools/base64-lite/): Encode or decode Base64 for text and local files, on your computer.
   - Free lite GitHub: https://github.com/tidybytetools/base64-lite
+  - Pay per use (Apify, $0.001 per unique item): https://apify.com/tidybytetools/base64-encode-decode
   - Multilingual keywords:
     - es: Codifica o decodifica Base64 para texto y archivos locales, en tu computadora. | codificar base64, decodificar base64, base64, data uri
     - pt-BR: Codifique ou decodifique Base64 para texto e arquivos locais, no seu computador. | codificar base64, decodificar base64, base64, data uri

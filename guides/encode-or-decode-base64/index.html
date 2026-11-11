@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How to encode or decode Base64 for text and files · Tidy Byte Tools</title>
+  <meta name="description" content="Encode or decode Base64 for text and files. Start with built-in commands or a free local tool. Use the cloud Actor when you have many items or file links.">
+  <link rel="canonical" href="https://tidybytetools.github.io/guides/encode-or-decode-base64/">
+  
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preload" href="/assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <meta name="theme-color" content="#F4F7F5" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0D1512" media="(prefers-color-scheme: dark)">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Tidy Byte Tools">
+  <meta property="og:title" content="How to encode or decode Base64 for text and files · Tidy Byte Tools">
+  <meta property="og:description" content="Encode or decode Base64 for text and files. Start with built-in commands or a free local tool. Use the cloud Actor when you have many items or file links.">
+  <meta property="og:url" content="https://tidybytetools.github.io/guides/encode-or-decode-base64/">
+  <meta property="og:image" content="https://tidybytetools.github.io/assets/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to encode or decode Base64 for text and files · Tidy Byte Tools">
+  <meta name="twitter:description" content="Encode or decode Base64 for text and files. Start with built-in commands or a free local tool. Use the cloud Actor when you have many items or file links.">
+  <meta name="twitter:image" content="https://tidybytetools.github.io/assets/img/og.png">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  
+</head>
+
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="header-inner">
+
+    <a class="logo" href="/">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="/assets/img/lockup-horizontal-dark.svg">
+        <img src="/assets/img/lockup-horizontal-light.svg" alt="Tidy Byte Tools" height="32" width="118">
+      </picture>
+    </a>
+    
+<div class="header-tools">
+<nav aria-label="Primary"><ul><li><a href="/tools/">Tools</a></li><li><a href="/guides/" aria-current="page">Guides</a></li><li><a href="/#how">How it works</a></li><li><a href="/#faq">FAQ</a></li><li><a href="/connect/">For AI agents</a></li><li><a href="/api/">API</a></li><li><a href="https://github.com/tidybytetools">GitHub</a></li></ul></nav>
+<nav class="lang-switch" aria-label="Language"><ul class="lang-switch"><li><a href="/guides/encode-or-decode-base64/" lang="en" hreflang="en" title="English" aria-current="true">EN</a></li><li><a href="/es/" lang="es" hreflang="es" title="Español">ES</a></li><li><a href="/pt/" lang="pt-BR" hreflang="pt-BR" title="Português">PT</a></li><li><a href="/de/" lang="de" hreflang="de" title="Deutsch">DE</a></li><li><a href="/fr/" lang="fr" hreflang="fr" title="Français">FR</a></li><li><a href="/ja/" lang="ja" hreflang="ja" title="日本語">JA</a></li><li><a href="/zh/" lang="zh-CN" hreflang="zh-CN" title="中文">中文</a></li></ul></nav>
+</div></div></header>
+<main id="main">
+    <section class="wrap page-hero">
+      <p class="crumb"><a href="/">Home</a> / <a href="/guides/">Guides</a> / How to encode or decode Base64 for text and files</p>
+      <h1>How to encode or decode Base64 for text and files</h1>
+      <p class="lede">Encode or decode Base64 for text and files. Start with built-in commands or a free local tool. Use the cloud Actor when you have many items or file links.</p>
+    </section>
+    <section class="wrap" style="padding-bottom:48px">
+      <article class="prose guide-body"><p>You have some text, or a small file, and you need it in Base64. That is a common job for data URIs, email-safe text, and APIs that only accept text. This page shows the honest options, starting with tools you may already have. We made the paid and free Tidy Byte Tools options below.</p>
+<p>Base64 is encoding, not encryption. Anyone can turn it back into the original bytes. Do not use it to hide passwords or keys.</p>
+<h2>Try a built-in command first</h2>
+<p>If you only need to convert one short string, a tool already on your computer is often enough.</p>
+<p><strong>macOS and Linux</strong></p>
+<pre><code>printf &#x27;hello world&#x27; | base64
+printf &#x27;aGVsbG8gd29ybGQ=&#x27; | base64 --decode</code></pre>
+<p>On macOS the second command may need <code>base64 -D</code> instead of <code>base64 --decode</code>.</p>
+<p><strong>Python 3</strong> (Windows, macOS, or Linux)</p>
+<pre><code>python3 -c &quot;import base64; print(base64.b64encode(b&#x27;hello world&#x27;).decode())&quot;
+python3 -c &quot;import base64; print(base64.b64decode(&#x27;aGVsbG8gd29ybGQ=&#x27;).decode())&quot;</code></pre>
+<p><strong>Windows PowerShell</strong></p>
+<pre><code>[Convert]::ToBase64String([Text.Encoding]::UTF8.GetBytes(&#x27;hello world&#x27;))
+[Text.Encoding]::UTF8.GetString([Convert]::FromBase64String(&#x27;aGVsbG8gd29ybGQ=&#x27;))</code></pre>
+<p>If that already gives you the result, you are done.</p>
+<p>Do <strong>not</strong> paste passwords, API keys, or private files into a random website. Many "online Base64" pages send what you paste to a server.</p>
+<h2>Free local tool: base64-lite</h2>
+<p><a href="https://github.com/tidybytetools/base64-lite">base64-lite</a> is a free tool you run on your own computer. It has a command-line tool and an MCP server for AI apps. There is no API key and no account. We made it.</p>
+<p><strong>What it does</strong></p>
+<ul>
+<li>Encodes or decodes Base64 for text and local files.</li>
+<li>Supports the URL-safe alphabet (<code>-</code> and <code>_</code>) and data-URI output.</li>
+<li>Can auto-detect encode vs decode, or you can set the direction yourself.</li>
+<li>Runs offline, so the file stays on your machine.</li>
+</ul>
+<p><strong>What it does not do</strong></p>
+<ul>
+<li>It does <strong>not</strong> fetch file links from the internet.</li>
+<li>The MCP file tool has a <strong>5 MB</strong> cap. The command line can read a larger local file.</li>
+<li>Auto-detect can guess wrong on short or unusual strings. Set <code>encode</code> or <code>decode</code> when you already know the direction.</li>
+<li>It does <strong>not</strong> inspect decoded bytes for viruses or hidden data.</li>
+</ul>
+<h3>Install and run</h3>
+<p>You need Python 3. The package is not on PyPI yet, so install it from GitHub:</p>
+<pre><code>pip install git+https://github.com/tidybytetools/base64-lite
+printf &#x27;hello world&#x27; | base64-lite --action encode
+base64-lite photo.png --action encode --data-uri
+printf &#x27;aGVsbG8gd29ybGQ=&#x27; | base64-lite --action decode</code></pre>
+<p>To use it from Claude Desktop or Cursor, see the <a href="https://github.com/tidybytetools/base64-lite#use-it-from-claude-desktop-or-cursor-mcp">repository README</a>. The product page is <a href="https://tidybytetools.github.io/tools/base64-lite/">on our site</a>.</p>
+<h2>Free HTTP API, with a daily cap</h2>
+<p>If you want a simple HTTPS call and the text is small (up to 16 KB), you can use our free <a href="https://tidybytetools.tidybytetools.workers.dev">Tidy Byte Tools API</a>:</p>
+<pre><code>curl -sS https://tidybytetools.tidybytetools.workers.dev/v1/base64 \
+  -H &#x27;content-type: application/json&#x27; \
+  -d &#x27;{&quot;action&quot;:&quot;encode&quot;,&quot;text&quot;:&quot;hello world&quot;}&#x27;</code></pre>
+<p>Anonymous use is 50 calls per IP per UTC day. A free key (<code>POST /keys</code>) raises that to 200 calls a day. This path is for short text, not large files and not file URLs.</p>
+<h2>When you need many items or file links</h2>
+<p>Use the cloud tool if you need any of these:</p>
+<ul>
+<li>Many texts or files in one run (repeats in the same run are free)</li>
+<li>A public file link, not a file already on your computer</li>
+<li>A scheduled run in the cloud</li>
+</ul>
+<p><a href="https://apify.com/tidybytetools/base64-encode-decode">Base64 Encoder &amp; Decoder</a> runs on Apify. It costs <strong>$0.001 per unique item</strong>. Failed items are free. We made this Actor too. You can also run it from Apify MCP.</p>
+<p>If you only need one local string, the built-in commands or the free lite tool are the better fit.</p></article>
+      <aside style="margin-top:36px">
+        <h2>More guides</h2>
+        <ul><li><a href="/guides/check-a-website-for-broken-links/">How to check a website for broken links</a></li><li><a href="/guides/count-llm-tokens-and-estimate-cost/">How to count LLM tokens and estimate cost</a></li><li><a href="/guides/extract-pdf-tables-to-excel-or-csv/">How to extract tables from a PDF into Excel or CSV</a></li><li><a href="/guides/flatten-nested-json-into-csv/">How to flatten nested JSON into CSV</a></li><li><a href="/guides/turn-pdf-or-word-into-markdown-for-ai/">How to turn a PDF or Word file into Markdown for AI and notes</a></li></ul>
+      </aside>
+    </section>
+    </main>
+
+<footer class="site-footer">
+  
+  <section class="featured-on" aria-label="Featured on">
+    <div class="wrap">
+      <h2>Featured on</h2>
+      <p>As directories list us, their marks will show up here.</p>
+      <ul class="featured-logos"></ul>
+    </div>
+  </section>
+
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      
+    <a class="logo" href="/">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="/assets/img/lockup-horizontal-dark.svg">
+        <img src="/assets/img/lockup-horizontal-light.svg" alt="Tidy Byte Tools" height="32" width="118">
+      </picture>
+    </a>
+    
+      <p>Small tools that clean up messy data. Each one does one job and does it well.</p>
+    </div>
+    <div>
+      <h2>Tools</h2>
+      <ul><li><a href="/tools/pdf-table-pull/">PDF Table Pull</a></li>
+<li><a href="/tools/doc2md/">Doc to Markdown</a></li>
+<li><a href="/tools/sheet-scrub/">CSV &amp; spreadsheet cleanup</a></li>
+<li><a href="/tools/json-shaper/">JSON Shaper</a></li>
+<li><a href="/tools/lead-sheet-fixer/">Lead Sheet Fixer</a></li>
+<li><a href="/tools/phone-validator/">Phone Number Validator</a></li>
+<li><a href="/tools/data-cleanup-bundle/">Data Cleanup Bundle</a></li>
+<li><a href="/tools/link-check/">Broken Link Checker</a></li>
+<li><a href="/tools/server-pulse/">Server Pulse</a></li>
+<li><a href="/tools/markdown-chunker/">Markdown Chunker for RAG</a></li>
+<li><a href="/tools/gif-forge/">GIF Forge</a></li>
+<li><a href="/tools/n8n-data-cleanup-pack/">n8n Data Cleanup Pack</a></li>
+<li><a href="/tools/n8n-cleanup-sampler/">n8n Cleanup Sampler</a></li>
+<li><a href="/tools/csv-char-fix/">csv-char-fix</a></li>
+<li><a href="/tools/csv-split/">csv-split</a></li>
+<li><a href="/tools/regex-pack/">Regex Pack for Messy Data</a></li>
+<li><a href="/tools/claude-data-skills/">CSV Skills for Claude Code</a></li>
+<li><a href="/tools/base64-lite/">Base64 Encode &amp; Decode</a></li>
+<li><a href="/tools/json-repair-lite/">JSON Repair</a></li>
+<li><a href="/tools/hash-lite/">Hash &amp; Checksum</a></li>
+<li><a href="/tools/html-table-extractor/">HTML Table Extractor</a></li>
+<li><a href="/tools/llm-token-counter/">LLM Token Counter</a></li>
+<li><a href="/tools/json-to-csv/">JSON to CSV Converter</a></li>
+<li><a href="/tools/csv-encoding-fixer/">CSV Encoding Fixer</a></li>
+<li><a href="/tools/json-schema-validator/">JSON Schema Validator</a></li>
+<li><a href="/tools/link-preview/">Link Preview</a></li>
+<li><a href="/tools/language-detector/">Language Detector</a></li>
+<li><a href="/tools/date-timezone/">Date &amp; Timezone Normalizer</a></li></ul>
+    </div>
+    <div>
+      <h2>Shops</h2>
+      <ul>
+        <li><a href="https://apify.com/tidybytetools">Apify</a></li>
+        <li><a href="https://tidybyte.gumroad.com">Gumroad</a></li>
+        <li><a href="https://github.com/tidybytetools">GitHub</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>This site</h2>
+      <ul>
+        <li><a href="/guides/">Guides</a></li>
+        <li><a href="/connect/">For AI agents</a></li>
+        <li><a href="/api/">API</a></li>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/terms/">Terms</a></li>
+        <li><a href="/llms.txt">llms.txt</a></li>
+        <li><a href="/tools.json">tools.json</a></li>
+        <li><a href="/.well-known/mcp.json">mcp.json</a></li>
+        <li><a href="/openapi.json">openapi.json</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap legal">
+    <p>© 2026 Tidy Byte Tools. This site does not use tracking cookies.</p>
+  </div>
+</footer>
+
+</body></html>

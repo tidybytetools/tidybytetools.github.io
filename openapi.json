@@ -264,6 +264,48 @@
         }
       }
     },
+    "/acts/tidybytetools~base64-encode-decode/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_base64_lite",
+        "summary": "Base64 Encode & Decode",
+        "description": "Base64 Encode & Decode: Encode or decode Base64 for text and local files, on your computer. Input: Text or a local file, plus encode, decode, or auto. Output: Base64 text, a data URI, or the decoded text or bytes. Price: $0.001 per unique texts (Item converted). Start fee $5e-05.",
+        "tags": [
+          "Base64 Encode & Decode"
+        ],
+        "security": [
+          {
+            "ApifyToken": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Dataset items from a finished run.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/acts/tidybytetools~html-table-extractor/run-sync-get-dataset-items": {
       "post": {
         "operationId": "run_html_table_extractor",

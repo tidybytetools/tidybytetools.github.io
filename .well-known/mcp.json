@@ -1247,7 +1247,8 @@
         }
       },
       "actor": "tidybytetools/base64-encode-decode",
-      "apify_status": "The public store page is not up yet.",
+      "apify": "https://apify.com/tidybytetools/base64-encode-decode",
+      "mcp": "https://mcp.apify.com/?tools=tidybytetools/base64-encode-decode",
       "price": {
         "event": "item-converted",
         "title": "Item converted",

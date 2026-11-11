@@ -1413,11 +1413,11 @@
           "place": "Apify",
           "label": "Pay per use",
           "price": "$0.001 per unique item",
-          "url": null
+          "url": "https://apify.com/tidybytetools/base64-encode-decode"
         }
       ],
-      "apify": null,
-      "apify_mcp": null,
+      "apify": "https://apify.com/tidybytetools/base64-encode-decode",
+      "apify_mcp": "https://mcp.apify.com/?tools=tidybytetools/base64-encode-decode",
       "mcp": "https://github.com/tidybytetools/base64-lite",
       "github": "https://github.com/tidybytetools/base64-lite",
       "input": "Text or a local file, plus encode, decode, or auto.",
