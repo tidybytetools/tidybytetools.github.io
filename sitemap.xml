@@ -2,8 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://tidybytetools.github.io/</loc></url>
   <url><loc>https://tidybytetools.github.io/tools/</loc></url>
+  <url><loc>https://tidybytetools.github.io/tools.json</loc></url>
   <url><loc>https://tidybytetools.github.io/guides/</loc></url>
   <url><loc>https://tidybytetools.github.io/privacy/</loc></url>
+  <url><loc>https://tidybytetools.github.io/llms.txt</loc></url>
   <url><loc>https://tidybytetools.github.io/tools/pdf-table-pull/</loc></url>
   <url><loc>https://tidybytetools.github.io/tools/doc2md/</loc></url>
   <url><loc>https://tidybytetools.github.io/tools/sheet-scrub/</loc></url>

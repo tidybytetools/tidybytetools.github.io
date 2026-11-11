@@ -2,7 +2,7 @@
 
 This is the public homepage for [Tidy Byte Tools](https://tidybytetools.github.io).
 
-Small tools that clean up messy data. The site lists every live product, with real links and real prices, and is hosted for free on GitHub Pages.
+Small tools that clean up messy data. The site lists every live product, with real links and real prices, and is hosted for free on GitHub Pages. A machine-readable catalog is at [tools.json](https://tidybytetools.github.io/tools.json).
 
 ## Rebuild
 

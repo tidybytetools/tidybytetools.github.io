@@ -1,0 +1,467 @@
+{
+  "name": "Tidy Byte Tools",
+  "url": "https://tidybytetools.github.io/",
+  "description": "Small tools that clean up messy data. Each one does one job and does it well.",
+  "updated": "2026-11-10",
+  "tools": [
+    {
+      "name": "PDF Table Pull",
+      "slug": "pdf-table-pull",
+      "url": "https://tidybytetools.github.io/tools/pdf-table-pull/",
+      "what_it_does": "Pull tables out of PDFs into Excel, CSV, or JSON.",
+      "summary": "Copying tables out of a PDF by hand is slow, and pasting them into Excel often wrecks the columns. This tool finds the tables and saves clean rows.",
+      "category": "pdf",
+      "price": [
+        {
+          "place": "Apify",
+          "label": "Pay per use",
+          "price": "$0.003 per page with a table",
+          "url": "https://apify.com/tidybytetools/pdf-table-pull"
+        },
+        {
+          "place": "Gumroad",
+          "label": "For your computer",
+          "price": "$12",
+          "url": "https://tidybyte.gumroad.com/l/hkxqxh"
+        },
+        {
+          "place": "GitHub & PyPI",
+          "label": "Free lite",
+          "price": "Free",
+          "url": "https://github.com/tidybytetools/pdf-table-pull-lite"
+        }
+      ],
+      "apify": "https://apify.com/tidybytetools/pdf-table-pull",
+      "mcp": "https://github.com/tidybytetools/pdf-table-pull-lite",
+      "github": "https://github.com/tidybytetools/pdf-table-pull-lite"
+    },
+    {
+      "name": "Doc to Markdown",
+      "slug": "doc2md",
+      "url": "https://tidybytetools.github.io/tools/doc2md/",
+      "what_it_does": "Turn PDFs, Word files, and web pages into clean Markdown.",
+      "summary": "Get Markdown you can use in notes, docs, or AI apps. Tables stay as Markdown tables. The paid version also writes chunks for AI search.",
+      "category": "pdf",
+      "price": [
+        {
+          "place": "Apify",
+          "label": "Pay per use",
+          "price": "$0.003 per file",
+          "url": "https://apify.com/tidybytetools/doc-to-markdown"
+        },
+        {
+          "place": "Gumroad",
+          "label": "For your computer",
+          "price": "$12",
+          "url": "https://tidybyte.gumroad.com/l/frlkv"
+        },
+        {
+          "place": "GitHub & PyPI",
+          "label": "Free lite",
+          "price": "Free",
+          "url": "https://github.com/tidybytetools/doc2md-lite"
+        }
+      ],
+      "apify": "https://apify.com/tidybytetools/doc-to-markdown",
+      "mcp": "https://github.com/tidybytetools/doc2md-lite",
+      "github": "https://github.com/tidybytetools/doc2md-lite"
+    },
+    {
+      "name": "CSV & spreadsheet cleanup",
+      "slug": "sheet-scrub",
+      "url": "https://tidybytetools.github.io/tools/sheet-scrub/",
+      "what_it_does": "Clean messy CSV and Excel files: dates, phones, emails, and duplicates.",
+      "summary": "Got a sheet full of extra spaces, mixed date styles, and repeat rows? These tools tidy the file and give you a clean table back.",
+      "category": "data",
+      "price": [
+        {
+          "place": "Apify",
+          "label": "Pay per use",
+          "price": "$0.0005 per clean row",
+          "url": "https://apify.com/tidybytetools/csv-excel-data-cleaner"
+        },
+        {
+          "place": "Gumroad",
+          "label": "For your computer",
+          "price": "$9",
+          "url": "https://tidybyte.gumroad.com/l/cknndc"
+        }
+      ],
+      "apify": "https://apify.com/tidybytetools/csv-excel-data-cleaner",
+      "mcp": null,
+      "github": null
+    },
+    {
+      "name": "JSON Shaper",
+      "slug": "json-shaper",
+      "url": "https://tidybytetools.github.io/tools/json-shaper/",
+      "what_it_does": "Turn messy notes, CSV, and Markdown tables into clean JSON.",
+      "summary": "Free converters do well with neat CSV. JSON Shaper is for the messy stuff: pasted notes, key: value lists, and tables.",
+      "category": "data",
+      "price": [
+        {
+          "place": "Gumroad",
+          "label": "For your computer",
+          "price": "From $5",
+          "url": "https://tidybyte.gumroad.com/l/cznmeo"
+        },
+        {
+          "place": "GitHub & PyPI",
+          "label": "Free lite",
+          "price": "Free",
+          "url": "https://github.com/tidybytetools/json-shaper-lite"
+        }
+      ],
+      "apify": null,
+      "mcp": "https://github.com/tidybytetools/json-shaper-lite",
+      "github": "https://github.com/tidybytetools/json-shaper-lite"
+    },
+    {
+      "name": "Lead Sheet Fixer",
+      "slug": "lead-sheet-fixer",
+      "url": "https://tidybytetools.github.io/tools/lead-sheet-fixer/",
+      "what_it_does": "Clean a lead list: fix phones, check emails, and merge duplicates.",
+      "summary": "Clean the lead list you already have. Phones are formatted, bad emails are flagged, names can be split, and duplicate rows can be merged.",
+      "category": "data",
+      "price": [
+        {
+          "place": "Gumroad",
+          "label": "For your computer",
+          "price": "$9",
+          "url": "https://tidybyte.gumroad.com/l/iaiacv"
+        }
+      ],
+      "apify": null,
+      "mcp": null,
+      "github": null
+    },
+    {
+      "name": "Phone Number Validator",
+      "slug": "phone-validator",
+      "url": "https://tidybytetools.github.io/tools/phone-validator/",
+      "what_it_does": "Check phone numbers and format them as E.164, in bulk, offline.",
+      "summary": "See if each number is valid and write it in three common formats. The tool also shows country, line type, area, and time zone. It works offline and never calls or texts anyone.",
+      "category": "data",
+      "price": [
+        {
+          "place": "Apify",
+          "label": "Pay per use",
+          "price": "$0.001 per number",
+          "url": "https://apify.com/tidybytetools/phone-number-validator-formatter"
+        }
+      ],
+      "apify": "https://apify.com/tidybytetools/phone-number-validator-formatter",
+      "mcp": null,
+      "github": null
+    },
+    {
+      "name": "Data Cleanup Bundle",
+      "slug": "data-cleanup-bundle",
+      "url": "https://tidybytetools.github.io/tools/data-cleanup-bundle/",
+      "what_it_does": "Three desktop tools together: PDF tables, sheet cleanup, and JSON Shaper.",
+      "summary": "Get pdf-table-pull, sheet-scrub, and json-shaper in one purchase. Bought one by one they cost at least $26. The bundle is $19, so you save $7.",
+      "category": "data",
+      "price": [
+        {
+          "place": "Gumroad",
+          "label": "For your computer",
+          "price": "$19",
+          "url": "https://tidybyte.gumroad.com/l/qnlxiy"
+        }
+      ],
+      "apify": null,
+      "mcp": null,
+      "github": null
+    },
+    {
+      "name": "Broken Link Checker",
+      "slug": "link-check",
+      "url": "https://tidybytetools.github.io/tools/link-check/",
+      "what_it_does": "Check a list of links for status codes, redirects, and broken pages.",
+      "summary": "Paste a list, give a sitemap, or scan pages for their links. Get a clear report of what works, what is broken, and where redirects end up.",
+      "category": "web",
+      "price": [
+        {
+          "place": "Apify",
+          "label": "Pay per use",
+          "price": "$0.001 per link",
+          "url": "https://apify.com/tidybytetools/broken-link-checker"
+        },
+        {
+          "place": "Gumroad",
+          "label": "For your computer",
+          "price": "$7",
+          "url": "https://tidybyte.gumroad.com/l/link-check"
+        },
+        {
+          "place": "GitHub & PyPI",
+          "label": "Free lite",
+          "price": "Free",
+          "url": "https://github.com/tidybytetools/link-check-lite"
+        }
+      ],
+      "apify": "https://apify.com/tidybytetools/broken-link-checker",
+      "mcp": "https://github.com/tidybytetools/link-check-lite",
+      "github": "https://github.com/tidybytetools/link-check-lite"
+    },
+    {
+      "name": "Server Pulse",
+      "slug": "server-pulse",
+      "url": "https://tidybytetools.github.io/tools/server-pulse/",
+      "what_it_does": "Get a Discord alert when a website or server goes down.",
+      "summary": "Server Pulse watches a site or server and sends a Discord message if it goes down. It can also post Stripe and PayPal donation alerts to Discord.",
+      "category": "web",
+      "price": [
+        {
+          "place": "Gumroad",
+          "label": "For your computer",
+          "price": "$19",
+          "url": "https://tidybyte.gumroad.com/l/cjatbj"
+        }
+      ],
+      "apify": null,
+      "mcp": null,
+      "github": null
+    },
+    {
+      "name": "Markdown Chunker for RAG",
+      "slug": "markdown-chunker",
+      "url": "https://tidybytetools.github.io/tools/markdown-chunker/",
+      "what_it_does": "Split Markdown into chunks for AI search, with heading paths kept.",
+      "summary": "Split a Markdown file by heading so each chunk stays on one topic. Code blocks and tables stay whole when they fit. Each chunk keeps its heading path and line numbers. This is plain code, not an AI model, so the same file always gives the same chunks.",
+      "category": "ai",
+      "price": [
+        {
+          "place": "Apify",
+          "label": "Pay per use",
+          "price": "$0.0001 per chunk",
+          "url": "https://apify.com/tidybytetools/markdown-rag-chunker"
+        },
+        {
+          "place": "GitHub & PyPI",
+          "label": "Free lite",
+          "price": "Free",
+          "url": "https://github.com/tidybytetools/md-chunk-lite"
+        }
+      ],
+      "apify": "https://apify.com/tidybytetools/markdown-rag-chunker",
+      "mcp": "https://github.com/tidybytetools/md-chunk-lite",
+      "github": "https://github.com/tidybytetools/md-chunk-lite"
+    },
+    {
+      "name": "GIF Forge",
+      "slug": "gif-forge",
+      "url": "https://tidybytetools.github.io/tools/gif-forge/",
+      "what_it_does": "Turn a folder of videos into small, sharp GIFs, offline.",
+      "summary": "Drop in a folder of clips and get a folder of small, sharp, looping GIFs. It can also remove solid image backgrounds, all on your computer.",
+      "category": "media",
+      "price": [
+        {
+          "place": "Gumroad",
+          "label": "For your computer",
+          "price": "$7",
+          "url": "https://tidybyte.gumroad.com/l/vjbsqs"
+        }
+      ],
+      "apify": null,
+      "mcp": null,
+      "github": null
+    },
+    {
+      "name": "n8n Data Cleanup Pack",
+      "slug": "n8n-data-cleanup-pack",
+      "url": "https://tidybytetools.github.io/tools/n8n-data-cleanup-pack/",
+      "what_it_does": "9 n8n workflows for messy CSVs, leads, invoices, sheets, and uptime alerts.",
+      "summary": "Import a file, pick your logins, and run. These workflows clean messy data in n8n, using only the nodes that come with n8n.",
+      "category": "n8n",
+      "price": [
+        {
+          "place": "Gumroad",
+          "label": "For n8n",
+          "price": "$19",
+          "url": "https://tidybyte.gumroad.com/l/n8n-data-cleanup-pack"
+        },
+        {
+          "place": "Gumroad",
+          "label": "Free sample",
+          "price": "Free",
+          "url": "https://tidybyte.gumroad.com/l/n8n-cleanup-sampler"
+        }
+      ],
+      "apify": null,
+      "mcp": null,
+      "github": null
+    },
+    {
+      "name": "n8n Cleanup Sampler",
+      "slug": "n8n-cleanup-sampler",
+      "url": "https://tidybytetools.github.io/tools/n8n-cleanup-sampler/",
+      "what_it_does": "2 free n8n workflows from the Data Cleanup Pack: CSV cleanup and uptime alerts.",
+      "summary": "Try two workflows for free before you buy the full pack. Import a file, follow the setup note inside, and run. No logins are stored in the files.",
+      "category": "n8n",
+      "price": [
+        {
+          "place": "Gumroad",
+          "label": "Free sample",
+          "price": "Free",
+          "url": "https://tidybyte.gumroad.com/l/n8n-cleanup-sampler"
+        }
+      ],
+      "apify": null,
+      "mcp": null,
+      "github": null
+    },
+    {
+      "name": "csv-char-fix",
+      "slug": "csv-char-fix",
+      "url": "https://tidybytetools.github.io/tools/csv-char-fix/",
+      "what_it_does": "Fix weird characters like \u00c3\u00a9 and \u00e2\u20ac\u2122 in CSV and text files.",
+      "summary": "Did an export turn Jos\u00e9 into Jos\u00c3\u00a9 or it's into it\u00e2\u20ac\u2122s? This small script puts the text back the way it should be and saves the file so Excel shows accents right.",
+      "category": "data",
+      "price": [
+        {
+          "place": "Gumroad",
+          "label": "For your computer",
+          "price": "$1",
+          "url": "https://tidybyte.gumroad.com/l/csv-char-fix"
+        }
+      ],
+      "apify": null,
+      "mcp": null,
+      "github": null
+    },
+    {
+      "name": "csv-split",
+      "slug": "csv-split",
+      "url": "https://tidybytetools.github.io/tools/csv-split/",
+      "what_it_does": "Split a big CSV into smaller files. Every new file keeps the header.",
+      "summary": "Use it when a CSV is too big for Excel, too big to upload, or when you want one file per group, like one file per state.",
+      "category": "data",
+      "price": [
+        {
+          "place": "Gumroad",
+          "label": "For your computer",
+          "price": "$1",
+          "url": "https://tidybyte.gumroad.com/l/csv-split"
+        }
+      ],
+      "apify": null,
+      "mcp": null,
+      "github": null
+    },
+    {
+      "name": "Regex Pack for Messy Data",
+      "slug": "regex-pack",
+      "url": "https://tidybytetools.github.io/tools/regex-pack/",
+      "what_it_does": "49 ready-to-use regex patterns for emails, phones, dates, money, and more.",
+      "summary": "Copy a pattern into your tool, or use the small helper script to check or fix a CSV column. Every pattern comes with examples that are tested in Python and JavaScript.",
+      "category": "data",
+      "price": [
+        {
+          "place": "Gumroad",
+          "label": "For your computer",
+          "price": "$2",
+          "url": "https://tidybyte.gumroad.com/l/regex-pack"
+        }
+      ],
+      "apify": null,
+      "mcp": null,
+      "github": null
+    },
+    {
+      "name": "CSV Skills for Claude Code",
+      "slug": "claude-data-skills",
+      "url": "https://tidybytetools.github.io/tools/claude-data-skills/",
+      "what_it_does": "4 Claude Code skills that profile, diff, fix, and split CSV files on your computer.",
+      "summary": "Claude runs a small, tested script and reads the short result, instead of loading a big CSV into the chat line by line. Your data stays on your computer.",
+      "category": "ai",
+      "price": [
+        {
+          "place": "Gumroad",
+          "label": "For your computer",
+          "price": "$3",
+          "url": "https://tidybyte.gumroad.com/l/claude-data-skills"
+        }
+      ],
+      "apify": null,
+      "mcp": null,
+      "github": null
+    },
+    {
+      "name": "HTML Table Extractor",
+      "slug": "html-table-extractor",
+      "url": "https://tidybytetools.github.io/tools/html-table-extractor/",
+      "what_it_does": "Pull tables from web pages into CSV and JSON.",
+      "summary": "Reads HTML tables from a page or pasted HTML. Keeps merged cells, handles more than one table on a page, and saves CSV. Honest about tables that only appear after JavaScript runs.",
+      "category": "web",
+      "price": [
+        {
+          "place": "Apify",
+          "label": "Pay per use",
+          "price": "$0.0005 per data row",
+          "url": "https://apify.com/tidybytetools/html-table-extractor"
+        }
+      ],
+      "apify": "https://apify.com/tidybytetools/html-table-extractor",
+      "mcp": null,
+      "github": null
+    },
+    {
+      "name": "LLM Token Counter",
+      "slug": "llm-token-counter",
+      "url": "https://tidybytetools.github.io/tools/llm-token-counter/",
+      "what_it_does": "Count tokens and estimate cost for GPT, Claude, and Gemini.",
+      "summary": "Counts tokens offline for OpenAI models and estimates Claude and Gemini. Uses public list prices. No API key. Paste text or add file links.",
+      "category": "ai",
+      "price": [
+        {
+          "place": "Apify",
+          "label": "Pay per use",
+          "price": "$0.0005 per unique text",
+          "url": "https://apify.com/tidybytetools/llm-token-counter"
+        }
+      ],
+      "apify": "https://apify.com/tidybytetools/llm-token-counter",
+      "mcp": null,
+      "github": null
+    },
+    {
+      "name": "JSON to CSV Converter",
+      "slug": "json-to-csv",
+      "url": "https://tidybytetools.github.io/tools/json-to-csv/",
+      "what_it_does": "Flatten nested JSON or JSON Lines into a CSV table.",
+      "summary": "Turn nested JSON into a flat table for Excel and Google Sheets. You pick how lists are handled.",
+      "category": "data",
+      "price": [
+        {
+          "place": "Apify",
+          "label": "Pay per use",
+          "price": "$0.0001 per row",
+          "url": "https://apify.com/tidybytetools/json-to-csv-flattener"
+        }
+      ],
+      "apify": "https://apify.com/tidybytetools/json-to-csv-flattener",
+      "mcp": null,
+      "github": null
+    },
+    {
+      "name": "CSV Encoding Fixer",
+      "slug": "csv-encoding-fixer",
+      "url": "https://tidybytetools.github.io/tools/csv-encoding-fixer/",
+      "what_it_does": "Fix broken characters in CSV files and split large files.",
+      "summary": "Fixes garbled letters such as \u00c3\u00a9 instead of \u00e9, then saves clean UTF-8 that opens right in Excel. Can also split a large file and keep the header on every part.",
+      "category": "data",
+      "price": [
+        {
+          "place": "Apify",
+          "label": "Pay per use",
+          "price": "$0.01 per file",
+          "url": "https://apify.com/tidybytetools/csv-encoding-fixer-splitter"
+        }
+      ],
+      "apify": "https://apify.com/tidybytetools/csv-encoding-fixer-splitter",
+      "mcp": null,
+      "github": null
+    }
+  ]
+}

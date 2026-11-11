@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import html
+import re
 import json
 import shutil
 import subprocess
@@ -1322,6 +1323,160 @@ def ld_script(data) -> str:
     return '<script type="application/ld+json">' + json.dumps(data, ensure_ascii=True) + "</script>"
 
 
+def offer_from_version(ver: dict) -> dict | None:
+    """Build a schema.org Offer, including a numeric price when we can read one."""
+    url = ver.get("url")
+    if not url:
+        urls = ver.get("urls") or []
+        url = urls[0][1] if urls else None
+    if not url:
+        return None
+    offer = {
+        "@type": "Offer",
+        "url": url,
+        "availability": "https://schema.org/InStock",
+        "priceCurrency": "USD",
+        "description": f"{ver['label']} on {ver['place']}: {ver['price']}",
+    }
+    price = str(ver.get("price") or "").strip()
+    if price.lower() == "free":
+        offer["price"] = "0"
+    else:
+        m = re.search(r"\$([0-9]+(?:\.[0-9]+)?)", price)
+        if m:
+            offer["price"] = m.group(1)
+    return offer
+
+
+def faq_page_ld(faqs: list[tuple[str, str]], page_url: str | None = None) -> dict:
+    data = {
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": q,
+                "acceptedAnswer": {"@type": "Answer", "text": a},
+            }
+            for q, a in faqs
+        ],
+    }
+    if page_url:
+        data["url"] = page_url
+    return data
+
+
+def faq_html(faqs: list[tuple[str, str]]) -> str:
+    if not faqs:
+        return ""
+    items = "".join(
+        f'<div class="faq-item"><h3>{e(q)}</h3><p>{e(a)}</p></div>'
+        for q, a in faqs
+    )
+    return f'<div class="faq" style="margin-top:36px"><h2>FAQ</h2>{items}</div>'
+
+
+def tool_faqs(tool: dict) -> list[tuple[str, str]]:
+    faqs = [
+        ("What does this tool do?", tool["tagline"] + " " + tool["summary"]),
+    ]
+    cost_bits = []
+    for ver in tool["versions"]:
+        cost_bits.append(f"{ver['label']} on {ver['place']} costs {ver['price']}.")
+        if ver.get("note"):
+            cost_bits.append(ver["note"])
+    faqs.append(("What does it cost?", " ".join(cost_bits)))
+    faqs.append((
+        "Will you see my files?",
+        "The download tools run on your computer, so those files stay with you. "
+        "The Apify tools run in your own Apify account. This website does not take uploads.",
+    ))
+    mentions_mcp = any("MCP" in x for x in tool.get("does", [])) or any(
+        "MCP" in (ver.get("note") or "") for ver in tool["versions"]
+    )
+    if mentions_mcp:
+        faqs.append((
+            "Does the free tool work with AI apps?",
+            "Yes. The free lite version includes a small MCP server. You can use it from "
+            "Cursor, Claude Desktop, and other apps that support MCP. No API key is needed.",
+        ))
+    return faqs
+
+
+def tool_github_and_mcp(tool: dict) -> tuple[str | None, str | None]:
+    """Best GitHub and MCP links we can honestly list for a tool."""
+    github = None
+    mcp = None
+    for ver in tool["versions"]:
+        for label, url in ver.get("urls") or []:
+            if label == "GitHub":
+                github = url
+                if "MCP" in (ver.get("note") or ""):
+                    mcp = url
+        if ver.get("place", "").startswith("GitHub") and ver.get("url"):
+            github = github or ver["url"]
+    if not github:
+        repos = tool.get("repos") or []
+        if repos:
+            github = f"https://github.com/tidybytetools/{repos[0]}"
+    mentions_mcp = any("MCP" in x for x in tool.get("does", [])) or any(
+        "MCP" in (ver.get("note") or "") for ver in tool["versions"]
+    )
+    if mentions_mcp and github and not mcp:
+        mcp = github
+    return github, mcp
+
+
+def tools_catalog(tools: list[dict]) -> dict:
+    entries = []
+    for tool in tools:
+        prices = []
+        apify = None
+        for ver in tool["versions"]:
+            url = ver.get("url")
+            if not url and ver.get("urls"):
+                url = ver["urls"][0][1]
+            prices.append({
+                "place": ver["place"],
+                "label": ver["label"],
+                "price": ver["price"],
+                "url": url,
+            })
+            if ver["place"] == "Apify" and ver.get("url"):
+                apify = ver["url"]
+        github, mcp = tool_github_and_mcp(tool)
+        entries.append({
+            "name": tool["name"],
+            "slug": tool["slug"],
+            "url": f"{BASE}/tools/{tool['slug']}/",
+            "what_it_does": tool["tagline"],
+            "summary": tool["summary"],
+            "category": tool["category"],
+            "price": prices,
+            "apify": apify,
+            "mcp": mcp,
+            "github": github,
+        })
+    return {
+        "name": "Tidy Byte Tools",
+        "url": BASE + "/",
+        "description": "Small tools that clean up messy data. Each one does one job and does it well.",
+        "updated": f"{YEAR}-11-10",
+        "tools": entries,
+    }
+
+
+HOME_FAQS = [
+    ("What is Tidy Byte Tools?", "A small shop of tools that clean up messy data. We sell downloads you run on your computer, and pay-per-use tools on Apify. Free lite tools are on GitHub and PyPI."),
+    ("Will you see my files?", "The download tools run on your computer, so those files stay with you. The Apify tools run in your own Apify account. This website does not take uploads."),
+    ("What is the difference between free and paid?", "The free lite tools cover the common case, like a text PDF or a simple list of links. Paid versions add things like Excel output, scanned pages, Word files, or folder support. Each tool page lists the difference."),
+    ("What does pay per use mean?", "On Apify you pay for what the tool does, such as each page with a table or each link checked. Failed or skipped items are free. The exact price is on the tool page and on Apify."),
+    ("Do the free tools work with AI apps?", "Yes. The free lite tools include a small MCP server. You can use them from Cursor, Claude Desktop, and other apps that support MCP. No API key is needed."),
+    ("How do I get help?", "Open an issue on the GitHub page for that tool. For a Gumroad or Apify purchase, you can also use the support option on that site."),
+]
+
+
+
+
 def page_shell(title, description, path, body, nav_page, tools, extra_head=""):
     return "\n".join([
         head_html(title, description, path, extra=extra_head),
@@ -1437,7 +1592,13 @@ def home_page(tools: list[dict]) -> None:
       </div>
     </section>
     '''
-    extra = ld_script(ORG_LD)
+    extra = ld_script({
+        "@context": "https://schema.org",
+        "@graph": [
+            {k: v for k, v in ORG_LD.items() if k != "@context"},
+            faq_page_ld(HOME_FAQS, BASE + "/"),
+        ],
+    })
     html_text = page_shell(
         "Tidy Byte Tools — small tools that clean up messy data",
         desc,
@@ -1490,30 +1651,41 @@ def tool_page(tool: dict, tools: list[dict]) -> None:
               {version_links(ver)}
             </div>'''
         )
-        url = ver.get("url") or (ver.get("urls") or [[None, None]])[0][1]
-        if url:
-            offer = {
-                "@type": "Offer",
-                "url": url,
-                "availability": "https://schema.org/InStock",
-            }
-            if ver["price"].lower() == "free":
-                offer["price"] = "0"
-                offer["priceCurrency"] = "USD"
+        offer = offer_from_version(ver)
+        if offer:
             offers.append(offer)
-    ld = {
-        "@context": "https://schema.org",
+    page_url = f"{BASE}/tools/{tool['slug']}/"
+    faqs = tool_faqs(tool)
+    ld_app = {
         "@type": "SoftwareApplication",
         "name": tool["name"],
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "Windows, macOS, Linux",
         "description": tool["tagline"],
-        "url": f"{BASE}/tools/{tool['slug']}/",
+        "url": page_url,
         "image": BASE + tool["cover_png"],
         "author": {"@type": "Organization", "name": "Tidy Byte Tools", "url": BASE},
     }
     if offers:
-        ld["offers"] = offers if len(offers) > 1 else offers[0]
+        ld_app["offers"] = offers if len(offers) > 1 else offers[0]
+    graph: list[dict] = [ld_app]
+    apify_ver = next((v for v in tool["versions"] if v.get("place") == "Apify" and v.get("url")), None)
+    if apify_ver:
+        api_offer = offer_from_version(apify_ver)
+        api = {
+            "@type": "WebAPI",
+            "name": tool["name"] + " API",
+            "description": tool["tagline"],
+            "url": apify_ver["url"],
+            "documentation": apify_ver["url"],
+            "provider": {"@type": "Organization", "name": "Tidy Byte Tools", "url": BASE},
+        }
+        if api_offer:
+            api["offers"] = api_offer
+        graph.append(api)
+    if faqs:
+        graph.append(faq_page_ld(faqs, page_url))
+    ld = {"@context": "https://schema.org", "@graph": graph}
     gallery_html = ""
     if tool.get("gallery_src"):
         gallery_html = (
@@ -1543,6 +1715,7 @@ def tool_page(tool: dict, tools: list[dict]) -> None:
           <h2>Get it</h2>
         </div>
         {"".join(version_blocks)}
+        {faq_html(faqs)}
       </div>
     </article>
     '''
@@ -1613,7 +1786,7 @@ def write_meta(tools: list[dict], guides: list[dict] | None = None) -> None:
     (ROOT / "robots.txt").write_text(
         "User-agent: *\nAllow: /\n\nSitemap: " + BASE + "/sitemap.xml\n"
     )
-    urls = ["/", "/tools/", "/guides/", "/privacy/"] + [f"/tools/{t['slug']}/" for t in tools] + [f"/guides/{g['slug']}/" for g in guides]
+    urls = ["/", "/tools/", "/tools.json", "/guides/", "/privacy/", "/llms.txt"] + [f"/tools/{t['slug']}/" for t in tools] + [f"/guides/{g['slug']}/" for g in guides]
     parts = [
         '<?xml version="1.0" encoding="UTF-8"?>',
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
@@ -1638,6 +1811,8 @@ def write_meta(tools: list[dict], guides: list[dict] | None = None) -> None:
         f"- [All tools]({BASE}/tools/)",
         f"- [Guides]({BASE}/guides/)",
         f"- [Privacy]({BASE}/privacy/)",
+        f"- [Machine-readable catalog]({BASE}/tools.json): name, what it does, price, Apify, MCP and GitHub links",
+        f"- [Long catalog]({BASE}/llms-full.txt)",
         "",
         "## Tools",
     ]
@@ -1672,6 +1847,9 @@ def write_meta(tools: list[dict], guides: list[dict] | None = None) -> None:
     full.append("Do not list tools that are not public yet.")
     full.append("")
     (ROOT / "llms-full.txt").write_text("\n".join(full))
+    catalog = tools_catalog(tools)
+    (ROOT / "tools.json").write_text(json.dumps(catalog, indent=2, ensure_ascii=True) + "\n")
+    print("wrote tools.json")
     (ROOT / ".nojekyll").write_text("")
 
 
@@ -1681,7 +1859,7 @@ def write_readme() -> None:
 
 This is the public homepage for [Tidy Byte Tools](https://tidybytetools.github.io).
 
-Small tools that clean up messy data. The site lists every live product, with real links and real prices, and is hosted for free on GitHub Pages.
+Small tools that clean up messy data. The site lists every live product, with real links and real prices, and is hosted for free on GitHub Pages. A machine-readable catalog is at [tools.json](https://tidybytetools.github.io/tools.json).
 
 ## Rebuild
 

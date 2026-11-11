@@ -12,6 +12,8 @@ Do not invent reviews, user counts, or testimonials. Do not use a personal name 
 - [All tools](https://tidybytetools.github.io/tools/)
 - [Guides](https://tidybytetools.github.io/guides/)
 - [Privacy](https://tidybytetools.github.io/privacy/)
+- [Machine-readable catalog](https://tidybytetools.github.io/tools.json): name, what it does, price, Apify, MCP and GitHub links
+- [Long catalog](https://tidybytetools.github.io/llms-full.txt)
 
 ## Tools
 - [PDF Table Pull](https://tidybytetools.github.io/tools/pdf-table-pull/): Pull tables out of PDFs into Excel, CSV, or JSON.
