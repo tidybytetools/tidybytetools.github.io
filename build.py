@@ -663,18 +663,37 @@ def featured_on_html(lang: str = "en") -> str:
 """
 
 
-def fazier_badge_html() -> str:
-    """Official Fazier Basic backlink badge (Help Center embed)."""
-    # Docs: https://falakdigital.notion.site/How-to-embed-Fazier-badge-1f54da94993180778128e74659aad04d
-    # Native size is 182x43, above their 120px minimum width.
-    return (
-        '<p class="footer-dir-badges">'
+def footer_dir_badges_html(lang: str = "en") -> str:
+    """Official directory badges in the quiet legal footer.
+
+    Fazier markup stays the official Help Center embed (182x43). APP NAVI
+    sits next to it, using the Japanese badge on Japanese pages.
+    """
+    # Fazier docs: https://falakdigital.notion.site/How-to-embed-Fazier-badge-1f54da94993180778128e74659aad04d
+    # APP NAVI docs: https://appnavi.dev/en/for-developers/#badge
+    fazier = (
         '<a href="https://fazier.com" target="_blank">'
         '<img src="https://fazier.com/api/v1/public/badges/launch_badges.svg?badge_type=featured&theme=light" '
         'alt="Fazier badge" width="182" height="43" />'
         "</a>"
-        "</p>"
     )
+    if lang == "ja":
+        appnavi_href = "https://appnavi.dev/ja/apps/tidy-byte-tools/"
+        appnavi_src = "https://appnavi.dev/badge/ja-light.svg"
+    else:
+        appnavi_href = "https://appnavi.dev/en/apps/tidy-byte-tools/"
+        appnavi_src = "https://appnavi.dev/badge/en-light.svg"
+    appnavi = (
+        f'<a href="{appnavi_href}">'
+        f'<img src="{appnavi_src}" alt="APP NAVI" width="190" height="44" />'
+        "</a>"
+    )
+    return f'<p class="footer-dir-badges">{fazier} {appnavi}</p>'
+
+
+def fazier_badge_html() -> str:
+    """Back-compat wrapper; prefer footer_dir_badges_html(lang)."""
+    return footer_dir_badges_html("en")
 
 
 def footer_html(tools: list[dict], lang: str = "en") -> str:
@@ -720,7 +739,7 @@ def footer_html(tools: list[dict], lang: str = "en") -> str:
   </div>
   <div class="wrap legal">
     <p>{e(u("footer_legal").format(year=YEAR))}</p>
-    {fazier_badge_html()}
+    {footer_dir_badges_html(lang)}
   </div>
 </footer>
 """

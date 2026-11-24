@@ -757,13 +757,21 @@ a.card, .card { color: inherit; }
 }
 
 /* Official directory badges in the footer. Keep Fazier at its native 182px
-   width so it stays above their 120px minimum and is easy to auto-detect. */
+   width so it stays above their 120px minimum and is easy to auto-detect.
+   APP NAVI is 190x44 and sits next to it. */
 .footer-dir-badges { margin-top: 16px; }
-.footer-dir-badges a { display: inline-block; }
+.footer-dir-badges a { display: inline-block; vertical-align: middle; margin-right: 12px; }
+.footer-dir-badges a:last-child { margin-right: 0; }
 .footer-dir-badges img {
   display: block;
+  border: 0;
+}
+.footer-dir-badges a[href="https://fazier.com"] img {
   width: 182px;
   height: 43px;
   min-width: 120px;
-  border: 0;
+}
+.footer-dir-badges a[href^="https://appnavi.dev/"] img {
+  width: 190px;
+  height: 44px;
 }
