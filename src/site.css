@@ -755,3 +755,15 @@ a.card, .card { color: inherit; }
   white-space: nowrap;
   border: 0;
 }
+
+/* Official directory badges in the footer. Keep Fazier at its native 182px
+   width so it stays above their 120px minimum and is easy to auto-detect. */
+.footer-dir-badges { margin-top: 16px; }
+.footer-dir-badges a { display: inline-block; }
+.footer-dir-badges img {
+  display: block;
+  width: 182px;
+  height: 43px;
+  min-width: 120px;
+  border: 0;
+}

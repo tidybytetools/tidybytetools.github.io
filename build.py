@@ -663,6 +663,20 @@ def featured_on_html(lang: str = "en") -> str:
 """
 
 
+def fazier_badge_html() -> str:
+    """Official Fazier Basic backlink badge (Help Center embed)."""
+    # Docs: https://falakdigital.notion.site/How-to-embed-Fazier-badge-1f54da94993180778128e74659aad04d
+    # Native size is 182x43, above their 120px minimum width.
+    return (
+        '<p class="footer-dir-badges">'
+        '<a href="https://fazier.com" target="_blank">'
+        '<img src="https://fazier.com/api/v1/public/badges/launch_badges.svg?badge_type=featured&theme=light" '
+        'alt="Fazier badge" width="182" height="43" />'
+        "</a>"
+        "</p>"
+    )
+
+
 def footer_html(tools: list[dict], lang: str = "en") -> str:
     tool_links = "\n".join(
         f'<li><a href="{P("/tools/")}{e(t["slug"])}/">{e(t["name"])}</a></li>' for t in tools
@@ -706,6 +720,7 @@ def footer_html(tools: list[dict], lang: str = "en") -> str:
   </div>
   <div class="wrap legal">
     <p>{e(u("footer_legal").format(year=YEAR))}</p>
+    {fazier_badge_html()}
   </div>
 </footer>
 """
