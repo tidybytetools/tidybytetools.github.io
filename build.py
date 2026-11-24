@@ -35,6 +35,9 @@ YEAR = "2026"
 # Live Cloudflare Worker API (separate from this site's Apify OpenAPI).
 API_WORKER = "https://tidybytetools.tidybytetools.workers.dev"
 
+# APP NAVI site-ownership verification (official site claim).
+APPNAVI_SITE_VERIFY = "t3UDjH5QJeyBL81mSR58KVzHp3aUK3t1"
+
 
 def P(path: str) -> str:
     """Site-absolute path with optional hosting subpath prefix."""
@@ -779,6 +782,11 @@ def head_html(
     og_img = BASE + (og_path or "/assets/img/og.png")
     hreflang = hreflang_tags(en_path if en_path is not None else ("/" if path in {"/", f"/{info['prefix']}/"} else path), lang)
     font = P("/assets/fonts/geist-latin.woff2")
+    appnavi_verify_meta = (
+        f'<meta name="appnavi-verification" content="{APPNAVI_SITE_VERIFY}">'
+        if path == "/"
+        else ""
+    )
     return f"""<!DOCTYPE html>
 <html lang="{e(info["hreflang"])}">
 <head>
@@ -786,6 +794,7 @@ def head_html(
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{e(title)}</title>
   <meta name="description" content="{e(description)}">
+  {appnavi_verify_meta}
   <link rel="canonical" href="{e(canon)}">
   {hreflang}
   <link rel="icon" href="{P("/favicon.ico")}" sizes="any">
@@ -1632,6 +1641,10 @@ def write_mcp(tools: list[dict]) -> None:
     dest.mkdir(parents=True, exist_ok=True)
     (dest / "mcp.json").write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n")
     print("wrote .well-known/mcp.json")
+    (dest / "appnavi-verification.txt").write_text(
+        f"appnavi-verify={APPNAVI_SITE_VERIFY}\n"
+    )
+    print("wrote .well-known/appnavi-verification.txt")
 
 
 def write_openapi(tools: list[dict]) -> None:
