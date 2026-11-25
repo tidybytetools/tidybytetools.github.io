@@ -1233,6 +1233,26 @@
       "translations": {}
     },
     {
+      "name": "Agent Cost Saver",
+      "slug": "agent-cost-saver",
+      "description": "A free guide and 4 scripts to cut Claude Code, Cursor, and Codex token costs.",
+      "url": "https://tidybytetools.github.io/tools/agent-cost-saver/",
+      "github": null,
+      "input": "Your project folder, plus, for the session report, your local Claude Code logs.",
+      "output": "A ranked fix list, a per-session token total, a suggested ignore file, or a hook that shortens test output.",
+      "translations": {}
+    },
+    {
+      "name": "Dev OS in Claude Code",
+      "slug": "dev-os-claude-code",
+      "description": "15 skills, 5 subagents, and 4 safety hooks that turn a Claude Code day into a repeatable loop.",
+      "url": "https://tidybytetools.github.io/tools/dev-os-claude-code/",
+      "github": null,
+      "input": "Your project folder.",
+      "output": "A .claude/ folder with skills, subagents, hooks, and merged settings, plus a short status from the doctor.",
+      "translations": {}
+    },
+    {
       "name": "Base64 Encode & Decode",
       "slug": "base64-lite",
       "description": "Encode or decode Base64 for text and local files, on your computer.",

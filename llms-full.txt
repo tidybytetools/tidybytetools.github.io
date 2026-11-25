@@ -221,12 +221,26 @@ Do not invent reviews, user counts, or testimonials. Do not use a personal name 
   - For your computer (Gumroad, From $1): https://tidybyte.gumroad.com/l/agents-md-starter-pack
   - Also: Ship-Ready Skills Pack (Gumroad, From $1): https://tidybyte.gumroad.com/l/ship-ready-skills-pack
   - Free skill sample (Gumroad, Free): https://tidybyte.gumroad.com/l/json-repair-skill-free
+  - Also: Dev OS in Claude Code (Gumroad, $9): https://tidybyte.gumroad.com/l/dev-os-claude-code
+  - Free: Agent Cost Saver (Gumroad, Free): https://tidybyte.gumroad.com/l/agent-cost-saver
 - [Ship-Ready Skills Pack](https://tidybytetools.github.io/tools/ship-ready-skills-pack/): 10 tested agent skills that make Claude Code, Cursor, and Codex prove the work before they say done.
   - For your computer (Gumroad, From $1): https://tidybyte.gumroad.com/l/ship-ready-skills-pack
   - Free sample skill (Gumroad, Free): https://tidybyte.gumroad.com/l/verify-before-done-free
+  - Also: Dev OS in Claude Code (Gumroad, $9): https://tidybyte.gumroad.com/l/dev-os-claude-code
+  - Free: Agent Cost Saver (Gumroad, Free): https://tidybyte.gumroad.com/l/agent-cost-saver
 - [Verify Before Done](https://tidybytetools.github.io/tools/verify-before-done-free/): A free agent skill that makes Claude Code, Cursor, and Codex run your real tests before they say done.
   - Free sample (Gumroad, Free): https://tidybyte.gumroad.com/l/verify-before-done-free
   - Full 10-skill pack (Gumroad, From $1): https://tidybyte.gumroad.com/l/ship-ready-skills-pack
+  - Free: Agent Cost Saver (Gumroad, Free): https://tidybyte.gumroad.com/l/agent-cost-saver
+- [Agent Cost Saver](https://tidybytetools.github.io/tools/agent-cost-saver/): A free guide and 4 scripts to cut Claude Code, Cursor, and Codex token costs.
+  - Free guide (Gumroad, Free): https://tidybyte.gumroad.com/l/agent-cost-saver
+  - Also: Ship-Ready Skills Pack (Gumroad, From $1): https://tidybyte.gumroad.com/l/ship-ready-skills-pack
+  - Also: AGENTS.md starter pack (Gumroad, From $1): https://tidybyte.gumroad.com/l/agents-md-starter-pack
+  - Also: Dev OS in Claude Code (Gumroad, $9): https://tidybyte.gumroad.com/l/dev-os-claude-code
+- [Dev OS in Claude Code](https://tidybytetools.github.io/tools/dev-os-claude-code/): 15 skills, 5 subagents, and 4 safety hooks that turn a Claude Code day into a repeatable loop.
+  - For your computer (Gumroad, $9): https://tidybyte.gumroad.com/l/dev-os-claude-code
+  - Free: Agent Cost Saver (Gumroad, Free): https://tidybyte.gumroad.com/l/agent-cost-saver
+  - Also: Ship-Ready Skills Pack (Gumroad, From $1): https://tidybyte.gumroad.com/l/ship-ready-skills-pack
 - [Base64 Encode & Decode](https://tidybytetools.github.io/tools/base64-lite/): Encode or decode Base64 for text and local files, on your computer.
   - Free lite GitHub: https://github.com/tidybytetools/base64-lite
   - Pay per use (Apify, $0.001 per unique item): https://apify.com/tidybytetools/base64-encode-decode
@@ -509,6 +523,8 @@ An AGENTS.md file is a plain note that lists your commands, your rules, and how 
 - For your computer (Gumroad, From $1): Pay what you want, suggested $5. These are text files. An agent can still ignore a rule. Change the commands to match your project.
 - Also: Ship-Ready Skills Pack (Gumroad, From $1): 10 tested skills for code review, tests, secret scans, and changelogs. Suggested $7.
 - Free skill sample (Gumroad, Free): A free JSON repair skill, also on GitHub at github.com/tidybytetools/json-repair-skill. Separate from this pack.
+- Also: Dev OS in Claude Code (Gumroad, $9): 15 skills, 5 subagents, and 4 safety hooks, plus an installer. A daily workflow kit for Claude Code.
+- Free: Agent Cost Saver (Gumroad, Free): A short guide and 4 scripts for cutting Claude Code, Cursor, and Codex token costs.
 
 ### Ship-Ready Skills Pack
 AI coding agents are fast, and they also say they are done when the tests never ran. This pack gives the agent 10 skills, 8 with a small Python script, so it works from real output.
@@ -517,6 +533,8 @@ AI coding agents are fast, and they also say they are done when the tests never 
 - install.sh copies the skills into Claude Code and Cursor and never overwrites a skill you already have, unless you pass --force.
 - For your computer (Gumroad, From $1): Pay what you want, suggested $7. Scripts use the Python standard library only. An agent can still ignore a skill.
 - Free sample skill (Gumroad, Free): The verify-before-done skill, plus a short definition-of-done block. 1 of the 10 skills in this pack.
+- Also: Dev OS in Claude Code (Gumroad, $9): 15 skills, 5 subagents, and 4 safety hooks, plus an installer. A daily workflow kit for Claude Code.
+- Free: Agent Cost Saver (Gumroad, Free): A short guide and 4 scripts for cutting Claude Code, Cursor, and Codex token costs. No made-up savings numbers.
 
 ### Verify Before Done
 Your AI coding agent says it is done. Did it run the tests? This free skill finds your real lint, type, test, and build commands, runs them, and shows PASS or FAIL.
@@ -525,6 +543,26 @@ Your AI coding agent says it is done. Did it run the tests? This free skill find
 - Includes a short definition-of-done block you can add to AGENTS.md or CLAUDE.md.
 - Free sample (Gumroad, Free): Free to use in any project. Pay what you want, $0+.
 - Full 10-skill pack (Gumroad, From $1): Adds code review, tests, secret scan, changelog, release notes, PR text, dependency checks, bug repro, and API docs. Suggested $7.
+- Free: Agent Cost Saver (Gumroad, Free): A short guide and 4 scripts for cutting Claude Code, Cursor, and Codex token costs.
+
+### Agent Cost Saver
+Your AI coding agent costs more than it should. Most of the waste comes from a few habits and a few big files. This free pack shows you which ones, then lets you measure before and after.
+- A short guide for each tool: 14 Claude Code habits, 8 Cursor habits, and 9 Codex habits, with the exact command or setting and a link to the official docs (checked Nov 25, 2026).
+- cost_audit.py scans a project for what is sent with every request. session_report.py totals tokens per Claude Code session from your own local logs.
+- make_ignore.py suggests a .cursorignore and Claude Code Read-deny rules. filter_test_output.py is a hook that keeps test output short and keeps the real exit code.
+- Free guide (Gumroad, Free): Free to use and change (MIT). Pay what you want, $0+. It does not promise a percent saved. Measure before and after instead.
+- Also: Ship-Ready Skills Pack (Gumroad, From $1): 10 tested skills for code review, tests, secret scans, and changelogs. Suggested $7.
+- Also: AGENTS.md starter pack (Gumroad, From $1): 12 instruction files that tell Codex, Cursor, and Claude Code how your project works.
+- Also: Dev OS in Claude Code (Gumroad, $9): 15 skills, 5 subagents, and 4 safety hooks, plus an installer. A daily workflow kit for Claude Code.
+
+### Dev OS in Claude Code
+Claude Code is powerful, but every day starts the same way: re-explain the project, hope it checks its work, hope it does not run something nasty. This kit installs into a project in about 5 minutes.
+- 15 slash-command skills for the daily loop: start, plan, build, review, commit, hand off, plus fix, test, explain, refactor, and release.
+- 5 subagents (a cheap file finder, a reviewer, a test runner, a security pass, and a docs writer) and 4 hooks that block dangerous shell commands, protect .env and keys, format the file just written, and show your branch at session start.
+- A safe installer (dry run by default, merges your settings, never overwrites your files, can be undone) and a doctor script that checks the install.
+- For your computer (Gumroad, $9): Fixed $9. You may use it in your own projects, including client work. Please do not resell it. The hooks match command patterns; they are not a sandbox. Keep Claude Code's permission prompts on.
+- Free: Agent Cost Saver (Gumroad, Free): A short guide and 4 scripts for cutting Claude Code, Cursor, and Codex token costs.
+- Also: Ship-Ready Skills Pack (Gumroad, From $1): 10 tested skills for code review, tests, secret scans, and changelogs. Suggested $7.
 
 ### Base64 Encode & Decode
 Turn text or a local file into Base64, or turn Base64 back into text or bytes. You can also use the URL-safe alphabet and data-URI output. It runs offline.

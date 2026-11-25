@@ -221,12 +221,26 @@ Do not invent reviews, user counts, or testimonials. Do not use a personal name 
   - For your computer (Gumroad, From $1): https://tidybyte.gumroad.com/l/agents-md-starter-pack
   - Also: Ship-Ready Skills Pack (Gumroad, From $1): https://tidybyte.gumroad.com/l/ship-ready-skills-pack
   - Free skill sample (Gumroad, Free): https://tidybyte.gumroad.com/l/json-repair-skill-free
+  - Also: Dev OS in Claude Code (Gumroad, $9): https://tidybyte.gumroad.com/l/dev-os-claude-code
+  - Free: Agent Cost Saver (Gumroad, Free): https://tidybyte.gumroad.com/l/agent-cost-saver
 - [Ship-Ready Skills Pack](https://tidybytetools.github.io/tools/ship-ready-skills-pack/): 10 tested agent skills that make Claude Code, Cursor, and Codex prove the work before they say done.
   - For your computer (Gumroad, From $1): https://tidybyte.gumroad.com/l/ship-ready-skills-pack
   - Free sample skill (Gumroad, Free): https://tidybyte.gumroad.com/l/verify-before-done-free
+  - Also: Dev OS in Claude Code (Gumroad, $9): https://tidybyte.gumroad.com/l/dev-os-claude-code
+  - Free: Agent Cost Saver (Gumroad, Free): https://tidybyte.gumroad.com/l/agent-cost-saver
 - [Verify Before Done](https://tidybytetools.github.io/tools/verify-before-done-free/): A free agent skill that makes Claude Code, Cursor, and Codex run your real tests before they say done.
   - Free sample (Gumroad, Free): https://tidybyte.gumroad.com/l/verify-before-done-free
   - Full 10-skill pack (Gumroad, From $1): https://tidybyte.gumroad.com/l/ship-ready-skills-pack
+  - Free: Agent Cost Saver (Gumroad, Free): https://tidybyte.gumroad.com/l/agent-cost-saver
+- [Agent Cost Saver](https://tidybytetools.github.io/tools/agent-cost-saver/): A free guide and 4 scripts to cut Claude Code, Cursor, and Codex token costs.
+  - Free guide (Gumroad, Free): https://tidybyte.gumroad.com/l/agent-cost-saver
+  - Also: Ship-Ready Skills Pack (Gumroad, From $1): https://tidybyte.gumroad.com/l/ship-ready-skills-pack
+  - Also: AGENTS.md starter pack (Gumroad, From $1): https://tidybyte.gumroad.com/l/agents-md-starter-pack
+  - Also: Dev OS in Claude Code (Gumroad, $9): https://tidybyte.gumroad.com/l/dev-os-claude-code
+- [Dev OS in Claude Code](https://tidybytetools.github.io/tools/dev-os-claude-code/): 15 skills, 5 subagents, and 4 safety hooks that turn a Claude Code day into a repeatable loop.
+  - For your computer (Gumroad, $9): https://tidybyte.gumroad.com/l/dev-os-claude-code
+  - Free: Agent Cost Saver (Gumroad, Free): https://tidybyte.gumroad.com/l/agent-cost-saver
+  - Also: Ship-Ready Skills Pack (Gumroad, From $1): https://tidybyte.gumroad.com/l/ship-ready-skills-pack
 - [Base64 Encode & Decode](https://tidybytetools.github.io/tools/base64-lite/): Encode or decode Base64 for text and local files, on your computer.
   - Free lite GitHub: https://github.com/tidybytetools/base64-lite
   - Pay per use (Apify, $0.001 per unique item): https://apify.com/tidybytetools/base64-encode-decode
