@@ -923,6 +923,16 @@
       }
     },
     {
+      "name": "n8n Prompt + Reliability Pack",
+      "slug": "n8n-prompt-reliability-pack",
+      "description": "12 AI prompts plus 4 n8n workflows for alerts, retries, duplicate webhooks, and lead checks.",
+      "url": "https://tidybytetools.github.io/tools/n8n-prompt-reliability-pack/",
+      "github": null,
+      "input": "A webhook, a failed n8n run, or an API URL, plus the sample data in each workflow.",
+      "output": "An alert message, a processed-or-ignored reply, a fallback result, or a lead report with HTTP 200, 422, or 502.",
+      "translations": {}
+    },
+    {
       "name": "csv-char-fix",
       "slug": "csv-char-fix",
       "description": "Fix weird characters like Ã© and â€™ in CSV and text files.",
@@ -1118,6 +1128,16 @@
       }
     },
     {
+      "name": "Dev Cheat Sheets",
+      "slug": "dev-cheat-sheets",
+      "description": "8 one-page PDFs for git, curl and jq, SQL, cron, Docker, grep/sed/awk, ssh, and Python CSV.",
+      "url": "https://tidybytetools.github.io/tools/dev-cheat-sheets/",
+      "github": null,
+      "input": "A question like how to undo a commit, call an API, or write a cron line.",
+      "output": "The command and a short note, on a one-page PDF or in the Markdown copy.",
+      "translations": {}
+    },
+    {
       "name": "CSV Skills for Claude Code",
       "slug": "claude-data-skills",
       "description": "4 Claude Code skills that profile, diff, fix, and split CSV files on your computer.",
@@ -1181,6 +1201,16 @@
           ]
         }
       }
+    },
+    {
+      "name": "AGENTS.md Starter Pack",
+      "slug": "agents-md-starter-pack",
+      "description": "12 instruction files that tell Codex, Cursor, and Claude Code how your project works.",
+      "url": "https://tidybytetools.github.io/tools/agents-md-starter-pack/",
+      "github": null,
+      "input": "Your project folder, and the template that matches it.",
+      "output": "An AGENTS.md file, and a CLAUDE.md that imports it so Claude Code reads it too.",
+      "translations": {}
     },
     {
       "name": "Base64 Encode & Decode",

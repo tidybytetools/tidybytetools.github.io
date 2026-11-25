@@ -615,14 +615,18 @@ jon smith,jon@acme.com,415 555 0110,""",
             "From n8n-data-cleanup-pack/samples/input.csv and clean-output-from-n8n.csv.",
         ),
         "versions": [
-            V("Gumroad", "For n8n", "$19",
+            V("Gumroad", "For n8n", "From $1",
               "https://tidybyte.gumroad.com/l/n8n-data-cleanup-pack",
               cta="Buy on Gumroad",
-              note="Tested on self-hosted n8n 2.46.4. Workflows that read files from disk need self-hosted n8n."),
+              note="Pay what you want, suggested $5. Tested on self-hosted n8n 2.46.4. Workflows that read files from disk need self-hosted n8n."),
             V("Gumroad", "Free sample", "Free",
               "https://tidybyte.gumroad.com/l/n8n-cleanup-sampler",
               cta="Get free on Gumroad",
               note="Two workflows from the pack: CSV cleanup and uptime alerts."),
+            V("Gumroad", "Also: prompts and reliability", "From $1",
+              "https://tidybyte.gumroad.com/l/n8n-prompt-reliability-pack",
+              cta="See on Gumroad",
+              note="12 AI prompts and 4 workflows for error alerts, retries, duplicate webhooks, and lead checks."),
         ],
         "repos": [],
     },
@@ -639,7 +643,7 @@ jon smith,jon@acme.com,415 555 0110,""",
         "does": [
             "Includes CSV cleanup and dedupe, plus website uptime alerts to Discord or Slack.",
             "Uses only nodes that come with n8n. No community nodes and no paid APIs.",
-            "Leads to the full n8n Data Cleanup Pack ($19) with 9 workflows.",
+            "Leads to the full n8n Data Cleanup Pack (from $1) with 9 workflows.",
         ],
         "thumb": PRODUCTS_DIR / "n8n-cleanup-sampler" / "thumb.png",
         "cover": PRODUCTS_DIR / "n8n-cleanup-sampler" / "cover.png",
@@ -661,7 +665,66 @@ Maria Garcia,maria@sunrise.com,512.555.0142,""",
             V("Gumroad", "Free sample", "Free",
               "https://tidybyte.gumroad.com/l/n8n-cleanup-sampler",
               cta="Get free on Gumroad",
-              note="Two workflows from the $19 n8n Data Cleanup Pack. The CSV cleanup workflow needs self-hosted n8n."),
+              note="Two workflows from the n8n Data Cleanup Pack (from $1). The CSV cleanup workflow needs self-hosted n8n."),
+            V("Gumroad", "Full data cleanup pack", "From $1",
+              "https://tidybyte.gumroad.com/l/n8n-data-cleanup-pack",
+              cta="Buy on Gumroad",
+              note="9 workflows, pay what you want, suggested $5."),
+            V("Gumroad", "Also: prompts and reliability", "From $1",
+              "https://tidybyte.gumroad.com/l/n8n-prompt-reliability-pack",
+              cta="See on Gumroad",
+              note="12 AI prompts and 4 workflows for error alerts, retries, duplicate webhooks, and lead checks."),
+        ],
+        "repos": [],
+    },
+    {
+        "slug": "n8n-prompt-reliability-pack",
+        "name": "n8n Prompt + Reliability Pack",
+        "category": "n8n",
+        "icon": "workflow",
+        "tagline": "12 AI prompts plus 4 n8n workflows for alerts, retries, duplicate webhooks, and lead checks.",
+        "summary": (
+            "Most n8n workflows work on day one and break on day thirty. This pack helps you "
+            "build faster with AI, and build so a failure is not silent."
+        ),
+        "does": [
+            "12 copy-paste prompts for Claude, ChatGPT, or Gemini, with rules that keep secrets out and add an error path.",
+            "Four ready-to-import workflows: error alerts, ignore duplicate webhooks, retry an API with a fallback, and validate leads.",
+            "Built-in nodes only. No secrets in the files. Each workflow has sticky notes and sample data.",
+        ],
+        "thumb": PRODUCTS_DIR / "n8n-prompt-reliability-pack" / "thumb.png",
+        "cover": PRODUCTS_DIR / "n8n-prompt-reliability-pack" / "cover.png",
+        "input": "A webhook, a failed n8n run, or an API URL, plus the sample data in each workflow.",
+        "output": "An alert message, a processed-or-ignored reply, a fallback result, or a lead report with HTTP 200, 422, or 502.",
+        "example": E(
+            """POST /webhook/validate-leads
+[
+  {"name":"  Ana Ruiz ","email":"ANA@Example.com "},
+  {"name":"Bo","email":"bo-at-example.com","phone":"12"},
+  {"name":"","email":"cy@example.com"}
+]""",
+            """HTTP 422
+checked: 3
+accepted: 1
+rejected: 2
+results:
+  Ana Ruiz   accepted  ana@example.com
+  Bo         rejected  email does not look right; phone needs 7 to 15 digits
+  (empty)    rejected  name is missing or too short""",
+            "Three leads posted to the webhook",
+            "Report from a real n8n 2.46.4 run",
+            "text",
+            "From a test run of 04-validate-and-route-incoming-leads.json in n8n 2.46.4.",
+        ),
+        "versions": [
+            V("Gumroad", "For n8n", "From $1",
+              "https://tidybyte.gumroad.com/l/n8n-prompt-reliability-pack",
+              cta="Buy on Gumroad",
+              note="Pay what you want, suggested $5. Tested on self-hosted n8n 2.46.4. Not tested on n8n Cloud or with a real Discord or Slack account."),
+            V("Gumroad", "Free data-cleanup sample", "Free",
+              "https://tidybyte.gumroad.com/l/n8n-cleanup-sampler",
+              cta="Get free on Gumroad",
+              note="Two free cleanup workflows, separate from this pack."),
         ],
         "repos": [],
     },
@@ -786,6 +849,51 @@ Smith, Jane             Jane Smith
               "https://tidybyte.gumroad.com/l/regex-pack",
               cta="Buy on Gumroad",
               note="Patterns are tested in Python and JavaScript. A regex checks shape, not whether a value is real."),
+            V("Gumroad", "Also: 8 dev cheat sheets", "$3",
+              "https://tidybyte.gumroad.com/l/dev-cheat-sheets",
+              cta="See on Gumroad",
+              note="One-page PDFs for git, curl and jq, SQL, cron, Docker, grep/sed/awk, ssh, and Python CSV."),
+        ],
+        "repos": [],
+    },
+    {
+        "slug": "dev-cheat-sheets",
+        "name": "Dev Cheat Sheets",
+        "category": "data",
+        "icon": "doc",
+        "tagline": "8 one-page PDFs for git, curl and jq, SQL, cron, Docker, grep/sed/awk, ssh, and Python CSV.",
+        "summary": (
+            "You know the command. You just cannot remember the flag. These one-page sheets "
+            "put the answers where you can see them. Print them, or keep the PDF open."
+        ),
+        "does": [
+            "Eight letter-size PDFs, one page each, plus one combined PDF and Markdown copies you can search.",
+            "A test script that runs the safe examples (git, jq, grep, sed, awk, SQL, and the Python snippets).",
+            "Commands that delete things are marked DANGER or careful.",
+        ],
+        "thumb": PRODUCTS_DIR / "dev-cheat-sheets" / "thumb.png",
+        "cover": PRODUCTS_DIR / "dev-cheat-sheets" / "cover.png",
+        "input": "A question like how to undo a commit, call an API, or write a cron line.",
+        "output": "The command and a short note, on a one-page PDF or in the Markdown copy.",
+        "example": E(
+            """# I need to call an API and pull one field
+curl ?  jq ?""",
+            """curl -fsS https://api.example.com/items | jq -r '.items[].name'
+
+# Other curl + jq lines on the same page:
+curl -s -o /dev/null -w "%{http_code}\n" URL
+jq -r '.items[] | [.id, .name] | @csv' file.json
+jq empty file.json && echo ok""",
+            "A common lookup",
+            "Lines from the curl + jq sheet",
+            "text",
+            "From sheets/curl-jq-cheat-sheet.md. The safe examples were run by test_examples.sh.",
+        ),
+        "versions": [
+            V("Gumroad", "For your computer", "$3",
+              "https://tidybyte.gumroad.com/l/dev-cheat-sheets",
+              cta="Buy on Gumroad",
+              note="Not tested here: ssh, scp, rsync, Docker, crontab, and curl against a live server. Those limits are listed in the README."),
         ],
         "repos": [],
     },
@@ -825,6 +933,63 @@ Zoë Brontë,Zürich,Price: €25""",
               "https://tidybyte.gumroad.com/l/claude-data-skills",
               cta="Buy on Gumroad",
               note="Made for Claude Code. Scripts also run on their own with Python 3.8+. CSV and text only, not .xlsx."),
+            V("Gumroad", "Also: AGENTS.md starter pack", "From $1",
+              "https://tidybyte.gumroad.com/l/agents-md-starter-pack",
+              cta="See on Gumroad",
+              note="12 instruction files that tell Codex, Cursor, and Claude Code how your project works."),
+        ],
+        "repos": [],
+    },
+    {
+        "slug": "agents-md-starter-pack",
+        "name": "AGENTS.md Starter Pack",
+        "category": "ai",
+        "icon": "skills",
+        "tagline": "12 instruction files that tell Codex, Cursor, and Claude Code how your project works.",
+        "summary": (
+            "An AGENTS.md file is a plain note that lists your commands, your rules, and how "
+            "the agent should prove its work. Copy one template, change a few lines, and you are done."
+        ),
+        "does": [
+            "12 templates: Python CLI, data scripts, Node API, React, Cloudflare Worker, docs site, n8n repo, skill repo, Django, research notes, monorepo, and bug-fix mode.",
+            "7 short rule blocks you can mix in, such as secrets and safety, small diffs, and test first.",
+            "An install script that copies a template into your project and never overwrites a file you already have.",
+        ],
+        "thumb": PRODUCTS_DIR / "agents-md-starter-pack" / "thumb.png",
+        "cover": PRODUCTS_DIR / "agents-md-starter-pack" / "cover.png",
+        "input": "Your project folder, and the template that matches it.",
+        "output": "An AGENTS.md file, and a CLAUDE.md that imports it so Claude Code reads it too.",
+        "example": E(
+            """# AGENTS.md: Python command-line tool
+
+## Commands (run these, do not guess)
+- Run tests: `pytest -q`
+- Lint: `ruff check .`
+
+## Rules
+- Ask before adding a new dependency.
+- Never print a secret.
+
+## Before you say you are done
+1. Run pytest -q and ruff check .
+2. Paste the last lines of each.""",
+            """./install.sh 01 ~/code/mytool secrets-and-safety test-first
+Wrote ~/code/mytool/AGENTS.md
+Wrote ~/code/mytool/CLAUDE.md (imports AGENTS.md)""",
+            "Part of the Python CLI template",
+            "What the install script prints",
+            "text",
+            "From templates/01-python-cli.md and a real install.sh run.",
+        ),
+        "versions": [
+            V("Gumroad", "For your computer", "From $1",
+              "https://tidybyte.gumroad.com/l/agents-md-starter-pack",
+              cta="Buy on Gumroad",
+              note="Pay what you want, suggested $5. These are text files. An agent can still ignore a rule. Change the commands to match your project."),
+            V("Gumroad", "Free skill sample", "Free",
+              "https://tidybyte.gumroad.com/l/json-repair-skill-free",
+              cta="Get free sample",
+              note="A free JSON repair skill, also on GitHub at github.com/tidybytetools/json-repair-skill. Separate from this pack."),
         ],
         "repos": [],
     },

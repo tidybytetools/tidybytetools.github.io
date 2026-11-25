@@ -932,7 +932,7 @@
         {
           "place": "Gumroad",
           "label": "For n8n",
-          "price": "$19",
+          "price": "From $1",
           "url": "https://tidybyte.gumroad.com/l/n8n-data-cleanup-pack"
         },
         {
@@ -940,6 +940,12 @@
           "label": "Free sample",
           "price": "Free",
           "url": "https://tidybyte.gumroad.com/l/n8n-cleanup-sampler"
+        },
+        {
+          "place": "Gumroad",
+          "label": "Also: prompts and reliability",
+          "price": "From $1",
+          "url": "https://tidybyte.gumroad.com/l/n8n-prompt-reliability-pack"
         }
       ],
       "apify": null,
@@ -1018,6 +1024,18 @@
           "label": "Free sample",
           "price": "Free",
           "url": "https://tidybyte.gumroad.com/l/n8n-cleanup-sampler"
+        },
+        {
+          "place": "Gumroad",
+          "label": "Full data cleanup pack",
+          "price": "From $1",
+          "url": "https://tidybyte.gumroad.com/l/n8n-data-cleanup-pack"
+        },
+        {
+          "place": "Gumroad",
+          "label": "Also: prompts and reliability",
+          "price": "From $1",
+          "url": "https://tidybyte.gumroad.com/l/n8n-prompt-reliability-pack"
         }
       ],
       "apify": null,
@@ -1082,6 +1100,35 @@
           ]
         }
       }
+    },
+    {
+      "name": "n8n Prompt + Reliability Pack",
+      "slug": "n8n-prompt-reliability-pack",
+      "url": "https://tidybytetools.github.io/tools/n8n-prompt-reliability-pack/",
+      "what_it_does": "12 AI prompts plus 4 n8n workflows for alerts, retries, duplicate webhooks, and lead checks.",
+      "summary": "Most n8n workflows work on day one and break on day thirty. This pack helps you build faster with AI, and build so a failure is not silent.",
+      "category": "n8n",
+      "price": [
+        {
+          "place": "Gumroad",
+          "label": "For n8n",
+          "price": "From $1",
+          "url": "https://tidybyte.gumroad.com/l/n8n-prompt-reliability-pack"
+        },
+        {
+          "place": "Gumroad",
+          "label": "Free data-cleanup sample",
+          "price": "Free",
+          "url": "https://tidybyte.gumroad.com/l/n8n-cleanup-sampler"
+        }
+      ],
+      "apify": null,
+      "apify_mcp": null,
+      "mcp": null,
+      "github": null,
+      "input": "A webhook, a failed n8n run, or an API URL, plus the sample data in each workflow.",
+      "output": "An alert message, a processed-or-ignored reply, a fallback result, or a lead report with HTTP 200, 422, or 502.",
+      "translations": {}
     },
     {
       "name": "csv-char-fix",
@@ -1252,6 +1299,12 @@
           "label": "For your computer",
           "price": "$2",
           "url": "https://tidybyte.gumroad.com/l/regex-pack"
+        },
+        {
+          "place": "Gumroad",
+          "label": "Also: 8 dev cheat sheets",
+          "price": "$3",
+          "url": "https://tidybyte.gumroad.com/l/dev-cheat-sheets"
         }
       ],
       "apify": null,
@@ -1318,6 +1371,29 @@
       }
     },
     {
+      "name": "Dev Cheat Sheets",
+      "slug": "dev-cheat-sheets",
+      "url": "https://tidybytetools.github.io/tools/dev-cheat-sheets/",
+      "what_it_does": "8 one-page PDFs for git, curl and jq, SQL, cron, Docker, grep/sed/awk, ssh, and Python CSV.",
+      "summary": "You know the command. You just cannot remember the flag. These one-page sheets put the answers where you can see them. Print them, or keep the PDF open.",
+      "category": "data",
+      "price": [
+        {
+          "place": "Gumroad",
+          "label": "For your computer",
+          "price": "$3",
+          "url": "https://tidybyte.gumroad.com/l/dev-cheat-sheets"
+        }
+      ],
+      "apify": null,
+      "apify_mcp": null,
+      "mcp": null,
+      "github": null,
+      "input": "A question like how to undo a commit, call an API, or write a cron line.",
+      "output": "The command and a short note, on a one-page PDF or in the Markdown copy.",
+      "translations": {}
+    },
+    {
       "name": "CSV Skills for Claude Code",
       "slug": "claude-data-skills",
       "url": "https://tidybytetools.github.io/tools/claude-data-skills/",
@@ -1330,6 +1406,12 @@
           "label": "For your computer",
           "price": "$3",
           "url": "https://tidybyte.gumroad.com/l/claude-data-skills"
+        },
+        {
+          "place": "Gumroad",
+          "label": "Also: AGENTS.md starter pack",
+          "price": "From $1",
+          "url": "https://tidybyte.gumroad.com/l/agents-md-starter-pack"
         }
       ],
       "apify": null,
@@ -1394,6 +1476,35 @@
           ]
         }
       }
+    },
+    {
+      "name": "AGENTS.md Starter Pack",
+      "slug": "agents-md-starter-pack",
+      "url": "https://tidybytetools.github.io/tools/agents-md-starter-pack/",
+      "what_it_does": "12 instruction files that tell Codex, Cursor, and Claude Code how your project works.",
+      "summary": "An AGENTS.md file is a plain note that lists your commands, your rules, and how the agent should prove its work. Copy one template, change a few lines, and you are done.",
+      "category": "ai",
+      "price": [
+        {
+          "place": "Gumroad",
+          "label": "For your computer",
+          "price": "From $1",
+          "url": "https://tidybyte.gumroad.com/l/agents-md-starter-pack"
+        },
+        {
+          "place": "Gumroad",
+          "label": "Free skill sample",
+          "price": "Free",
+          "url": "https://tidybyte.gumroad.com/l/json-repair-skill-free"
+        }
+      ],
+      "apify": null,
+      "apify_mcp": null,
+      "mcp": null,
+      "github": null,
+      "input": "Your project folder, and the template that matches it.",
+      "output": "An AGENTS.md file, and a CLAUDE.md that imports it so Claude Code reads it too.",
+      "translations": {}
     },
     {
       "name": "Base64 Encode & Decode",

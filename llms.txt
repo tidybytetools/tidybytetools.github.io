@@ -152,8 +152,9 @@ Do not invent reviews, user counts, or testimonials. Do not use a personal name 
     - ja: 動画のフォルダを、小さくて鮮明なGIFにします。オフラインです。 | 動画 を GIF, GIF 作成, 背景削除, オフライン
     - zh-CN: 把一文件夹视频离线转成小而清晰的 GIF。 | 视频转 GIF, 制作 GIF, 去除背景, 离线
 - [n8n Data Cleanup Pack](https://tidybytetools.github.io/tools/n8n-data-cleanup-pack/): 9 n8n workflows for messy CSVs, leads, invoices, sheets, and uptime alerts.
-  - For n8n (Gumroad, $19): https://tidybyte.gumroad.com/l/n8n-data-cleanup-pack
+  - For n8n (Gumroad, From $1): https://tidybyte.gumroad.com/l/n8n-data-cleanup-pack
   - Free sample (Gumroad, Free): https://tidybyte.gumroad.com/l/n8n-cleanup-sampler
+  - Also: prompts and reliability (Gumroad, From $1): https://tidybyte.gumroad.com/l/n8n-prompt-reliability-pack
   - Multilingual keywords:
     - es: 9 flujos de n8n para CSV, clientes, facturas, hojas y avisos de actividad. | flujos n8n, limpiar csv n8n, automatización n8n, alertas uptime
     - pt-BR: 9 fluxos n8n para CSV, leads, faturas, planilhas e alertas de uptime. | fluxos n8n, limpar csv n8n, automação n8n, alertas uptime
@@ -163,6 +164,8 @@ Do not invent reviews, user counts, or testimonials. Do not use a personal name 
     - zh-CN: 9 个 n8n 工作流，用于杂乱 CSV、线索、发票、表格和在线状态提醒。 | n8n 工作流, n8n 清理 CSV, n8n 自动化, 可用性提醒
 - [n8n Cleanup Sampler](https://tidybytetools.github.io/tools/n8n-cleanup-sampler/): 2 free n8n workflows from the Data Cleanup Pack: CSV cleanup and uptime alerts.
   - Free sample (Gumroad, Free): https://tidybyte.gumroad.com/l/n8n-cleanup-sampler
+  - Full data cleanup pack (Gumroad, From $1): https://tidybyte.gumroad.com/l/n8n-data-cleanup-pack
+  - Also: prompts and reliability (Gumroad, From $1): https://tidybyte.gumroad.com/l/n8n-prompt-reliability-pack
   - Multilingual keywords:
     - es: 2 flujos n8n gratis del paquete: limpieza de CSV y avisos de actividad. | n8n gratis, muestra n8n, limpiar csv n8n, alertas uptime
     - pt-BR: 2 fluxos n8n gratis do pacote: limpeza de CSV e alertas de uptime. | n8n gratis, amostra n8n, limpar csv n8n, alertas uptime
@@ -170,6 +173,9 @@ Do not invent reviews, user counts, or testimonials. Do not use a personal name 
     - fr: 2 flux n8n gratuits du pack : nettoyage CSV et alertes de disponibilité. | n8n gratuit, échantillon n8n, nettoyer csv n8n, alertes uptime
     - ja: パックから無料のn8nワークフローが2本。CSVの整理と稼働の知らせです。 | n8n 無料, n8n サンプル, n8n CSV, 稼働監視
     - zh-CN: 从套装中免费提供 2 个 n8n 工作流：CSV 清理和在线状态提醒。 | 免费 n8n, n8n 样例, n8n 清理 CSV, 可用性提醒
+- [n8n Prompt + Reliability Pack](https://tidybytetools.github.io/tools/n8n-prompt-reliability-pack/): 12 AI prompts plus 4 n8n workflows for alerts, retries, duplicate webhooks, and lead checks.
+  - For n8n (Gumroad, From $1): https://tidybyte.gumroad.com/l/n8n-prompt-reliability-pack
+  - Free data-cleanup sample (Gumroad, Free): https://tidybyte.gumroad.com/l/n8n-cleanup-sampler
 - [csv-char-fix](https://tidybytetools.github.io/tools/csv-char-fix/): Fix weird characters like Ã© and â€™ in CSV and text files.
   - For your computer (Gumroad, $1): https://tidybyte.gumroad.com/l/csv-char-fix
   - Multilingual keywords:
@@ -190,6 +196,7 @@ Do not invent reviews, user counts, or testimonials. Do not use a personal name 
     - zh-CN: 把大的 CSV 拆成更小的文件。每个新文件都保留表头。 | 拆分 CSV, 切割 CSV, 按列拆分, 小文件
 - [Regex Pack for Messy Data](https://tidybytetools.github.io/tools/regex-pack/): 49 ready-to-use regex patterns for emails, phones, dates, money, and more.
   - For your computer (Gumroad, $2): https://tidybyte.gumroad.com/l/regex-pack
+  - Also: 8 dev cheat sheets (Gumroad, $3): https://tidybyte.gumroad.com/l/dev-cheat-sheets
   - Multilingual keywords:
     - es: 49 patrones de regex listos para correos, teléfonos, fechas, dinero y más. | patrones regex, regex email, regex teléfono, regex fechas
     - pt-BR: 49 padrões de regex prontos para e-mails, telefones, datas, dinheiro e mais. | padrões regex, regex email, regex telefone, regex datas
@@ -197,8 +204,11 @@ Do not invent reviews, user counts, or testimonials. Do not use a personal name 
     - fr: 49 motifs regex prêts à l'emploi pour e-mails, telephones, dates, argent et plus. | motifs regex, regex email, regex telephone, regex dates
     - ja: メール、電話、日付、金額などに使える正規表現が49個あります。 | 正規表現 パターン, メール 正規表現, 電話 正規表現, 日付 正規表現
     - zh-CN: 49 个现成的正则，用于邮箱、电话、日期、金额等。 | 正则表达式, 邮箱正则, 电话正则, 日期正则
+- [Dev Cheat Sheets](https://tidybytetools.github.io/tools/dev-cheat-sheets/): 8 one-page PDFs for git, curl and jq, SQL, cron, Docker, grep/sed/awk, ssh, and Python CSV.
+  - For your computer (Gumroad, $3): https://tidybyte.gumroad.com/l/dev-cheat-sheets
 - [CSV Skills for Claude Code](https://tidybytetools.github.io/tools/claude-data-skills/): 4 Claude Code skills that profile, diff, fix, and split CSV files on your computer.
   - For your computer (Gumroad, $3): https://tidybyte.gumroad.com/l/claude-data-skills
+  - Also: AGENTS.md starter pack (Gumroad, From $1): https://tidybyte.gumroad.com/l/agents-md-starter-pack
   - Multilingual keywords:
     - es: 4 habilidades de Claude Code para perfilar, comparar, arreglar y partir CSV en tu computadora. | claude code csv, habilidades claude, perfil de csv, diff de csv
     - pt-BR: 4 habilidades do Claude Code para perfilar, comparar, corrigir e dividir CSV no seu computador. | claude code csv, skills claude, perfil de csv, diff de csv
@@ -206,6 +216,9 @@ Do not invent reviews, user counts, or testimonials. Do not use a personal name 
     - fr: 4 compétences Claude Code pour profiler, comparer, réparer et découper des CSV sur votre ordinateur. | claude code csv, skills claude, profil csv, diff csv
     - ja: Claude Code用のスキルが4つ。コンピュータ上でCSVの概要、比較、修正、分割ができます。 | Claude Code CSV, Claude スキル, CSV プロファイル, CSV 差分
     - zh-CN: 4 个 Claude Code 技能，在你的电脑上对 CSV 做概览、对比、修复和拆分。 | Claude Code CSV, Claude 技能, CSV 概览, CSV 对比
+- [AGENTS.md Starter Pack](https://tidybytetools.github.io/tools/agents-md-starter-pack/): 12 instruction files that tell Codex, Cursor, and Claude Code how your project works.
+  - For your computer (Gumroad, From $1): https://tidybyte.gumroad.com/l/agents-md-starter-pack
+  - Free skill sample (Gumroad, Free): https://tidybyte.gumroad.com/l/json-repair-skill-free
 - [Base64 Encode & Decode](https://tidybytetools.github.io/tools/base64-lite/): Encode or decode Base64 for text and local files, on your computer.
   - Free lite GitHub: https://github.com/tidybytetools/base64-lite
   - Pay per use (Apify, $0.001 per unique item): https://apify.com/tidybytetools/base64-encode-decode
