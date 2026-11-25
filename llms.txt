@@ -208,6 +208,7 @@ Do not invent reviews, user counts, or testimonials. Do not use a personal name 
   - For your computer (Gumroad, $3): https://tidybyte.gumroad.com/l/dev-cheat-sheets
 - [CSV Skills for Claude Code](https://tidybytetools.github.io/tools/claude-data-skills/): 4 Claude Code skills that profile, diff, fix, and split CSV files on your computer.
   - For your computer (Gumroad, $3): https://tidybyte.gumroad.com/l/claude-data-skills
+  - Bigger pack: 8 data skills (Gumroad, From $1): https://tidybyte.gumroad.com/l/agent-data-skills
   - Also: AGENTS.md starter pack (Gumroad, From $1): https://tidybyte.gumroad.com/l/agents-md-starter-pack
   - Also: Ship-Ready Skills Pack (Gumroad, From $1): https://tidybyte.gumroad.com/l/ship-ready-skills-pack
   - Multilingual keywords:
@@ -217,6 +218,10 @@ Do not invent reviews, user counts, or testimonials. Do not use a personal name 
     - fr: 4 compétences Claude Code pour profiler, comparer, réparer et découper des CSV sur votre ordinateur. | claude code csv, skills claude, profil csv, diff csv
     - ja: Claude Code用のスキルが4つ。コンピュータ上でCSVの概要、比較、修正、分割ができます。 | Claude Code CSV, Claude スキル, CSV プロファイル, CSV 差分
     - zh-CN: 4 个 Claude Code 技能，在你的电脑上对 CSV 做概览、对比、修复和拆分。 | Claude Code CSV, Claude 技能, CSV 概览, CSV 对比
+- [Agent Data Skills Pack](https://tidybytetools.github.io/tools/agent-data-skills/): 8 tested skills that let Claude Code, Cursor, and Codex clean CSV, repair JSON, hide personal info, and chunk Markdown.
+  - For your computer (Gumroad, From $1): https://tidybyte.gumroad.com/l/agent-data-skills
+  - Free skill sample (Gumroad, Free): https://tidybyte.gumroad.com/l/json-repair-skill-free
+  - Also: Ship-Ready Skills Pack (Gumroad, From $1): https://tidybyte.gumroad.com/l/ship-ready-skills-pack
 - [AGENTS.md Starter Pack](https://tidybytetools.github.io/tools/agents-md-starter-pack/): 12 instruction files that tell Codex, Cursor, and Claude Code how your project works.
   - For your computer (Gumroad, From $1): https://tidybyte.gumroad.com/l/agents-md-starter-pack
   - Also: Ship-Ready Skills Pack (Gumroad, From $1): https://tidybyte.gumroad.com/l/ship-ready-skills-pack

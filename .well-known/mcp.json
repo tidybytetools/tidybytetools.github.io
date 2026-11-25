@@ -1203,6 +1203,16 @@
       }
     },
     {
+      "name": "Agent Data Skills Pack",
+      "slug": "agent-data-skills",
+      "description": "8 tested skills that let Claude Code, Cursor, and Codex clean CSV, repair JSON, hide personal info, and chunk Markdown.",
+      "url": "https://tidybytetools.github.io/tools/agent-data-skills/",
+      "github": null,
+      "input": "A CSV, JSON, text, or Markdown file on your computer.",
+      "output": "A profile, a diff, a fixed file, a CSV, a redacted copy, or JSONL chunks. The original can stay unchanged.",
+      "translations": {}
+    },
+    {
       "name": "AGENTS.md Starter Pack",
       "slug": "agents-md-starter-pack",
       "description": "12 instruction files that tell Codex, Cursor, and Claude Code how your project works.",

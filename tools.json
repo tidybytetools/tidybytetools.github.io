@@ -1409,6 +1409,12 @@
         },
         {
           "place": "Gumroad",
+          "label": "Bigger pack: 8 data skills",
+          "price": "From $1",
+          "url": "https://tidybyte.gumroad.com/l/agent-data-skills"
+        },
+        {
+          "place": "Gumroad",
           "label": "Also: AGENTS.md starter pack",
           "price": "From $1",
           "url": "https://tidybyte.gumroad.com/l/agents-md-starter-pack"
@@ -1482,6 +1488,41 @@
           ]
         }
       }
+    },
+    {
+      "name": "Agent Data Skills Pack",
+      "slug": "agent-data-skills",
+      "url": "https://tidybytetools.github.io/tools/agent-data-skills/",
+      "what_it_does": "8 tested skills that let Claude Code, Cursor, and Codex clean CSV, repair JSON, hide personal info, and chunk Markdown.",
+      "summary": "Each skill is a SKILL.md file plus a small tested Python script that runs on your computer. The agent runs the script and reads a short result, instead of loading a whole file into the chat.",
+      "category": "ai",
+      "price": [
+        {
+          "place": "Gumroad",
+          "label": "For your computer",
+          "price": "From $1",
+          "url": "https://tidybyte.gumroad.com/l/agent-data-skills"
+        },
+        {
+          "place": "Gumroad",
+          "label": "Free skill sample",
+          "price": "Free",
+          "url": "https://tidybyte.gumroad.com/l/json-repair-skill-free"
+        },
+        {
+          "place": "Gumroad",
+          "label": "Also: Ship-Ready Skills Pack",
+          "price": "From $1",
+          "url": "https://tidybyte.gumroad.com/l/ship-ready-skills-pack"
+        }
+      ],
+      "apify": null,
+      "apify_mcp": null,
+      "mcp": null,
+      "github": null,
+      "input": "A CSV, JSON, text, or Markdown file on your computer.",
+      "output": "A profile, a diff, a fixed file, a CSV, a redacted copy, or JSONL chunks. The original can stay unchanged.",
+      "translations": {}
     },
     {
       "name": "AGENTS.md Starter Pack",
