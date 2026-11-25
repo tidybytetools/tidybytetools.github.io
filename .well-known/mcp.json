@@ -1263,6 +1263,36 @@
       "translations": {}
     },
     {
+      "name": "Anti-Slop Kit",
+      "slug": "anti-slop-kit",
+      "description": "A tested checker, 4 skills, hooks, and CI that keep AI-written READMEs, docs, commits, and PR text plain.",
+      "url": "https://tidybytetools.github.io/tools/anti-slop-kit/",
+      "github": null,
+      "input": "A README, docs folder, pull request text, or commit message.",
+      "output": "A list of findings with line, severity, and a plain fix, or a rewrite that keeps your facts and code the same.",
+      "translations": {}
+    },
+    {
+      "name": "Anti-Slop Rules",
+      "slug": "anti-slop-rules-free",
+      "description": "Free: 12 plain-writing rules and a de-slop skill for Claude Code, Cursor, and Codex.",
+      "url": "https://tidybytetools.github.io/tools/anti-slop-rules-free/",
+      "github": null,
+      "input": "A README, docs page, pull request, or commit message you want written in plain words.",
+      "output": "A rewritten draft, plus a short list of what changed.",
+      "translations": {}
+    },
+    {
+      "name": "All Tidy Byte Agent Packs",
+      "slug": "all-agent-packs",
+      "description": "6 packs for Claude Code, Cursor, and Codex in one bundle: skills, hooks, AGENTS.md, and the Anti-Slop Kit.",
+      "url": "https://tidybytetools.github.io/tools/all-agent-packs/",
+      "github": null,
+      "input": "Your project folder, plus the pack you want to install first.",
+      "output": "Each pack's own files, with their README, installer, and tests.",
+      "translations": {}
+    },
+    {
       "name": "Base64 Encode & Decode",
       "slug": "base64-lite",
       "description": "Encode or decode Base64 for text and local files, on your computer.",

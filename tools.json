@@ -1383,6 +1383,12 @@
           "label": "For your computer",
           "price": "$3",
           "url": "https://tidybyte.gumroad.com/l/dev-cheat-sheets"
+        },
+        {
+          "place": "Gumroad",
+          "label": "Also: All Tidy Byte Agent Packs",
+          "price": "$19",
+          "url": "https://tidybyte.gumroad.com/l/all-agent-packs"
         }
       ],
       "apify": null,
@@ -1514,6 +1520,12 @@
           "label": "Also: Ship-Ready Skills Pack",
           "price": "From $1",
           "url": "https://tidybyte.gumroad.com/l/ship-ready-skills-pack"
+        },
+        {
+          "place": "Gumroad",
+          "label": "Also: All Tidy Byte Agent Packs",
+          "price": "$19",
+          "url": "https://tidybyte.gumroad.com/l/all-agent-packs"
         }
       ],
       "apify": null,
@@ -1561,6 +1573,12 @@
           "label": "Free: Agent Cost Saver",
           "price": "Free",
           "url": "https://tidybyte.gumroad.com/l/agent-cost-saver"
+        },
+        {
+          "place": "Gumroad",
+          "label": "Also: All Tidy Byte Agent Packs",
+          "price": "$19",
+          "url": "https://tidybyte.gumroad.com/l/all-agent-packs"
         }
       ],
       "apify": null,
@@ -1602,6 +1620,18 @@
           "label": "Free: Agent Cost Saver",
           "price": "Free",
           "url": "https://tidybyte.gumroad.com/l/agent-cost-saver"
+        },
+        {
+          "place": "Gumroad",
+          "label": "Also: All Tidy Byte Agent Packs",
+          "price": "$19",
+          "url": "https://tidybyte.gumroad.com/l/all-agent-packs"
+        },
+        {
+          "place": "Gumroad",
+          "label": "Also: Anti-Slop Kit",
+          "price": "$9",
+          "url": "https://tidybyte.gumroad.com/l/anti-slop-kit"
         }
       ],
       "apify": null,
@@ -1637,6 +1667,12 @@
           "label": "Free: Agent Cost Saver",
           "price": "Free",
           "url": "https://tidybyte.gumroad.com/l/agent-cost-saver"
+        },
+        {
+          "place": "Gumroad",
+          "label": "Free: Anti-Slop Rules",
+          "price": "Free",
+          "url": "https://tidybyte.gumroad.com/l/anti-slop-rules-free"
         }
       ],
       "apify": null,
@@ -1678,6 +1714,12 @@
           "label": "Also: Dev OS in Claude Code",
           "price": "$9",
           "url": "https://tidybyte.gumroad.com/l/dev-os-claude-code"
+        },
+        {
+          "place": "Gumroad",
+          "label": "Free: Anti-Slop Rules",
+          "price": "Free",
+          "url": "https://tidybyte.gumroad.com/l/anti-slop-rules-free"
         }
       ],
       "apify": null,
@@ -1713,6 +1755,18 @@
           "label": "Also: Ship-Ready Skills Pack",
           "price": "From $1",
           "url": "https://tidybyte.gumroad.com/l/ship-ready-skills-pack"
+        },
+        {
+          "place": "Gumroad",
+          "label": "Also: All Tidy Byte Agent Packs",
+          "price": "$19",
+          "url": "https://tidybyte.gumroad.com/l/all-agent-packs"
+        },
+        {
+          "place": "Gumroad",
+          "label": "Also: Anti-Slop Kit",
+          "price": "$9",
+          "url": "https://tidybyte.gumroad.com/l/anti-slop-kit"
         }
       ],
       "apify": null,
@@ -1721,6 +1775,105 @@
       "github": null,
       "input": "Your project folder.",
       "output": "A .claude/ folder with skills, subagents, hooks, and merged settings, plus a short status from the doctor.",
+      "translations": {}
+    },
+    {
+      "name": "Anti-Slop Kit",
+      "slug": "anti-slop-kit",
+      "url": "https://tidybytetools.github.io/tools/anti-slop-kit/",
+      "what_it_does": "A tested checker, 4 skills, hooks, and CI that keep AI-written READMEs, docs, commits, and PR text plain.",
+      "summary": "AI coding agents often write the same way: \"Certainly!\", \"blazing fast\", \"seamless\", \"It's not X, it's Y\", em dashes, and emoji bullets. This kit finds those patterns with a script and gives Claude Code, Cursor, and Codex the rules to write plainly.",
+      "category": "ai",
+      "price": [
+        {
+          "place": "Gumroad",
+          "label": "For your computer",
+          "price": "$9",
+          "url": "https://tidybyte.gumroad.com/l/anti-slop-kit"
+        },
+        {
+          "place": "Gumroad",
+          "label": "Free: Anti-Slop Rules",
+          "price": "Free",
+          "url": "https://tidybyte.gumroad.com/l/anti-slop-rules-free"
+        },
+        {
+          "place": "Gumroad",
+          "label": "Also: All Tidy Byte Agent Packs",
+          "price": "$19",
+          "url": "https://tidybyte.gumroad.com/l/all-agent-packs"
+        }
+      ],
+      "apify": null,
+      "apify_mcp": null,
+      "mcp": null,
+      "github": null,
+      "input": "A README, docs folder, pull request text, or commit message.",
+      "output": "A list of findings with line, severity, and a plain fix, or a rewrite that keeps your facts and code the same.",
+      "translations": {}
+    },
+    {
+      "name": "Anti-Slop Rules",
+      "slug": "anti-slop-rules-free",
+      "url": "https://tidybytetools.github.io/tools/anti-slop-rules-free/",
+      "what_it_does": "Free: 12 plain-writing rules and a de-slop skill for Claude Code, Cursor, and Codex.",
+      "summary": "Your AI coding agent writes READMEs, commit messages, and PR text. These free rules make it write them plainly, without \"Certainly!\", \"blazing fast\", or emoji bullets.",
+      "category": "ai",
+      "price": [
+        {
+          "place": "Gumroad",
+          "label": "Free rules",
+          "price": "Free",
+          "url": "https://tidybyte.gumroad.com/l/anti-slop-rules-free"
+        },
+        {
+          "place": "Gumroad",
+          "label": "Full Anti-Slop Kit",
+          "price": "$9",
+          "url": "https://tidybyte.gumroad.com/l/anti-slop-kit"
+        }
+      ],
+      "apify": null,
+      "apify_mcp": null,
+      "mcp": null,
+      "github": null,
+      "input": "A README, docs page, pull request, or commit message you want written in plain words.",
+      "output": "A rewritten draft, plus a short list of what changed.",
+      "translations": {}
+    },
+    {
+      "name": "All Tidy Byte Agent Packs",
+      "slug": "all-agent-packs",
+      "url": "https://tidybytetools.github.io/tools/all-agent-packs/",
+      "what_it_does": "6 packs for Claude Code, Cursor, and Codex in one bundle: skills, hooks, AGENTS.md, and the Anti-Slop Kit.",
+      "summary": "Every Tidy Byte pack for AI coding agents, in one purchase. Each pack has its own README and tests. The bundle is $19. Bought alone at each pack's minimum price, they come to $24, which is the struck-through price Gumroad shows.",
+      "category": "ai",
+      "price": [
+        {
+          "place": "Gumroad",
+          "label": "The bundle",
+          "price": "$19",
+          "url": "https://tidybyte.gumroad.com/l/all-agent-packs"
+        },
+        {
+          "place": "Gumroad",
+          "label": "Free: Anti-Slop Rules",
+          "price": "Free",
+          "url": "https://tidybyte.gumroad.com/l/anti-slop-rules-free"
+        },
+        {
+          "place": "Gumroad",
+          "label": "Free: Agent Cost Saver",
+          "price": "Free",
+          "url": "https://tidybyte.gumroad.com/l/agent-cost-saver"
+        }
+      ],
+      "apify": null,
+      "apify_mcp": null,
+      "mcp": null,
+      "github": null,
+      "input": "Your project folder, plus the pack you want to install first.",
+      "output": "Each pack's own files, with their README, installer, and tests.",
       "translations": {}
     },
     {

@@ -206,6 +206,7 @@ Do not invent reviews, user counts, or testimonials. Do not use a personal name 
     - zh-CN: 49 个现成的正则，用于邮箱、电话、日期、金额等。 | 正则表达式, 邮箱正则, 电话正则, 日期正则
 - [Dev Cheat Sheets](https://tidybytetools.github.io/tools/dev-cheat-sheets/): 8 one-page PDFs for git, curl and jq, SQL, cron, Docker, grep/sed/awk, ssh, and Python CSV.
   - For your computer (Gumroad, $3): https://tidybyte.gumroad.com/l/dev-cheat-sheets
+  - Also: All Tidy Byte Agent Packs (Gumroad, $19): https://tidybyte.gumroad.com/l/all-agent-packs
 - [CSV Skills for Claude Code](https://tidybytetools.github.io/tools/claude-data-skills/): 4 Claude Code skills that profile, diff, fix, and split CSV files on your computer.
   - For your computer (Gumroad, $3): https://tidybyte.gumroad.com/l/claude-data-skills
   - Bigger pack: 8 data skills (Gumroad, From $1): https://tidybyte.gumroad.com/l/agent-data-skills
@@ -222,30 +223,49 @@ Do not invent reviews, user counts, or testimonials. Do not use a personal name 
   - For your computer (Gumroad, From $1): https://tidybyte.gumroad.com/l/agent-data-skills
   - Free skill sample (Gumroad, Free): https://tidybyte.gumroad.com/l/json-repair-skill-free
   - Also: Ship-Ready Skills Pack (Gumroad, From $1): https://tidybyte.gumroad.com/l/ship-ready-skills-pack
+  - Also: All Tidy Byte Agent Packs (Gumroad, $19): https://tidybyte.gumroad.com/l/all-agent-packs
 - [AGENTS.md Starter Pack](https://tidybytetools.github.io/tools/agents-md-starter-pack/): 12 instruction files that tell Codex, Cursor, and Claude Code how your project works.
   - For your computer (Gumroad, From $1): https://tidybyte.gumroad.com/l/agents-md-starter-pack
   - Also: Ship-Ready Skills Pack (Gumroad, From $1): https://tidybyte.gumroad.com/l/ship-ready-skills-pack
   - Free skill sample (Gumroad, Free): https://tidybyte.gumroad.com/l/json-repair-skill-free
   - Also: Dev OS in Claude Code (Gumroad, $9): https://tidybyte.gumroad.com/l/dev-os-claude-code
   - Free: Agent Cost Saver (Gumroad, Free): https://tidybyte.gumroad.com/l/agent-cost-saver
+  - Also: All Tidy Byte Agent Packs (Gumroad, $19): https://tidybyte.gumroad.com/l/all-agent-packs
 - [Ship-Ready Skills Pack](https://tidybytetools.github.io/tools/ship-ready-skills-pack/): 10 tested agent skills that make Claude Code, Cursor, and Codex prove the work before they say done.
   - For your computer (Gumroad, From $1): https://tidybyte.gumroad.com/l/ship-ready-skills-pack
   - Free sample skill (Gumroad, Free): https://tidybyte.gumroad.com/l/verify-before-done-free
   - Also: Dev OS in Claude Code (Gumroad, $9): https://tidybyte.gumroad.com/l/dev-os-claude-code
   - Free: Agent Cost Saver (Gumroad, Free): https://tidybyte.gumroad.com/l/agent-cost-saver
+  - Also: All Tidy Byte Agent Packs (Gumroad, $19): https://tidybyte.gumroad.com/l/all-agent-packs
+  - Also: Anti-Slop Kit (Gumroad, $9): https://tidybyte.gumroad.com/l/anti-slop-kit
 - [Verify Before Done](https://tidybytetools.github.io/tools/verify-before-done-free/): A free agent skill that makes Claude Code, Cursor, and Codex run your real tests before they say done.
   - Free sample (Gumroad, Free): https://tidybyte.gumroad.com/l/verify-before-done-free
   - Full 10-skill pack (Gumroad, From $1): https://tidybyte.gumroad.com/l/ship-ready-skills-pack
   - Free: Agent Cost Saver (Gumroad, Free): https://tidybyte.gumroad.com/l/agent-cost-saver
+  - Free: Anti-Slop Rules (Gumroad, Free): https://tidybyte.gumroad.com/l/anti-slop-rules-free
 - [Agent Cost Saver](https://tidybytetools.github.io/tools/agent-cost-saver/): A free guide and 4 scripts to cut Claude Code, Cursor, and Codex token costs.
   - Free guide (Gumroad, Free): https://tidybyte.gumroad.com/l/agent-cost-saver
   - Also: Ship-Ready Skills Pack (Gumroad, From $1): https://tidybyte.gumroad.com/l/ship-ready-skills-pack
   - Also: AGENTS.md starter pack (Gumroad, From $1): https://tidybyte.gumroad.com/l/agents-md-starter-pack
   - Also: Dev OS in Claude Code (Gumroad, $9): https://tidybyte.gumroad.com/l/dev-os-claude-code
+  - Free: Anti-Slop Rules (Gumroad, Free): https://tidybyte.gumroad.com/l/anti-slop-rules-free
 - [Dev OS in Claude Code](https://tidybytetools.github.io/tools/dev-os-claude-code/): 15 skills, 5 subagents, and 4 safety hooks that turn a Claude Code day into a repeatable loop.
   - For your computer (Gumroad, $9): https://tidybyte.gumroad.com/l/dev-os-claude-code
   - Free: Agent Cost Saver (Gumroad, Free): https://tidybyte.gumroad.com/l/agent-cost-saver
   - Also: Ship-Ready Skills Pack (Gumroad, From $1): https://tidybyte.gumroad.com/l/ship-ready-skills-pack
+  - Also: All Tidy Byte Agent Packs (Gumroad, $19): https://tidybyte.gumroad.com/l/all-agent-packs
+  - Also: Anti-Slop Kit (Gumroad, $9): https://tidybyte.gumroad.com/l/anti-slop-kit
+- [Anti-Slop Kit](https://tidybytetools.github.io/tools/anti-slop-kit/): A tested checker, 4 skills, hooks, and CI that keep AI-written READMEs, docs, commits, and PR text plain.
+  - For your computer (Gumroad, $9): https://tidybyte.gumroad.com/l/anti-slop-kit
+  - Free: Anti-Slop Rules (Gumroad, Free): https://tidybyte.gumroad.com/l/anti-slop-rules-free
+  - Also: All Tidy Byte Agent Packs (Gumroad, $19): https://tidybyte.gumroad.com/l/all-agent-packs
+- [Anti-Slop Rules](https://tidybytetools.github.io/tools/anti-slop-rules-free/): Free: 12 plain-writing rules and a de-slop skill for Claude Code, Cursor, and Codex.
+  - Free rules (Gumroad, Free): https://tidybyte.gumroad.com/l/anti-slop-rules-free
+  - Full Anti-Slop Kit (Gumroad, $9): https://tidybyte.gumroad.com/l/anti-slop-kit
+- [All Tidy Byte Agent Packs](https://tidybytetools.github.io/tools/all-agent-packs/): 6 packs for Claude Code, Cursor, and Codex in one bundle: skills, hooks, AGENTS.md, and the Anti-Slop Kit.
+  - The bundle (Gumroad, $19): https://tidybyte.gumroad.com/l/all-agent-packs
+  - Free: Anti-Slop Rules (Gumroad, Free): https://tidybyte.gumroad.com/l/anti-slop-rules-free
+  - Free: Agent Cost Saver (Gumroad, Free): https://tidybyte.gumroad.com/l/agent-cost-saver
 - [Base64 Encode & Decode](https://tidybytetools.github.io/tools/base64-lite/): Encode or decode Base64 for text and local files, on your computer.
   - Free lite GitHub: https://github.com/tidybytetools/base64-lite
   - Pay per use (Apify, $0.001 per unique item): https://apify.com/tidybytetools/base64-encode-decode
@@ -510,6 +530,7 @@ You know the command. You just cannot remember the flag. These one-page sheets p
 - A test script that runs the safe examples (git, jq, grep, sed, awk, SQL, and the Python snippets).
 - Commands that delete things are marked DANGER or careful.
 - For your computer (Gumroad, $3): Not tested here: ssh, scp, rsync, Docker, crontab, and curl against a live server. Those limits are listed in the README.
+- Also: All Tidy Byte Agent Packs (Gumroad, $19): All 6 agent packs in one bundle for $19. Bought alone at each pack's minimum, they come to $24 (the struck-through price Gumroad shows).
 
 ### CSV Skills for Claude Code
 Claude runs a small, tested script and reads the short result, instead of loading a big CSV into the chat line by line. Your data stays on your computer.
@@ -529,6 +550,7 @@ Each skill is a SKILL.md file plus a small tested Python script that runs on you
 - For your computer (Gumroad, From $1): Pay what you want, suggested $7. Needs Python 3.9+. CSV and text only, not .xlsx. pii-redact is regex only, not a compliance tool.
 - Free skill sample (Gumroad, Free): The json-repair skill on its own. 1 of the 8 skills in this pack.
 - Also: Ship-Ready Skills Pack (Gumroad, From $1): 10 tested skills for code review, tests, secret scans, and changelogs. Suggested $7.
+- Also: All Tidy Byte Agent Packs (Gumroad, $19): All 6 agent packs in one bundle for $19. Bought alone at each pack's minimum, they come to $24 (the struck-through price Gumroad shows).
 
 ### AGENTS.md Starter Pack
 An AGENTS.md file is a plain note that lists your commands, your rules, and how the agent should prove its work. Copy one template, change a few lines, and you are done.
@@ -540,6 +562,7 @@ An AGENTS.md file is a plain note that lists your commands, your rules, and how 
 - Free skill sample (Gumroad, Free): A free JSON repair skill, also on GitHub at github.com/tidybytetools/json-repair-skill. Separate from this pack.
 - Also: Dev OS in Claude Code (Gumroad, $9): 15 skills, 5 subagents, and 4 safety hooks, plus an installer. A daily workflow kit for Claude Code.
 - Free: Agent Cost Saver (Gumroad, Free): A short guide and 4 scripts for cutting Claude Code, Cursor, and Codex token costs.
+- Also: All Tidy Byte Agent Packs (Gumroad, $19): All 6 agent packs in one bundle for $19. Bought alone at each pack's minimum, they come to $24 (the struck-through price Gumroad shows).
 
 ### Ship-Ready Skills Pack
 AI coding agents are fast, and they also say they are done when the tests never ran. This pack gives the agent 10 skills, 8 with a small Python script, so it works from real output.
@@ -550,6 +573,8 @@ AI coding agents are fast, and they also say they are done when the tests never 
 - Free sample skill (Gumroad, Free): The verify-before-done skill, plus a short definition-of-done block. 1 of the 10 skills in this pack.
 - Also: Dev OS in Claude Code (Gumroad, $9): 15 skills, 5 subagents, and 4 safety hooks, plus an installer. A daily workflow kit for Claude Code.
 - Free: Agent Cost Saver (Gumroad, Free): A short guide and 4 scripts for cutting Claude Code, Cursor, and Codex token costs. No made-up savings numbers.
+- Also: All Tidy Byte Agent Packs (Gumroad, $19): All 6 agent packs in one bundle for $19. Bought alone at each pack's minimum, they come to $24 (the struck-through price Gumroad shows).
+- Also: Anti-Slop Kit (Gumroad, $9): A tested checker, 4 skills, hooks, and CI that keep AI-written docs, commits, and PR text plain.
 
 ### Verify Before Done
 Your AI coding agent says it is done. Did it run the tests? This free skill finds your real lint, type, test, and build commands, runs them, and shows PASS or FAIL.
@@ -559,6 +584,7 @@ Your AI coding agent says it is done. Did it run the tests? This free skill find
 - Free sample (Gumroad, Free): Free to use in any project. Pay what you want, $0+.
 - Full 10-skill pack (Gumroad, From $1): Adds code review, tests, secret scan, changelog, release notes, PR text, dependency checks, bug repro, and API docs. Suggested $7.
 - Free: Agent Cost Saver (Gumroad, Free): A short guide and 4 scripts for cutting Claude Code, Cursor, and Codex token costs.
+- Free: Anti-Slop Rules (Gumroad, Free): 12 plain-writing rules and a de-slop skill for Claude Code, Cursor, and Codex.
 
 ### Agent Cost Saver
 Your AI coding agent costs more than it should. Most of the waste comes from a few habits and a few big files. This free pack shows you which ones, then lets you measure before and after.
@@ -569,6 +595,7 @@ Your AI coding agent costs more than it should. Most of the waste comes from a f
 - Also: Ship-Ready Skills Pack (Gumroad, From $1): 10 tested skills for code review, tests, secret scans, and changelogs. Suggested $7.
 - Also: AGENTS.md starter pack (Gumroad, From $1): 12 instruction files that tell Codex, Cursor, and Claude Code how your project works.
 - Also: Dev OS in Claude Code (Gumroad, $9): 15 skills, 5 subagents, and 4 safety hooks, plus an installer. A daily workflow kit for Claude Code.
+- Free: Anti-Slop Rules (Gumroad, Free): 12 plain-writing rules and a de-slop skill for Claude Code, Cursor, and Codex.
 
 ### Dev OS in Claude Code
 Claude Code is powerful, but every day starts the same way: re-explain the project, hope it checks its work, hope it does not run something nasty. This kit installs into a project in about 5 minutes.
@@ -578,6 +605,34 @@ Claude Code is powerful, but every day starts the same way: re-explain the proje
 - For your computer (Gumroad, $9): Fixed $9. You may use it in your own projects, including client work. Please do not resell it. The hooks match command patterns; they are not a sandbox. Keep Claude Code's permission prompts on.
 - Free: Agent Cost Saver (Gumroad, Free): A short guide and 4 scripts for cutting Claude Code, Cursor, and Codex token costs.
 - Also: Ship-Ready Skills Pack (Gumroad, From $1): 10 tested skills for code review, tests, secret scans, and changelogs. Suggested $7.
+- Also: All Tidy Byte Agent Packs (Gumroad, $19): All 6 agent packs in one bundle for $19. Bought alone at each pack's minimum, they come to $24 (the struck-through price Gumroad shows).
+- Also: Anti-Slop Kit (Gumroad, $9): A tested checker, 4 skills, hooks, and CI that keep AI-written docs, commits, and PR text plain.
+
+### Anti-Slop Kit
+AI coding agents often write the same way: "Certainly!", "blazing fast", "seamless", "It's not X, it's Y", em dashes, and emoji bullets. This kit finds those patterns with a script and gives Claude Code, Cursor, and Codex the rules to write plainly.
+- slop_check.py checks Markdown and text. No AI. Python 3.8+, standard library only. About 150 phrases plus 10 pattern checks, each with a line number and a plain fix. It skips code, URLs, and front matter.
+- 4 skills: slop-check, de-slop, plain-readme, and plain-commits-and-prs. A Claude Code hook, a git commit-msg hook, and a GitHub Action.
+- 12 writing rules, a Cursor rule, a settings file, before and after examples, and 35 tests you can run yourself.
+- For your computer (Gumroad, $9): Fixed $9. It is not an AI detector. It checks words and patterns, in English only. Free prompt-only anti-slop skills exist on GitHub; this kit adds the tested checker, hooks, and CI.
+- Free: Anti-Slop Rules (Gumroad, Free): 12 writing rules, a Cursor rule, an AGENTS.md block, and a de-slop skill. Instructions only. Nothing checks the result.
+- Also: All Tidy Byte Agent Packs (Gumroad, $19): This kit plus Ship-Ready, Dev OS, Agent Data Skills, the AGENTS.md Starter Pack, and Dev Cheat Sheets. $19. Bought alone at each pack's minimum, they come to $24.
+
+### Anti-Slop Rules
+Your AI coding agent writes READMEs, commit messages, and PR text. These free rules make it write them plainly, without "Certainly!", "blazing fast", or emoji bullets.
+- 12 writing rules you can paste into CLAUDE.md, AGENTS.md, or any agent instructions.
+- The same rules as a Cursor rule file, plus a short AGENTS.md block for Codex and other tools.
+- A de-slop-lite skill that rewrites text in plain words and keeps your facts, commands, and code the same.
+- Free rules (Gumroad, Free): Free to use in your own and client projects. Pay what you want, $0+. This version is instructions only. Nothing checks the result.
+- Full Anti-Slop Kit (Gumroad, $9): Adds the tested checker, a Claude Code hook, a git hook, a GitHub Action, and 4 skills. Fixed $9.
+
+### All Tidy Byte Agent Packs
+Every Tidy Byte pack for AI coding agents, in one purchase. Each pack has its own README and tests. The bundle is $19. Bought alone at each pack's minimum price, they come to $24, which is the struck-through price Gumroad shows.
+- Ship-Ready Skills Pack (10 skills) and Dev OS in Claude Code (15 skills, 5 subagents, 4 safety hooks).
+- Anti-Slop Kit (checker, 4 skills, hooks, and CI) and Agent Data Skills Pack (8 skills for CSV, JSON, PII, and Markdown).
+- AGENTS.md Starter Pack (12 instruction files) and Dev Cheat Sheets (8 one-page PDFs).
+- The bundle (Gumroad, $19): Fixed $19. Some packs are pay-what-you-want from $1 on their own, so buying one or two alone can cost less. You may use them in your own and client projects. Please do not resell them.
+- Free: Anti-Slop Rules (Gumroad, Free): The free writing-rules pack. Not in the bundle. The paid Anti-Slop Kit is.
+- Free: Agent Cost Saver (Gumroad, Free): A short guide and 4 scripts for cutting Claude Code, Cursor, and Codex token costs. Not in the bundle.
 
 ### Base64 Encode & Decode
 Turn text or a local file into Base64, or turn Base64 back into text or bytes. You can also use the URL-safe alphabet and data-URI output. It runs offline.
