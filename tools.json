@@ -1412,6 +1412,12 @@
           "label": "Also: AGENTS.md starter pack",
           "price": "From $1",
           "url": "https://tidybyte.gumroad.com/l/agents-md-starter-pack"
+        },
+        {
+          "place": "Gumroad",
+          "label": "Also: Ship-Ready Skills Pack",
+          "price": "From $1",
+          "url": "https://tidybyte.gumroad.com/l/ship-ready-skills-pack"
         }
       ],
       "apify": null,
@@ -1493,6 +1499,12 @@
         },
         {
           "place": "Gumroad",
+          "label": "Also: Ship-Ready Skills Pack",
+          "price": "From $1",
+          "url": "https://tidybyte.gumroad.com/l/ship-ready-skills-pack"
+        },
+        {
+          "place": "Gumroad",
           "label": "Free skill sample",
           "price": "Free",
           "url": "https://tidybyte.gumroad.com/l/json-repair-skill-free"
@@ -1504,6 +1516,64 @@
       "github": null,
       "input": "Your project folder, and the template that matches it.",
       "output": "An AGENTS.md file, and a CLAUDE.md that imports it so Claude Code reads it too.",
+      "translations": {}
+    },
+    {
+      "name": "Ship-Ready Skills Pack",
+      "slug": "ship-ready-skills-pack",
+      "url": "https://tidybytetools.github.io/tools/ship-ready-skills-pack/",
+      "what_it_does": "10 tested agent skills that make Claude Code, Cursor, and Codex prove the work before they say done.",
+      "summary": "AI coding agents are fast, and they also say they are done when the tests never ran. This pack gives the agent 10 skills, 8 with a small Python script, so it works from real output.",
+      "category": "ai",
+      "price": [
+        {
+          "place": "Gumroad",
+          "label": "For your computer",
+          "price": "From $1",
+          "url": "https://tidybyte.gumroad.com/l/ship-ready-skills-pack"
+        },
+        {
+          "place": "Gumroad",
+          "label": "Free sample skill",
+          "price": "Free",
+          "url": "https://tidybyte.gumroad.com/l/verify-before-done-free"
+        }
+      ],
+      "apify": null,
+      "apify_mcp": null,
+      "mcp": null,
+      "github": null,
+      "input": "Your project folder, plus the skill the agent should follow.",
+      "output": "A PASS or FAIL from your real checks, a ranked review, a test list, a changelog, or a secret scan with the values masked.",
+      "translations": {}
+    },
+    {
+      "name": "Verify Before Done",
+      "slug": "verify-before-done-free",
+      "url": "https://tidybytetools.github.io/tools/verify-before-done-free/",
+      "what_it_does": "A free agent skill that makes Claude Code, Cursor, and Codex run your real tests before they say done.",
+      "summary": "Your AI coding agent says it is done. Did it run the tests? This free skill finds your real lint, type, test, and build commands, runs them, and shows PASS or FAIL.",
+      "category": "ai",
+      "price": [
+        {
+          "place": "Gumroad",
+          "label": "Free sample",
+          "price": "Free",
+          "url": "https://tidybyte.gumroad.com/l/verify-before-done-free"
+        },
+        {
+          "place": "Gumroad",
+          "label": "Full 10-skill pack",
+          "price": "From $1",
+          "url": "https://tidybyte.gumroad.com/l/ship-ready-skills-pack"
+        }
+      ],
+      "apify": null,
+      "apify_mcp": null,
+      "mcp": null,
+      "github": null,
+      "input": "Your project folder.",
+      "output": "A list of the checks it found, then PASS or FAIL for each one, plus three lines: Checks run, What changed, Not checked.",
       "translations": {}
     },
     {

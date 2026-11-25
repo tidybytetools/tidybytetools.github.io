@@ -937,6 +937,10 @@ Zoë Brontë,Zürich,Price: €25""",
               "https://tidybyte.gumroad.com/l/agents-md-starter-pack",
               cta="See on Gumroad",
               note="12 instruction files that tell Codex, Cursor, and Claude Code how your project works."),
+            V("Gumroad", "Also: Ship-Ready Skills Pack", "From $1",
+              "https://tidybyte.gumroad.com/l/ship-ready-skills-pack",
+              cta="See on Gumroad",
+              note="10 tested skills for code review, tests, secret scans, and changelogs. Suggested $7."),
         ],
         "repos": [],
     },
@@ -986,10 +990,103 @@ Wrote ~/code/mytool/CLAUDE.md (imports AGENTS.md)""",
               "https://tidybyte.gumroad.com/l/agents-md-starter-pack",
               cta="Buy on Gumroad",
               note="Pay what you want, suggested $5. These are text files. An agent can still ignore a rule. Change the commands to match your project."),
+            V("Gumroad", "Also: Ship-Ready Skills Pack", "From $1",
+              "https://tidybyte.gumroad.com/l/ship-ready-skills-pack",
+              cta="See on Gumroad",
+              note="10 tested skills for code review, tests, secret scans, and changelogs. Suggested $7."),
             V("Gumroad", "Free skill sample", "Free",
               "https://tidybyte.gumroad.com/l/json-repair-skill-free",
               cta="Get free sample",
               note="A free JSON repair skill, also on GitHub at github.com/tidybytetools/json-repair-skill. Separate from this pack."),
+        ],
+        "repos": [],
+    },
+    {
+        "slug": "ship-ready-skills-pack",
+        "name": "Ship-Ready Skills Pack",
+        "category": "ai",
+        "icon": "skills",
+        "tagline": "10 tested agent skills that make Claude Code, Cursor, and Codex prove the work before they say done.",
+        "summary": (
+            "AI coding agents are fast, and they also say they are done when the tests never ran. "
+            "This pack gives the agent 10 skills, 8 with a small Python script, so it works from real output."
+        ),
+        "does": [
+            "verify-before-done finds and runs your real lint, type, test, and build commands, then reports PASS or FAIL.",
+            "code-review, write-tests, changelog, release notes, PR text, secret scan, dependency check, bug repro, and API docs.",
+            "install.sh copies the skills into Claude Code and Cursor and never overwrites a skill you already have, unless you pass --force.",
+        ],
+        "thumb": PRODUCTS_DIR / "ship-ready-skills-pack" / "thumb.png",
+        "cover": PRODUCTS_DIR / "ship-ready-skills-pack" / "cover.png",
+        "input": "Your project folder, plus the skill the agent should follow.",
+        "output": "A PASS or FAIL from your real checks, a ranked review, a test list, a changelog, or a secret scan with the values masked.",
+        "example": E(
+            """# in your project folder
+sh install.sh --project
+python3 .claude/skills/verify-before-done/scripts/find_checks.py .""",
+            """installed ./.claude/skills/verify-before-done
+installed ./.claude/skills/code-review
+# ...8 more skills...
+Checks for /home/you/myapp:
+  test    python3 -m pytest -q                     (from pyproject.toml)
+CI runs these (match them if you can):
+  - python -m unittest discover -s tests -v   (.github/workflows/tests.yml)""",
+            "Install, then find the real checks",
+            "What the script printed on a real Python repo",
+            "text",
+            "install.sh is from the pack. find_checks.py was run on json-repair-lite.",
+        ),
+        "versions": [
+            V("Gumroad", "For your computer", "From $1",
+              "https://tidybyte.gumroad.com/l/ship-ready-skills-pack",
+              cta="Buy on Gumroad",
+              note="Pay what you want, suggested $7. Scripts use the Python standard library only. An agent can still ignore a skill."),
+            V("Gumroad", "Free sample skill", "Free",
+              "https://tidybyte.gumroad.com/l/verify-before-done-free",
+              cta="Get free sample",
+              note="The verify-before-done skill, plus a short definition-of-done block. 1 of the 10 skills in this pack."),
+        ],
+        "repos": [],
+    },
+    {
+        "slug": "verify-before-done-free",
+        "name": "Verify Before Done",
+        "category": "ai",
+        "icon": "skills",
+        "tagline": "A free agent skill that makes Claude Code, Cursor, and Codex run your real tests before they say done.",
+        "summary": (
+            "Your AI coding agent says it is done. Did it run the tests? This free skill finds your "
+            "real lint, type, test, and build commands, runs them, and shows PASS or FAIL."
+        ),
+        "does": [
+            "Finds your project's real check commands from package.json, pyproject.toml, Makefile, Cargo.toml, go.mod, and CI files.",
+            "Runs them in order and reports PASS or FAIL with the last lines of output. It must not delete or skip a test to get a green result.",
+            "Includes a short definition-of-done block you can add to AGENTS.md or CLAUDE.md.",
+        ],
+        "thumb": PRODUCTS_DIR / "verify-before-done-free" / "thumb.png",
+        "cover": PRODUCTS_DIR / "verify-before-done-free" / "cover.png",
+        "input": "Your project folder.",
+        "output": "A list of the checks it found, then PASS or FAIL for each one, plus three lines: Checks run, What changed, Not checked.",
+        "example": E(
+            "python3 scripts/find_checks.py /home/you/myapp",
+            """Checks for /home/you/myapp:
+  test    python3 -m pytest -q                     (from pyproject.toml)
+CI runs these (match them if you can):
+  - python -m unittest discover -s tests -v   (.github/workflows/tests.yml)""",
+            "Ask the skill to find the checks",
+            "What find_checks.py printed on a real Python repo",
+            "text",
+            "Run on json-repair-lite with the script from this free skill.",
+        ),
+        "versions": [
+            V("Gumroad", "Free sample", "Free",
+              "https://tidybyte.gumroad.com/l/verify-before-done-free",
+              cta="Get free on Gumroad",
+              note="Free to use in any project. Pay what you want, $0+."),
+            V("Gumroad", "Full 10-skill pack", "From $1",
+              "https://tidybyte.gumroad.com/l/ship-ready-skills-pack",
+              cta="See on Gumroad",
+              note="Adds code review, tests, secret scan, changelog, release notes, PR text, dependency checks, bug repro, and API docs. Suggested $7."),
         ],
         "repos": [],
     },

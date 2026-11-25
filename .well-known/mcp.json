@@ -1213,6 +1213,26 @@
       "translations": {}
     },
     {
+      "name": "Ship-Ready Skills Pack",
+      "slug": "ship-ready-skills-pack",
+      "description": "10 tested agent skills that make Claude Code, Cursor, and Codex prove the work before they say done.",
+      "url": "https://tidybytetools.github.io/tools/ship-ready-skills-pack/",
+      "github": null,
+      "input": "Your project folder, plus the skill the agent should follow.",
+      "output": "A PASS or FAIL from your real checks, a ranked review, a test list, a changelog, or a secret scan with the values masked.",
+      "translations": {}
+    },
+    {
+      "name": "Verify Before Done",
+      "slug": "verify-before-done-free",
+      "description": "A free agent skill that makes Claude Code, Cursor, and Codex run your real tests before they say done.",
+      "url": "https://tidybytetools.github.io/tools/verify-before-done-free/",
+      "github": null,
+      "input": "Your project folder.",
+      "output": "A list of the checks it found, then PASS or FAIL for each one, plus three lines: Checks run, What changed, Not checked.",
+      "translations": {}
+    },
+    {
       "name": "Base64 Encode & Decode",
       "slug": "base64-lite",
       "description": "Encode or decode Base64 for text and local files, on your computer.",

@@ -209,6 +209,7 @@ Do not invent reviews, user counts, or testimonials. Do not use a personal name 
 - [CSV Skills for Claude Code](https://tidybytetools.github.io/tools/claude-data-skills/): 4 Claude Code skills that profile, diff, fix, and split CSV files on your computer.
   - For your computer (Gumroad, $3): https://tidybyte.gumroad.com/l/claude-data-skills
   - Also: AGENTS.md starter pack (Gumroad, From $1): https://tidybyte.gumroad.com/l/agents-md-starter-pack
+  - Also: Ship-Ready Skills Pack (Gumroad, From $1): https://tidybyte.gumroad.com/l/ship-ready-skills-pack
   - Multilingual keywords:
     - es: 4 habilidades de Claude Code para perfilar, comparar, arreglar y partir CSV en tu computadora. | claude code csv, habilidades claude, perfil de csv, diff de csv
     - pt-BR: 4 habilidades do Claude Code para perfilar, comparar, corrigir e dividir CSV no seu computador. | claude code csv, skills claude, perfil de csv, diff de csv
@@ -218,7 +219,14 @@ Do not invent reviews, user counts, or testimonials. Do not use a personal name 
     - zh-CN: 4 个 Claude Code 技能，在你的电脑上对 CSV 做概览、对比、修复和拆分。 | Claude Code CSV, Claude 技能, CSV 概览, CSV 对比
 - [AGENTS.md Starter Pack](https://tidybytetools.github.io/tools/agents-md-starter-pack/): 12 instruction files that tell Codex, Cursor, and Claude Code how your project works.
   - For your computer (Gumroad, From $1): https://tidybyte.gumroad.com/l/agents-md-starter-pack
+  - Also: Ship-Ready Skills Pack (Gumroad, From $1): https://tidybyte.gumroad.com/l/ship-ready-skills-pack
   - Free skill sample (Gumroad, Free): https://tidybyte.gumroad.com/l/json-repair-skill-free
+- [Ship-Ready Skills Pack](https://tidybytetools.github.io/tools/ship-ready-skills-pack/): 10 tested agent skills that make Claude Code, Cursor, and Codex prove the work before they say done.
+  - For your computer (Gumroad, From $1): https://tidybyte.gumroad.com/l/ship-ready-skills-pack
+  - Free sample skill (Gumroad, Free): https://tidybyte.gumroad.com/l/verify-before-done-free
+- [Verify Before Done](https://tidybytetools.github.io/tools/verify-before-done-free/): A free agent skill that makes Claude Code, Cursor, and Codex run your real tests before they say done.
+  - Free sample (Gumroad, Free): https://tidybyte.gumroad.com/l/verify-before-done-free
+  - Full 10-skill pack (Gumroad, From $1): https://tidybyte.gumroad.com/l/ship-ready-skills-pack
 - [Base64 Encode & Decode](https://tidybytetools.github.io/tools/base64-lite/): Encode or decode Base64 for text and local files, on your computer.
   - Free lite GitHub: https://github.com/tidybytetools/base64-lite
   - Pay per use (Apify, $0.001 per unique item): https://apify.com/tidybytetools/base64-encode-decode
@@ -491,6 +499,7 @@ Claude runs a small, tested script and reads the short result, instead of loadin
 - fix-chars and split-csv: fix garbled characters, or split a big file while keeping the header.
 - For your computer (Gumroad, $3): Made for Claude Code. Scripts also run on their own with Python 3.8+. CSV and text only, not .xlsx.
 - Also: AGENTS.md starter pack (Gumroad, From $1): 12 instruction files that tell Codex, Cursor, and Claude Code how your project works.
+- Also: Ship-Ready Skills Pack (Gumroad, From $1): 10 tested skills for code review, tests, secret scans, and changelogs. Suggested $7.
 
 ### AGENTS.md Starter Pack
 An AGENTS.md file is a plain note that lists your commands, your rules, and how the agent should prove its work. Copy one template, change a few lines, and you are done.
@@ -498,7 +507,24 @@ An AGENTS.md file is a plain note that lists your commands, your rules, and how 
 - 7 short rule blocks you can mix in, such as secrets and safety, small diffs, and test first.
 - An install script that copies a template into your project and never overwrites a file you already have.
 - For your computer (Gumroad, From $1): Pay what you want, suggested $5. These are text files. An agent can still ignore a rule. Change the commands to match your project.
+- Also: Ship-Ready Skills Pack (Gumroad, From $1): 10 tested skills for code review, tests, secret scans, and changelogs. Suggested $7.
 - Free skill sample (Gumroad, Free): A free JSON repair skill, also on GitHub at github.com/tidybytetools/json-repair-skill. Separate from this pack.
+
+### Ship-Ready Skills Pack
+AI coding agents are fast, and they also say they are done when the tests never ran. This pack gives the agent 10 skills, 8 with a small Python script, so it works from real output.
+- verify-before-done finds and runs your real lint, type, test, and build commands, then reports PASS or FAIL.
+- code-review, write-tests, changelog, release notes, PR text, secret scan, dependency check, bug repro, and API docs.
+- install.sh copies the skills into Claude Code and Cursor and never overwrites a skill you already have, unless you pass --force.
+- For your computer (Gumroad, From $1): Pay what you want, suggested $7. Scripts use the Python standard library only. An agent can still ignore a skill.
+- Free sample skill (Gumroad, Free): The verify-before-done skill, plus a short definition-of-done block. 1 of the 10 skills in this pack.
+
+### Verify Before Done
+Your AI coding agent says it is done. Did it run the tests? This free skill finds your real lint, type, test, and build commands, runs them, and shows PASS or FAIL.
+- Finds your project's real check commands from package.json, pyproject.toml, Makefile, Cargo.toml, go.mod, and CI files.
+- Runs them in order and reports PASS or FAIL with the last lines of output. It must not delete or skip a test to get a green result.
+- Includes a short definition-of-done block you can add to AGENTS.md or CLAUDE.md.
+- Free sample (Gumroad, Free): Free to use in any project. Pay what you want, $0+.
+- Full 10-skill pack (Gumroad, From $1): Adds code review, tests, secret scan, changelog, release notes, PR text, dependency checks, bug repro, and API docs. Suggested $7.
 
 ### Base64 Encode & Decode
 Turn text or a local file into Base64, or turn Base64 back into text or bytes. You can also use the URL-safe alphabet and data-URI output. It runs offline.

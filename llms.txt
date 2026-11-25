@@ -209,6 +209,7 @@ Do not invent reviews, user counts, or testimonials. Do not use a personal name 
 - [CSV Skills for Claude Code](https://tidybytetools.github.io/tools/claude-data-skills/): 4 Claude Code skills that profile, diff, fix, and split CSV files on your computer.
   - For your computer (Gumroad, $3): https://tidybyte.gumroad.com/l/claude-data-skills
   - Also: AGENTS.md starter pack (Gumroad, From $1): https://tidybyte.gumroad.com/l/agents-md-starter-pack
+  - Also: Ship-Ready Skills Pack (Gumroad, From $1): https://tidybyte.gumroad.com/l/ship-ready-skills-pack
   - Multilingual keywords:
     - es: 4 habilidades de Claude Code para perfilar, comparar, arreglar y partir CSV en tu computadora. | claude code csv, habilidades claude, perfil de csv, diff de csv
     - pt-BR: 4 habilidades do Claude Code para perfilar, comparar, corrigir e dividir CSV no seu computador. | claude code csv, skills claude, perfil de csv, diff de csv
@@ -218,7 +219,14 @@ Do not invent reviews, user counts, or testimonials. Do not use a personal name 
     - zh-CN: 4 个 Claude Code 技能，在你的电脑上对 CSV 做概览、对比、修复和拆分。 | Claude Code CSV, Claude 技能, CSV 概览, CSV 对比
 - [AGENTS.md Starter Pack](https://tidybytetools.github.io/tools/agents-md-starter-pack/): 12 instruction files that tell Codex, Cursor, and Claude Code how your project works.
   - For your computer (Gumroad, From $1): https://tidybyte.gumroad.com/l/agents-md-starter-pack
+  - Also: Ship-Ready Skills Pack (Gumroad, From $1): https://tidybyte.gumroad.com/l/ship-ready-skills-pack
   - Free skill sample (Gumroad, Free): https://tidybyte.gumroad.com/l/json-repair-skill-free
+- [Ship-Ready Skills Pack](https://tidybytetools.github.io/tools/ship-ready-skills-pack/): 10 tested agent skills that make Claude Code, Cursor, and Codex prove the work before they say done.
+  - For your computer (Gumroad, From $1): https://tidybyte.gumroad.com/l/ship-ready-skills-pack
+  - Free sample skill (Gumroad, Free): https://tidybyte.gumroad.com/l/verify-before-done-free
+- [Verify Before Done](https://tidybytetools.github.io/tools/verify-before-done-free/): A free agent skill that makes Claude Code, Cursor, and Codex run your real tests before they say done.
+  - Free sample (Gumroad, Free): https://tidybyte.gumroad.com/l/verify-before-done-free
+  - Full 10-skill pack (Gumroad, From $1): https://tidybyte.gumroad.com/l/ship-ready-skills-pack
 - [Base64 Encode & Decode](https://tidybytetools.github.io/tools/base64-lite/): Encode or decode Base64 for text and local files, on your computer.
   - Free lite GitHub: https://github.com/tidybytetools/base64-lite
   - Pay per use (Apify, $0.001 per unique item): https://apify.com/tidybytetools/base64-encode-decode
