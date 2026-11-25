@@ -38,6 +38,63 @@ API_WORKER = "https://tidybytetools.tidybytetools.workers.dev"
 # APP NAVI site-ownership verification (official site claim).
 APPNAVI_SITE_VERIFY = "t3UDjH5QJeyBL81mSR58KVzHp3aUK3t1"
 
+# Free demos and cross-posts (linked from the site so people can find them).
+HF_FIX_BROKEN_JSON = "https://huggingface.co/spaces/runescapeprivateservers/fix-broken-json"
+JSON_REPAIR_SKILL = "https://github.com/tidybytetools/json-repair-skill"
+# Keys are site guide slugs. URLs are our published dev.to posts (canonical URL stays on this site).
+DEVTO_GUIDES = {
+    "extract-pdf-tables-to-excel-or-csv": {
+        "url": "https://dev.to/tidybytetools/how-to-extract-tables-from-a-pdf-into-excel-or-csv-5ab9",
+        "title": "How to extract tables from a PDF into Excel or CSV",
+    },
+    "turn-pdf-or-word-into-markdown-for-ai": {
+        "url": "https://dev.to/tidybytetools/how-to-turn-a-pdf-or-word-file-into-markdown-for-ai-and-notes-5fp1",
+        "title": "How to turn a PDF or Word file into Markdown for AI and notes",
+    },
+    "encode-or-decode-base64": {
+        "url": "https://dev.to/tidybytetools/how-to-encode-or-decode-base64-the-easy-ways-i23",
+        "title": "How to encode or decode Base64 (the easy ways)",
+    },
+    "flatten-nested-json-into-csv": {
+        "url": "https://dev.to/tidybytetools/how-to-convert-nested-json-or-json-lines-into-a-flat-csv-508n",
+        "title": "How to convert nested JSON or JSON Lines into a flat CSV",
+    },
+}
+
+
+def json_repair_try_html() -> str:
+    """Extra links on the JSON Repair tool page: browser demo and agent skill."""
+    return (
+        '<div class="prose">'
+        "<h2>Try it in your browser, or as an agent skill</h2>"
+        "<p>Paste broken JSON into the free "
+        f'<a href="{e(HF_FIX_BROKEN_JSON)}">Fix Broken JSON</a> page. '
+        "Nothing to install. The same repair is also a free "
+        f'<a href="{e(JSON_REPAIR_SKILL)}">agent skill</a> '
+        "for Claude Code, Cursor, and Codex.</p>"
+        "</div>\n"
+    )
+
+
+def devto_link_for(slug: str) -> str:
+    item = DEVTO_GUIDES.get(slug)
+    if not item:
+        return ""
+    return f'<p>This guide is also on <a href="{e(item["url"])}">dev.to</a>.</p>'
+
+
+def devto_guides_index_html() -> str:
+    items = "".join(
+        f'<li><a href="{e(v["url"])}">{e(v["title"])}</a></li>'
+        for v in DEVTO_GUIDES.values()
+    )
+    return (
+        "<p>Four of these guides are also on "
+        '<a href="https://dev.to/tidybytetools">our dev.to page</a>:</p>'
+        f"<ul>{items}</ul>"
+    )
+
+
 
 def P(path: str) -> str:
     """Site-absolute path with optional hosting subpath prefix."""
@@ -728,6 +785,9 @@ def footer_html(tools: list[dict], lang: str = "en") -> str:
       <h2>{e(u("footer_site"))}</h2>
       <ul>
         <li><a href="{P("/guides/")}">{e(u("nav_guides"))}</a></li>
+        <li><a href="https://dev.to/tidybytetools">Guides on dev.to</a></li>
+        <li><a href="{HF_FIX_BROKEN_JSON}">Fix Broken JSON</a></li>
+        <li><a href="{JSON_REPAIR_SKILL}">JSON repair skill</a></li>
         <li><a href="{P("/connect/")}">{e(u("nav_connect"))}</a></li>
         <li><a href="{P("/api/")}">{e(u("nav_api"))}</a></li>
         <li><a href="{P("/privacy/")}">{e(u("nav_privacy"))}</a></li>
@@ -1310,6 +1370,7 @@ def tool_page(tool: dict, tools: list[dict]) -> None:
           <h2>Get it</h2>
         </div>
         {"".join(version_blocks)}
+        {json_repair_try_html() if tool.get("slug") == "json-repair-lite" else ""}
         {faq_html(faqs)}
       </div>
     </article>
@@ -1471,6 +1532,8 @@ def connect_page(tools: list[dict]) -> None:
         <p>You can also start a run with <code>POST https://api.apify.com/v2/acts/tidybytetools~&lt;actor&gt;/run-sync-get-dataset-items</code>. The OpenAPI file for that shape is at <a href="{P('/openapi.json')}">{BASE}/openapi.json</a>. You will need an Apify token for the HTTP API.</p>
         <h2>Local lite MCP</h2>
         <p>For a free lite tool, install it from GitHub and run its MCP server on your computer. Some tools are not on PyPI yet. For those, install with <code>pip install git+https://github.com/tidybytetools/&lt;repo&gt;</code> until a PyPI package is up. Then point your app at the local MCP command shown in that tool’s README.</p>
+        <h2>Free agent skill and browser demo</h2>
+        <p>If you use Claude Code, Cursor, or Codex, you can install our free <a href="{e(JSON_REPAIR_SKILL)}">JSON repair skill</a>. It repairs broken JSON from AI chats and exports. You can also paste broken JSON into a free <a href="{e(HF_FIX_BROKEN_JSON)}">Fix Broken JSON</a> page, with nothing to install.</p>
         <p>Machine-readable lists of the same tools are at <a href="{P('/.well-known/mcp.json')}">/.well-known/mcp.json</a>, <a href="{P('/tools.json')}">/tools.json</a>, and <a href="{P('/llms.txt')}">/llms.txt</a>.</p>
         <p>Each Apify run has a ${ACTOR_START_USD} start fee in addition to the event price below. Failed or skipped items are free, as described on each tool page.</p>
       </div>
@@ -1863,6 +1926,15 @@ def write_meta(tools: list[dict], guides: list[dict] | None = None) -> None:
         "- [Gumroad](https://tidybyte.gumroad.com)",
         "- [GitHub](https://github.com/tidybytetools)",
         "",
+        "## Free demos and guides elsewhere",
+        f"- [Fix Broken JSON]({HF_FIX_BROKEN_JSON}): paste broken JSON in your browser, nothing to install",
+        f"- [json-repair-skill]({JSON_REPAIR_SKILL}): free agent skill for Claude Code, Cursor, and Codex",
+        "- Guides also on [dev.to/tidybytetools](https://dev.to/tidybytetools):",
+    ]
+    for item in DEVTO_GUIDES.values():
+        lines.append(f"  - [{item['title']}]({item['url']})")
+    lines += [
+        "",
     ]
     (OUT / "llms.txt").write_text("\n".join(lines + ["", f"Full catalog: {BASE}/llms-full.txt", ""]))
     full = list(lines)
@@ -1939,6 +2011,7 @@ def guides_index(tools: list[dict], guides: list[dict]) -> None:
       <p class="crumb"><a href="{P("/")}">Home</a> / Guides</p>
       <h1>How-to guides</h1>
       <p class="lede">Short, honest guides for common file jobs. Free options first, then our tools when they help.</p>
+      {devto_guides_index_html()}
     </section>
     <section class="wrap" style="padding-bottom:48px">
       <div class="card-grid">{"".join(cards)}</div>
@@ -1969,6 +2042,7 @@ def guide_page(guide: dict, tools: list[dict], guides: list[dict]) -> None:
       <p class="crumb"><a href="{P("/")}">Home</a> / <a href="{P("/guides/")}">Guides</a> / {e(guide["title"])}</p>
       <h1>{e(guide["title"])}</h1>
       <p class="lede">{e(guide["description"])}</p>
+      {devto_link_for(guide["slug"])}
     </section>
     <section class="wrap" style="padding-bottom:48px">
       <article class="prose guide-body">{article}</article>

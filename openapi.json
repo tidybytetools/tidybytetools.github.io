@@ -306,6 +306,90 @@
         }
       }
     },
+    "/acts/tidybytetools~json-repair/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_json_repair_lite",
+        "summary": "JSON Repair",
+        "description": "JSON Repair: Repair broken or incomplete JSON, including output from language models. Input: Broken or incomplete JSON, or a local JSON or JSON Lines file. Output: Valid JSON. Already-valid input is left alone and marked as wasValid. Price: $0.001 per documents (Document saved). Start fee $5e-05.",
+        "tags": [
+          "JSON Repair"
+        ],
+        "security": [
+          {
+            "ApifyToken": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Dataset items from a finished run.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/tidybytetools~hash-checksum/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run_hash_lite",
+        "summary": "Hash & Checksum",
+        "description": "Hash & Checksum: Hash text or local files with SHA-256, SHA-1, MD5, and optional SHA-512. Input: Text or a local file, plus the hash algorithms to use. Output: Hex and Base64 hashes for each selected algorithm. Price: $0.001 per unique texts (Input hashed). Start fee $5e-05.",
+        "tags": [
+          "Hash & Checksum"
+        ],
+        "security": [
+          {
+            "ApifyToken": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Dataset items from a finished run.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/acts/tidybytetools~html-table-extractor/run-sync-get-dataset-items": {
       "post": {
         "operationId": "run_html_table_extractor",

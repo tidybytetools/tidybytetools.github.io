@@ -218,6 +218,7 @@ Do not invent reviews, user counts, or testimonials. Do not use a personal name 
     - zh-CN: 在自己的电脑上，对文本或本地文件做 Base64 编码或解码。 | Base64 编码, Base64 解码, Base64, data URI
 - [JSON Repair](https://tidybytetools.github.io/tools/json-repair-lite/): Repair broken or incomplete JSON, including output from language models.
   - Free lite GitHub: https://github.com/tidybytetools/json-repair-lite
+  - Pay per use (Apify, $0.001 per document): https://apify.com/tidybytetools/json-repair
   - Multilingual keywords:
     - es: Repara JSON roto o incompleto, incluso la salida de modelos de lenguaje. | reparar json, json roto, arreglar json, json de un modelo
     - pt-BR: Repare JSON quebrado ou incompleto, inclusive a saída de modelos de linguagem. | reparar json, json quebrado, consertar json, json de um modelo
@@ -227,6 +228,7 @@ Do not invent reviews, user counts, or testimonials. Do not use a personal name 
     - zh-CN: 修复损坏或不完整的 JSON，包括语言模型的输出。 | 修复 JSON, 损坏的 JSON, 整理 JSON, 模型输出 JSON
 - [Hash & Checksum](https://tidybytetools.github.io/tools/hash-lite/): Hash text or local files with SHA-256, SHA-1, MD5, and optional SHA-512.
   - Free lite GitHub: https://github.com/tidybytetools/hash-lite
+  - Pay per use (Apify, $0.001 per unique input): https://apify.com/tidybytetools/hash-checksum
   - Multilingual keywords:
     - es: Calcula hashes de texto o archivos locales con SHA-256, SHA-1, MD5 y SHA-512 opcional. | hash sha-256, checksum, md5, sha-1
     - pt-BR: Calcule hashes de texto ou arquivos locais com SHA-256, SHA-1, MD5 e SHA-512 opcional. | hash sha-256, checksum, md5, sha-1
@@ -311,6 +313,15 @@ Do not invent reviews, user counts, or testimonials. Do not use a personal name 
 - [Apify](https://apify.com/tidybytetools)
 - [Gumroad](https://tidybyte.gumroad.com)
 - [GitHub](https://github.com/tidybytetools)
+
+## Free demos and guides elsewhere
+- [Fix Broken JSON](https://huggingface.co/spaces/runescapeprivateservers/fix-broken-json): paste broken JSON in your browser, nothing to install
+- [json-repair-skill](https://github.com/tidybytetools/json-repair-skill): free agent skill for Claude Code, Cursor, and Codex
+- Guides also on [dev.to/tidybytetools](https://dev.to/tidybytetools):
+  - [How to extract tables from a PDF into Excel or CSV](https://dev.to/tidybytetools/how-to-extract-tables-from-a-pdf-into-excel-or-csv-5ab9)
+  - [How to turn a PDF or Word file into Markdown for AI and notes](https://dev.to/tidybytetools/how-to-turn-a-pdf-or-word-file-into-markdown-for-ai-and-notes-5fp1)
+  - [How to encode or decode Base64 (the easy ways)](https://dev.to/tidybytetools/how-to-encode-or-decode-base64-the-easy-ways-i23)
+  - [How to convert nested JSON or JSON Lines into a flat CSV](https://dev.to/tidybytetools/how-to-convert-nested-json-or-json-lines-into-a-flat-csv-508n)
 
 ## Full product notes
 
@@ -464,7 +475,7 @@ Paste JSON that is missing quotes or has a trailing comma, and get valid JSON ba
 - Includes a free MCP server for AI apps. No API key is needed.
 - This is a repair step, not a language model. Some text cannot be repaired.
 - Free lite (GitHub, Free): CLI and MCP server. Install for now with: pip install git+https://github.com/tidybytetools/json-repair-lite. We will switch this to a PyPI install when the package is on PyPI.
-- Pay per use (Apify, $0.001 per document): Empty or unreadable input is free. The public store page goes live this week. The Apify listing goes public this week.
+- Pay per use (Apify, $0.001 per document): Empty or unreadable input is free. The public store page goes live this week.
 
 ### Hash & Checksum
 Get hex and Base64 hashes for text or a local file. SHA-256, SHA-1, and MD5 are on by default. Prefer SHA-256 or SHA-512 for new security work.
@@ -473,7 +484,7 @@ Get hex and Base64 hashes for text or a local file. SHA-256, SHA-1, and MD5 are 
 - Includes a free MCP server for AI apps. No API key is needed.
 - MD5 and SHA-1 are included for checks, but they are not safe for new security work.
 - Free lite (GitHub, Free): CLI and MCP server. Install for now with: pip install git+https://github.com/tidybytetools/hash-lite. We will switch this to a PyPI install when the package is on PyPI.
-- Pay per use (Apify, $0.001 per unique input): All selected hashes are included. Repeats in the same run are free. The public store page goes live this week. The Apify listing goes public this week.
+- Pay per use (Apify, $0.001 per unique input): All selected hashes are included. Repeats in the same run are free. The public store page goes live this week.
 
 ### HTML Table Extractor
 Reads HTML tables from a page or pasted HTML. Keeps merged cells, handles more than one table on a page, and saves CSV. Honest about tables that only appear after JavaScript runs.

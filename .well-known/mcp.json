@@ -1323,7 +1323,8 @@
         }
       },
       "actor": "tidybytetools/json-repair",
-      "apify_status": "The public store page is not up yet.",
+      "apify": "https://apify.com/tidybytetools/json-repair",
+      "mcp": "https://mcp.apify.com/?tools=tidybytetools/json-repair",
       "price": {
         "event": "document-repaired",
         "title": "Document saved",
@@ -1398,7 +1399,8 @@
         }
       },
       "actor": "tidybytetools/hash-checksum",
-      "apify_status": "The public store page is not up yet.",
+      "apify": "https://apify.com/tidybytetools/hash-checksum",
+      "mcp": "https://mcp.apify.com/?tools=tidybytetools/hash-checksum",
       "price": {
         "event": "input-hashed",
         "title": "Input hashed",

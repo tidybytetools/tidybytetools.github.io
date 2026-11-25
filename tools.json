@@ -1497,11 +1497,11 @@
           "place": "Apify",
           "label": "Pay per use",
           "price": "$0.001 per document",
-          "url": null
+          "url": "https://apify.com/tidybytetools/json-repair"
         }
       ],
-      "apify": null,
-      "apify_mcp": null,
+      "apify": "https://apify.com/tidybytetools/json-repair",
+      "apify_mcp": "https://mcp.apify.com/?tools=tidybytetools/json-repair",
       "mcp": "https://github.com/tidybytetools/json-repair-lite",
       "github": "https://github.com/tidybytetools/json-repair-lite",
       "input": "Broken or incomplete JSON, or a local JSON or JSON Lines file.",
@@ -1581,11 +1581,11 @@
           "place": "Apify",
           "label": "Pay per use",
           "price": "$0.001 per unique input",
-          "url": null
+          "url": "https://apify.com/tidybytetools/hash-checksum"
         }
       ],
-      "apify": null,
-      "apify_mcp": null,
+      "apify": "https://apify.com/tidybytetools/hash-checksum",
+      "apify_mcp": "https://mcp.apify.com/?tools=tidybytetools/hash-checksum",
       "mcp": "https://github.com/tidybytetools/hash-lite",
       "github": "https://github.com/tidybytetools/hash-lite",
       "input": "Text or a local file, plus the hash algorithms to use.",
