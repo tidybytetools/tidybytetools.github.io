@@ -244,6 +244,7 @@ Do not invent reviews, user counts, or testimonials. Do not use a personal name 
   - Free: Agent Cost Saver (Gumroad, Free): https://tidybyte.gumroad.com/l/agent-cost-saver
   - Free: Anti-Slop Rules (Gumroad, Free): https://tidybyte.gumroad.com/l/anti-slop-rules-free
 - [Agent Cost Saver](https://tidybytetools.github.io/tools/agent-cost-saver/): A free guide and 4 scripts to cut Claude Code, Cursor, and Codex token costs.
+  - Source (MIT) (GitHub, Free): https://github.com/tidybytetools/agent-cost-saver
   - Free guide (Gumroad, Free): https://tidybyte.gumroad.com/l/agent-cost-saver
   - Also: Ship-Ready Skills Pack (Gumroad, From $1): https://tidybyte.gumroad.com/l/ship-ready-skills-pack
   - Also: AGENTS.md starter pack (Gumroad, From $1): https://tidybyte.gumroad.com/l/agents-md-starter-pack
@@ -260,6 +261,7 @@ Do not invent reviews, user counts, or testimonials. Do not use a personal name 
   - Free: Anti-Slop Rules (Gumroad, Free): https://tidybyte.gumroad.com/l/anti-slop-rules-free
   - Also: All Tidy Byte Agent Packs (Gumroad, $19): https://tidybyte.gumroad.com/l/all-agent-packs
 - [Anti-Slop Rules](https://tidybytetools.github.io/tools/anti-slop-rules-free/): Free: 12 plain-writing rules and a de-slop skill for Claude Code, Cursor, and Codex.
+  - Source (MIT) (GitHub, Free): https://github.com/tidybytetools/anti-slop-rules
   - Free rules (Gumroad, Free): https://tidybyte.gumroad.com/l/anti-slop-rules-free
   - Full Anti-Slop Kit (Gumroad, $9): https://tidybyte.gumroad.com/l/anti-slop-kit
 - [All Tidy Byte Agent Packs](https://tidybytetools.github.io/tools/all-agent-packs/): 6 packs for Claude Code, Cursor, and Codex in one bundle: skills, hooks, AGENTS.md, and the Anti-Slop Kit.
@@ -377,6 +379,8 @@ Do not invent reviews, user counts, or testimonials. Do not use a personal name 
 ## Free demos and guides elsewhere
 - [Fix Broken JSON](https://huggingface.co/spaces/runescapeprivateservers/fix-broken-json): paste broken JSON in your browser, nothing to install
 - [json-repair-skill](https://github.com/tidybytetools/json-repair-skill): free agent skill for Claude Code, Cursor, and Codex
+- [agent-cost-saver](https://github.com/tidybytetools/agent-cost-saver): free guide and scripts to cut Claude Code, Cursor, and Codex token costs
+- [anti-slop-rules](https://github.com/tidybytetools/anti-slop-rules): free plain-writing rules and a de-slop skill
 - Guides also on [dev.to/tidybytetools](https://dev.to/tidybytetools):
   - [How to extract tables from a PDF into Excel or CSV](https://dev.to/tidybytetools/how-to-extract-tables-from-a-pdf-into-excel-or-csv-5ab9)
   - [How to turn a PDF or Word file into Markdown for AI and notes](https://dev.to/tidybytetools/how-to-turn-a-pdf-or-word-file-into-markdown-for-ai-and-notes-5fp1)

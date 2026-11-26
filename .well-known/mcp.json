@@ -1247,7 +1247,7 @@
       "slug": "agent-cost-saver",
       "description": "A free guide and 4 scripts to cut Claude Code, Cursor, and Codex token costs.",
       "url": "https://tidybytetools.github.io/tools/agent-cost-saver/",
-      "github": null,
+      "github": "https://github.com/tidybytetools/agent-cost-saver",
       "input": "Your project folder, plus, for the session report, your local Claude Code logs.",
       "output": "A ranked fix list, a per-session token total, a suggested ignore file, or a hook that shortens test output.",
       "translations": {}
@@ -1277,7 +1277,7 @@
       "slug": "anti-slop-rules-free",
       "description": "Free: 12 plain-writing rules and a de-slop skill for Claude Code, Cursor, and Codex.",
       "url": "https://tidybytetools.github.io/tools/anti-slop-rules-free/",
-      "github": null,
+      "github": "https://github.com/tidybytetools/anti-slop-rules",
       "input": "A README, docs page, pull request, or commit message you want written in plain words.",
       "output": "A rewritten draft, plus a short list of what changed.",
       "translations": {}

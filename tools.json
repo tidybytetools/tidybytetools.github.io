@@ -1692,6 +1692,12 @@
       "category": "ai",
       "price": [
         {
+          "place": "GitHub",
+          "label": "Source (MIT)",
+          "price": "Free",
+          "url": "https://github.com/tidybytetools/agent-cost-saver"
+        },
+        {
           "place": "Gumroad",
           "label": "Free guide",
           "price": "Free",
@@ -1725,7 +1731,7 @@
       "apify": null,
       "apify_mcp": null,
       "mcp": null,
-      "github": null,
+      "github": "https://github.com/tidybytetools/agent-cost-saver",
       "input": "Your project folder, plus, for the session report, your local Claude Code logs.",
       "output": "A ranked fix list, a per-session token total, a suggested ignore file, or a hook that shortens test output.",
       "translations": {}
@@ -1821,6 +1827,12 @@
       "category": "ai",
       "price": [
         {
+          "place": "GitHub",
+          "label": "Source (MIT)",
+          "price": "Free",
+          "url": "https://github.com/tidybytetools/anti-slop-rules"
+        },
+        {
           "place": "Gumroad",
           "label": "Free rules",
           "price": "Free",
@@ -1836,7 +1848,7 @@
       "apify": null,
       "apify_mcp": null,
       "mcp": null,
-      "github": null,
+      "github": "https://github.com/tidybytetools/anti-slop-rules",
       "input": "A README, docs page, pull request, or commit message you want written in plain words.",
       "output": "A rewritten draft, plus a short list of what changed.",
       "translations": {}

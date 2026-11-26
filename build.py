@@ -41,6 +41,8 @@ APPNAVI_SITE_VERIFY = "t3UDjH5QJeyBL81mSR58KVzHp3aUK3t1"
 # Free demos and cross-posts (linked from the site so people can find them).
 HF_FIX_BROKEN_JSON = "https://huggingface.co/spaces/runescapeprivateservers/fix-broken-json"
 JSON_REPAIR_SKILL = "https://github.com/tidybytetools/json-repair-skill"
+AGENT_COST_SAVER_REPO = "https://github.com/tidybytetools/agent-cost-saver"
+ANTI_SLOP_RULES_REPO = "https://github.com/tidybytetools/anti-slop-rules"
 # Keys are site guide slugs. URLs are our published dev.to posts (canonical URL stays on this site).
 DEVTO_GUIDES = {
     "extract-pdf-tables-to-excel-or-csv": {
@@ -1929,6 +1931,8 @@ def write_meta(tools: list[dict], guides: list[dict] | None = None) -> None:
         "## Free demos and guides elsewhere",
         f"- [Fix Broken JSON]({HF_FIX_BROKEN_JSON}): paste broken JSON in your browser, nothing to install",
         f"- [json-repair-skill]({JSON_REPAIR_SKILL}): free agent skill for Claude Code, Cursor, and Codex",
+        f"- [agent-cost-saver]({AGENT_COST_SAVER_REPO}): free guide and scripts to cut Claude Code, Cursor, and Codex token costs",
+        f"- [anti-slop-rules]({ANTI_SLOP_RULES_REPO}): free plain-writing rules and a de-slop skill",
         "- Guides also on [dev.to/tidybytetools](https://dev.to/tidybytetools):",
     ]
     for item in DEVTO_GUIDES.values():
