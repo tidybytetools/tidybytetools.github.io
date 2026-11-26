@@ -946,6 +946,12 @@
           "label": "Also: prompts and reliability",
           "price": "From $1",
           "url": "https://tidybyte.gumroad.com/l/n8n-prompt-reliability-pack"
+        },
+        {
+          "place": "Gumroad",
+          "label": "Also: n8n Builder Kit",
+          "price": "$9",
+          "url": "https://tidybyte.gumroad.com/l/n8n-builder-kit-claude-code"
         }
       ],
       "apify": null,
@@ -1036,6 +1042,12 @@
           "label": "Also: prompts and reliability",
           "price": "From $1",
           "url": "https://tidybyte.gumroad.com/l/n8n-prompt-reliability-pack"
+        },
+        {
+          "place": "Gumroad",
+          "label": "Also: n8n Builder Kit",
+          "price": "$9",
+          "url": "https://tidybyte.gumroad.com/l/n8n-builder-kit-claude-code"
         }
       ],
       "apify": null,
@@ -1120,6 +1132,12 @@
           "label": "Free data-cleanup sample",
           "price": "Free",
           "url": "https://tidybyte.gumroad.com/l/n8n-cleanup-sampler"
+        },
+        {
+          "place": "Gumroad",
+          "label": "Also: n8n Builder Kit",
+          "price": "$9",
+          "url": "https://tidybyte.gumroad.com/l/n8n-builder-kit-claude-code"
         }
       ],
       "apify": null,
@@ -1886,6 +1904,128 @@
       "github": null,
       "input": "Your project folder, plus the pack you want to install first.",
       "output": "Each pack's own files, with their README, installer, and tests.",
+      "translations": {}
+    },
+    {
+      "name": "n8n Lint",
+      "slug": "n8n-lint-free",
+      "url": "https://tidybytetools.github.io/tools/n8n-lint-free/",
+      "what_it_does": "A free 27-rule linter and node lookup for n8n workflow JSON.",
+      "summary": "Check n8n workflow JSON before you import it. Catch invented node names, wrong typeVersion numbers, broken connections, and keys left in the file.",
+      "category": "n8n",
+      "price": [
+        {
+          "place": "Gumroad",
+          "label": "Free linter",
+          "price": "Free",
+          "url": "https://tidybyte.gumroad.com/l/n8n-lint-free"
+        },
+        {
+          "place": "Gumroad",
+          "label": "Full n8n Builder Kit",
+          "price": "$9",
+          "url": "https://tidybyte.gumroad.com/l/n8n-builder-kit-claude-code"
+        }
+      ],
+      "apify": null,
+      "apify_mcp": null,
+      "mcp": null,
+      "github": null,
+      "input": "An n8n workflow JSON file, or a folder of them.",
+      "output": "A list of errors and warnings, each with a code, the node name, and a plain fix, or a close name for a typo.",
+      "translations": {}
+    },
+    {
+      "name": "n8n Builder Kit for Claude Code",
+      "slug": "n8n-builder-kit-claude-code",
+      "url": "https://tidybytetools.github.io/tools/n8n-builder-kit-claude-code/",
+      "what_it_does": "3 skills, a 27-rule linter, and a node lookup so AI agents write n8n workflows that import and run.",
+      "summary": "AI agents get n8n wrong in the same few ways: they invent node names, use old typeVersion numbers, link connections by id, and forget the '=' in an expression. This kit catches those before you import the file.",
+      "category": "n8n",
+      "price": [
+        {
+          "place": "Gumroad",
+          "label": "For your computer",
+          "price": "$9",
+          "url": "https://tidybyte.gumroad.com/l/n8n-builder-kit-claude-code"
+        },
+        {
+          "place": "Gumroad",
+          "label": "Free: n8n Lint",
+          "price": "Free",
+          "url": "https://tidybyte.gumroad.com/l/n8n-lint-free"
+        },
+        {
+          "place": "Gumroad",
+          "label": "Also: n8n Data Cleanup Pack",
+          "price": "From $1",
+          "url": "https://tidybyte.gumroad.com/l/n8n-data-cleanup-pack"
+        }
+      ],
+      "apify": null,
+      "apify_mcp": null,
+      "mcp": null,
+      "github": null,
+      "input": "A plain-language description of the workflow you want, or an existing n8n JSON file, or a failed n8n run log.",
+      "output": "Workflow JSON that linted clean, a ranked review, or a table that names the failing node and a likely fix.",
+      "translations": {}
+    },
+    {
+      "name": "Production Readiness Lite",
+      "slug": "production-readiness-lite-free",
+      "url": "https://tidybytetools.github.io/tools/production-readiness-lite-free/",
+      "what_it_does": "A free 15-check release scanner and a go or no-go sheet.",
+      "summary": "A small scanner that finds the problems that most often cause release-day outages: a committed .env, missing tests or CI, no health check, no timeouts, a container running as root.",
+      "category": "ai",
+      "price": [
+        {
+          "place": "Gumroad",
+          "label": "Free scanner",
+          "price": "Free",
+          "url": "https://tidybyte.gumroad.com/l/production-readiness-lite-free"
+        },
+        {
+          "place": "Gumroad",
+          "label": "Full Production Readiness Kit",
+          "price": "$9",
+          "url": "https://tidybyte.gumroad.com/l/production-readiness-kit"
+        }
+      ],
+      "apify": null,
+      "apify_mcp": null,
+      "mcp": null,
+      "github": null,
+      "input": "A repository folder on your computer.",
+      "output": "A verdict (GO, GO WITH RISKS, or NO-GO), each failed check with a file, line, and fix, plus 4 questions for a person.",
+      "translations": {}
+    },
+    {
+      "name": "Production Readiness Kit",
+      "slug": "production-readiness-kit",
+      "url": "https://tidybytetools.github.io/tools/production-readiness-kit/",
+      "what_it_does": "A read-only scanner, 22 questions, a review skill, 6 templates, and 3 starter services for a go or no-go call.",
+      "summary": "Most outages on release day come from the same short list: a committed .env, no health check, no timeouts, a container running as root, a migration nobody could roll back, no one on call. This kit finds the ones that files can show, and makes you answer the ones they cannot.",
+      "category": "ai",
+      "price": [
+        {
+          "place": "Gumroad",
+          "label": "For your computer",
+          "price": "$9",
+          "url": "https://tidybyte.gumroad.com/l/production-readiness-kit"
+        },
+        {
+          "place": "Gumroad",
+          "label": "Free: Production Readiness Lite",
+          "price": "Free",
+          "url": "https://tidybyte.gumroad.com/l/production-readiness-lite-free"
+        }
+      ],
+      "apify": null,
+      "apify_mcp": null,
+      "mcp": null,
+      "github": null,
+      "input": "A repository folder on your computer.",
+      "output": "A verdict, a table of findings, and, if you want them, filled-in go or no-go, rollback, runbook, or postmortem sheets.",
       "translations": {}
     },
     {

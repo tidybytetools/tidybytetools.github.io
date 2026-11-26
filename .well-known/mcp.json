@@ -1293,6 +1293,46 @@
       "translations": {}
     },
     {
+      "name": "n8n Lint",
+      "slug": "n8n-lint-free",
+      "description": "A free 27-rule linter and node lookup for n8n workflow JSON.",
+      "url": "https://tidybytetools.github.io/tools/n8n-lint-free/",
+      "github": null,
+      "input": "An n8n workflow JSON file, or a folder of them.",
+      "output": "A list of errors and warnings, each with a code, the node name, and a plain fix, or a close name for a typo.",
+      "translations": {}
+    },
+    {
+      "name": "n8n Builder Kit for Claude Code",
+      "slug": "n8n-builder-kit-claude-code",
+      "description": "3 skills, a 27-rule linter, and a node lookup so AI agents write n8n workflows that import and run.",
+      "url": "https://tidybytetools.github.io/tools/n8n-builder-kit-claude-code/",
+      "github": null,
+      "input": "A plain-language description of the workflow you want, or an existing n8n JSON file, or a failed n8n run log.",
+      "output": "Workflow JSON that linted clean, a ranked review, or a table that names the failing node and a likely fix.",
+      "translations": {}
+    },
+    {
+      "name": "Production Readiness Lite",
+      "slug": "production-readiness-lite-free",
+      "description": "A free 15-check release scanner and a go or no-go sheet.",
+      "url": "https://tidybytetools.github.io/tools/production-readiness-lite-free/",
+      "github": null,
+      "input": "A repository folder on your computer.",
+      "output": "A verdict (GO, GO WITH RISKS, or NO-GO), each failed check with a file, line, and fix, plus 4 questions for a person.",
+      "translations": {}
+    },
+    {
+      "name": "Production Readiness Kit",
+      "slug": "production-readiness-kit",
+      "description": "A read-only scanner, 22 questions, a review skill, 6 templates, and 3 starter services for a go or no-go call.",
+      "url": "https://tidybytetools.github.io/tools/production-readiness-kit/",
+      "github": null,
+      "input": "A repository folder on your computer.",
+      "output": "A verdict, a table of findings, and, if you want them, filled-in go or no-go, rollback, runbook, or postmortem sheets.",
+      "translations": {}
+    },
+    {
       "name": "Base64 Encode & Decode",
       "slug": "base64-lite",
       "description": "Encode or decode Base64 for text and local files, on your computer.",

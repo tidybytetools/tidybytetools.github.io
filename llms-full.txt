@@ -155,6 +155,7 @@ Do not invent reviews, user counts, or testimonials. Do not use a personal name 
   - For n8n (Gumroad, From $1): https://tidybyte.gumroad.com/l/n8n-data-cleanup-pack
   - Free sample (Gumroad, Free): https://tidybyte.gumroad.com/l/n8n-cleanup-sampler
   - Also: prompts and reliability (Gumroad, From $1): https://tidybyte.gumroad.com/l/n8n-prompt-reliability-pack
+  - Also: n8n Builder Kit (Gumroad, $9): https://tidybyte.gumroad.com/l/n8n-builder-kit-claude-code
   - Multilingual keywords:
     - es: 9 flujos de n8n para CSV, clientes, facturas, hojas y avisos de actividad. | flujos n8n, limpiar csv n8n, automatización n8n, alertas uptime
     - pt-BR: 9 fluxos n8n para CSV, leads, faturas, planilhas e alertas de uptime. | fluxos n8n, limpar csv n8n, automação n8n, alertas uptime
@@ -166,6 +167,7 @@ Do not invent reviews, user counts, or testimonials. Do not use a personal name 
   - Free sample (Gumroad, Free): https://tidybyte.gumroad.com/l/n8n-cleanup-sampler
   - Full data cleanup pack (Gumroad, From $1): https://tidybyte.gumroad.com/l/n8n-data-cleanup-pack
   - Also: prompts and reliability (Gumroad, From $1): https://tidybyte.gumroad.com/l/n8n-prompt-reliability-pack
+  - Also: n8n Builder Kit (Gumroad, $9): https://tidybyte.gumroad.com/l/n8n-builder-kit-claude-code
   - Multilingual keywords:
     - es: 2 flujos n8n gratis del paquete: limpieza de CSV y avisos de actividad. | n8n gratis, muestra n8n, limpiar csv n8n, alertas uptime
     - pt-BR: 2 fluxos n8n gratis do pacote: limpeza de CSV e alertas de uptime. | n8n gratis, amostra n8n, limpar csv n8n, alertas uptime
@@ -176,6 +178,7 @@ Do not invent reviews, user counts, or testimonials. Do not use a personal name 
 - [n8n Prompt + Reliability Pack](https://tidybytetools.github.io/tools/n8n-prompt-reliability-pack/): 12 AI prompts plus 4 n8n workflows for alerts, retries, duplicate webhooks, and lead checks.
   - For n8n (Gumroad, From $1): https://tidybyte.gumroad.com/l/n8n-prompt-reliability-pack
   - Free data-cleanup sample (Gumroad, Free): https://tidybyte.gumroad.com/l/n8n-cleanup-sampler
+  - Also: n8n Builder Kit (Gumroad, $9): https://tidybyte.gumroad.com/l/n8n-builder-kit-claude-code
 - [csv-char-fix](https://tidybytetools.github.io/tools/csv-char-fix/): Fix weird characters like Ã© and â€™ in CSV and text files.
   - For your computer (Gumroad, $1): https://tidybyte.gumroad.com/l/csv-char-fix
   - Multilingual keywords:
@@ -268,6 +271,19 @@ Do not invent reviews, user counts, or testimonials. Do not use a personal name 
   - The bundle (Gumroad, $19): https://tidybyte.gumroad.com/l/all-agent-packs
   - Free: Anti-Slop Rules (Gumroad, Free): https://tidybyte.gumroad.com/l/anti-slop-rules-free
   - Free: Agent Cost Saver (Gumroad, Free): https://tidybyte.gumroad.com/l/agent-cost-saver
+- [n8n Lint](https://tidybytetools.github.io/tools/n8n-lint-free/): A free 27-rule linter and node lookup for n8n workflow JSON.
+  - Free linter (Gumroad, Free): https://tidybyte.gumroad.com/l/n8n-lint-free
+  - Full n8n Builder Kit (Gumroad, $9): https://tidybyte.gumroad.com/l/n8n-builder-kit-claude-code
+- [n8n Builder Kit for Claude Code](https://tidybytetools.github.io/tools/n8n-builder-kit-claude-code/): 3 skills, a 27-rule linter, and a node lookup so AI agents write n8n workflows that import and run.
+  - For your computer (Gumroad, $9): https://tidybyte.gumroad.com/l/n8n-builder-kit-claude-code
+  - Free: n8n Lint (Gumroad, Free): https://tidybyte.gumroad.com/l/n8n-lint-free
+  - Also: n8n Data Cleanup Pack (Gumroad, From $1): https://tidybyte.gumroad.com/l/n8n-data-cleanup-pack
+- [Production Readiness Lite](https://tidybytetools.github.io/tools/production-readiness-lite-free/): A free 15-check release scanner and a go or no-go sheet.
+  - Free scanner (Gumroad, Free): https://tidybyte.gumroad.com/l/production-readiness-lite-free
+  - Full Production Readiness Kit (Gumroad, $9): https://tidybyte.gumroad.com/l/production-readiness-kit
+- [Production Readiness Kit](https://tidybytetools.github.io/tools/production-readiness-kit/): A read-only scanner, 22 questions, a review skill, 6 templates, and 3 starter services for a go or no-go call.
+  - For your computer (Gumroad, $9): https://tidybyte.gumroad.com/l/production-readiness-kit
+  - Free: Production Readiness Lite (Gumroad, Free): https://tidybyte.gumroad.com/l/production-readiness-lite-free
 - [Base64 Encode & Decode](https://tidybytetools.github.io/tools/base64-lite/): Encode or decode Base64 for text and local files, on your computer.
   - Free lite GitHub: https://github.com/tidybytetools/base64-lite
   - Pay per use (Apify, $0.001 per unique item): https://apify.com/tidybytetools/base64-encode-decode
@@ -488,6 +504,7 @@ Import a file, pick your logins, and run. These workflows clean messy data in n8
 - For n8n (Gumroad, From $1): Pay what you want, suggested $5. Tested on self-hosted n8n 2.46.4. Workflows that read files from disk need self-hosted n8n.
 - Free sample (Gumroad, Free): Two workflows from the pack: CSV cleanup and uptime alerts.
 - Also: prompts and reliability (Gumroad, From $1): 12 AI prompts and 4 workflows for error alerts, retries, duplicate webhooks, and lead checks.
+- Also: n8n Builder Kit (Gumroad, $9): 3 skills, a 27-rule linter, and a lookup of all 572 n8n nodes, so AI agents write workflows that import and run.
 
 ### n8n Cleanup Sampler
 Try two workflows for free before you buy the full pack. Import a file, follow the setup note inside, and run. No logins are stored in the files.
@@ -497,6 +514,7 @@ Try two workflows for free before you buy the full pack. Import a file, follow t
 - Free sample (Gumroad, Free): Two workflows from the n8n Data Cleanup Pack (from $1). The CSV cleanup workflow needs self-hosted n8n.
 - Full data cleanup pack (Gumroad, From $1): 9 workflows, pay what you want, suggested $5.
 - Also: prompts and reliability (Gumroad, From $1): 12 AI prompts and 4 workflows for error alerts, retries, duplicate webhooks, and lead checks.
+- Also: n8n Builder Kit (Gumroad, $9): 3 skills, a 27-rule linter, and a lookup of all 572 n8n nodes, so AI agents write workflows that import and run.
 
 ### n8n Prompt + Reliability Pack
 Most n8n workflows work on day one and break on day thirty. This pack helps you build faster with AI, and build so a failure is not silent.
@@ -505,6 +523,7 @@ Most n8n workflows work on day one and break on day thirty. This pack helps you 
 - Built-in nodes only. No secrets in the files. Each workflow has sticky notes and sample data.
 - For n8n (Gumroad, From $1): Pay what you want, suggested $5. Tested on self-hosted n8n 2.46.4. Not tested on n8n Cloud or with a real Discord or Slack account.
 - Free data-cleanup sample (Gumroad, Free): Two free cleanup workflows, separate from this pack.
+- Also: n8n Builder Kit (Gumroad, $9): 3 skills, a 27-rule linter, and a lookup of all 572 n8n nodes, so AI agents write workflows that import and run.
 
 ### csv-char-fix
 Did an export turn José into JosÃ© or it's into itâ€™s? This small script puts the text back the way it should be and saves the file so Excel shows accents right.
@@ -639,6 +658,39 @@ Every Tidy Byte pack for AI coding agents, in one purchase. Each pack has its ow
 - The bundle (Gumroad, $19): Fixed $19. Some packs are pay-what-you-want from $1 on their own, so buying one or two alone can cost less. You may use them in your own and client projects. Please do not resell them.
 - Free: Anti-Slop Rules (Gumroad, Free): The free writing-rules pack. Not in the bundle. The paid Anti-Slop Kit is.
 - Free: Agent Cost Saver (Gumroad, Free): A short guide and 4 scripts for cutting Claude Code, Cursor, and Codex token costs. Not in the bundle.
+
+### n8n Lint
+Check n8n workflow JSON before you import it. Catch invented node names, wrong typeVersion numbers, broken connections, and keys left in the file.
+- n8n_lint.py runs 27 rules (13 errors, 14 warnings) on structure, names, node types and versions, connections, expressions, and secrets. It suggests the closest real name for a typo. --json and --strict for CI.
+- n8n_nodes.py searches all 572 built-in nodes of n8n 2.49.6, with type strings, versions, credentials, and parameter names.
+- A skill so Claude Code, Cursor, or Codex can run both for you, plus a test file that checks every rule (41 checks).
+- Free linter (Gumroad, Free): MIT license. Python 3.9+, standard library only. Nothing leaves your computer. It checks structure, not whether your API key is right, and it does not run the workflow. Tested on n8n 2.49.6.
+- Full n8n Builder Kit (Gumroad, $9): Adds a builder skill, a review skill, a debug skill, 7 reference pages, 3 slash commands, 12 prompts, and 3 working example workflows.
+
+### n8n Builder Kit for Claude Code
+AI agents get n8n wrong in the same few ways: they invent node names, use old typeVersion numbers, link connections by id, and forget the '=' in an expression. This kit catches those before you import the file.
+- 3 skills: n8n-workflow-builder (plan, look up real nodes, write the JSON, lint it), n8n-workflow-review, and n8n-debug-run (reads a failed run and names the fix).
+- n8n_lint.py (27 rules) and n8n_nodes.py (all 572 built-in nodes of n8n 2.49.6). n8n_builder.py writes workflows in Python with 22 helpers, each run in a real n8n.
+- 7 reference pages, 12 prompts, 3 slash commands, and 3 example workflows that run in demo mode with no accounts. 64 offline checks, plus a --real mode that runs the examples in n8n.
+- For your computer (Gumroad, $9): Fixed $9. Standard library Python only. Nothing leaves your computer. Tested on n8n 2.49.6, with a fake model server. Other n8n versions may differ. It does not host or run your workflows.
+- Free: n8n Lint (Gumroad, Free): The 27-rule linter and the 572-node lookup, plus a skill and 41 tests. MIT license.
+- Also: n8n Data Cleanup Pack (Gumroad, From $1): 9 ready-to-import cleanup workflows, using only nodes that come with n8n.
+
+### Production Readiness Lite
+A small scanner that finds the problems that most often cause release-day outages: a committed .env, missing tests or CI, no health check, no timeouts, a container running as root.
+- readiness_lite.py runs 15 checks on Node, Python, Java, and Go repos. It prints GO, GO WITH RISKS, or NO-GO, the file and line behind each failure, and the fix. It reads files only and never prints a secret value.
+- It also lists 4 questions for a person: who owns the secrets, was a rollback practiced, was a restore tested, and do alerts reach someone.
+- Includes a checklist and a go or no-go sheet. Python 3.9+, standard library only. Tests on good and bad sample repos are included.
+- Free scanner (Gumroad, Free): MIT license. The scan finds patterns, so open each finding before you act. It is not a security audit, and it cannot see backups, alerts, or load.
+- Full Production Readiness Kit (Gumroad, $9): All 45 scanned checks and 22 questions, a skill and 4 slash commands, 6 templates, 3 starter services, and stack pages for Node, Python, Java, and Go.
+
+### Production Readiness Kit
+Most outages on release day come from the same short list: a committed .env, no health check, no timeouts, a container running as root, a migration nobody could roll back, no one on call. This kit finds the ones that files can show, and makes you answer the ones they cannot.
+- readiness_scan.py runs 45 checks in 8 areas and prints GO, GO WITH RISKS, or NO-GO, with the file and line and the fix. It reads files only, never runs your code, never uses the network, and never prints a secret value.
+- 22 questions only a person can answer sit in the same report (45 + 22 = 67). A skill and 4 slash commands run the scan, check each finding in the code, and fill in the sheets.
+- 6 templates (go or no-go, rollback plan, runbook, release day checklist, postmortem, risk acceptance), 3 starter services (Node, Python, Go) that scan GO, and stack pages for Node, Python, Java and Spring Boot, and Go.
+- For your computer (Gumroad, $9): Fixed $9. The scan uses patterns, so it can miss a problem or flag a harmless line. There is no Java starter. The starter Dockerfiles were not built in our tests. A good verdict is not a security audit.
+- Free: Production Readiness Lite (Gumroad, Free): 15 of the checks, 4 questions, the lite checklist, and the go or no-go sheet. MIT license.
 
 ### Base64 Encode & Decode
 Turn text or a local file into Base64, or turn Base64 back into text or bytes. You can also use the URL-safe alphabet and data-URI output. It runs offline.

@@ -627,6 +627,10 @@ jon smith,jon@acme.com,415 555 0110,""",
               "https://tidybyte.gumroad.com/l/n8n-prompt-reliability-pack",
               cta="See on Gumroad",
               note="12 AI prompts and 4 workflows for error alerts, retries, duplicate webhooks, and lead checks."),
+            V("Gumroad", "Also: n8n Builder Kit", "$9",
+              "https://tidybyte.gumroad.com/l/n8n-builder-kit-claude-code",
+              cta="See on Gumroad",
+              note="3 skills, a 27-rule linter, and a lookup of all 572 n8n nodes, so AI agents write workflows that import and run."),
         ],
         "repos": [],
     },
@@ -674,6 +678,10 @@ Maria Garcia,maria@sunrise.com,512.555.0142,""",
               "https://tidybyte.gumroad.com/l/n8n-prompt-reliability-pack",
               cta="See on Gumroad",
               note="12 AI prompts and 4 workflows for error alerts, retries, duplicate webhooks, and lead checks."),
+            V("Gumroad", "Also: n8n Builder Kit", "$9",
+              "https://tidybyte.gumroad.com/l/n8n-builder-kit-claude-code",
+              cta="See on Gumroad",
+              note="3 skills, a 27-rule linter, and a lookup of all 572 n8n nodes, so AI agents write workflows that import and run."),
         ],
         "repos": [],
     },
@@ -725,6 +733,10 @@ results:
               "https://tidybyte.gumroad.com/l/n8n-cleanup-sampler",
               cta="Get free on Gumroad",
               note="Two free cleanup workflows, separate from this pack."),
+            V("Gumroad", "Also: n8n Builder Kit", "$9",
+              "https://tidybyte.gumroad.com/l/n8n-builder-kit-claude-code",
+              cta="See on Gumroad",
+              note="3 skills, a 27-rule linter, and a lookup of all 572 n8n nodes, so AI agents write workflows that import and run."),
         ],
         "repos": [],
     },
@@ -1440,6 +1452,191 @@ README-before.md:13:1   HIGH  "Let's dive in"
         ],
         "repos": [],
     },
+
+    {
+        "slug": "n8n-lint-free",
+        "name": "n8n Lint",
+        "category": "n8n",
+        "icon": "workflow",
+        "tagline": "A free 27-rule linter and node lookup for n8n workflow JSON.",
+        "summary": (
+            "Check n8n workflow JSON before you import it. Catch invented node names, wrong "
+            "typeVersion numbers, broken connections, and keys left in the file."
+        ),
+        "does": [
+            "n8n_lint.py runs 27 rules (13 errors, 14 warnings) on structure, names, node types and versions, connections, expressions, and secrets. It suggests the closest real name for a typo. --json and --strict for CI.",
+            "n8n_nodes.py searches all 572 built-in nodes of n8n 2.49.6, with type strings, versions, credentials, and parameter names.",
+            "A skill so Claude Code, Cursor, or Codex can run both for you, plus a test file that checks every rule (41 checks).",
+        ],
+        "thumb": PRODUCTS_DIR / "n8n-lint-free" / "thumb.png",
+        "cover": PRODUCTS_DIR / "n8n-lint-free" / "cover.png",
+        "input": "An n8n workflow JSON file, or a folder of them.",
+        "output": "A list of errors and warnings, each with a code, the node name, and a plain fix, or a close name for a typo.",
+        "example": E(
+            """$ python3 n8n_lint.py flow.json
+flow.json: 2 error(s), 1 warning(s)
+  E006 error [Manual Trigger]: unknown node type 'n8n-nodes-base.googleSheetz'. Did you mean: n8n-nodes-base.googleSheets, n8n-nodes-base.googleChat, n8n-nodes-base.googleSheetsTrigger?
+  E007 error [Call LLM]: typeVersion 9 is not known for n8n-nodes-base.httpRequest. Known: [1, 2, 3, 4, 4.1, 4.2, 4.3, 4.4, 4.5]""",
+            """$ python3 n8n_lint.py examples/error-alert-repeat-blocker.json
+examples/error-alert-repeat-blocker.json: 0 error(s), 0 warning(s)""",
+            "A typo and a wrong typeVersion",
+            "A real example workflow from the pack",
+            "text",
+            "Run Nov 25, 2026 against n8n 2.49.6. The typo file was made from a pack example; the clean file is examples/error-alert-repeat-blocker.json.",
+        ),
+        "versions": [
+            V("Gumroad", "Free linter", "Free",
+              "https://tidybyte.gumroad.com/l/n8n-lint-free",
+              cta="Get free on Gumroad",
+              note="MIT license. Python 3.9+, standard library only. Nothing leaves your computer. It checks structure, not whether your API key is right, and it does not run the workflow. Tested on n8n 2.49.6."),
+            V("Gumroad", "Full n8n Builder Kit", "$9",
+              "https://tidybyte.gumroad.com/l/n8n-builder-kit-claude-code",
+              cta="Buy on Gumroad",
+              note="Adds a builder skill, a review skill, a debug skill, 7 reference pages, 3 slash commands, 12 prompts, and 3 working example workflows."),
+        ],
+        "repos": [],
+    },
+    {
+        "slug": "n8n-builder-kit-claude-code",
+        "name": "n8n Builder Kit for Claude Code",
+        "category": "n8n",
+        "icon": "workflow",
+        "tagline": "3 skills, a 27-rule linter, and a node lookup so AI agents write n8n workflows that import and run.",
+        "summary": (
+            "AI agents get n8n wrong in the same few ways: they invent node names, use old typeVersion "
+            "numbers, link connections by id, and forget the '=' in an expression. This kit catches those "
+            "before you import the file."
+        ),
+        "does": [
+            "3 skills: n8n-workflow-builder (plan, look up real nodes, write the JSON, lint it), n8n-workflow-review, and n8n-debug-run (reads a failed run and names the fix).",
+            "n8n_lint.py (27 rules) and n8n_nodes.py (all 572 built-in nodes of n8n 2.49.6). n8n_builder.py writes workflows in Python with 22 helpers, each run in a real n8n.",
+            "7 reference pages, 12 prompts, 3 slash commands, and 3 example workflows that run in demo mode with no accounts. 64 offline checks, plus a --real mode that runs the examples in n8n.",
+        ],
+        "thumb": PRODUCTS_DIR / "n8n-builder-kit-claude-code" / "thumb.png",
+        "cover": PRODUCTS_DIR / "n8n-builder-kit-claude-code" / "cover.png",
+        "input": "A plain-language description of the workflow you want, or an existing n8n JSON file, or a failed n8n run log.",
+        "output": "Workflow JSON that linted clean, a ranked review, or a table that names the failing node and a likely fix.",
+        "example": E(
+            """$ python3 n8n_lint.py flow.json
+flow.json: 2 error(s), 1 warning(s)
+  E006 error [Manual Trigger]: unknown node type 'n8n-nodes-base.googleSheetz'. Did you mean: n8n-nodes-base.googleSheets, n8n-nodes-base.googleChat, n8n-nodes-base.googleSheetsTrigger?
+  E007 error [Call LLM]: typeVersion 9 is not known for n8n-nodes-base.httpRequest. Known: [1, 2, 3, 4, 4.1, 4.2, 4.3, 4.4, 4.5]""",
+            """$ python3 n8n_lint.py examples/error-alert-repeat-blocker.json
+examples/error-alert-repeat-blocker.json: 0 error(s), 0 warning(s)""",
+            "A typo and a wrong typeVersion",
+            "A real example workflow from the kit",
+            "text",
+            "Run Nov 25, 2026 against n8n 2.49.6. The typo file was made from a kit example; the clean file is examples/error-alert-repeat-blocker.json.",
+        ),
+        "versions": [
+            V("Gumroad", "For your computer", "$9",
+              "https://tidybyte.gumroad.com/l/n8n-builder-kit-claude-code",
+              cta="Buy on Gumroad",
+              note="Fixed $9. Standard library Python only. Nothing leaves your computer. Tested on n8n 2.49.6, with a fake model server. Other n8n versions may differ. It does not host or run your workflows."),
+            V("Gumroad", "Free: n8n Lint", "Free",
+              "https://tidybyte.gumroad.com/l/n8n-lint-free",
+              cta="Get free on Gumroad",
+              note="The 27-rule linter and the 572-node lookup, plus a skill and 41 tests. MIT license."),
+            V("Gumroad", "Also: n8n Data Cleanup Pack", "From $1",
+              "https://tidybyte.gumroad.com/l/n8n-data-cleanup-pack",
+              cta="See on Gumroad",
+              note="9 ready-to-import cleanup workflows, using only nodes that come with n8n."),
+        ],
+        "repos": [],
+    },
+    {
+        "slug": "production-readiness-lite-free",
+        "name": "Production Readiness Lite",
+        "category": "ai",
+        "icon": "check",
+        "tagline": "A free 15-check release scanner and a go or no-go sheet.",
+        "summary": (
+            "A small scanner that finds the problems that most often cause release-day outages: "
+            "a committed .env, missing tests or CI, no health check, no timeouts, a container running as root."
+        ),
+        "does": [
+            "readiness_lite.py runs 15 checks on Node, Python, Java, and Go repos. It prints GO, GO WITH RISKS, or NO-GO, the file and line behind each failure, and the fix. It reads files only and never prints a secret value.",
+            "It also lists 4 questions for a person: who owns the secrets, was a rollback practiced, was a restore tested, and do alerts reach someone.",
+            "Includes a checklist and a go or no-go sheet. Python 3.9+, standard library only. Tests on good and bad sample repos are included.",
+        ],
+        "thumb": PRODUCTS_DIR / "production-readiness-lite-free" / "thumb.png",
+        "cover": PRODUCTS_DIR / "production-readiness-lite-free" / "cover.png",
+        "input": "A repository folder on your computer.",
+        "output": "A verdict (GO, GO WITH RISKS, or NO-GO), each failed check with a file, line, and fix, plus 4 questions for a person.",
+        "example": E(
+            """$ python3 readiness_lite.py .
+READINESS SCAN (lite)  .
+VERDICT: NO-GO    (some pass, some fail)
+  FAIL S02  blocker   No real .env file is committed
+  FAIL R02  important SIGTERM is handled (graceful shutdown)
+  FAIL C02  important Container does not run as root""",
+            "Fix the blockers, then fill in the go or no-go sheet, including the 4 questions the scan cannot answer.",
+            "A scan on a repo with known problems",
+            "What you do next",
+            "text",
+            "The scanner was tested Nov 25, 2026 on good and bad sample repos. This sample is shortened from a real run.",
+        ),
+        "versions": [
+            V("Gumroad", "Free scanner", "Free",
+              "https://tidybyte.gumroad.com/l/production-readiness-lite-free",
+              cta="Get free on Gumroad",
+              note="MIT license. The scan finds patterns, so open each finding before you act. It is not a security audit, and it cannot see backups, alerts, or load."),
+            V("Gumroad", "Full Production Readiness Kit", "$9",
+              "https://tidybyte.gumroad.com/l/production-readiness-kit",
+              cta="Buy on Gumroad",
+              note="All 45 scanned checks and 22 questions, a skill and 4 slash commands, 6 templates, 3 starter services, and stack pages for Node, Python, Java, and Go."),
+        ],
+        "repos": [],
+    },
+    {
+        "slug": "production-readiness-kit",
+        "name": "Production Readiness Kit",
+        "category": "ai",
+        "icon": "check",
+        "tagline": "A read-only scanner, 22 questions, a review skill, 6 templates, and 3 starter services for a go or no-go call.",
+        "summary": (
+            "Most outages on release day come from the same short list: a committed .env, no health check, "
+            "no timeouts, a container running as root, a migration nobody could roll back, no one on call. "
+            "This kit finds the ones that files can show, and makes you answer the ones they cannot."
+        ),
+        "does": [
+            "readiness_scan.py runs 45 checks in 8 areas and prints GO, GO WITH RISKS, or NO-GO, with the file and line and the fix. It reads files only, never runs your code, never uses the network, and never prints a secret value.",
+            "22 questions only a person can answer sit in the same report (45 + 22 = 67). A skill and 4 slash commands run the scan, check each finding in the code, and fill in the sheets.",
+            "6 templates (go or no-go, rollback plan, runbook, release day checklist, postmortem, risk acceptance), 3 starter services (Node, Python, Go) that scan GO, and stack pages for Node, Python, Java and Spring Boot, and Go.",
+        ],
+        "thumb": PRODUCTS_DIR / "production-readiness-kit" / "thumb.png",
+        "cover": PRODUCTS_DIR / "production-readiness-kit" / "cover.png",
+        "input": "A repository folder on your computer.",
+        "output": "A verdict, a table of findings, and, if you want them, filled-in go or no-go, rollback, runbook, or postmortem sheets.",
+        "example": E(
+            """$ python3 readiness_scan.py .
+READINESS SCAN  service-starter-with-problems
+stacks: node   service: yes   database: no   git: yes
+VERDICT: NO-GO    (33 pass, 7 fail, 5 not applicable)
+  FAIL R01  important A health endpoint exists
+  FAIL R02  important SIGTERM is handled (graceful shutdown)
+  FAIL C02  important Container does not run as root
+  FAIL C03  important Base image tags are pinned
+  FAIL X01  blocker   TLS certificate checks are not turned off""",
+            "Fix X01 first (a blocker). Then fix the important items, or accept each one in writing. Then answer the 22 manual questions.",
+            "A real scan of the kit's sample starter after four problems were added",
+            "What the verdict means",
+            "text",
+            "From examples/sample-scan-output.txt in the kit, made by copying starters/node and removing health routes and SIGTERM handling, using FROM node:latest with no USER, and adding rejectUnauthorized: false. Tested Nov 25, 2026.",
+        ),
+        "versions": [
+            V("Gumroad", "For your computer", "$9",
+              "https://tidybyte.gumroad.com/l/production-readiness-kit",
+              cta="Buy on Gumroad",
+              note="Fixed $9. The scan uses patterns, so it can miss a problem or flag a harmless line. There is no Java starter. The starter Dockerfiles were not built in our tests. A good verdict is not a security audit."),
+            V("Gumroad", "Free: Production Readiness Lite", "Free",
+              "https://tidybyte.gumroad.com/l/production-readiness-lite-free",
+              cta="Get free on Gumroad",
+              note="15 of the checks, 4 questions, the lite checklist, and the go or no-go sheet. MIT license."),
+        ],
+        "repos": [],
+    },
+
     {
         "slug": "base64-lite",
         "name": "Base64 Encode & Decode",
