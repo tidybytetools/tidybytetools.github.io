@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How to test a Claude Code skill pack before you install it · Tidy Byte Tools</title>
+  <meta name="description" content="Skill packs can cost context and tokens, and some do little. Here is a plain 4-step test with a filler-text control, and what to read first.">
+  
+  <link rel="canonical" href="https://tidybytetools.github.io/guides/test-a-claude-code-skill-pack-before-installing/">
+  
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preload" href="/assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <meta name="theme-color" content="#F4F7F5" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0D1512" media="(prefers-color-scheme: dark)">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Tidy Byte Tools">
+  <meta property="og:title" content="How to test a Claude Code skill pack before you install it · Tidy Byte Tools">
+  <meta property="og:description" content="Skill packs can cost context and tokens, and some do little. Here is a plain 4-step test with a filler-text control, and what to read first.">
+  <meta property="og:url" content="https://tidybytetools.github.io/guides/test-a-claude-code-skill-pack-before-installing/">
+  <meta property="og:image" content="https://tidybytetools.github.io/assets/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to test a Claude Code skill pack before you install it · Tidy Byte Tools">
+  <meta name="twitter:description" content="Skill packs can cost context and tokens, and some do little. Here is a plain 4-step test with a filler-text control, and what to read first.">
+  <meta name="twitter:image" content="https://tidybytetools.github.io/assets/img/og.png">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  
+</head>
+
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="header-inner">
+
+    <a class="logo" href="/">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="/assets/img/lockup-horizontal-dark.svg">
+        <img src="/assets/img/lockup-horizontal-light.svg" alt="Tidy Byte Tools" height="32" width="118">
+      </picture>
+    </a>
+    
+<div class="header-tools">
+<nav aria-label="Primary"><ul><li><a href="/tools/">Tools</a></li><li><a href="/guides/" aria-current="page">Guides</a></li><li><a href="/#how">How it works</a></li><li><a href="/#faq">FAQ</a></li><li><a href="/connect/">For AI agents</a></li><li><a href="/api/">API</a></li><li><a href="https://github.com/tidybytetools">GitHub</a></li></ul></nav>
+<nav class="lang-switch" aria-label="Language"><ul class="lang-switch"><li><a href="/guides/test-a-claude-code-skill-pack-before-installing/" lang="en" hreflang="en" title="English" aria-current="true">EN</a></li><li><a href="/es/" lang="es" hreflang="es" title="Español">ES</a></li><li><a href="/pt/" lang="pt-BR" hreflang="pt-BR" title="Português">PT</a></li><li><a href="/de/" lang="de" hreflang="de" title="Deutsch">DE</a></li><li><a href="/fr/" lang="fr" hreflang="fr" title="Français">FR</a></li><li><a href="/ja/" lang="ja" hreflang="ja" title="日本語">JA</a></li><li><a href="/zh/" lang="zh-CN" hreflang="zh-CN" title="中文">中文</a></li></ul></nav>
+</div></div></header>
+<main id="main">
+    <section class="wrap page-hero">
+      <p class="crumb"><a href="/">Home</a> / <a href="/guides/">Guides</a> / How to test a Claude Code skill pack before you install it</p>
+      <h1>How to test a Claude Code skill pack before you install it</h1>
+      <p class="lede">Skill packs can cost context and tokens, and some do little. Here is a plain 4-step test with a filler-text control, and what to read first.</p>
+      
+    </section>
+    <section class="wrap" style="padding-bottom:48px">
+      <article class="prose guide-body"><p>Skill packs are everywhere right now. Some are great. Some mostly add words your agent has to read every time. This page gives you a small test you can run in one afternoon, so you keep only what helps.</p>
+<h2>What people are finding</h2>
+<p>Careful writers have started to measure skills instead of ranking them by stars.</p>
+<ul>
+<li>Jack Klimov read 63 skills in full, out of 9,578 from 80 repos, and picked 24 worth installing. His main rule: read the file before you install it, because a skill is instructions your agent follows and some ship scripts and hooks. <a href="https://jack.direct/blog/best-claude-code-skills/">Read his list</a>.</li>
+<li>A GitHub project called <a href="https://github.com/ferhatatagun/rules-bench">rules-bench</a> asks what rule, skill and agent packs cost in context before you type a word.</li>
+<li>AgentCraft ran 30 before-and-after runs on one small CLAUDE.md of four rules and found it changed behavior a little, with about the same cost. <a href="https://agentcraft.dev/en/blog/karpathy-skills-claude-code-test-2026-11/">Read the test</a>.</li>
+</ul>
+<p>We have not repeated these tests ourselves. We link them so you can check them.</p>
+<h2>The 4-step test</h2>
+<p>You need one small project, about 5 tasks you do often, and a way to see token use (your Claude Code usage view, or a script that adds up your session logs).</p>
+<p>1. <strong>Baseline.</strong> Run your 5 tasks with no pack. Write down tokens, time, and whether each task worked.</p>
+<p>2. <strong>Filler control.</strong> Install a fake skill that is the same length as the pack but has no advice in it, just neutral text. Run the same 5 tasks. This shows what extra length alone costs.</p>
+<p>3. <strong>The pack.</strong> Remove the filler. Install the pack. Run the same 5 tasks.</p>
+<p>4. <strong>Compare.</strong> Keep the pack only if it beats the filler on something you care about: fewer failed tasks, fewer retries, or a lower bill. If it does not, remove it.</p>
+<p>Five tasks is a small sample. Treat the result as a hint, not a proof. Run it twice if the numbers are close.</p>
+<h2>Read before you install</h2>
+<ul>
+<li>Open every <code>SKILL.md</code>. Look for the <code>description</code> line, because it is what the agent reads to decide when to load the skill.</li>
+<li>Look for scripts and hooks. Read them. A hook runs on your machine.</li>
+<li>Check size. A long always-on instruction file is paid for on every request. Rules for one folder belong in that folder.</li>
+<li>Prefer small skills that teach the agent something it cannot know alone: your API, your deploy steps, your style rules.</li>
+</ul>
+<h2>Tools that can help</h2>
+<ul>
+<li><a href="https://tidybyte.gumroad.com/l/agent-cost-saver">Agent Cost Saver</a> is a free pack from Tidy Byte Tools. It has <code>cost_audit.py</code>, which lists what your project sends with every request, and <code>session_report.py</code>, which adds up tokens per session from your own local logs. It does not promise a percent saved. It helps you measure before and after.</li>
+<li>The <a href="https://tidybyte.gumroad.com/l/ship-ready-skills-pack">Ship-Ready Skills Pack</a> is a small paid pack of 10 skills. It is a fair thing to test with the steps above.</li>
+</ul>
+<p>We sell some of these packs, so test ours the same way you test everyone else's.</p>
+<h2>Related guides</h2>
+<ul>
+<li><a href="/guides/count-llm-tokens-and-estimate-cost/">How to count LLM tokens and estimate cost</a></li>
+</ul>
+<p>Made by <a href="https://tidybytetools.github.io">Tidy Byte Tools</a>.</p></article>
+      <aside style="margin-top:36px">
+        <h2>More guides</h2>
+        <ul><li><a href="/guides/check-a-website-for-broken-links/">How to check a website for broken links</a></li><li><a href="/guides/anti-slop-skills-compared/">Anti-slop skills compared: free prompts, a rewriter, or a checker</a></li><li><a href="/guides/claude-md-vs-agents-md-vs-cursor-rules/">CLAUDE.md, AGENTS.md or Cursor rules: which file should you write?</a></li><li><a href="/guides/count-llm-tokens-and-estimate-cost/">How to count LLM tokens and estimate cost</a></li><li><a href="/guides/encode-or-decode-base64/">How to encode or decode Base64 for text and files</a></li><li><a href="/guides/extract-pdf-tables-to-excel-or-csv/">How to extract tables from a PDF into Excel or CSV</a></li><li><a href="/guides/flatten-nested-json-into-csv/">How to flatten nested JSON into CSV</a></li><li><a href="/guides/turn-pdf-or-word-into-markdown-for-ai/">How to turn a PDF or Word file into Markdown for AI and notes</a></li></ul>
+      </aside>
+    </section>
+    </main>
+
+<footer class="site-footer">
+  
+  <section class="featured-on" aria-label="Featured on">
+    <div class="wrap">
+      <h2>Featured on</h2>
+      <p>As directories list us, their marks will show up here.</p>
+      <ul class="featured-logos"></ul>
+    </div>
+  </section>
+
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      
+    <a class="logo" href="/">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="/assets/img/lockup-horizontal-dark.svg">
+        <img src="/assets/img/lockup-horizontal-light.svg" alt="Tidy Byte Tools" height="32" width="118">
+      </picture>
+    </a>
+    
+      <p>Small tools that clean up messy data. Each one does one job and does it well.</p>
+    </div>
+    <div>
+      <h2>Tools</h2>
+      <ul><li><a href="/tools/pdf-table-pull/">PDF Table Pull</a></li>
+<li><a href="/tools/doc2md/">Doc to Markdown</a></li>
+<li><a href="/tools/sheet-scrub/">CSV &amp; spreadsheet cleanup</a></li>
+<li><a href="/tools/json-shaper/">JSON Shaper</a></li>
+<li><a href="/tools/lead-sheet-fixer/">Lead Sheet Fixer</a></li>
+<li><a href="/tools/phone-validator/">Phone Number Validator</a></li>
+<li><a href="/tools/data-cleanup-bundle/">Data Cleanup Bundle</a></li>
+<li><a href="/tools/link-check/">Broken Link Checker</a></li>
+<li><a href="/tools/server-pulse/">Server Pulse</a></li>
+<li><a href="/tools/markdown-chunker/">Markdown Chunker for RAG</a></li>
+<li><a href="/tools/gif-forge/">GIF Forge</a></li>
+<li><a href="/tools/n8n-data-cleanup-pack/">n8n Data Cleanup Pack</a></li>
+<li><a href="/tools/n8n-cleanup-sampler/">n8n Cleanup Sampler</a></li>
+<li><a href="/tools/n8n-prompt-reliability-pack/">n8n Prompt + Reliability Pack</a></li>
+<li><a href="/tools/csv-char-fix/">csv-char-fix</a></li>
+<li><a href="/tools/csv-split/">csv-split</a></li>
+<li><a href="/tools/regex-pack/">Regex Pack for Messy Data</a></li>
+<li><a href="/tools/dev-cheat-sheets/">Dev Cheat Sheets</a></li>
+<li><a href="/tools/claude-data-skills/">CSV Skills for Claude Code</a></li>
+<li><a href="/tools/agent-data-skills/">Agent Data Skills Pack</a></li>
+<li><a href="/tools/agents-md-starter-pack/">AGENTS.md Starter Pack</a></li>
+<li><a href="/tools/ship-ready-skills-pack/">Ship-Ready Skills Pack</a></li>
+<li><a href="/tools/verify-before-done-free/">Verify Before Done</a></li>
+<li><a href="/tools/agent-cost-saver/">Agent Cost Saver</a></li>
+<li><a href="/tools/dev-os-claude-code/">Dev OS in Claude Code</a></li>
+<li><a href="/tools/anti-slop-kit/">Anti-Slop Kit</a></li>
+<li><a href="/tools/anti-slop-rules-free/">Anti-Slop Rules</a></li>
+<li><a href="/tools/all-agent-packs/">All Tidy Byte Agent Packs</a></li>
+<li><a href="/tools/base64-lite/">Base64 Encode &amp; Decode</a></li>
+<li><a href="/tools/json-repair-lite/">JSON Repair</a></li>
+<li><a href="/tools/hash-lite/">Hash &amp; Checksum</a></li>
+<li><a href="/tools/html-table-extractor/">HTML Table Extractor</a></li>
+<li><a href="/tools/llm-token-counter/">LLM Token Counter</a></li>
+<li><a href="/tools/json-to-csv/">JSON to CSV Converter</a></li>
+<li><a href="/tools/csv-encoding-fixer/">CSV Encoding Fixer</a></li>
+<li><a href="/tools/json-schema-validator/">JSON Schema Validator</a></li>
+<li><a href="/tools/link-preview/">Link Preview</a></li>
+<li><a href="/tools/language-detector/">Language Detector</a></li>
+<li><a href="/tools/date-timezone/">Date &amp; Timezone Normalizer</a></li></ul>
+    </div>
+    <div>
+      <h2>Shops</h2>
+      <ul>
+        <li><a href="https://apify.com/tidybytetools">Apify</a></li>
+        <li><a href="https://tidybyte.gumroad.com">Gumroad</a></li>
+        <li><a href="https://github.com/tidybytetools">GitHub</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>This site</h2>
+      <ul>
+        <li><a href="/guides/">Guides</a></li>
+        <li><a href="https://dev.to/tidybytetools">Guides on dev.to</a></li>
+        <li><a href="https://huggingface.co/spaces/runescapeprivateservers/fix-broken-json">Fix Broken JSON</a></li>
+        <li><a href="https://github.com/tidybytetools/json-repair-skill">JSON repair skill</a></li>
+        <li><a href="/connect/">For AI agents</a></li>
+        <li><a href="/api/">API</a></li>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/terms/">Terms</a></li>
+        <li><a href="/llms.txt">llms.txt</a></li>
+        <li><a href="/tools.json">tools.json</a></li>
+        <li><a href="/.well-known/mcp.json">mcp.json</a></li>
+        <li><a href="/openapi.json">openapi.json</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap legal">
+    <p>© 2026 Tidy Byte Tools. This site does not use tracking cookies.</p>
+    <p class="footer-dir-badges"><a href="https://fazier.com" target="_blank"><img src="https://fazier.com/api/v1/public/badges/launch_badges.svg?badge_type=featured&theme=light" alt="Fazier badge" width="182" height="43" /></a> <a href="https://appnavi.dev/en/apps/tidy-byte-tools/"><img src="https://appnavi.dev/badge/en-light.svg" alt="APP NAVI" width="190" height="44" /></a></p>
+  </div>
+</footer>
+
+</body></html>

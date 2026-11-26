@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anti-slop skills compared: free prompts, a rewriter, or a checker · Tidy Byte Tools</title>
+  <meta name="description" content="Three honest ways to stop AI-written READMEs and commits from sounding generic. What each one does well, where it falls short, and which to pick.">
+  
+  <link rel="canonical" href="https://tidybytetools.github.io/guides/anti-slop-skills-compared/">
+  
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preload" href="/assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <meta name="theme-color" content="#F4F7F5" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0D1512" media="(prefers-color-scheme: dark)">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Tidy Byte Tools">
+  <meta property="og:title" content="Anti-slop skills compared: free prompts, a rewriter, or a checker · Tidy Byte Tools">
+  <meta property="og:description" content="Three honest ways to stop AI-written READMEs and commits from sounding generic. What each one does well, where it falls short, and which to pick.">
+  <meta property="og:url" content="https://tidybytetools.github.io/guides/anti-slop-skills-compared/">
+  <meta property="og:image" content="https://tidybytetools.github.io/assets/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Anti-slop skills compared: free prompts, a rewriter, or a checker · Tidy Byte Tools">
+  <meta name="twitter:description" content="Three honest ways to stop AI-written READMEs and commits from sounding generic. What each one does well, where it falls short, and which to pick.">
+  <meta name="twitter:image" content="https://tidybytetools.github.io/assets/img/og.png">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  
+</head>
+
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="header-inner">
+
+    <a class="logo" href="/">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="/assets/img/lockup-horizontal-dark.svg">
+        <img src="/assets/img/lockup-horizontal-light.svg" alt="Tidy Byte Tools" height="32" width="118">
+      </picture>
+    </a>
+    
+<div class="header-tools">
+<nav aria-label="Primary"><ul><li><a href="/tools/">Tools</a></li><li><a href="/guides/" aria-current="page">Guides</a></li><li><a href="/#how">How it works</a></li><li><a href="/#faq">FAQ</a></li><li><a href="/connect/">For AI agents</a></li><li><a href="/api/">API</a></li><li><a href="https://github.com/tidybytetools">GitHub</a></li></ul></nav>
+<nav class="lang-switch" aria-label="Language"><ul class="lang-switch"><li><a href="/guides/anti-slop-skills-compared/" lang="en" hreflang="en" title="English" aria-current="true">EN</a></li><li><a href="/es/" lang="es" hreflang="es" title="Español">ES</a></li><li><a href="/pt/" lang="pt-BR" hreflang="pt-BR" title="Português">PT</a></li><li><a href="/de/" lang="de" hreflang="de" title="Deutsch">DE</a></li><li><a href="/fr/" lang="fr" hreflang="fr" title="Français">FR</a></li><li><a href="/ja/" lang="ja" hreflang="ja" title="日本語">JA</a></li><li><a href="/zh/" lang="zh-CN" hreflang="zh-CN" title="中文">中文</a></li></ul></nav>
+</div></div></header>
+<main id="main">
+    <section class="wrap page-hero">
+      <p class="crumb"><a href="/">Home</a> / <a href="/guides/">Guides</a> / Anti-slop skills compared: free prompts, a rewriter, or a checker</p>
+      <h1>Anti-slop skills compared: free prompts, a rewriter, or a checker</h1>
+      <p class="lede">Three honest ways to stop AI-written READMEs and commits from sounding generic. What each one does well, where it falls short, and which to pick.</p>
+      
+    </section>
+    <section class="wrap" style="padding-bottom:48px">
+      <article class="prose guide-body"><p>AI agents now write many READMEs, commit messages and pull request texts. You can often tell: "Certainly!", "blazing fast", "seamless", "It's not X, it's Y", and a dash in every sentence. This page compares three ways to fix that and tells you when each one is enough.</p>
+<h2>The three approaches</h2>
+<div class="table-wrap"><table>
+<tr><th>Approach</th><th>What it is</th><th>Good at</th><th>Falls short</th></tr>
+<tr><td>Free rules only</td><td>A short list of "do not write this" lines in CLAUDE.md, AGENTS.md or a skill</td><td>Costs nothing. Works the moment you paste it</td><td>Nothing checks them. The agent can forget a rule on a long task</td></tr>
+<tr><td>A rewriter skill</td><td>A skill that rewrites text to remove AI patterns, such as the free <code>humanizer</code> skill, which one reviewer says removes 26 patterns of AI prose (<a href="https://jack.direct/blog/best-claude-code-skills/">source</a>)</td><td>Good for fixing one piece of writing now</td><td>It runs when you ask. It does not stop new slop from landing in your repo</td></tr>
+<tr><td>A checker plus hooks</td><td>A script that reports bad patterns with line numbers, and hooks or CI that run it for you</td><td>Catches slop on every commit and pull request, with no AI call</td><td>English only. It checks patterns, not truth. It is not an AI detector</td></tr>
+</table></div>
+<h2>How to pick</h2>
+<ul>
+<li><strong>One README, one time:</strong> use free rules or a rewriter. You do not need more.</li>
+<li><strong>A team repo where agents write docs every day:</strong> add a checker so the rules are enforced, not only requested.</li>
+<li><strong>You publish docs for customers:</strong> use both. Rules to prevent, a checker to catch what slips through.</li>
+</ul>
+<h2>Our options</h2>
+<p>The Anti-Slop Kit from Tidy Byte Tools is the third kind. It has <code>slop_check.py</code> (standard library Python, about 150 phrases and 10 pattern checks), four skills, a Claude Code hook, a git commit hook and a GitHub Action. On 14 real npm package READMEs it found no high or medium findings, and 22 findings on our sample AI-style README. That says it flags the slop and mostly leaves normal technical writing alone. It also ships 35 tests you can run.</p>
+<ul>
+<li>Start free: <a href="https://tidybyte.gumroad.com/l/anti-slop-rules-free">Anti-Slop Rules (free)</a>. Rules only, no checker.</li>
+<li>Full kit, $9: <a href="https://tidybyte.gumroad.com/l/anti-slop-kit">Anti-Slop Kit</a>.</li>
+</ul>
+<p>Other sellers have anti-slop products too, and some free ones are good. Try a free one first. If rules alone keep working for you, you do not need ours.</p>
+<h2>What no tool can do</h2>
+<ul>
+<li>It cannot say who wrote a text. Do not trust any tool that claims it can.</li>
+<li>It cannot tell if your docs are correct or clear. A person still has to read them.</li>
+</ul>
+<h2>Related guides</h2>
+<ul>
+<li><a href="/guides/test-a-claude-code-skill-pack-before-installing/">How to test a Claude Code skill pack before you install it</a></li>
+</ul>
+<p>Made by <a href="https://tidybytetools.github.io">Tidy Byte Tools</a>.</p></article>
+      <aside style="margin-top:36px">
+        <h2>More guides</h2>
+        <ul><li><a href="/guides/check-a-website-for-broken-links/">How to check a website for broken links</a></li><li><a href="/guides/claude-md-vs-agents-md-vs-cursor-rules/">CLAUDE.md, AGENTS.md or Cursor rules: which file should you write?</a></li><li><a href="/guides/count-llm-tokens-and-estimate-cost/">How to count LLM tokens and estimate cost</a></li><li><a href="/guides/encode-or-decode-base64/">How to encode or decode Base64 for text and files</a></li><li><a href="/guides/extract-pdf-tables-to-excel-or-csv/">How to extract tables from a PDF into Excel or CSV</a></li><li><a href="/guides/flatten-nested-json-into-csv/">How to flatten nested JSON into CSV</a></li><li><a href="/guides/test-a-claude-code-skill-pack-before-installing/">How to test a Claude Code skill pack before you install it</a></li><li><a href="/guides/turn-pdf-or-word-into-markdown-for-ai/">How to turn a PDF or Word file into Markdown for AI and notes</a></li></ul>
+      </aside>
+    </section>
+    </main>
+
+<footer class="site-footer">
+  
+  <section class="featured-on" aria-label="Featured on">
+    <div class="wrap">
+      <h2>Featured on</h2>
+      <p>As directories list us, their marks will show up here.</p>
+      <ul class="featured-logos"></ul>
+    </div>
+  </section>
+
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      
+    <a class="logo" href="/">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="/assets/img/lockup-horizontal-dark.svg">
+        <img src="/assets/img/lockup-horizontal-light.svg" alt="Tidy Byte Tools" height="32" width="118">
+      </picture>
+    </a>
+    
+      <p>Small tools that clean up messy data. Each one does one job and does it well.</p>
+    </div>
+    <div>
+      <h2>Tools</h2>
+      <ul><li><a href="/tools/pdf-table-pull/">PDF Table Pull</a></li>
+<li><a href="/tools/doc2md/">Doc to Markdown</a></li>
+<li><a href="/tools/sheet-scrub/">CSV &amp; spreadsheet cleanup</a></li>
+<li><a href="/tools/json-shaper/">JSON Shaper</a></li>
+<li><a href="/tools/lead-sheet-fixer/">Lead Sheet Fixer</a></li>
+<li><a href="/tools/phone-validator/">Phone Number Validator</a></li>
+<li><a href="/tools/data-cleanup-bundle/">Data Cleanup Bundle</a></li>
+<li><a href="/tools/link-check/">Broken Link Checker</a></li>
+<li><a href="/tools/server-pulse/">Server Pulse</a></li>
+<li><a href="/tools/markdown-chunker/">Markdown Chunker for RAG</a></li>
+<li><a href="/tools/gif-forge/">GIF Forge</a></li>
+<li><a href="/tools/n8n-data-cleanup-pack/">n8n Data Cleanup Pack</a></li>
+<li><a href="/tools/n8n-cleanup-sampler/">n8n Cleanup Sampler</a></li>
+<li><a href="/tools/n8n-prompt-reliability-pack/">n8n Prompt + Reliability Pack</a></li>
+<li><a href="/tools/csv-char-fix/">csv-char-fix</a></li>
+<li><a href="/tools/csv-split/">csv-split</a></li>
+<li><a href="/tools/regex-pack/">Regex Pack for Messy Data</a></li>
+<li><a href="/tools/dev-cheat-sheets/">Dev Cheat Sheets</a></li>
+<li><a href="/tools/claude-data-skills/">CSV Skills for Claude Code</a></li>
+<li><a href="/tools/agent-data-skills/">Agent Data Skills Pack</a></li>
+<li><a href="/tools/agents-md-starter-pack/">AGENTS.md Starter Pack</a></li>
+<li><a href="/tools/ship-ready-skills-pack/">Ship-Ready Skills Pack</a></li>
+<li><a href="/tools/verify-before-done-free/">Verify Before Done</a></li>
+<li><a href="/tools/agent-cost-saver/">Agent Cost Saver</a></li>
+<li><a href="/tools/dev-os-claude-code/">Dev OS in Claude Code</a></li>
+<li><a href="/tools/anti-slop-kit/">Anti-Slop Kit</a></li>
+<li><a href="/tools/anti-slop-rules-free/">Anti-Slop Rules</a></li>
+<li><a href="/tools/all-agent-packs/">All Tidy Byte Agent Packs</a></li>
+<li><a href="/tools/base64-lite/">Base64 Encode &amp; Decode</a></li>
+<li><a href="/tools/json-repair-lite/">JSON Repair</a></li>
+<li><a href="/tools/hash-lite/">Hash &amp; Checksum</a></li>
+<li><a href="/tools/html-table-extractor/">HTML Table Extractor</a></li>
+<li><a href="/tools/llm-token-counter/">LLM Token Counter</a></li>
+<li><a href="/tools/json-to-csv/">JSON to CSV Converter</a></li>
+<li><a href="/tools/csv-encoding-fixer/">CSV Encoding Fixer</a></li>
+<li><a href="/tools/json-schema-validator/">JSON Schema Validator</a></li>
+<li><a href="/tools/link-preview/">Link Preview</a></li>
+<li><a href="/tools/language-detector/">Language Detector</a></li>
+<li><a href="/tools/date-timezone/">Date &amp; Timezone Normalizer</a></li></ul>
+    </div>
+    <div>
+      <h2>Shops</h2>
+      <ul>
+        <li><a href="https://apify.com/tidybytetools">Apify</a></li>
+        <li><a href="https://tidybyte.gumroad.com">Gumroad</a></li>
+        <li><a href="https://github.com/tidybytetools">GitHub</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>This site</h2>
+      <ul>
+        <li><a href="/guides/">Guides</a></li>
+        <li><a href="https://dev.to/tidybytetools">Guides on dev.to</a></li>
+        <li><a href="https://huggingface.co/spaces/runescapeprivateservers/fix-broken-json">Fix Broken JSON</a></li>
+        <li><a href="https://github.com/tidybytetools/json-repair-skill">JSON repair skill</a></li>
+        <li><a href="/connect/">For AI agents</a></li>
+        <li><a href="/api/">API</a></li>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/terms/">Terms</a></li>
+        <li><a href="/llms.txt">llms.txt</a></li>
+        <li><a href="/tools.json">tools.json</a></li>
+        <li><a href="/.well-known/mcp.json">mcp.json</a></li>
+        <li><a href="/openapi.json">openapi.json</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap legal">
+    <p>© 2026 Tidy Byte Tools. This site does not use tracking cookies.</p>
+    <p class="footer-dir-badges"><a href="https://fazier.com" target="_blank"><img src="https://fazier.com/api/v1/public/badges/launch_badges.svg?badge_type=featured&theme=light" alt="Fazier badge" width="182" height="43" /></a> <a href="https://appnavi.dev/en/apps/tidy-byte-tools/"><img src="https://appnavi.dev/badge/en-light.svg" alt="APP NAVI" width="190" height="44" /></a></p>
+  </div>
+</footer>
+
+</body></html>

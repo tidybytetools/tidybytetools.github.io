@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CLAUDE.md, AGENTS.md or Cursor rules: which file should you write? · Tidy Byte Tools</title>
+  <meta name="description" content="Which instruction file each coding agent reads, how to avoid writing the same rules twice, and how long each file should be.">
+  
+  <link rel="canonical" href="https://tidybytetools.github.io/guides/claude-md-vs-agents-md-vs-cursor-rules/">
+  
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preload" href="/assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <meta name="theme-color" content="#F4F7F5" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0D1512" media="(prefers-color-scheme: dark)">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Tidy Byte Tools">
+  <meta property="og:title" content="CLAUDE.md, AGENTS.md or Cursor rules: which file should you write? · Tidy Byte Tools">
+  <meta property="og:description" content="Which instruction file each coding agent reads, how to avoid writing the same rules twice, and how long each file should be.">
+  <meta property="og:url" content="https://tidybytetools.github.io/guides/claude-md-vs-agents-md-vs-cursor-rules/">
+  <meta property="og:image" content="https://tidybytetools.github.io/assets/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CLAUDE.md, AGENTS.md or Cursor rules: which file should you write? · Tidy Byte Tools">
+  <meta name="twitter:description" content="Which instruction file each coding agent reads, how to avoid writing the same rules twice, and how long each file should be.">
+  <meta name="twitter:image" content="https://tidybytetools.github.io/assets/img/og.png">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  
+</head>
+
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="header-inner">
+
+    <a class="logo" href="/">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="/assets/img/lockup-horizontal-dark.svg">
+        <img src="/assets/img/lockup-horizontal-light.svg" alt="Tidy Byte Tools" height="32" width="118">
+      </picture>
+    </a>
+    
+<div class="header-tools">
+<nav aria-label="Primary"><ul><li><a href="/tools/">Tools</a></li><li><a href="/guides/" aria-current="page">Guides</a></li><li><a href="/#how">How it works</a></li><li><a href="/#faq">FAQ</a></li><li><a href="/connect/">For AI agents</a></li><li><a href="/api/">API</a></li><li><a href="https://github.com/tidybytetools">GitHub</a></li></ul></nav>
+<nav class="lang-switch" aria-label="Language"><ul class="lang-switch"><li><a href="/guides/claude-md-vs-agents-md-vs-cursor-rules/" lang="en" hreflang="en" title="English" aria-current="true">EN</a></li><li><a href="/es/" lang="es" hreflang="es" title="Español">ES</a></li><li><a href="/pt/" lang="pt-BR" hreflang="pt-BR" title="Português">PT</a></li><li><a href="/de/" lang="de" hreflang="de" title="Deutsch">DE</a></li><li><a href="/fr/" lang="fr" hreflang="fr" title="Français">FR</a></li><li><a href="/ja/" lang="ja" hreflang="ja" title="日本語">JA</a></li><li><a href="/zh/" lang="zh-CN" hreflang="zh-CN" title="中文">中文</a></li></ul></nav>
+</div></div></header>
+<main id="main">
+    <section class="wrap page-hero">
+      <p class="crumb"><a href="/">Home</a> / <a href="/guides/">Guides</a> / CLAUDE.md, AGENTS.md or Cursor rules: which file should you write?</p>
+      <h1>CLAUDE.md, AGENTS.md or Cursor rules: which file should you write?</h1>
+      <p class="lede">Which instruction file each coding agent reads, how to avoid writing the same rules twice, and how long each file should be.</p>
+      
+    </section>
+    <section class="wrap" style="padding-bottom:48px">
+      <article class="prose guide-body"><p>Each coding agent reads a different instruction file. If you use more than one agent, you can end up with three files that say the same thing. That costs tokens and drifts out of date. Here is a simple way to keep it tidy.</p>
+<h2>Who reads what</h2>
+<div class="table-wrap"><table>
+<tr><th>File</th><th>Read by</th><th>When it loads</th></tr>
+<tr><td><code>CLAUDE.md</code></td><td>Claude Code</td><td>Every session</td></tr>
+<tr><td><code>AGENTS.md</code></td><td>Codex, Cursor and other tools</td><td>Every task. Codex starts at the project root and walks down to your folder, with at most one file per folder</td></tr>
+<tr><td>Cursor rules (<code>.cursor/rules</code>)</td><td>Cursor</td><td>Always on, or only when the rule's <code>globs</code> or description match</td></tr>
+</table></div>
+<p>Setting names and limits change between versions, so check the docs for the version you run. We last checked the Codex docs on Nov 25, 2026: <a href="https://developers.openai.com/codex/">developers.openai.com/codex</a>.</p>
+<h2>A simple setup for more than one tool</h2>
+<p>1. Put the real rules in <code>AGENTS.md</code>.</p>
+<p>2. Make <code>CLAUDE.md</code> one line that imports it: <code>@AGENTS.md</code>.</p>
+<p>3. Use Cursor rules only for things that apply to certain files, with <code>globs</code>.</p>
+<p>4. Put folder rules in a nested <code>AGENTS.md</code> inside that folder (for example <code>src/ui/AGENTS.md</code>), so they load only when work happens there.</p>
+<h2>How long should they be</h2>
+<ul>
+<li>Codex stops adding AGENTS.md files once the combined size reaches 32 KiB by default. Under 8 KiB is better.</li>
+<li>For Claude Code, keep <code>CLAUDE.md</code> short. A common target is under 200 lines. Move long workflows into skills.</li>
+<li>Short files are cheaper and more likely to be read in full.</li>
+</ul>
+<h2>What to put in them</h2>
+<ul>
+<li>The commands to build, test and run the project.</li>
+<li>Rules that are not obvious from the code: naming, folders that are off limits, how to write a commit.</li>
+<li>Things that went wrong before, written as one plain line each.</li>
+</ul>
+<p>Leave out old meeting notes, long style essays, and anything the agent can see by reading the code.</p>
+<h2>Free and paid help</h2>
+<ul>
+<li><a href="https://tidybyte.gumroad.com/l/agent-cost-saver">Agent Cost Saver</a> (free) has <code>cost_audit.py</code>. It flags a CLAUDE.md and AGENTS.md that repeat the same text, oversize files and always-on rules.</li>
+<li><a href="https://tidybyte.gumroad.com/l/agents-md-starter-pack">AGENTS.md Starter Pack</a> has short copy-paste AGENTS.md files for common project types.</li>
+</ul>
+<h2>Related guides</h2>
+<ul>
+<li><a href="/guides/test-a-claude-code-skill-pack-before-installing/">How to test a Claude Code skill pack before you install it</a></li>
+</ul>
+<p>Made by <a href="https://tidybytetools.github.io">Tidy Byte Tools</a>.</p></article>
+      <aside style="margin-top:36px">
+        <h2>More guides</h2>
+        <ul><li><a href="/guides/check-a-website-for-broken-links/">How to check a website for broken links</a></li><li><a href="/guides/anti-slop-skills-compared/">Anti-slop skills compared: free prompts, a rewriter, or a checker</a></li><li><a href="/guides/count-llm-tokens-and-estimate-cost/">How to count LLM tokens and estimate cost</a></li><li><a href="/guides/encode-or-decode-base64/">How to encode or decode Base64 for text and files</a></li><li><a href="/guides/extract-pdf-tables-to-excel-or-csv/">How to extract tables from a PDF into Excel or CSV</a></li><li><a href="/guides/flatten-nested-json-into-csv/">How to flatten nested JSON into CSV</a></li><li><a href="/guides/test-a-claude-code-skill-pack-before-installing/">How to test a Claude Code skill pack before you install it</a></li><li><a href="/guides/turn-pdf-or-word-into-markdown-for-ai/">How to turn a PDF or Word file into Markdown for AI and notes</a></li></ul>
+      </aside>
+    </section>
+    </main>
+
+<footer class="site-footer">
+  
+  <section class="featured-on" aria-label="Featured on">
+    <div class="wrap">
+      <h2>Featured on</h2>
+      <p>As directories list us, their marks will show up here.</p>
+      <ul class="featured-logos"></ul>
+    </div>
+  </section>
+
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      
+    <a class="logo" href="/">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="/assets/img/lockup-horizontal-dark.svg">
+        <img src="/assets/img/lockup-horizontal-light.svg" alt="Tidy Byte Tools" height="32" width="118">
+      </picture>
+    </a>
+    
+      <p>Small tools that clean up messy data. Each one does one job and does it well.</p>
+    </div>
+    <div>
+      <h2>Tools</h2>
+      <ul><li><a href="/tools/pdf-table-pull/">PDF Table Pull</a></li>
+<li><a href="/tools/doc2md/">Doc to Markdown</a></li>
+<li><a href="/tools/sheet-scrub/">CSV &amp; spreadsheet cleanup</a></li>
+<li><a href="/tools/json-shaper/">JSON Shaper</a></li>
+<li><a href="/tools/lead-sheet-fixer/">Lead Sheet Fixer</a></li>
+<li><a href="/tools/phone-validator/">Phone Number Validator</a></li>
+<li><a href="/tools/data-cleanup-bundle/">Data Cleanup Bundle</a></li>
+<li><a href="/tools/link-check/">Broken Link Checker</a></li>
+<li><a href="/tools/server-pulse/">Server Pulse</a></li>
+<li><a href="/tools/markdown-chunker/">Markdown Chunker for RAG</a></li>
+<li><a href="/tools/gif-forge/">GIF Forge</a></li>
+<li><a href="/tools/n8n-data-cleanup-pack/">n8n Data Cleanup Pack</a></li>
+<li><a href="/tools/n8n-cleanup-sampler/">n8n Cleanup Sampler</a></li>
+<li><a href="/tools/n8n-prompt-reliability-pack/">n8n Prompt + Reliability Pack</a></li>
+<li><a href="/tools/csv-char-fix/">csv-char-fix</a></li>
+<li><a href="/tools/csv-split/">csv-split</a></li>
+<li><a href="/tools/regex-pack/">Regex Pack for Messy Data</a></li>
+<li><a href="/tools/dev-cheat-sheets/">Dev Cheat Sheets</a></li>
+<li><a href="/tools/claude-data-skills/">CSV Skills for Claude Code</a></li>
+<li><a href="/tools/agent-data-skills/">Agent Data Skills Pack</a></li>
+<li><a href="/tools/agents-md-starter-pack/">AGENTS.md Starter Pack</a></li>
+<li><a href="/tools/ship-ready-skills-pack/">Ship-Ready Skills Pack</a></li>
+<li><a href="/tools/verify-before-done-free/">Verify Before Done</a></li>
+<li><a href="/tools/agent-cost-saver/">Agent Cost Saver</a></li>
+<li><a href="/tools/dev-os-claude-code/">Dev OS in Claude Code</a></li>
+<li><a href="/tools/anti-slop-kit/">Anti-Slop Kit</a></li>
+<li><a href="/tools/anti-slop-rules-free/">Anti-Slop Rules</a></li>
+<li><a href="/tools/all-agent-packs/">All Tidy Byte Agent Packs</a></li>
+<li><a href="/tools/base64-lite/">Base64 Encode &amp; Decode</a></li>
+<li><a href="/tools/json-repair-lite/">JSON Repair</a></li>
+<li><a href="/tools/hash-lite/">Hash &amp; Checksum</a></li>
+<li><a href="/tools/html-table-extractor/">HTML Table Extractor</a></li>
+<li><a href="/tools/llm-token-counter/">LLM Token Counter</a></li>
+<li><a href="/tools/json-to-csv/">JSON to CSV Converter</a></li>
+<li><a href="/tools/csv-encoding-fixer/">CSV Encoding Fixer</a></li>
+<li><a href="/tools/json-schema-validator/">JSON Schema Validator</a></li>
+<li><a href="/tools/link-preview/">Link Preview</a></li>
+<li><a href="/tools/language-detector/">Language Detector</a></li>
+<li><a href="/tools/date-timezone/">Date &amp; Timezone Normalizer</a></li></ul>
+    </div>
+    <div>
+      <h2>Shops</h2>
+      <ul>
+        <li><a href="https://apify.com/tidybytetools">Apify</a></li>
+        <li><a href="https://tidybyte.gumroad.com">Gumroad</a></li>
+        <li><a href="https://github.com/tidybytetools">GitHub</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>This site</h2>
+      <ul>
+        <li><a href="/guides/">Guides</a></li>
+        <li><a href="https://dev.to/tidybytetools">Guides on dev.to</a></li>
+        <li><a href="https://huggingface.co/spaces/runescapeprivateservers/fix-broken-json">Fix Broken JSON</a></li>
+        <li><a href="https://github.com/tidybytetools/json-repair-skill">JSON repair skill</a></li>
+        <li><a href="/connect/">For AI agents</a></li>
+        <li><a href="/api/">API</a></li>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/terms/">Terms</a></li>
+        <li><a href="/llms.txt">llms.txt</a></li>
+        <li><a href="/tools.json">tools.json</a></li>
+        <li><a href="/.well-known/mcp.json">mcp.json</a></li>
+        <li><a href="/openapi.json">openapi.json</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap legal">
+    <p>© 2026 Tidy Byte Tools. This site does not use tracking cookies.</p>
+    <p class="footer-dir-badges"><a href="https://fazier.com" target="_blank"><img src="https://fazier.com/api/v1/public/badges/launch_badges.svg?badge_type=featured&theme=light" alt="Fazier badge" width="182" height="43" /></a> <a href="https://appnavi.dev/en/apps/tidy-byte-tools/"><img src="https://appnavi.dev/badge/en-light.svg" alt="APP NAVI" width="190" height="44" /></a></p>
+  </div>
+</footer>
+
+</body></html>
