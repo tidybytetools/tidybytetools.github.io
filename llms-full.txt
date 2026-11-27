@@ -284,6 +284,18 @@ Do not invent reviews, user counts, or testimonials. Do not use a personal name 
 - [Production Readiness Kit](https://tidybytetools.github.io/tools/production-readiness-kit/): A read-only scanner, 22 questions, a review skill, 6 templates, and 3 starter services for a go or no-go call.
   - For your computer (Gumroad, $9): https://tidybyte.gumroad.com/l/production-readiness-kit
   - Free: Production Readiness Lite (Gumroad, Free): https://tidybyte.gumroad.com/l/production-readiness-lite-free
+- [n8n AI Workflows (free)](https://tidybytetools.github.io/tools/n8n-ai-workflows-free/): Three n8n AI workflows you can import and run now, with no accounts and demo mode on.
+  - Free sample (Gumroad, Free): https://tidybyte.gumroad.com/l/n8n-ai-workflows-free
+  - Full n8n AI Workflow Pack (Gumroad, $9): https://tidybyte.gumroad.com/l/n8n-ai-workflow-pack
+- [n8n AI Workflow Pack](https://tidybytetools.github.io/tools/n8n-ai-workflow-pack/): Eight n8n AI workflows you can import and run with no accounts, each run in a real n8n.
+  - For n8n (Gumroad, $9): https://tidybyte.gumroad.com/l/n8n-ai-workflow-pack
+  - Free: n8n AI Workflows (Gumroad, Free): https://tidybyte.gumroad.com/l/n8n-ai-workflows-free
+- [Claude Code Commands (free)](https://tidybytetools.github.io/tools/claude-code-commands-free/): Eight safe slash commands for Claude Code, one CLAUDE.md template, and a folder map.
+  - Free commands (Gumroad, Free): https://tidybyte.gumroad.com/l/claude-code-commands-free
+  - Full Cookbook (Gumroad, $9): https://tidybyte.gumroad.com/l/claude-code-commands-cookbook
+- [Claude Code Commands Cookbook](https://tidybytetools.github.io/tools/claude-code-commands-cookbook/): Thirty safe slash commands for Claude Code, 5 CLAUDE.md templates, and short guides.
+  - For your computer (Gumroad, $9): https://tidybyte.gumroad.com/l/claude-code-commands-cookbook
+  - Free: Claude Code Commands (Gumroad, Free): https://tidybyte.gumroad.com/l/claude-code-commands-free
 - [Base64 Encode & Decode](https://tidybytetools.github.io/tools/base64-lite/): Encode or decode Base64 for text and local files, on your computer.
   - Free lite GitHub: https://github.com/tidybytetools/base64-lite
   - Pay per use (Apify, $0.001 per unique item): https://apify.com/tidybytetools/base64-encode-decode
@@ -691,6 +703,38 @@ Most outages on release day come from the same short list: a committed .env, no 
 - 6 templates (go or no-go, rollback plan, runbook, release day checklist, postmortem, risk acceptance), 3 starter services (Node, Python, Go) that scan GO, and stack pages for Node, Python, Java and Spring Boot, and Go.
 - For your computer (Gumroad, $9): Fixed $9. The scan uses patterns, so it can miss a problem or flag a harmless line. There is no Java starter. The starter Dockerfiles were not built in our tests. A good verdict is not a security audit.
 - Free: Production Readiness Lite (Gumroad, Free): 15 of the checks, 4 questions, the lite checklist, and the go or no-go sheet. MIT license.
+
+### n8n AI Workflows (free)
+Three n8n workflows with no API keys needed: a social post writer, a text-to-JSON extractor with retry, and an error alert with a repeat blocker. A free sample of the 8-workflow pack.
+- Three workflows you import and run right away. Each model step has a demo mode so you see the full flow first.
+- Includes a 27-rule linter, setup notes, and tests. MIT license.
+- Webhook nodes ship without authentication. Add Header Auth before you activate them.
+- Free sample (Gumroad, Free): MIT license. Demo replies are fixed sample text and show the flow, not model quality.
+- Full n8n AI Workflow Pack (Gumroad, $9): All 8 workflows, tested in n8n 2.49.6.
+
+### n8n AI Workflow Pack
+Eight workflows: social posts, lead scorer, ticket triage, blog repurposer, meeting notes, text-to-JSON, page change monitor, and error alerts. Demo mode is on by default.
+- 8 workflows, each run in n8n 2.49.6 in demo mode and through the live HTTP path against a local fake model server.
+- A Config node in every workflow, a 27-rule linter, setup notes, and tests.
+- Works with any OpenAI-compatible model when you switch demo mode off.
+- For n8n (Gumroad, $9): Fixed $9. Not tested against live OpenAI or OpenRouter. Tested on n8n 2.49.6 only. Webhook nodes ship without authentication.
+- Free: n8n AI Workflows (Gumroad, Free): 3 of the 8 workflows. MIT license.
+
+### Claude Code Commands (free)
+Eight plain Markdown slash commands that read a read-only snapshot of your repo first. None pre-approves edits or commits. A free sample of the cookbook.
+- 8 commands: explain-repo, fix-failing-test, review-diff, commit-msg, pr-description, handoff, scope-check, undo-plan.
+- Install with sh install.sh. It never overwrites a same-named file unless you add --force.
+- Includes tests and a Cursor converter. MIT license.
+- Free commands (Gumroad, Free): MIT license. On Windows use Git Bash or WSL.
+- Full Cookbook (Gumroad, $9): 30 commands, 5 templates, and 3 guides.
+
+### Claude Code Commands Cookbook
+Thirty commands that each do one job, five CLAUDE.md templates, and three short guides. None pre-approves edits or commits.
+- 30 commands in 6 groups: understand, fix, change safely, test and review, ship, and session.
+- 5 CLAUDE.md templates, a guide to writing one that works, 12 time and money saving habits, and the folder map.
+- A Cursor converter, an installer, and tests.
+- For your computer (Gumroad, $9): Fixed $9. Not run inside a live Claude Code session. How well Claude follows each command depends on your model and repo.
+- Free: Claude Code Commands (Gumroad, Free): 8 commands, 1 template, and the folder map. MIT license.
 
 ### Base64 Encode & Decode
 Turn text or a local file into Base64, or turn Base64 back into text or bytes. You can also use the URL-safe alphabet and data-URI output. It runs offline.

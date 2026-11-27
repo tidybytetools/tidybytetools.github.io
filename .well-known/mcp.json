@@ -1333,6 +1333,46 @@
       "translations": {}
     },
     {
+      "name": "n8n AI Workflows (free)",
+      "slug": "n8n-ai-workflows-free",
+      "description": "Three n8n AI workflows you can import and run now, with no accounts and demo mode on.",
+      "url": "https://tidybytetools.github.io/tools/n8n-ai-workflows-free/",
+      "github": null,
+      "input": "An n8n instance (2.x) and a JSON file to import.",
+      "output": "Importable workflow JSON files, with demo replies you can swap for a real model.",
+      "translations": {}
+    },
+    {
+      "name": "n8n AI Workflow Pack",
+      "slug": "n8n-ai-workflow-pack",
+      "description": "Eight n8n AI workflows you can import and run with no accounts, each run in a real n8n.",
+      "url": "https://tidybytetools.github.io/tools/n8n-ai-workflow-pack/",
+      "github": null,
+      "input": "An n8n instance (2.x) and a JSON file to import.",
+      "output": "Eight importable workflow files, plus a linter, notes, and tests.",
+      "translations": {}
+    },
+    {
+      "name": "Claude Code Commands (free)",
+      "slug": "claude-code-commands-free",
+      "description": "Eight safe slash commands for Claude Code, one CLAUDE.md template, and a folder map.",
+      "url": "https://tidybytetools.github.io/tools/claude-code-commands-free/",
+      "github": null,
+      "input": "A repo and Claude Code (or Cursor).",
+      "output": "Slash commands, a CLAUDE.md template, and a .claude folder map.",
+      "translations": {}
+    },
+    {
+      "name": "Claude Code Commands Cookbook",
+      "slug": "claude-code-commands-cookbook",
+      "description": "Thirty safe slash commands for Claude Code, 5 CLAUDE.md templates, and short guides.",
+      "url": "https://tidybytetools.github.io/tools/claude-code-commands-cookbook/",
+      "github": null,
+      "input": "A repo and Claude Code (or Cursor).",
+      "output": "Slash commands, templates, guides, and an installer.",
+      "translations": {}
+    },
+    {
       "name": "Base64 Encode & Decode",
       "slug": "base64-lite",
       "description": "Encode or decode Base64 for text and local files, on your computer.",

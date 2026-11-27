@@ -284,6 +284,18 @@ Do not invent reviews, user counts, or testimonials. Do not use a personal name 
 - [Production Readiness Kit](https://tidybytetools.github.io/tools/production-readiness-kit/): A read-only scanner, 22 questions, a review skill, 6 templates, and 3 starter services for a go or no-go call.
   - For your computer (Gumroad, $9): https://tidybyte.gumroad.com/l/production-readiness-kit
   - Free: Production Readiness Lite (Gumroad, Free): https://tidybyte.gumroad.com/l/production-readiness-lite-free
+- [n8n AI Workflows (free)](https://tidybytetools.github.io/tools/n8n-ai-workflows-free/): Three n8n AI workflows you can import and run now, with no accounts and demo mode on.
+  - Free sample (Gumroad, Free): https://tidybyte.gumroad.com/l/n8n-ai-workflows-free
+  - Full n8n AI Workflow Pack (Gumroad, $9): https://tidybyte.gumroad.com/l/n8n-ai-workflow-pack
+- [n8n AI Workflow Pack](https://tidybytetools.github.io/tools/n8n-ai-workflow-pack/): Eight n8n AI workflows you can import and run with no accounts, each run in a real n8n.
+  - For n8n (Gumroad, $9): https://tidybyte.gumroad.com/l/n8n-ai-workflow-pack
+  - Free: n8n AI Workflows (Gumroad, Free): https://tidybyte.gumroad.com/l/n8n-ai-workflows-free
+- [Claude Code Commands (free)](https://tidybytetools.github.io/tools/claude-code-commands-free/): Eight safe slash commands for Claude Code, one CLAUDE.md template, and a folder map.
+  - Free commands (Gumroad, Free): https://tidybyte.gumroad.com/l/claude-code-commands-free
+  - Full Cookbook (Gumroad, $9): https://tidybyte.gumroad.com/l/claude-code-commands-cookbook
+- [Claude Code Commands Cookbook](https://tidybytetools.github.io/tools/claude-code-commands-cookbook/): Thirty safe slash commands for Claude Code, 5 CLAUDE.md templates, and short guides.
+  - For your computer (Gumroad, $9): https://tidybyte.gumroad.com/l/claude-code-commands-cookbook
+  - Free: Claude Code Commands (Gumroad, Free): https://tidybyte.gumroad.com/l/claude-code-commands-free
 - [Base64 Encode & Decode](https://tidybytetools.github.io/tools/base64-lite/): Encode or decode Base64 for text and local files, on your computer.
   - Free lite GitHub: https://github.com/tidybytetools/base64-lite
   - Pay per use (Apify, $0.001 per unique item): https://apify.com/tidybytetools/base64-encode-decode

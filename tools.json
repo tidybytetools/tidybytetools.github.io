@@ -2029,6 +2029,122 @@
       "translations": {}
     },
     {
+      "name": "n8n AI Workflows (free)",
+      "slug": "n8n-ai-workflows-free",
+      "url": "https://tidybytetools.github.io/tools/n8n-ai-workflows-free/",
+      "what_it_does": "Three n8n AI workflows you can import and run now, with no accounts and demo mode on.",
+      "summary": "Three n8n workflows with no API keys needed: a social post writer, a text-to-JSON extractor with retry, and an error alert with a repeat blocker. A free sample of the 8-workflow pack.",
+      "category": "ai",
+      "price": [
+        {
+          "place": "Gumroad",
+          "label": "Free sample",
+          "price": "Free",
+          "url": "https://tidybyte.gumroad.com/l/n8n-ai-workflows-free"
+        },
+        {
+          "place": "Gumroad",
+          "label": "Full n8n AI Workflow Pack",
+          "price": "$9",
+          "url": "https://tidybyte.gumroad.com/l/n8n-ai-workflow-pack"
+        }
+      ],
+      "apify": null,
+      "apify_mcp": null,
+      "mcp": null,
+      "github": null,
+      "input": "An n8n instance (2.x) and a JSON file to import.",
+      "output": "Importable workflow JSON files, with demo replies you can swap for a real model.",
+      "translations": {}
+    },
+    {
+      "name": "n8n AI Workflow Pack",
+      "slug": "n8n-ai-workflow-pack",
+      "url": "https://tidybytetools.github.io/tools/n8n-ai-workflow-pack/",
+      "what_it_does": "Eight n8n AI workflows you can import and run with no accounts, each run in a real n8n.",
+      "summary": "Eight workflows: social posts, lead scorer, ticket triage, blog repurposer, meeting notes, text-to-JSON, page change monitor, and error alerts. Demo mode is on by default.",
+      "category": "ai",
+      "price": [
+        {
+          "place": "Gumroad",
+          "label": "For n8n",
+          "price": "$9",
+          "url": "https://tidybyte.gumroad.com/l/n8n-ai-workflow-pack"
+        },
+        {
+          "place": "Gumroad",
+          "label": "Free: n8n AI Workflows",
+          "price": "Free",
+          "url": "https://tidybyte.gumroad.com/l/n8n-ai-workflows-free"
+        }
+      ],
+      "apify": null,
+      "apify_mcp": null,
+      "mcp": null,
+      "github": null,
+      "input": "An n8n instance (2.x) and a JSON file to import.",
+      "output": "Eight importable workflow files, plus a linter, notes, and tests.",
+      "translations": {}
+    },
+    {
+      "name": "Claude Code Commands (free)",
+      "slug": "claude-code-commands-free",
+      "url": "https://tidybytetools.github.io/tools/claude-code-commands-free/",
+      "what_it_does": "Eight safe slash commands for Claude Code, one CLAUDE.md template, and a folder map.",
+      "summary": "Eight plain Markdown slash commands that read a read-only snapshot of your repo first. None pre-approves edits or commits. A free sample of the cookbook.",
+      "category": "ai",
+      "price": [
+        {
+          "place": "Gumroad",
+          "label": "Free commands",
+          "price": "Free",
+          "url": "https://tidybyte.gumroad.com/l/claude-code-commands-free"
+        },
+        {
+          "place": "Gumroad",
+          "label": "Full Cookbook",
+          "price": "$9",
+          "url": "https://tidybyte.gumroad.com/l/claude-code-commands-cookbook"
+        }
+      ],
+      "apify": null,
+      "apify_mcp": null,
+      "mcp": null,
+      "github": null,
+      "input": "A repo and Claude Code (or Cursor).",
+      "output": "Slash commands, a CLAUDE.md template, and a .claude folder map.",
+      "translations": {}
+    },
+    {
+      "name": "Claude Code Commands Cookbook",
+      "slug": "claude-code-commands-cookbook",
+      "url": "https://tidybytetools.github.io/tools/claude-code-commands-cookbook/",
+      "what_it_does": "Thirty safe slash commands for Claude Code, 5 CLAUDE.md templates, and short guides.",
+      "summary": "Thirty commands that each do one job, five CLAUDE.md templates, and three short guides. None pre-approves edits or commits.",
+      "category": "ai",
+      "price": [
+        {
+          "place": "Gumroad",
+          "label": "For your computer",
+          "price": "$9",
+          "url": "https://tidybyte.gumroad.com/l/claude-code-commands-cookbook"
+        },
+        {
+          "place": "Gumroad",
+          "label": "Free: Claude Code Commands",
+          "price": "Free",
+          "url": "https://tidybyte.gumroad.com/l/claude-code-commands-free"
+        }
+      ],
+      "apify": null,
+      "apify_mcp": null,
+      "mcp": null,
+      "github": null,
+      "input": "A repo and Claude Code (or Cursor).",
+      "output": "Slash commands, templates, guides, and an installer.",
+      "translations": {}
+    },
+    {
       "name": "Base64 Encode & Decode",
       "slug": "base64-lite",
       "url": "https://tidybytetools.github.io/tools/base64-lite/",
